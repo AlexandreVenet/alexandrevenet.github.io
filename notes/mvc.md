@@ -32,12 +32,20 @@ Ces fichiers sont à placer dans un répertoire Config ou Tools...
 Une arborescence possible de dossiers avec le rooteur à la racine :
 
 Racine :
-|_ fichier_routeur
-|_ config
-|_ controler
-|_ model
-|_ vue
-   |_ js
-   |_ phtml
-   |_ css
-   |_ img
+├──  fichier_routeur
+
+├── config
+
+├── controler
+
+├── model
+
+├── vue
+
+|   ├── js
+
+|   ├── phtml
+
+|   ├── css
+
+└── └── img
