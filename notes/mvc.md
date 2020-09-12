@@ -45,7 +45,7 @@ Racine :
 
 |   ├── js
 
-|   ├── phtml
+│   ├── phtml
 
 |   ├── css
 
