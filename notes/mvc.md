@@ -32,6 +32,7 @@ Ces fichiers sont à placer dans un répertoire Config ou Tools...
 Une arborescence possible de dossiers avec le rooteur à la racine :
 
 Racine :
+
 ├──  fichier_routeur
 
 ├── config
