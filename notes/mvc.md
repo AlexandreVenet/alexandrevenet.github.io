@@ -3,10 +3,10 @@
 MVC est un modèle de structure applicative et est l'acronyme de **Model Vue Controler**, dont la traduction littérale en français fait perdre le sens.
 
 Ce modèle possède 4 éléments principaux :
-- le routeur,
-- les fonctions de type Model,
-- les fonctions de type Vue,
-- les fonctions de type Controleur.
+- le fichier routeur (ou répertoire contenant les éléments de routage),
+- le répertoire de fonctions de type Model,
+- le répertoire de fonctions de type Vue,
+- le répertoire de fonctions de type Controleur.
 
 ## Routeur
 Le routeur est le fichier à la racine du site ou de l'application. 
@@ -27,26 +27,3 @@ La Vue regroupe les fonctions qui concernent **l'affichage**, comme par exemple 
 ## Tools
 On peut avoir besoin de fonctions plus **utilitaires** ou **générales** comme par exemple : fichiers de configuration, informations de connexion... 
 Ces fichiers sont à placer dans un répertoire Config ou Tools...
-
-## Exemple d'arborescence
-Une arborescence possible de dossiers avec le rooteur à la racine :
-
-Racine :
-
-├──  fichier_routeur
-
-├── config
-
-├── controler
-
-├── model
-
-├── vue
-
-|   ├── js
-
-│   ├── phtml
-
-|   ├── css
-
-└── └── img
