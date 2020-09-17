@@ -5,3 +5,7 @@ Pour accéder à la page d'accueil mise en forme de cet espace : [alexandrevenet
 
 ## Notes
 Le répertoire `Notes` contient des notes de cours ou de travail que je garde ici pour mémoire et à des fins pédagogiques.
+
+- [Modèle MVC](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/mvc.md#mvc-dun-point-de-vue-pragmatique "Modèle MVC")
+- [JS : date](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/date.js "JS : date")
+- [JS : fonction fléchée](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/fonction_flechee.md "JS : fonction fléchée")
