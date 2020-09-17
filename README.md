@@ -9,3 +9,4 @@ Le répertoire `Notes` contient des notes de cours ou de travail que je garde ic
 - [Modèle MVC](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/mvc.md#mvc-dun-point-de-vue-pragmatique "Modèle MVC")
 - [JS : date](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/date.js "JS : date")
 - [JS : fonction fléchée](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/fonction_flechee.md "JS : fonction fléchée")
+-[Atom : choses utiles](https://github.com/AlexandreVenet/alexandrevenet.github.io/blob/master/notes/atom.md#atom--choses-utiles "Atom : choses utiles")
