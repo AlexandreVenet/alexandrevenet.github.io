@@ -29,13 +29,13 @@ Ceci est un fichier Markdown. Dans Atom, `CTRL MAJ m` pour **prévisualiser en t
 
 ## Commentaires
 Pour chercher **tous les commentaires d'un document**, cocher l'option "regEx" du champ de recherche puis entrer :
-- type //... : `//.*`
-- type /*...*/ (mais sans retour chariot): `/\*.*\*/`
+- type `//...` : rechercher `//.*`
+- type `/*...*/` (sans retour chariot) : rechercher `/\*.*\*/`
 
 ## Raccourcis
 - En HTML, `Tab` permet de passer d'une **propriété** à une autre.
 - `CTRL /` marque la ou les **lignes en commentaire**, quel que soit le langage, que la ou les lignes soient vides ou pas.
-- `CTRL L` **sélectionne la ligne** (marche aussi sur plusieurs lignes)
+- `CTRL L` **sélectionne la ligne** (fonctionne aussi sur plusieurs lignes).
 
 ## Snippets
 Pour modifier les **snippets** : menu `File/Snippets`.
@@ -46,8 +46,8 @@ Pour modifier les **snippets** : menu `File/Snippets`.
 3. Entrer "html" dans le champ de recherche.
 4. Dans la liste, sélectionner `langage-html`.
 5. Chercher "scope" dans la page affichée. Copier la valeur qui est `.text.html.basic`.
-6. aller dans le menu `File/Snippets` (ou ouvrir le fichier `snippets.cson`).
-7. Créer le nouveau snippet avec la valeur copiée et enregistrez le document.
+6. Aller dans le menu `File/Snippets` (ou ouvrir le fichier `snippets.cson`).
+7. Créer le nouveau snippet avec la valeur copiée et enregistrer le document.
 9. Dans un fichier html vide, entrer `html`. Un menu apparait indiquant la liste de commandes possibles. Choisir l'entrée désirée (`touche entrée` ou `click souris`).
 
 ```
