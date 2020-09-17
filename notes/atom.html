@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Atom : choses utiles</title>
+		<meta name="author" content="Alexandre Venet">
+		<meta name="description" content="Les packages que j'aime bien, un mémo sur les snippets et quelques astuces.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../css/styles.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="conteneur">
+				<a href="https://alexandrevenet.github.io" title="Alexandre Venet sur GitHub">alexandrevenet.github.io</a>
+			</div>
+		</header>
+
+		<main>
+			<div class="conteneur">
+				<section>
+					<h1>Atom : choses utiles</h1>
+					<p class="couleurGris">Les packages que j'aime bien, un mémo sur les snippets et quelques astuces.</p>
+				</section>
+				<section>
+					<h2>Markdown preview</h2>
+					<p>Ceci est un fichier Markdown. Dans Atom, <code>CTRL MAJ m</code> pour <strong>prévisualiser en temps réel</strong>. Peut ne pas fonctionner lorsque la commande est lancée une première fois dans l'éditeur ouvert, alors recommencer.</p>
+				</section>
+				<section>
+					<h2>Community Packages (nom - auteur)</h2>
+					<ul>
+						<li><strong>Atom-beautify</strong> - Glavin001</li>
+						<li><strong>color-picker</strong> - thomaslindstrom</li>
+						<li><strong>file-icons</strong> - file-icons</li>
+						<li><strong>lorem</strong> - shilingp</li>
+						<li><strong>nms-color-bracket</strong> - nmscholl</li>
+						<li><strong>open-in-browser</strong> - magbicaleman</li>
+						<li><strong>pigments</strong> - abe33</li>
+						<li><strong>emet</strong> - emetio</li>
+						<li><strong>french-menu</strong> - lamboley</li>
+						<li><strong>minimap</strong> - atom-minimap</li>
+						<li><strong>platformio-ide-terminal</strong> - platformio</li>
+						<li><strong>sass-autocompile</strong> - armin-pfaeffle</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Core Packages à traiter</h2>
+					<ul>
+						<li><strong>wrap-guide</strong> : désactiver ou paramétrer au besoin.</li>
+						<li><strong>spell check</strong> : désactiver "use locales". Ce package évalue les mots sur la base du dictionnaire système (seul l'EN-us est prévu par atom pour le moment, donc inutile en FR)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Thèmes</h2>
+					<ul>
+						<li><strong>One dark</strong> (ui/syntax)</li>
+						<li><strong>One light</strong> (ui/syntax)</li>
+						<li><strong>mdn</strong> (syntax)</li>
+						<li><strong>two</strong> (syntax) : version améliorée de One dark (syntax)</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Commentaires</h2>
+					<p>Pour chercher tous les commentaires d'un <strong>document</strong>, cocher l'option "regEx" du champ de recherche puis entrer :</p>
+					<ul>
+						<li>type <code>//...</code> : rechercher <code>//.*</code>,</li>
+    					<li>type <code>/*...*/</code> (sans retour chariot) : rechercher <code>/\*.*\*/</code>.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Raccourcis</h2>
+					<ul>
+						<li>En HTML, <code>Tab</code> permet de passer d'une propriété à une autre.</li>
+						<li><code>CTRL /</code> marque la ou les lignes en commentaire, quel que soit le langage, que la ou les lignes soient vides ou pas.</li>
+						<li><code>CTRL L</code> sélectionne la ligne (fonctionne aussi sur plusieurs lignes).</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Snippets</h2>
+					<p>Pour modifier les <strong>snippets</strong> : menu <code>File/Snippets</code>.</p>
+					<p><b>Exemple</b> : on veut créer un snippet dont le code est <code>html</code> et qui écrit dans un fichier html une structure de page par défaut.</p>
+					<ol>
+						<li>Ouvrir les <code>settings</code>.</li>
+						<li>Aller dans <code>packages</code>.</li>
+						<li>Entrer "html" dans le champ de recherche.</li>
+						<li>Dans la liste, sélectionner <code>langage-html</code>.</li>
+						<li>Chercher "scope" dans la page affichée. Copier la valeur qui est <code>.text.html.basic</code>.</li>
+						<li>Aller dans le menu <code>File/Snippets</code> (ou ouvrir le fichier <code>snippets.cson</code>).</li>
+						<li>Créer le nouveau snippet avec la valeur copiée et enregistrer le document.</li>
+						<li>Dans un fichier html vide, entrer <code>html</code>. Un menu apparait indiquant la liste de commandes possibles. Choisir l'entrée désirée (<code>touche entrée</code> ou <code>click souris</code>).</li>
+					</ol>
+					<pre><code>
+'.text.html.basic':
+	'HTML5 base perso':
+		'prefix': 'html'
+		'body': """
+			&lt;!DOCTYPE html&gt;
+			&lt;html lang=&quot;fr&quot;&gt;
+			&lt;head&gt;
+				&lt;meta charset=&quot;utf-8&quot;&gt;
+				&lt;title&gt;Document&lt;/title&gt;
+				&lt;meta name=&quot;author&quot; content=&quot;Nom...&quot;&gt;
+				&lt;meta name=&quot;description&quot; content=&quot;Description...&quot;&gt;
+				&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+				&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+
+				&lt;header&gt;
+				&lt;/header&gt;
+
+				&lt;main&gt;
+				&lt;/main&gt;
+
+				&lt;footer&gt;
+				&lt;/footer&gt;
+
+				&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;
+		"""
+					</code></pre>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+		</footer>
+
+	</body>
+</html>
