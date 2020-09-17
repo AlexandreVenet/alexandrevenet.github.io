@@ -50,7 +50,7 @@ Gestion de la **décomposition** pour la liste des paramètres :
 let f = ([a,b] = [1,2], {x:c} = {x:a+b}) => a+b+c;
 f();  
 ```
-La fonction fléchée est déconseillée pour "déclarer une méthode" car ne disposant pas de "this" (elle renvoie le `this` du parent) mais elle peut être utilisée néanmoins à la condition de ne pas faire appel à ces choses :
+La fonction fléchée est déconseillée pour "déclarer une méthode" car ne disposant pas de `this` (elle renvoie le `this` du parent) mais elle peut être utilisée néanmoins à la condition de ne pas faire appel à ces choses :
 ```
 const bonhomme = {
 	nom: 'Bob',
