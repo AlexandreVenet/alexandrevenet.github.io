@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>JS : fonction fléchée</title>
+		<meta name="author" content="Alexandre Venet">
+		<meta name="description" content="Notes sur la fonction fléchée en Javascript">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../css/styles.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="conteneur">
+				<a href="https://alexandrevenet.github.io" title="Alexandre Venet sur GitHub">alexandrevenet.github.io</a>
+			</div>
+		</header>
+
+		<main>
+			<div class="conteneur">
+				<section>
+					<h1>JS : fonction fléchée</h1>
+					<p class="couleurGris">Notes sur la fonction fléchée en Javascript, tirées de la page MDN : </p>
+					<a class="lien" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es" target="_blank">Fonctions fléchées sur MDN</a>
+					<p>Il existe les <strong>fonctions</strong> qu’on écrit de deux manières :</p>
+					<pre><code>
+const maFonction1 = function(parametre){
+	return expression ;
+}
+					</code></pre>
+					<pre><code>
+function maFonction2(parametre){
+	return expression ;
+}
+					</code></pre>
+					<p>Il existe les <strong>fonctions fléchées</strong>. Elles sont plus faciles à écrire, à lire, font la même chose que les fonctions mais elles ne disposent pas de leurs "propres valeurs de <code>this</code>, <code>arguments</code>, <code>super</code> ou <code>new.target</code>" et n’ont pas de prototype, pas de constructeur. "Elles sont souvent anonymes et ne sont pas destinées à être utilisées pour déclarer des méthodes."</p>
+					<pre><code>
+(parametre) => {
+	instructions
+}
+					</code></pre>
+					<pre><code>
+const toto = (parametre) => {
+	return expression ;
+}
+					</code></pre>
+					<p>Quand <strong>un seul argument</strong>, pas besoin des parenthèses :</p>
+					<pre><code>
+param => expression
+					</code></pre>
+					<p>Quand <strong>pas de paramètres</strong>, les parenthèses sont très bien vides :</p>
+					<pre><code>
+() => {
+	instructions
+}
+					</code></pre>
+					<p>La fonction fléchée gère le <strong>reste des paramètres</strong>, <i>cad</i> un nombre indéfini de paramètres traités en tableau :</p>
+					<pre><code>
+(param1, param2, ...reste) => {
+	instructions
+}
+					</code></pre>
+					<p>Elle gère aussi les <strong>valeurs par défaut</strong> (par défaut, les paramètres sont <code>undefined</code>) :</p>
+					<pre><code>
+(param1 = 1, param2 = param1 + 2) => {
+	instructions
+}
+					</code></pre>
+					<p>Gestion de la <strong>décomposition</strong> pour la liste des paramètres :</p>
+					<pre><code>
+let f = ([a,b] = [1,2], {x:c} = {x:a+b}) => a+b+c;
+f();
+					</code></pre>
+					<p>La fonction fléchée est déconseillée pour "déclarer une méthode" car ne disposant pas de <code>this</code> (elle renvoie le <code>this</code> du parent) mais elle peut être utilisée néanmoins à la condition de ne pas faire appel à ces choses :</p>
+					<pre><code>
+const bonhomme = {
+	nom: 'Bob',
+	demanderAmi: (a1, a2, a3) => {
+		// avec les "templates litteral" ou "templates string"
+		return `Tu connais ${a1}, ${a2}, ${a3} ? `;
+	}
+}
+console.log(bonhomme.demanderAmi('pipi','caca','popo'));
+					</code></pre>
+				</section>
+			</div>
+		</main>
+
+		<footer>
+		</footer>
+
+	</body>
+</html>
