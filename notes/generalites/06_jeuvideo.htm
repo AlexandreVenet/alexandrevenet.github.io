@@ -1,0 +1,71 @@
+<section>
+	<h1>Jeu-vidéo</h1>
+	<p class="couleurGris">Approche de la <strong>conception</strong> de jeu-vidéo.</p>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#gameplay">Gameplay</a></li>
+			<li><a href="#attraction">Attraction</a></li>
+			<li><a href="#conception1">Conception 1 : joueur</a></li>
+			<li><a href="#conception2">Conception 2 : gameplay</a></li>
+			<li><a href="#conception3">Conception 3 : UI</a></li>
+			<li><a href="#conception4">Conception 4 : assets</a></li>
+		</ol>
+	</div>
+</section>
+<section id="gameplay">
+	<h2>Gameplay</h2>
+	<p>Ce qui définit un jeu-vidéo, c'est le <strong><i>gameplay</i></strong> : expérience (subjectif, <i>play</i>) instrumentée (objectif, <i>game</i>) - cf. Triclot.</p>
+	<p>Le <i>gameplay</i> minimum de jeu-vidéo repose sur l'<strong>incitation à l'action</strong> (<i>call to action</i>) :</p>
+	<ul>
+		<li>des <strong>éléments non jouables</strong> (<i>non-player</i>),</li>
+		<li><strong>incitent le joueur</strong>,</li>
+		<li>à <strong>mettre en œuvre des compétences</strong>,</li>
+		<li>avec <strong>un peu d'aléatoire</strong>,</li>
+		<li>pour produire une <strong>expérience</strong>.</li>
+	</ul>
+</section>
+<section id="attraction">
+	<h2>Attraction</h2>
+	<p>Pour rendre <strong>l'objet</strong> plus attrayant, on ajoute des détails qui enrichissent le <strong>monde du jeu</strong> :</p>
+	<ul>
+		<li>de l'<strong>animation</strong>,</li>
+		<li>de l'<strong>audio</strong> (musique, sons),</li>
+		<li>de <strong>particules</strong>.</li>
+	</ul>
+</section>
+<section id="conception1">
+	<h2>Conception 1 : joueur</h2>
+	<p>Pour commencer un prototype, coder d'abord le joueur :</p>
+	<ol>
+		<li>ce qu'il <strong>peut</strong> faire (exemple : se déplacer),</li>
+		<li>ensuite, ce qu'il <strong>ne peut pas</strong> faire (exemple : se déplacer hors champ caméra).</li>
+	</ol>
+</section>
+<section id="conception2">
+	<h2>Conception 2 : gameplay</h2>
+	<p>Une <strong>mécanique de <i>gameplay</i></strong> est une règle ou un système qui rend <strong>idéalement</strong> le jeu plus intéressant. Cela peut ne pas être très intéressant en soi mais peut apporter de la <strong>nouveauté</strong> voire un <strong>changement profond</strong> du coeur du jeu. Par exemple :</p>
+	<ul>
+		<li>la mécanique du <strong><i>power up</i></strong> : un état temporaire donnant au joueur un avantage. Cette mécanique introduit une possibilité de <strong>choisir</strong>, de poser une <strong>stratégie</strong> : prendre l'avantage, le conserver pour plus tard, ne pas l'utiliser, etc. ?</li>
+		<li>la mécanique de la <strong>difficulté croissante</strong> : une fois tous les ennemis d'une vague éliminés, d'autres arrivent plus nombreux dans la vague suivante, réalisant ainsi des <i>rounds</i> de plus en plus difficiles. Cela fait passer d'une expérience « statique », prévisible, facilement maîtrisable et donc vite ennuyeuse car limitée dans les défis proposés, à un expérience « dynamique », imprévisible, requérant toujours l'exercice de compétences face à des défis inattendus.</li>
+	</ul>
+	<p>Ces deux mécaniques vont de pair :</p>
+	<ul>
+		<li>plus la difficulté augmente,</li>
+		<li>plus il y a besoin de recourir à des avantages permettant de la résoudre.</li>
+	</ul>
+</section>
+<section id="conception3">
+	<h2>Conception 3 : UI</h2>
+	<p>L'<strong>interface utilisateur</strong> comprend tout texte, bouton, ou tout autre élément que l'utilisateur peut lire ou avec lesquels il peut intéragir pendant son expérience. Ces éléments dépendent du type de jeu. Par exemple : score actuel, chronomètre, jauge de vie, etc.</p>
+	<p>L'UI augmente la </strong>qualité</strong> du jeu et rend le jeu <strong>plus jouable</strong> que sans. En effet, une bonne expérience comprend le fait de ne pas avoir de bugs et aussi de <strong>ne pas avoir manqué d'informations</strong>.</p>
+</section>
+<section id="conception4">
+	<h2>Conception 4 : assets</h2>
+	<p>Le <strong>style</strong> du jeu doit être <strong>cohérent</strong>, sans quoi il n'a pas de style du tout. Exemple : en l'état, un objet photoréaliste et une primitive non texturée ne vont pas ensemble ; il faut harmoniser.</p>
+	<p>Les <strong>performances</strong> sont toujours à surveiller selon les buts poursuivis. Exemple : un objet photoréaliste demande plus de calcul qu'une primitive non texturée.</p>
+</section>
+<footer>
+	<p>Le 24-01-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>

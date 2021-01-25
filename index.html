@@ -12,38 +12,91 @@
 	<body>
 
 		<header>
-			<div class="conteneur">
-				<a href="https://alexandrevenet.github.io" title="Alexandre Venet sur GitHub">alexandrevenet.github.io</a>
-			</div>
+			<a href="https://alexandrevenet.github.io" title="Alexandre Venet sur GitHub">alexandrevenet.github.io</a>
+			<a id="menuBtn" href="#" title="Menu">Menu</a>
 		</header>
-
-		<main>
-			<div class="conteneur">
+		<div class="layout">
+			<nav>
 				<section>
-					<h1>GitHub // Alexandre Venet</h1>
-					<p class="couleurGris">Bienvenue dans mon espace GitHub consacré à la programmation. Pour des infos plus générales, consulter mon site :</p>
-					<a class="lien" href="https://www.alhomepage.com" target="_blank">Alhomepage.com</a>
+					<a href="#" title="Généralités">Généralités</a>
+					<div>
+						<a href="#" data-src="notes/generalites/01_competences.htm">Compétences</a>
+						<a href="#" data-src="notes/generalites/02_phasesdeproduction.htm">Phases de production</a>
+						<a href="#" data-src="notes/generalites/03_definition.htm">Qu'est-ce qu'Unity</a>
+						<a href="#" data-src="notes/generalites/04_designdoc.htm">Design document</a>
+						<a href="#" data-src="notes/generalites/05_jeuvideo.htm">Jeu-vidéo</a>
+					</div>
 				</section>
 				<section>
-					<h2>Notes générales</h2>
-					<p class="couleurGris">Mémos, exercices, tests et autres généralités.</p>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_generales/mvc.html" title="MCV pragmatique">MVC pragmatique</a>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_generales/atom.html" title="Atom : choses utiles">Atom : choses utiles</a>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_generales/nombres_premiers.html" title="Nombres premiers">Nombres premiers</a>
+					<a href="#" title="C# dans Unity">C# dans Unity</a>
+					<div>
+						<!-- <a href="#">Fichier autre</a>
+						<a href="#">Fichier avec un nom vraiment très long, toute une littérature</a>
+						<a href="#">Fichier 2</a>
+						<a href="#">FlexBoxCss</a> -->
+					</div>
 				</section>
 				<section>
-					<h2>Javascript</h2>
-					<p class="couleurGris">De petites choses en JS.</p>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_js/date.html" title="Date">Date</a>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_js/fonctionflechee.html" title="Fonction fléchée">Fonction fléchée</a>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_js/affectation.html" title="Affectation">Affectation</a>
-					<a class="lien" href="https://alexandrevenet.github.io/notes_js/listeners.html" title="Listeners">Listeners</a>
+					<a href="#" title="Fonctionnalités">Fonctionnalités</a>
+					<div>
+						<!-- <a href="#">Toto</a>
+						<a href="#">Tata</a>
+						<a href="#">Titi</a>
+						<a href="#">Pipi</a>
+						<a href="#">Caca</a>
+						<a href="#">Popo</a> -->
+					</div>
 				</section>
-			</div>
-		</main>
+				<section>
+					<a href="#" title="Fonctions spécifiques">Fonctions spécifiques</a>
+				</section>
+				<section>
+					<a href="#" title="Patrons de conception">Patrons de conception</a>
+					<div>
+						<!-- <a href="#">State machine</a> -->
+					</div>
+				</section>
+			</nav>
+			<main>
+				<div class="conteneur" id="contenuPage">
+					<section>
+						<h1>GitHub // Alexandre Venet</h1>
+						<p class="couleurGris">Bienvenue dans mon espace GitHub consacré à l'environnement 3D temps réel Unity.</p>
+						<p>Je publie ici mes notes de cours à la <strong>3WA</strong>, des parcours officiels <strong>Unity Technologies</strong> et de mon <strong>expérience personnelle</strong>. Par souci de pédagogie, les articles suivent une certaine progressivité par catégorie, mais Unity dépendant du langage C#, on n'hésitera pas à relier les articles d'une catégorie à ceux d'une autre.</p>
+						<p><strong>Documentations officielles</strong> : </p>
+						<a class="lien" href="https://docs.microsoft.com/fr-fr/dotnet/csharp" target="_blank" title="Microsoft C#">Microsoft C#</a>
+						<a class="lien" href="https://docs.unity3d.com/Manual/index.html" target="_blank" title="Unity : manuel">Unity : manuel</a>
+						<a class="lien" href="https://docs.unity3d.com/ScriptReference/index.html" target="_blank" title="Unity : API">Unity : API</a>
+						<p>Pour en savoir plus sur moi-même, consulter mon site :</p>
+						<a class="lien" href="https://www.alhomepage.com" title="Alhomepage" target="_blank">Alhomepage.com</a>
+					</section>
+					<section id="chap1">
+						<h2>Généralités</h2>
+						<p class="couleurGris">Unity découvert dans son contexte industriel.</p>
+					</section>
+					<section id="chap2">
+						<h2>C# dans Unity</h2>
+						<p class="couleurGris">La base nécessaire du langage C# appliqué à Unity.</p>
+					</section>
+					<section id="chap3">
+						<h2>Fonctionnalités</h2>
+						<p class="couleurGris">Tour d'horizon des briques élémentaires d'Unity.</p>
+					</section>
+					<section id="chap4">
+						<h2>Fonctions spécifiques</h2>
+						<p class="couleurGris">Notes concentrées sur des techniques, fonctions, orientées C#.</p>
+					</section>
+					<section id="chap5">
+						<h2>Patrons de conception</h2>
+						<p class="couleurGris">Une approche des <i>design patterns</i> dans Unity.</p>
+					</section>
+					<footer>
+						<p>Le 25-01-2021</p>
+					</footer>
+				</div>
+			</main>
+		</div>
 
-		<footer>
-		</footer>
-
+		<script src="js/general.js"></script>
 	</body>
 </html>
