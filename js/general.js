@@ -28,10 +28,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 	menuBtn = document.querySelector('#menuBtn');
 	menuBtn.addEventListener('click', clickMenuBtn);
 
-	if(document.querySelector('#sommaire') != null){
-		sommaire = document.querySelector('#sommaire');
-		sommaire.addEventListener('click', clickSommaire);
-	}
+
 
 	window.addEventListener('resize', resize);
 	resize();
@@ -44,12 +41,19 @@ function chargerPage(page){
 		if (this.readyState == 4 && this.status == 200) {
 			contenuPage.innerHTML = xhr.responseText;
 			main.scrollTop = 0;
+			testSommaire();
 		}
 	};
 	xhr.open("GET", page, true);
 	xhr.send();
 }
 
+function testSommaire(){
+	if(document.querySelector('#sommaire') != null){
+		sommaire = document.querySelector('#sommaire');
+		sommaire.addEventListener('click', clickSommaire);
+	}
+}
 
 function clickNav(e){
 	e.preventDefault();
