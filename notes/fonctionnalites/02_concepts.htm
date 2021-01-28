@@ -1,0 +1,39 @@
+<section>
+	<h1>Concepts</h1>
+	<p class="couleurGris">Objet et composant : deux principes d'Unity.</p>
+	<a class="lien" target="_blank" title="Essential Unity concepts" href="https://learn.unity.com/tutorial/essential-unity-concepts">Essential Unity concepts</a>
+	<a class="lien" target="_blank" title="Transform" href="Transform : https://docs.unity3d.com/ScriptReference/Transform.html">Documentation officielle : Transform</a>
+	<p><strong><i>GameObject</i></strong> :</p>
+	<ul>
+		<li>tout objet dans Unity est un <code>gameObject</code>,</li>
+		<li>c'est une entité à laquelle on ajoute des propriétés triées par <code>component</code>,</li>
+		<li>il a <strong>nécessairement</strong> un composant <code>Transform</code> ou <code>Rect Transform</code> (2D pour l'UI), sans quoi il ne peut pas être dans la scène ; inversement, un composant <code>Transform</code> ne peut pas à lui seul constituer un <code>gameObject</code> car ce ne sont que des propriétés de position, rotation et échelle.</li>
+	</ul>
+	<p><strong><i>Component</i></strong> : </p>
+	<ul>
+		<li>ensemble de propriétés de <code>gameObject</code> : lumière, physique, script...</li>
+		<li>lui et ses propriétés apparaissent dans la fenêtre <code>Inspector</code>,</li>
+		<li>au delà de la représentation dans l'<code>Inspector</code>, un composant est un script C# spécifiant un comportement, une fonctionnalité.</li>
+	</ul>
+	<p><code>gameObject</code> et <code>Transform</code> sont <strong>interdépendants</strong>. Par conséquent, il est possible de chercher un composant avec <code>GetComponent&lt;&gt;()</code> à partir de l'un ou l'autre. Par souci de clarté, on peut préfixer/suffixer les noms de variables selon le type choisi ; cela facilite le code notamment dans Visual Studio avec l'intellisense. Par exemple avec la <strong>notation hongroise</strong> :</p>
+	<pre><code>
+GameObject _myObject;
+public Transform m_tr_myTransform; // membre public "m_", transform "tr_", nom
+Transform _tr;
+	</code></pre>
+	<p>Unity rend <code>gameObject</code> accessible à partir de n'importe quoi.</p>
+	<pre><code>
+[SerializeField]
+TextMeshProUGUI _gameoverText;
+
+void Gameover()
+{
+_gameoverText.gameObject.SetActive(true);
+}
+	</code></pre>
+	<p><code>gameObject.transform</code> ou <code>transform</code> est <strong>itérable</strong> ; on peut boucler dessus pour trouver un enfant ou la collection des enfants ou utiliser des méthodes spécifiques à l'exploration de la hiérarchie.</p>
+</section>
+<footer>
+	<p>Le 28-01-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
