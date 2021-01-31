@@ -1,7 +1,7 @@
 <section>
 	<h1>Concepts</h1>
 	<p class="couleurGris">Objet et composant : deux principes d'Unity.</p>
-	<a class="lien" target="_blank" title="Essential Unity concepts" href="https://learn.unity.com/tutorial/essential-unity-concepts">Essential Unity concepts</a>
+	<a class="lien" target="_blank" title="Learn : Essential Unity concepts" href="https://learn.unity.com/tutorial/essential-unity-concepts">Learn : Essential Unity concepts</a>
 	<a class="lien" target="_blank" title="Transform" href="https://docs.unity3d.com/ScriptReference/Transform.html">Documentation officielle : Transform</a>
 	<p><strong><i>GameObject</i></strong> :</p>
 	<ul>
@@ -28,7 +28,7 @@ TextMeshProUGUI _gameoverText;
 
 void Gameover()
 {
-_gameoverText.gameObject.SetActive(true);
+	_gameoverText.gameObject.SetActive(true);
 }
 	</code></pre>
 	<p><code>gameObject.transform</code> ou <code>transform</code> est <strong>itérable</strong> ; on peut boucler dessus pour trouver un enfant ou la collection des enfants ou utiliser des méthodes spécifiques à l'exploration de la hiérarchie.</p>

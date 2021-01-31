@@ -1,12 +1,10 @@
 <section>
 	<h1>Interface</h1>
 	<p class="couleurGris">Les fenêtres principales de l'éditeur.</p>
-	<a class="lien" target="_blank" title="Documentation officielle : l'éditeur" href="https://docs.unity3d.com/Manual/UsingTheEditor.html">Documentation officielle : l'éditeur</a>
-	<a class="lien" target="_blank" title="Documentation officielle : personnaliser l'espace de travail" href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html">Documentation officielle : personnaliser l'espace de travail</a>
-	<a class="lien" target="_blank" title="Documentation officielle : fichiers log" href="https://docs.unity3d.com/Manual/LogFiles.html">Documentation officielle : fichiers log</a>
 	<div class="blocSommaire">
 		<p>Sommaire</p>
 		<ol id="sommaire">
+			<li><a href="#references">Références</a></li>
 			<li><a href="#scenegame">Scene, game</a></li>
 			<li><a href="#hierarchy">Hierarchy</a></li>
 			<li><a href="#project">Project</a></li>
@@ -18,7 +16,14 @@
 		</ol>
 	</div>
 </section>
-<section id="Scenegame">
+<section id="references">
+	<h2>Références</h2>
+	<p>Documentation officielle : </p>
+	<a class="lien" target="_blank" title="L'éditeur" href="https://docs.unity3d.com/Manual/UsingTheEditor.html">L'éditeur</a>
+	<a class="lien" target="_blank" title="Personnaliser l'espace de travail" href="https://docs.unity3d.com/Manual/CustomizingYourWorkspace.html">Personnaliser l'espace de travail</a>
+	<a class="lien" target="_blank" title="Fichiers log" href="https://docs.unity3d.com/Manual/LogFiles.html">Fichiers log</a>
+</section>
+<section id="scenegame">
 	<h2>Scene, game</h2>
 	<p>Un jeu contient bon nombre de scènes qui sont autant d'emplacements où se produit l'action :</p>
 	<ul>
@@ -133,12 +138,11 @@
 	</ul>
 	<p>Les entrées <code>Debug.Log</code> sont enregistrées dans des <strong>fichiers log</strong>.</p>
 	<p>Astuce : pour debug un <code>array</code> sans boucler dessus, utiliser <code>string.Join()</code> car Unity n'opère aucune conversion automatique :</p>
-<pre><code>
+	<pre><code>
 Debug.Log(string.Join(", ", monArray));
-
-</code></pre>
+	</code></pre>
 	<p>Une méthode personnelle de <i>debug</i>, qu'on modifiera au besoin :</p>
-<pre><code>
+	<pre><code>
 using System.Reflection;
 void MyDebug(string message)
 {
@@ -147,8 +151,7 @@ void MyDebug(string message)
         string methodName = MethodBase.GetCurrentMethod().Name;
         Debug.LogError($"[{objName}][{className}][{methodName}] {message}");
 }
-
-</code></pre>
+	</code></pre>
 </section>
 <section id="layout">
 	<h2>Layout</h2>

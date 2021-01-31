@@ -1,0 +1,83 @@
+<section>
+	<h1>Prefab</h1>
+	<p class="couleurGris">Les modèles d'objet dans Unity.</p>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#references">Références</a></li>
+			<li><a href="#primitives">Primitives</a></li>
+			<li><a href="#prefab">Prefab</a></li>
+			<li><a href="#manipulations">Manipulations</a></li>
+		</ol>
+	</div>
+</section>
+<section id="references">
+	<h2>Références</h2>
+	<p>Documentation officielle : </p>
+	<a class="lien" target="_blank" title="Prefab" href="https://docs.unity3d.com/Manual/Prefabs.html">Prefab</a>
+	<a class="lien" target="_blank" title="Variantes de prefab" href="https://docs.unity3d.com/Manual/PrefabVariants.html">Variantes de prefab</a>
+</section>
+<section id="primitives">
+	<h2>Primitives</h2>
+	<p>Unity fournit des <strong><i>primitives</i></strong>, par défaut à des dimensions de 1 unité (mètre) : </p>
+	<ul>
+		<li><strong>cube</strong> et <strong>sphère</strong> : <code>colliders</code> afférents,</li>
+		<li><strong>capsule</strong> et <strong>cylindre</strong> : hauteur de 2, <code>collider</code> de capsule,</li>
+		<li><strong>plan</strong> : surface plane subdivisée en 100 points (<i>vertices, vertex</i>, c'est-à-dire des sommets), pas d'épaisseur, la visibilité change selon une hauteur 1 ou -1,</li>
+		<li><strong>quad</strong> : surface plane non subdivisée, 4 points, 2 trianges, pas d'épaisseur, la visibilité change selon une hauteur 1 ou -1.</li>
+	</ul>
+	<p>Toute face 3D n'est par défaut visible que d'un côté.</p>
+	<p>Les primitives sont des <code>gameObjects</code>, au même titre qu'un objet vide. Et tous ces objets peuvent être <strong>imbriqués</strong>. Ces imbrications peuvent être <strong>sauvegardées</strong> en l'état pour être <strong>réutilisées</strong>, ce sont des <strong><i>prefabs</i></strong>.</p>
+</section>
+<section id="prefab">
+	<h2>Prefab</h2>
+	<p>Un prefab est un <strong>modèle</strong> pour ses objets-instances ; objet préconfiguré, préconstruit, préfabriqué, et donc ne nécessitant pas d'être reconfiguré. Cela peut concerner toute sorte d'objets, rendus ou non.</p>
+	<p>Ses <strong>instances</strong> sont des copies liées à l'<i>asset</i> originel qui se trouve dans le <code>Project</code>. Ainsi :</p>
+	<ul>
+		<li>tout changement sur le <i>prefab</i> originel est <strong>répercutable</strong> sur ses instances. Cela permet d'accélérer la modification (aspect, style) ou le debug (erreurs d'objet). Ceci est très utile pour des objets utilisés très souvent comme par exemple des plateformes,</li>
+		<li>chaque instance peut être <strong>modifiée</strong> indépendamment du <i>prefab</i> originel,</li>
+		<li>l'<strong>imbrication</strong> de <i>prefabs</i> est possible.</li>
+	</ul>
+	<p>Un <i>prefab</i> est automatiquement généré lorsqu'un objet de la <code>Hierarchy</code> est déplaçé dans la fenêtre de <code>Project</code>.</p>
+	<p>Dans la fenêtre <code>Project</code> sont affichés les fichiers du disque dur. Lorsque l'icone d'un <i>prefab</i> est sélectionnée, le chemin complet apparaît en barre de statut : c'est un fichier <code>.prefab</code>.</p>
+	<p>Les <i>prefabs</i> sont représentés en bleu avec une icone de cube plein (alors que les éléments par défaut sont des cubes vides gris).</p>
+</section>
+<section id="manipulations">
+	<h2>Manipulations</h2>
+	<p>Un objet peut être <strong>converti</strong> en <i>prefab</i>. Alors, un nouveau jeu de boutons est ajouté à l'<code>Inspector</code> :</p>
+	<ul>
+		<li><code>select</code> : sélectionner le <i>prefab</i> originel dans la fenêtre <code>Projet</code> (utile lorsqu'on a plein d'objets et qu'on n'y voit plus rien),</li>
+		<li><code>revert</code> : supprimer toutes les modifications qui ne sont pas dans le <i>prefab</i> originel,</li>
+		<li><code>overrides</code> : menu déroulant affichant les modifications apportées. En fin de liste :
+			<ul>
+				<li><code>revert all</code> : supprime les modifications apportées dans le menu <code>overrides</code> (et pas toute modification ; pour ça, utiliser <code>revert</code>),</li>
+				<li><code>apply all</code> : distribuer les modifications apportées sur toutes les instances et le <i>prefab</i> originel.</li>
+			</ul>
+		</li>
+	</ul>
+	<p>Une bonne pratique est de préparer son objet <strong>puis</strong> d'en faire un <i>prefab</i> dans un dossier spécifique <code>Prefabs</code>. Ce faisant, si une fenêtre d'alerte apparaît car on manipulait déjà une instance de <i>prefab</i>, alors on a le choix entre :</p>
+	<ul>
+		<li><code>Original Prefab</code> pour créer un <strong>nouveau</strong> <i>prefab</i>,</li>
+		<li><code>Prefab variant</code> pour créer une <strong>variation</strong> (l'icone en <code>Hierarchy</code> est bleue hachurée).</li>
+	</ul>
+	<p>Pour <strong>instancier</strong> un <i>prefab</i> :</p>
+	<ul>
+		<li>l'ajouter manuellement à la scène ou la <code>Hierarchy</code>,</li>
+		<li>en C#, utiliser la méthode <code>Instantiate()</code> avec une référence.</li>
+	</ul>
+	<p>Pour <strong>modifier</strong> un <i>prefab</i> <strong>en l'ouvrant</strong> :</p>
+	<ul>
+		<li>en <code>Hierarchy</code>, cliquer sur le chevron à droit du nom de l'instance,</li>
+		<li>en <code>Project</code>, double cliquer sur le <i>prefab</i>,</li>
+		<li>sauvegarder les modifications est nécessaire avant de quitter l'édition.</li>
+	</ul>
+	<p>Pour <strong>modifier</strong> un <i>prefab</i> à partir d'une de ses instances :</p>
+	<ul>
+		<li>déplier la <code>Hierarchy</code> et éditer les éléments,</li>
+		<li>les composants modifiés ou ajoutés à l' instance présentent une icone agrémentée d'un <code>+</code>.</li>
+	</ul>
+</section>
+<footer>
+	<p>Le 31-01-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
