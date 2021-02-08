@@ -4,14 +4,38 @@
 	<div class="blocSommaire">
 		<p>Sommaire</p>
 		<ol id="sommaire">
+			<li><a href="#modes">Modes de conception</a></li>
 			<li><a href="#gameplay">Gameplay</a></li>
 			<li><a href="#attraction">Attraction</a></li>
-			<li><a href="#conception1">Conception 1 : joueur</a></li>
-			<li><a href="#conception2">Conception 2 : gameplay</a></li>
-			<li><a href="#conception3">Conception 3 : UI</a></li>
-			<li><a href="#conception4">Conception 4 : assets</a></li>
+			<li><a href="#joueur">Le joueur</a></li>
+			<li><a href="#ui">UI</a></li>
+			<li><a href="#style">Cohérence du style</a></li>
+			<li><a href="#mecaniques">Mécaniques de gameplay</a></li>
+			<li><a href="#competences">Compétences</a></li>
+			<li><a href="#boucles">Boucles de gameplay</a></li>
+			<li><a href="#les3c">Les 3 C</a></li>
 		</ol>
 	</div>
+</section>
+<section id="modes">
+	<h2>Modes de conception</h2>
+	<p>Deux <strong>stratégies de gestion de bourse</strong> ont été appliquées au jeu-vidéo. Elles ne sont pas incompatibles car on peut partir de l’une pour aller à l’autre, et cela constamment dans la conception.</p>
+	<ul>
+		<li><strong><i>Top Down</i></strong>
+			<ul>
+				<li>partir de l’<strong>expérience globale</strong>, d’une vision à transmettre, d’un point de vue centré sur ce que le jeu doit faire <strong>ressentir</strong> plutôt que sur les mécaniques et le <i>gameplay</i>,</li>
+				<li>les mécaniques et le <i>gameplay</i> seront développées dans un second temps, s’articuleront autour de l’expérience globale,</li>
+				<li>exemple : proposer l’expérience d'une vie de chien,</li>
+			</ul>
+		</li>
+		<li><strong><i>Bottom Up</i></strong>
+			<ul>
+				<li>partir des <strong>mécaniques</strong>, d’un point de vue centré sur le <strong><i>gameplay</i></strong> et les sensations de jeu plutôt que l’expérience globale,</li>
+				<li>on remonte des mécaniques de jeu particulières à l’expérience globale,</li>
+				<li>exemple : faire un <i>GTA</i> où le joueur est un chien.</li>
+			</ul>
+		</li>
+	</ul>
 </section>
 <section id="gameplay">
 	<h2>Gameplay</h2>
@@ -34,16 +58,26 @@
 		<li>de <strong>particules</strong>.</li>
 	</ul>
 </section>
-<section id="conception1">
-	<h2>Conception 1 : joueur</h2>
+<section id="joueur">
+	<h2>Le joueur</h2>
 	<p>Pour commencer un prototype, coder d'abord le joueur :</p>
 	<ol>
 		<li>ce qu'il <strong>peut</strong> faire (exemple : se déplacer),</li>
 		<li>ensuite, ce qu'il <strong>ne peut pas</strong> faire (exemple : se déplacer hors champ caméra).</li>
 	</ol>
 </section>
-<section id="conception2">
-	<h2>Conception 2 : gameplay</h2>
+<section id="ui">
+	<h2>UI</h2>
+	<p>L'<strong>interface utilisateur</strong> comprend tout texte, bouton, ou tout autre élément que l'utilisateur peut lire ou avec lesquels il peut intéragir pendant son expérience. Ces éléments dépendent du type de jeu. Par exemple : score actuel, chronomètre, jauge de vie, etc.</p>
+	<p>L'UI augmente la </strong>qualité</strong> du jeu et rend le jeu <strong>plus jouable</strong> que sans. En effet, une bonne expérience comprend le fait de ne pas avoir de bugs et aussi de <strong>ne pas avoir manqué d'informations</strong>.</p>
+</section>
+<section id="style">
+	<h2>Cohérence du style</h2>
+	<p>Le <strong>style</strong> du jeu doit être <strong>cohérent</strong>, sans quoi il n'a pas de style du tout. Exemple : en l'état, un objet photoréaliste et une primitive non texturée ne vont pas ensemble ; il faut harmoniser.</p>
+	<p>Les <strong>performances</strong> sont toujours à surveiller selon les buts poursuivis. Exemple : un objet photoréaliste demande plus de calcul qu'une primitive non texturée.</p>
+</section>
+<section id="mecaniques">
+	<h2>Mécaniques de gameplay</h2>
 	<p>Une <strong>mécanique de <i>gameplay</i></strong> est une règle ou un système qui rend <strong>idéalement</strong> le jeu plus intéressant. Cela peut ne pas être très intéressant en soi mais peut apporter de la <strong>nouveauté</strong> voire un <strong>changement profond</strong> du coeur du jeu. Par exemple :</p>
 	<ul>
 		<li>la mécanique du <strong><i>power up</i></strong> : un état temporaire donnant au joueur un avantage. Cette mécanique introduit une possibilité de <strong>choisir</strong>, de poser une <strong>stratégie</strong> : prendre l'avantage, le conserver pour plus tard, ne pas l'utiliser, etc. ?</li>
@@ -54,18 +88,139 @@
 		<li>plus la difficulté augmente,</li>
 		<li>plus il y a besoin de recourir à des avantages permettant de la résoudre.</li>
 	</ul>
+	<p>Une autre mécanique est celle du <strong><i>randomizer</i></strong>, par exemple dans un <i>metroidvania</i> :</p>
+	<ul>
+		<li>l'<strong>accès</strong> à un endroit est limité à un <strong>objet</strong> : chaque coffre de fin de défi fournit un objet aléatoire utilisable et qui sert de clé d'entrée (exemple : bombe pour casser la porte d'un donjon et y entrer),</li>
+		<li>la progression est donc <strong>non linéaire</strong> : il faut <strong>chercher où appliquer l'objet</strong>,</i>
+		<li>conséquence : on s'adresse aux joueurs qui <strong>connaissent le jeu</strong> et qui veulent rejouer avec un peu de variation ; on s'adresse aux joueurs <strong>aimant chercher</strong> le rapport objet-lieu.</i>
+	</ul>
 </section>
-<section id="conception3">
-	<h2>Conception 3 : UI</h2>
-	<p>L'<strong>interface utilisateur</strong> comprend tout texte, bouton, ou tout autre élément que l'utilisateur peut lire ou avec lesquels il peut intéragir pendant son expérience. Ces éléments dépendent du type de jeu. Par exemple : score actuel, chronomètre, jauge de vie, etc.</p>
-	<p>L'UI augmente la </strong>qualité</strong> du jeu et rend le jeu <strong>plus jouable</strong> que sans. En effet, une bonne expérience comprend le fait de ne pas avoir de bugs et aussi de <strong>ne pas avoir manqué d'informations</strong>.</p>
+<section id="competences">
+	<h2>Compétences</h2>
+	<p>De manière générale, les mécaniques de <i>gameplay</i> visent la mise en oeuvre de <strong>compétences</strong> par le joueur, compétences qu'il peut développer grâce au jeu ou qu'il doit avoir déjà développé pour jouer :</p>
+	<ul>
+		<li><strong>synchronisation (<i>timing</i>)</strong> : la prévision du temps correspondant à une action ou série d'actions. Il s'agit d'exécuter une action au bon moment pour avancer. L'événement est attendu,</li>
+		<li><strong>réflexes</strong> : réponse involontaire et rapide. Ici, il s'agit pour le joueur d'exécuter une action rapide suite à une incitation. L'événement est inattendu,</li>
+		<li><strong>stratégie</strong> : plannification des choix sur le long terme à partir de données fournies en amont de partie,</li>
+		<li><strong>tactique</strong> : faire un choix sur le moment, selon une stratégie ou pour modifier cette dernière,</li>
+		<li><strong>précision</strong> : effectuer une entrée (<i>input</i>) à une mesure fine. Par exemple viser juste, jauger un saut.</li>
+	</ul>
 </section>
-<section id="conception4">
-	<h2>Conception 4 : assets</h2>
-	<p>Le <strong>style</strong> du jeu doit être <strong>cohérent</strong>, sans quoi il n'a pas de style du tout. Exemple : en l'état, un objet photoréaliste et une primitive non texturée ne vont pas ensemble ; il faut harmoniser.</p>
-	<p>Les <strong>performances</strong> sont toujours à surveiller selon les buts poursuivis. Exemple : un objet photoréaliste demande plus de calcul qu'une primitive non texturée.</p>
+<section id="boucles">
+	<h2>Boucles de gameplay</h2>
+	<p>La <strong>boucle de <i>gameplay</i></strong> est un outil pour <strong>découper un jeu</strong> et en <strong>faciliter la réalisation</strong>. Elle repose sur 3 principes :</p>
+	<ol>
+		<li><strong>but</strong> : ce que le joueur doit faire,</li>
+		<li><strong>défi</strong> : ce qu'il faut franchir, réussir,</li>
+		<li><strong>récompense</strong> : ce que le joueur gagne s'il réussit.</li>
+	</ol>
+	<p>La boucle de <i>gameplay</i> permet de générer de l'<strong>amusement</strong> ou d'éviter qu'il ne s'évanouisse :</p>
+	<ul>
+		<li>personne n'aime faire des efforts sans recevoir de récompense,</li>
+		<li>obtenir une récompense sans défi ne produit aucune impression d’accomplissement et retire de la valeur à la récompense.</li>
+	</ul>
+	<p>C'est le <i>game designer</i> qui en général pense les boucles de <i>gameplay</i>. Il définit la <strong>longueur</strong> de chaque boucle.</p>
+	<p>Il existe <strong>3 types de boucles</strong>, imbriquées, d'autant plus nombreuses qu'elles sont petites (présentées ici dans l'ordre croissant) :</p>
+	<ol>
+		<li><strong><i>micro</i></strong> : petite, quelques secondes ; exemple de <i>Super Mario Galaxy</i> :
+			<ul>
+				<li>but : atteindre la prochaine plateforme,</li>
+				<li>défi : sauter au bon moment,</li>
+				<li>récompense : avancer dans le niveau,</li>
+			</ul>
+		</li>
+		<li><strong><i>mid</i></strong> : moyenne, mission, quête, niveau ; exemple de <i>The legend of Zelda</i> :
+			<ul>
+				<li>but : terminer le donjon,</li>
+				<li>défi : venir à bout des ennemis et énigmes,</li>
+				<li>récompense : faire avancer l’histoire, obtenir un bonus de vie et objet spécial,</li>
+			</ul>
+		</li>
+		<li><strong><i>macro</i></strong> : grande, expérience complète, ce qui fait le jeu ; exemple général :
+			<ul>
+				<li>but : sauver le monde,</li>
+				<li>défi : finir tous les niveaux,</li>
+				<li>récompense : fin, réussite, <i>achievements</i>...</li>
+			</ul>
+		</li>
+	</ol>
+	<p>Le point de départ de la boucle est le <strong>but</strong> :</p>
+	<ul>
+		<li>quelle est sa <strong>nature</strong> ?
+			<ul>
+				<li>aller d’un point A à un point B,</li>
+				<li>résoudre une énigme, un puzzle,</li>
+				<li>vaincre un boss,</li>
+				<li>collecter des ressources,</li>
+				<li>...</li>
+			</ul>
+		</li>
+		<li>comment l'<strong>obtenir</strong> ?
+			<ul>
+				<li>donné directement au joueur (interface, dialogue avec un PNJ...),</li>
+				<li>induit par la structure de jeu (terminer un niveau),</li>
+				<li>amené par des mécaniques de jeu (tuer un ennemi pour survivre).</li>
+			</ul>
+		</li>
+	</ul>
+	<p>Le <strong>défi</strong> est un équilibre à trouver :</p>
+	<ul>
+		<li>il fait appel aux mécaniques du jeu et aux compétences du joueur,</li>
+		<li>il doit suivre un courbe de difficulté souhaitée tout en considérant que les joueurs deviennent meilleurs à mesure qu’ils jouent,</li>
+		<li>il doit correspondre au public visé.</li>
+	</ul>
+	<p>La <strong>récompense</strong> :</p>
+	<ul>
+		<li>elle est liée à l’accomplissement d’un défi et doit être proportionnelle à l’effort fourni,</li>
+		<li>Elle est de <strong>2 natures</strong> :
+			<ol>
+				<li><strong>liée au <i>gameplay</i></strong> : nouvelles fonctionnalités enrichissant l’expérience ludique, renforcement de personnage, nouveaux modes de jeu ou difficultés...</li>
+				<li><strong>liée au monde du jeu</strong> : éléments d’histoire, détails sur les personnages, cinématiques, costumes, <i>skins</i>...</li>
+			</ol>
+		</li>
+		<li>elle touche <strong>plusieurs publics</strong> : certains joueurs jouent pour l’univers, d’autre pour les sensations de jeu, d'autres oscillent entre les deux...</li>
+	</ul>
+</section>
+<section id="les3c">
+	<h2>Les 3 C</h2>
+	<p>Les <strong><i>3 C</i></strong> désignent en anglais :</p>
+	<ol>
+		<li><strong><i>camera</i></strong> : comment voit-on le jeu ?</li>
+		<li><strong><i>controls</i></strong> : comment joue-t-on ?</li>
+		<li><strong><i>character</i></strong> : quelles sont les compétences recrutées ?</li>
+	</ol>
+	<p>Les <i>3 C</i> sont interdépendants et font système : une modification de l'un implique de modifier les autres. Par conséquent, ils sont à concevoir en premier car ils définissent <strong>l'interface entre l'utilisateur et les actions dans le jeu</strong>.</p>
+	<p><strong><i>Camera</i></strong> : </p>
+	<ul>
+		<li>fixe,</li>
+		<li><i>scrolling</i> par axe,</li>
+		<li>déplaçable (sans orientation possible et non suivante),</li>
+		<li>flottante (orientée librement et non suivante),</li>
+		<li>suivante (position ou rotation),</li>
+		<li>poussable/orbitale/TPS : liée à un personnage,</li>
+		<li>FPS.</li>
+	</ul>
+	<p>La caméra est à <strong>adapter</strong> à chaque expérience voulue. Par exemple :</p>
+	<ul>
+		<li><strong>horreur</strong> : place importante accordée au personnage, réduire le champ de vision ; cela accentue l’oppression du joueur ; exemple : <i>Lone Survivor</i>, <i>Amnesia : the dark descent</i>,</li>
+		<li><strong>exploration & action</strong> : avatar petit pour permettre une navigation ample et nerveuse ; exemple : <i>Metroid Fusion</i>,</li>
+		<li><strong><i>runner</i></strong> : caméra décalée par rapport au personnage pour anticiper les obstacles ; exemple : <i>Bit. Trip presents : Runner 2</i>,</li>
+		<li><strong>contrôle absolu</strong> : caméra flottante avec zoom ; exemple : <i>Les Sims</i>,</li>
+		<li><strong>effet cinématographique</strong> : plans fixes avec plongée/contre plongée et gestion du hors champ ; exemple : <i>Resident Evil</i>.</li>
+	</ul>
+	<p><strong><i>Controls</i></strong> : </p>
+	<ul>
+		<li>ils doivent être <strong>simples</strong> et <strong>intuitifs</strong> pour le plus grand nombre (prise en compte de la culture et de l'expérience des joueurs). Par exemple : la gâchette de manette pour tirer au pistolet correspond à ce qu'on attend de l'usage du pistolet et est l'entrée communément utilisée pour cela,</li>
+		<li>s’il faut changer, alors il faut que le contrôle reste intuitif ; sans quoi cela rend le contrôle difficile et frustrant,</li>
+		<li>prendre en compte la <strong>limitation physique</strong> du joueur ; par exemple, un combo de touches trop complexe rend l'opération impossible à réaliser sur telle ou telle entrée ; sur mobile, les actions doivent s'effectuer en bas de l'écran (horizontal ou vertical) car sinon il y a risque de lancer des actions indésirables ou de lâcher le terminal.</li>
+	</ul>
+	<p><strong><i>Character</i></strong> : </p>
+	<ul>
+		<li>il s'agit de penser les <strong>compétences</strong> liées au personnage : sauter, frapper, bouger, nager, voler ?</li>
+		<li>ajouter une compétence à recruter implique d'<strong>ajouter des contrôles</strong> et éventuellemnt de <strong>modifier la caméra</strong>.</li>
+	</ul>
 </section>
 <footer>
-	<p>Le 24-01-2021</p>
+	<p>Le 08-02-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>

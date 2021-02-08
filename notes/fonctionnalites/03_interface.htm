@@ -146,10 +146,10 @@ Debug.Log(string.Join(", ", monArray));
 using System.Reflection;
 void MyDebug(string message)
 {
-        string objName = gameObject.name;
-        string className = this.GetType().Name;
-        string methodName = MethodBase.GetCurrentMethod().Name;
-        Debug.LogError($"[{objName}][{className}][{methodName}] {message}");
+	string objName = gameObject.name;
+	string className = this.GetType().Name;
+	string methodName = MethodBase.GetCurrentMethod().Name;
+	Debug.LogError($"[{objName}][{className}][{methodName}] {message}");
 }
 	</code></pre>
 </section>
