@@ -1,0 +1,155 @@
+<section>
+	<h1>State machine</h1>
+	<p>Le but du <i>design pattern</i> <strong><i>State machine</i></strong> est de :</p>
+	<ul>
+		<li>distinguer des comportements en <strong>états</strong> distincts,</li>
+		<li>naviguer entre ces états par <strong>transitions</strong> (conditions de passage, comme les entrées utilisateurs par exemple).</li>
+	</ul>
+	<p>Le <strong>nombre d'états</strong> est <strong>fini</strong>.</p>
+	<p>On ne peut être que dans <strong>un état à la fois</strong>.</p>
+	<p>Pour coder tout cela, on utilise une <code>enum</code> qui satisfait la règle du nombre fini d'états car ce type est non modifiable après initialisation (on peut faire autrement si besoin).</p>
+	<p>Si on veut accéder à des méthode de la classe <code>Enum</code>, insérer la librairie :</p>
+	<pre><code>
+using System;
+	</code></pre>
+	<p>On peut coder une classe qui hérite ou non de <code>MonoBehaviour</code>. Mais comme ce patron de conception est de type <strong>comportement</strong>, il semble aller de soi d'en faire un composant d'objet ; par conséquent, on peut ajouter autant de méthodes héritées de <code>MonoBehaviour</code>.</p>
+	<p>Exemple d'états pour un personnage jouable (on en ajoutera à loisir) :</p>
+	<pre><code>
+public enum States
+{
+	IDLE,
+	RUNNING,
+	JUMPING,
+	FALLING
+}
+	</code></pre>
+	<p>Puis, on déclare un état actuel...</p>
+	<pre><code>
+States _currentState;
+	</code></pre>
+	<p>... que l'on initialise avec une valeur de l'<code>enum</code> :</p>
+	<pre><code>
+void Start()
+{
+	_currentState = States.IDLE;
+}
+	</code></pre>
+	<p>Ensuite, coder 3 méthodes de contrôle...</p>
+	<pre><code>
+void OnStateEnter(States state){} // quand on arrive dans l'état
+
+void OnStateExit(States state){} // quand on sort de l'état
+
+void OnStateUpdate(States state){} // à chaque Update() avec l'état actuel
+	</code></pre>
+	<p>... et appeler la dernière depuis <code>Update()</code> et lui passer l'état actuel :</p>
+	<pre><code>
+void Update()
+{
+	// mettre à jour la StateMachine avec l'état actuel
+	OnStateUpdate(_currentState);
+}
+	</code></pre>
+	<p>Ajouter une autre méthode de passage d'un état à l'autre :</p>
+	<pre><code>
+void TransitionToState(States previousState, States nextState)
+{
+	OnStateExit(previousState);
+	_currentState = nextState;
+	OnStateEnter(nextState);
+}
+	</code></pre>
+	<p>Enfin, placer dans les 3 méthodes de contrôle un test des états :</p>
+	<pre><code>
+switch (_currentState)
+{
+	case States.IDLE:
+		break;
+	case States.RUNNING:
+		break;
+	case States.JUMPING:
+		break;
+	case States.FALLING:
+		break;
+	default:
+		break;
+}
+	</code></pre>
+	<p>Dans chaque méthode, on peut ajouter des <code>Debug.Log()</code> indiquant quelle état est en cours, par exemple dans le <code>default</code> de <code>OnStateExit()</code>, indiquer une erreur car les états étant en nombre fini, on ne peut pas logiquement avoir un autre état :</p>
+	<pre><code>
+Debug.LogError($"OnStateExit.default : {state}");
+	</code></pre>
+	<p>Voilà, tout est prêt, maintenant, on peut coder les transitions. Pour cela, par exemple dans <code>OnStateUpdate()</code>, à l'état <code>IDLE</code>, coder le comportement d'entrée utilisateur qui conduit à l'état <code>RUNNING</code>:</p>
+	<pre><code>
+void OnStateUpdate(States state)
+{
+	switch (_currentState)
+	{
+		case States.IDLE:
+			_horizontal = Input.GetAxis("Horizontal");
+			if(Mathf.Abs(_horizontal) > 0)
+			{
+				TransitionToState(_currentState, States.RUNNING);
+			}
+			break;
+//...
+	</code></pre>
+	<p>Puis, dans l'état <code>RUNNING</code>, ajouter l'entrée utilisateur quand elle est requise pour cet état. C'est un inconvénient (duplication de code) mais c'est le principe (contrôles par état). Exemple :</p>
+	<pre><code>
+case States.RUNNING:
+	_horizontal = Input.GetAxis("Horizontal");
+	if (_horizontal > 0)
+	{
+		transform.localScale = new Vector3(1, 1, 1);
+	}
+	else if (_horizontal < 0)
+	{
+		transform.localScale = new Vector3(-1, 1, 1);
+	}
+	else
+	{
+		TransitionToState(_currentState, States.IDLE);
+	}
+	break;
+//...
+	</code></pre>
+	<p>L'avantage : un meilleur contrôle des comportements par état. Par exemple, si le personange est <code>JUMPING</code>, on peut vouloir (ou non) ajouter d'autres comportements spécifiques de cet état (comme un <i>double-jump</i>, la possibilité de voler, etc.). Donc, on ajoute les instructions voulues dans chaque état indépendamment des autres ; sans cette méthode de développement, le code aurait été plein de <code>if</code> et de variables verrous, c'est-à-dire un code illisible, difficile à maintenir et à étendre.</p>
+	<p>On peut également coder les états d'entrée/sortie de transition. Par exemple, dans la méthode <code>OnStateUpdate()</code>...</p>
+	<pre><code>
+case States.JUMPING:
+	_horizontal = Input.GetAxis("Horizontal");
+	if (_horizontal > 0)
+	{
+		transform.localScale = new Vector3(1, 1, 1);
+	}
+	else if (_horizontal < 0)
+	{
+		transform.localScale = new Vector3(-1, 1, 1);
+	}
+	if (Input.GetButtonDown("Jump") && _currentJump < _maxJumps)
+	{
+		TransitionToState(_currentState, States.JUMPING);
+	}
+	break;
+//...
+	</code></pre>
+	<p>... et dans <code>OnStateEnter()</code> :</p>
+	<pre><code>
+case States.JUMPING:
+	if (_currentJump == 0)
+	{
+		_animator.SetBool("Jump", true);
+	}
+	else
+	{
+		_animator.SetBool("JumpDouble", true);
+	}
+	_currentJump++;
+	break;
+//...
+	</code></pre>
+	<p>On optimisera par la suite les instructions en centralisant les actions dans des méthodes dédiées (<i>refactoring</i>).</p>
+<footer>
+	<p>Le 10-02-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
