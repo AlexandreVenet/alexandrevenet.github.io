@@ -281,8 +281,9 @@ li a:active{
 	color:var(--couleur-grise);
 }
 /* liste imbriquée */
-li ul{
-	margin-top:0.5em;
+li ul,
+li ol{
+	margin-top:1em;
 }
 
 .blocSommaire{

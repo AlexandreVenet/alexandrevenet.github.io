@@ -1,0 +1,28 @@
+<section>
+	<h1>Caméra</h1>
+	<a class="lien" target="_blank" title="API Camera" href="https://docs.unity3d.com/ScriptReference/Camera.html">Documentation officielle : API Camera</a>
+	<a class="lien" target="_blank" title="Manuel Camera" href="https://docs.unity3d.com/Manual/class-Camera.html">Documentation officielle : Manuel Camera</a>
+	<p>La scène Unity contient par défaut une <strong>caméra</strong>. Elle filme vers la <strong>profondeur</strong> (axe z) et affiche un <strong>cadre de prévisualisation</strong> de ce qu'elle filme lorsque sélectionnée.</p>
+	<p>Elle dispose déjà de composants. Par exemple, on peut changer sa couleur de fond en cliquant sur <code>Background</code>.</p>
+	<p>Sa <strong>projection</strong> peut être <code>perspective</code> ou <code>orthographic</code>.</p>
+	<p>La caméra possède un <strong><i>frustum</i></strong> : c'est le <strong>champ de vision</strong>. Ce qui est en dehors de ce champ est le <strong>hors champ</strong>.</p>
+	<p>On peut utiliser <strong>plusieurs caméras</strong>, par exemple :</p>
+	<ul>
+		<li>une pour afficher l'UI joueur,</li>
+		<li>une pour représenter la scène,</li>
+		<li>une pour une <i>minimap</i> en surimpression,</li>
+		<li>une pour simuler une caméra de surveillance dont l'image est projetée comme texture,</li>
+		<li>etc.</li>
+	</ul>
+	<p>Les propriétés du composant <code>Camera</code> dépendent du type de <i>pipeline</i> de rendu :</p>
+	<ul>
+		<li><i>Universal Render Pipeline (URP)</i>,</li>
+		<li><i>High Definition Render Pipeline (HDRP)</i>,</li>
+		<li>ou standard <i>Built-in Render Pipeline</i>.</li>
+	</ul>
+</section>
+<a class="lien" target="_blank" title="Render pipelines" href="https://docs.unity3d.com/Manual/render-pipelines.html">Documentation officielle : Render pipelines</a>
+<footer>
+	<p>Le 10-02-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
