@@ -75,7 +75,7 @@ switch (_currentState)
 		break;
 }
 	</code></pre>
-	<p>Dans chaque méthode, on peut ajouter des <code>Debug.Log()</code> indiquant quelle état est en cours, par exemple dans le <code>default</code> de <code>OnStateExit()</code>, indiquer une erreur car les états étant en nombre fini, on ne peut pas logiquement avoir un autre état :</p>
+	<p>Dans chaque méthode, on peut ajouter des <code>Debug.Log()</code> indiquant quel état est en cours, par exemple dans le <code>default</code> de <code>OnStateExit()</code>, indiquer une erreur car les états étant en nombre fini, on ne peut pas logiquement avoir un autre état :</p>
 	<pre><code>
 Debug.LogError($"OnStateExit.default : {state}");
 	</code></pre>
@@ -113,7 +113,7 @@ case States.RUNNING:
 	break;
 //...
 	</code></pre>
-	<p>L'avantage : un meilleur contrôle des comportements par état. Par exemple, si le personange est <code>JUMPING</code>, on peut vouloir (ou non) ajouter d'autres comportements spécifiques de cet état (comme un <i>double-jump</i>, la possibilité de voler, etc.). Donc, on ajoute les instructions voulues dans chaque état indépendamment des autres ; sans cette méthode de développement, le code aurait été plein de <code>if</code> et de variables verrous, c'est-à-dire un code illisible, difficile à maintenir et à étendre.</p>
+	<p>L'avantage : un meilleur contrôle des comportements par état. Par exemple, si le personnage est <code>JUMPING</code>, on peut vouloir (ou non) ajouter d'autres comportements spécifiques de cet état (comme un <i>double-jump</i>, la possibilité de voler, etc.). Donc, on ajoute les instructions voulues dans chaque état indépendamment des autres ; sans cette méthode de développement, le code aurait été plein de <code>if</code> et de variables verrous, c'est-à-dire un code illisible, difficile à maintenir et à étendre.</p>
 	<p>On peut également coder les états d'entrée/sortie de transition. Par exemple, dans la méthode <code>OnStateUpdate()</code>...</p>
 	<pre><code>
 case States.JUMPING:
