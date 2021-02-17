@@ -107,7 +107,7 @@
 	<ul>
 		<li>on peut utiliser les propriétés du composant <code>Transform</code> de chaque objet (position, rotation, échelle),</li>
 		<li>on peut aussi déplacer les objets par <strong>crans de 1 unité (mètre)</strong> avec la touche <code>CTRL</code> enfoncée pendant le déplacement,</li>
-		<li>Unity gère le <strong><i>vertex snapping</i></strong> : sélectionner l'objet non en pivot mais en centre, utiliser la touche <code>V</code> ou <code>CTRL+SHIFT</code> pour que le positionnement s'effectue le long d'un des surfaces.</li>
+		<li>Unity gère le <strong><i>vertex snapping</i></strong> : sélectionner l'objet non en pivot mais en centre, utiliser la touche <code>V</code> ou <code>CTRL+SHIFT</code> pour que le positionnement s'effectue le long d'une des surfaces.</li>
 	</ul>
 	<p>Toute modification effectuée à un objet est <strong>répercutée à ses enfants</strong> mais pas l'inverse.</p>
 </section>
@@ -140,6 +140,10 @@
 	<p>Astuce : pour debug un <code>array</code> sans boucler dessus, utiliser <code>string.Join()</code> car Unity n'opère aucune conversion automatique :</p>
 	<pre><code>
 Debug.Log(string.Join(", ", monArray));
+	</code></pre>
+	<p>La console autorise des <strong>styles</strong> sur le modèle HTML :</p>
+	<pre><code>
+Debug.Log("Je parle &lt;color=red&gt;&lt;b&gt;rouge&lt;/b&gt;&lt;/color&gt;.");
 	</code></pre>
 	<p>Une méthode personnelle de <i>debug</i>, qu'on modifiera au besoin :</p>
 	<pre><code>
