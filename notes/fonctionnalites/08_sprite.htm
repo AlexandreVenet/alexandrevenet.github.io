@@ -1,0 +1,78 @@
+<section>
+	<h1>Sprite</h1>
+	<p>Unity Learn :</p>
+	<a class="lien" target="_blank" href="https://learn.unity.com/tutorial/introduction-to-sprite-editor-and-sheets?language=en&uv=2019.4#5ffbc83bedbc2a001fd10946" title="Sprite introduction">Sprite introduction</a>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#presentation">Présentation</a></li>
+			<li><a href="#spritesheet">Spritesheet</a></li>
+			<li><a href="#atlas">Atlas</a></li>
+			<li><a href="#decoupage">Découpage</a></li>
+			<li><a href="#affichage">Affichage</a></li>
+			<li><a href="#animation">Animation</a></li>
+		</ol>
+	</div>
+</section>
+<section id="presentation">
+	<h2>Présentation</h2>
+	<p>Un <strong><i>sprite</i></strong> est une image importée.</p>
+	<p>En général, utiliser des <strong>multiples de 2</strong> pour les dimensions des images :</p>
+	<ul>
+		<li>lors d’un zoom, si on a une image de 3x3 pixels, les colonnes et lignes de milieu vont être interpolées sur les deux autres, ce qui altère le rendu final (effet de bavure),</li>
+		<li>2 est adapté car le processeur utilise un format binaire,</li>
+		<li>exemples : 512 x 512, 1024 x 512, 1024 x 1024...</li>
+	</ul>
+</section>
+<section id="spritesheet">
+	<h2>Spritesheet</h2>
+	<p>Cette image peut être une <strong><i>spritesheet</i></strong>, c'est-à-dire une image contenant des <i>sprites</i> séquentielles, les <strong>poses pour une animation</strong>.</p>
+	<p>Une fois l'image importée, on peut la paramétrer selon le projet. Par exemple, pour un projet 2D :</p>
+	<ul>
+		<li><code>Filter mode</code> : <code>Point (no filter)</code> pour obtenir plus de netteté,</li>
+		<li>dans le <code>Format</code> de couleur : choisir <code>rgba32</code> pour ne pas modifier le rendu des couleurs,</li>
+		<li><code>Sprite mode</code> : <code>Multiple</code> si l'image contient plusieurs <i>sprites</i>, ce qui fait apparaître le bouton <code>Sprite Editor</code>.</li>
+		<li>Si le <i>sprite</i> affiché en scène est tout petit, alors modifier non pas la caméra mais le <strong>rapport pixel/unité</strong> ; sinon, la physique risque de ne pas fonctionner correctement : <code>Pixel per unit</code> à 16 pour un aspect <i>retro-game</i>.</li>
+	</ul>
+	<a class="lien" target="_blank" href="https://learn.unity.com/tutorial/importing-2d-assets-into-unity-2019-3#5f7cfc5cedbc2a0022112cab" title="Learn : importer des assets">Learn : importer des assets</a>
+</section>
+<section id="atlas">
+	<h2>Atlas</h2>
+	<p>L'image peut aussi être un <strong><i>Atlas</i></strong>, c'est-à-dire une collection de <i>sprites</i> non séquentiels découpés selon un format, par exemple les <strong>tuiles pour réaliser une <i>tilemap</i></strong>. Dans la fenêtre <code>Project</code>, cet <i>asset</i> présente un triangle pour accéder aux images qu'il contient. On n’accède pas au code de l'<i>Atlas</i> (qui peut être au format Json dans d’autres logiciels).</p>
+</section>
+<section id="decoupage">
+	<h2>Découpage</h2>
+	<p>Pour découper un <i>sprite</i> :</p>
+	<ul>
+		<li>cliquer sur le bouton <code>Sprite Editor</code>, puis sur <code>Slice</code>,</li>
+		<li><code>Automatic</code> : détection logicielle des pixels transparents en scannant chaque ligne. Les boîtes ont des tailles différentes (ce qui peut être utile ou non),</li>
+		<li><code>Grid by cell size</code> : paramétrage par taille de cellule,</li>
+		<li><code>Grid by cell count</code> : paramétrage par nombre de colonnes,</li>
+		<li><code>Pivot</code> : définir le point fixe de référence de l’élément (mettre en <code>bottom</code> pour qu’il soit en bas d’un personnage par exemple),</li>
+		<li>cliquer sur <code>Slice</code>,</li>
+		<li>cliquer sur <code>Apply</code> dans le menu de la fenêtre.</li>
+	</ul>
+</section>
+<section id="affichage">
+	<h2>Affichage</h2>
+	<p>Pour <strong>afficher un <i>sprite</i></strong>, il faut utiliser le composant <code>Sprite Renderer</code> attaché à un <code>gameObject</code>.</p>
+	<p>La <strong>superposition</strong> des <i>sprites</i> est contrôlable grâce à la propriété <code>Sorting Layer</code> : on contrôle alors les <i>sprites</i> un à un selon des <i>layers</i> que l'on crée au besoin. On peut faire de même avec des <strong>groupes</strong> de <code>Sprite Render</code> : attacher le composant <code>Sorting Group</code> au parent avec un <code>Sorting Layer 2D</code>, et dans ce parent, distribuer un <i>layer</i> en partant de 0 ; de cette façon, tout l’objet est traité comme un seul <code>Sprite Renderer</code> indépendamment de son contenu</p>
+	<p>Documentation officielle :</p>
+	<a class="lien" target="_blank" href="https://docs.unity3d.com/Manual/class-SpriteRenderer.html" title="Sprite renderer">Sprite renderer</a>
+	<a class="lien" target="_blank" href="https://docs.unity3d.com/Manual/class-SortingGroup.html" title="Sorting group">Sorting group</a>
+</section>
+<section id="animation">
+	<h2>Animation</h2>
+	<p>Pour <strong>animer</strong> un ensemble de <i>sprites</i> :</p>
+	<ul>
+		<li>sélectionner tous les <i>assets</i> de type <i>sprite</i> qui se trouvent dans la <i>spritesheet</i>,</li>
+		<li>glisser dans la scène,</li>
+		<li>enregistrer. L'animation génère un fichier <code>Animator Controller</code>. On en retiendra qu’un seul si on utilise plusieurs animations ; les autres seront à supprimer,</li>
+		<li>créer un objet qui a le composant <code>Animator</code>. Y renseigner le contrôleur précédent. L'édition des états peut commencer.</li>
+	</ul>
+	<p>Dans une animation de <i>sprite</i>, s’il s’agit de <strong>n’afficher plus rien</strong> (ce qui correspond à assigner la valeur <code>None</code> au champ de saisie), il faut cliquer <code>Record</code> dans <code>Animation</code> et <strong>manuellement sélectionner</strong> <code>None</code> dans le champ de <code>Sprite Renderer</code> : une <i>keyframe</i> correspondante apparait alors dans la <i>timeline</i>.</p>
+</section>
+<footer>
+	<p>Le 18-02-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
