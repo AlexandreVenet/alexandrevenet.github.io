@@ -72,7 +72,17 @@
 	</ul>
 	<p>Dans une animation de <i>sprite</i>, s’il s’agit de <strong>n’afficher plus rien</strong> (ce qui correspond à assigner la valeur <code>None</code> au champ de saisie), il faut cliquer <code>Record</code> dans <code>Animation</code> et <strong>manuellement sélectionner</strong> <code>None</code> dans le champ de <code>Sprite Renderer</code> : une <i>keyframe</i> correspondante apparait alors dans la <i>timeline</i>.</p>
 </section>
+<section id="curseur">
+	<h2>Curseur</h2>
+	<p>Paramétré en <code>Cursor</code>, un <i>sprite</i> peut remplacer le <strong>curseur de la souris</strong>.</p>
+	<p>Pour définir le curseur par défaut de l’application :</p>
+	<ul>
+		<li><code>SetCursor()</code> à l’<code>Awake()</code>,</li>
+		<li>ou bien dans <code>Project settings > Player > Default cursor</code>.</li>
+	</ul>
+	<p>Un curseur a un <strong><i>hot spot</i></strong> : c’est son point d'interaction. On peut le modifier avec <code>Cursor.SetCursor()</code> et un <code>Vector2</code> qui pose le décalage en pixels.</p>
+</section>
 <footer>
-	<p>Le 18-02-2021</p>
+	<p>Le 24-02-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
