@@ -1,0 +1,107 @@
+<section>
+	<h1>Audio</h1>
+	<p class="couleurGris">Introduction à la gestion des éléments sonores.</p>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#audioclip">Audio clip</a></li>
+			<li><a href="#audiosource">Audio source</a></li>
+			<li><a href="#audiolistener">Audio listener</a></li>
+			<li><a href="#script">Par script</a></li>
+			<li><a href="#mixers">Mixers audio</a></li>
+		</ol>
+	</div>
+</section>
+<section id="audioclip">
+	<h2>Audio clip</h2>
+	<p>Un <strong><i>audio clip</i></strong> est le <strong>fichier</strong> audio à jouer : .mp3, .ogg, .wav, .aif/.aiff.</p>
+</section>
+<section id="audiosource">
+	<h2>Audio source</h2>
+	<p>L'<strong><i>audio source</i></strong> est le composant qui joue le son, par défaut sans spatialisation, donc le son est entendu de partout au même volume. Sa propriété <code>Spatial Blend</code> est à 0 (ou 2D).</p>
+	<p>Pour attacher ce composant :</p>
+	<ul>
+		<li>sélectionner un <code>gameObject</code>,</li>
+		<li>ajouter le composant <code>Audio source</code>,</li>
+		<li>à la propriété <code>AudioClip</code> assigner un fichier (<i>asset</i>) audio,</li>
+		<li>paramétrer le <strong>volume</strong>, si c'est un fichier en <srong>boucle</strong> ou non, si le son doit être lancé en <code>Awake</code> ou non, etc.</li>
+	</ul>
+</section>
+<section id="audiolistener">
+	<h2>Audio listener</h2>
+	<p>Le son est <strong>joué à partir</strong> d'un <strong><i>audio listener</i></strong>, objet qui détecte un son produit à une position donnée (avec ou sans spatialisation) et le joue à l'utilisateur.</p>
+	<p><strong>Un seul</strong> <code>audio listener</code> par scène. La <strong>caméra</strong> par défaut est dotée d'un tel composant.</p>
+	<p>Pour attacher le composant et tester la spatialisation : </p>
+	<ul>
+		<li>sélectionner un <code>gameObject</code>,</li>
+		<li>ajouter le composant <code>Audio source</code>,</li>
+		<li>assigner à <code>Spatial Blend</code> la valeur maximum (1, 3D),</li>
+		<li>les <code>3D Sound Settings</code> sont alors disponibles comme le <code>Rolloff</code> qui définit la taille dans l'espace et le facteur d'atténuation.</li>
+	</ul>
+</section>
+<section id="script">
+	<h2>Par script</h2>
+	<p>On peut manipuler l'audio avec C#. Dans cet exemple, on veut déclencher un son quand on appuie sur barre espace. Le <code>gameObject</code> doit avoir le composant <code>Audio Source</code>.</p>
+	<pre><code>
+AudioSource _monAudioSource;
+
+[SerializeField]
+AudioClip _monSon; // à renseigner en éditeur
+
+void Start()
+{
+	_monAudioSource = GetComponent&lt;AudioSource&gt;();
+}
+
+void Update()
+{
+	if(Input.GetKey(KeyCode.Space))
+	{
+		_monAudioSource.PlayOneShot(_monSon, 1.0f); // lancer une fois, le son, au volume max
+	}
+}
+	</code></pre>
+</section>
+<section id="mixers">
+	<h2>Mixers audio</h2>
+	<p>Le <strong><i>mixer audio</i></strong> contrôle l'état de <strong>sortie</strong> d'un flux sonore.</p>
+	<p>Créer un dossier <code>Mixers</code> et y créer des <code>Create > Audio Mixer</code>. L'<i>Audio mixer</i> contient des sous-<i>assets</i> de groupe, etc.</p>
+	<p>Ouvrir la fenêtre <code>Audio Mixer</code>. Chaque <i>mixer</i> contient des contrôles de piste : solo, mute, effets de sortie.</p>
+	<p>On peut créer des <strong><i>Groups</i></strong> (ex : SFX, music...) : les <code>AudioClip</code> sont joués dans des <code>AudioSource</code> qui prennent en sortie le <i>mixer</i> choisi. Pour cela, ajouter un <code>gameObject</code>, lui attacher un composant <code>AudioSource</code> puis renseigner dans le champ <code>Output</code> le <i>group</i> voulu. Cela permet de paramétrer toutes les <code>AudioSource</code> à partir d'un seul <i>mixer</i> ; par exemple, en modifiant <code>Master</code>, on contrôle ses enfants. Ensuite :</p>
+	<ul>
+		<li>cliquer sur un <i>mixer</i> (ex : <i>group</i> <code>SFX</code>),</li>
+		<li>dans l'<code>Inspector</code>, faire un clic droit sur un paramètre d'effet (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
+		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis clic droit sur un nom pour renommer (ex : <code>SFXVolume</code>).</li>
+	</ul>
+	<p>En mode <code>Game</code>, la fenêtre <code>Audio Mixer</code> propose un bouton <code>Edit in play mode</code> : cocher pour pouvoir éditer (sinon c’est verrouillé pour éviter les erreurs).</p>
+	<p>Les mixers sont contrôlables en C#, par exemple :</p>
+	<pre><code>
+//... autres librairies
+using UnityEngine.Audio; // ajouter pour l'audio
+
+public class AudioMixerVolume : MonoBehaviour
+{
+	[SerializeField]
+	AudioMixerGroup _audioMixerGroup; // ou type AudioMixer ; renseigner avec un groupe
+
+	[SerializeField]
+	string _parametre; // renseigner le nom du paramètre exposé
+
+	public void SetVolume(float value){
+		_audioMixerGroup.SetFloat(_parametre, value);
+	}
+}
+	</code></pre>
+	<p>Si on veut utiliser un <code>Slider</code> d'UI, il faudra convertir les valeurs min/max -80/20 en échelle 0/1. Le script est à ajouter au <code>Slider</code> (ou <code>gameObject</code> dédié aux fonctions) et le <code>Slider</code> doit le renseigner dans <code>OnValueChanged</code> puis dans l'ensemble <code>Dynamic Float</code>. Exemple de calcul linéaire (hors courbe logarithmique) :</p>
+	<pre><code>
+void SetVolume(float value)
+{
+	float volume = Mathf.Lerp(-80, 20, value);
+	_audioMixerGroup.audioMixer.SetFloat(_parametre, volume);
+}
+	</code></pre>
+</section>
+<footer>
+	<p>Le 25-02-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
