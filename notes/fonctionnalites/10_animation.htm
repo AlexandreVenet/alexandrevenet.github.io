@@ -1,0 +1,121 @@
+<section>
+	<h1>Animation</h1>
+	<p>Documentation officielle : </p>
+	<a class="lien" href="https://docs.unity3d.com/ScriptReference/Animator.html" target="_blank" title="Animator">Animator</a>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#creer">Créer une animation</a></li>
+			<li><a href="#controller">Animation controller</a></li>
+			<li><a href="#code">Côté code</a></li>
+			<li><a href="#blendtree">Blend tree</a></li>
+			<li><a href="#event">Animation event</a></li>
+		</ol>
+	</div>
+</section>
+<section id="creer">
+	<h2>Créer une animation</h2>
+	<p>On peut créer une animation de bien des façons, en voici une procédure :</p>
+	<ul>
+		<li>sélectionner un <code>gameObject</code> qui sert de support à l'animation (il aura un composant <code>Animator</code>),</li>
+		<li>ouvrir la fenêtre <code>Animation</code>. Cliquer sur <code>Create</code>. Enregistrer un nouveau fichier de type <code>Animation clip</code>,</li>
+		<li>la <i>timeline</i> devient disponible. On réalise l'animation en appuyant sur le bouton rouge <code>Record</code> et en modifiant ce qui doit être animé (objet, propriétés). Toute modification dans Unity sera représentée dans la <i>timeline</i> par une propriété et des <i>keyframes</i>,</li>
+		<li>si l'objet support ne l'a pas déjà, Unity lui attache le composant <code>Animator</code>.</li>
+	</ul>
+	<p>Une animation doit avoir <strong>au moins 1 <i>keyframe</i></strong> enregistrant la propriété à animer ; sinon, rien n’est animé.</p>
+	<p><strong>L’animation verrouille les propriétés animées</strong>. Donc, impossible de modifier ces valeurs par code dans le même temps que l’animation. Si on utilise <code>Animator</code>, alors il faut changer d’état pour ensuite faire quoi que ce soit.</p>
+</section>
+<section id="controller">
+	<h2>Animation controller</h2>
+	<p>Le composant <code>Animator</code> est attaché à un objet et réfère à un <strong><i>Animation Controller</i></strong>. Ce contrôleur d'animation est un fichier (<i>asset</i>) spécifique gérant l'animation. On y accède par la fenêtre <code>Project</code> ou le champ <code>Controller</code> du composant ; double-cliquer sur ce champ ouvre la fenêtre <code>Animator</code>.</p>
+	<p>L'<i>animation controller</i> implémente le <i>design pattern</i> <strong><i>State Machine</i></strong> et la fenêtre <code>Animator</code> en fournit une représentation graphique. On y trouve : </p>
+	<ul>
+		<li>des <strong>couches</strong> d'animation (<i>layers</i>), chacune présentant un <strong>diagramme</strong> d'<strong>états</strong> (<i>states</i>) reliés par des <strong>transitions à conditions de passage</strong>,</li>
+		<li>des <strong>paramètres</strong> servant aux <strong>conditions de passage</strong> d'un état à un autre.</li>
+	</ul>
+	<p>La fenêtre <code>Animator</code> est mise à jour en mode <code>Game</code>, ce qui permet de suivre les changements en temps réel.</p>
+	<p>Chaque <strong>état</strong> correspond à un fichier d'animation spécifique et est un bouton :</p>
+	<ul>
+		<li><strong>simple clic</strong> : des infos de l'<strong>état</strong>, comme la vitesse (<i>speed</i>) à la quelle jouer l'animation sélectionnée,</li>
+		<li><strong>double clic</strong> : des infos sur le <strong>fichier</strong> d'animation, avec prévisualisation si appliquable,</li>
+		<li><strong>clic droit</strong> : options de contrôle.</li>
+	</ul>
+	<p>Un bouton vert <code>Entry</code> représente <strong>l'état au démarrage</strong> ; ce bouton vert est lié à un bouton d'état. Avec un clic droit sur un bouton, choisir <code>Set as layer default state</code> pour lier un autre état au lancement.</p>
+	<p>Chaque <strong>transition</strong> fait l'objet d'un <strong>lien fléché</strong> : </p>
+	<ul>
+		<li><strong>simple clic</strong> ouvre les paramètres en <code>Inspector</code> :
+			<ul>
+				<li><code>Has Exit Time</code> coché pour passer automatiquement ou non à l'animation suivante (décocher pour contrôler seulement par conditions),</li>
+				<li>la <i>timeline</i> de transition mesurée en <strong>secondes</strong>,</li>
+				<li>le <strong>PETIT</strong> bouton <code>Settings</code> juste au-dessus où on peut paraméter l'<code>Exit time</code> (quand sortir de la <i>frame</i>) et la <code>Transition duration</code> (durée de la transition),</li>
+				<li>les <strong>conditions</strong> de changement d'état : cliquer sur <code>+</code> pour en ajouter,</li>
+			</ul>
+		</li>
+		<li><strong>clic droit</strong> : options de contrôle.</li>
+	</ul>
+	<p>Les <code>Parameters</code> sont des <strong>variables</strong> : <code>float</code>, <code>bool</code>, <code>int</code> et le spécial <code>trigger</code> (<i>on/off</i>, déclenché à l'appel). Ces variables servent de paramètres aux <strong>conditions de passage</strong>. On peut créer par exemple un paramètre <code>SpeedX</code> qui sert de condition de transition entre des états <code>Idle</code> et <code>Walk</code>. Si par exemple, on modifie ce paramètre à 0.3, alors dans la transition la condition sera testée (par exemple <code>SpeedX Greater 0.1</code>) et le personnage passera automatiquement de <code>Idle</code> à <code>Walk</code>. Lorsqu'il y a plusieurs conditions (plusieurs paramètres sont utilisés) pour une même transition, Unity gère ces conditions en ET logique.</p>
+	<p>On peut ajouter <strong>plusieurs transitions entre deux états</strong>. La flèche possède alors trois triangles. Ajouter une transition génère à chaque fois un jeu de conditions et chaque transition apparaît dans la liste en haut de l'<code>Inspector</code>. Unity gère ces conditions en OU logique.</p>
+</section>
+<section id="code">
+	<h2>Côté code</h2>
+	<p>En C#, on d'abord a besoin de référer au composant <code>Animator</code>. Pour cela, renseigner un champ sérialisé ou récupérer le composant dans <code>Awake()</code>. Par exemple, imaginons un objet <code>Player</code> ayant un enfant <code>Graphics</code> qui a le composant <code>Animator</code> (cet enfant contient des enfants animés), et codons un composant script de <code>Player</code> :</p>
+	<pre><code>
+Animator _animator;
+void Awake()
+{
+	_animatior = transform.Find("Graphics").GetComponent&lt;Animator&gt;();
+}
+	</code></pre>
+	<p>Pour modifier les paramètres en C# et déclencher des transitions :</p>
+	<ul>
+		<li><code>SetTrigger()</code> : activer (<i>on/off)</i>,</li>
+		<li><code>SetBool("nom", true)</code> : assignation de valeur booléenne,</li>
+		<li><code>SetInteger("nom", 1)</code> : assignation de valeur de nombre entier,</li>
+		<li><code>SetFloat("nom",0.5f)</code> : assignation de valeur à virgule flottante.</li>
+	</ul>
+	<p>Pour gérer les transitions avec <code>GetAxis</code>, il faut utiliser une valeur absolue car <code>GetAxis</code> renvoie des valeurs comprises entre [-1,1] alors que par exemple <code>SetFloat()</code> utilise des valeurs entre [0,1].</p>
+	<pre><code>
+float horizontal = Input.GetAxis("Horizontal");
+_animator.SetFloat("SpeedX", Mathf.Abs(horizontal));
+	</code></pre>
+</section>
+<section id="blendtree">
+	<h2>Blend tree</h2>
+	<p>Les <strong><i>Blend Trees</i></strong> servent à regrouper des animations quand ces animations font partie d'un <strong>même ensemble</strong> et sont liées aux <strong>mêmes paramètres</strong>. Les <i>blend trees</i> ne fonctionnent qu'avec des <code>float</code> car les transitions y sont <strong>calculées relativement aux paramètres</strong> et non plus en temps comme les transitions standard.</p>
+	<p>Par exemple : en 2D avec <i>scrolling</i> de côté, les animations <code>Idle</code>, <code>Walk</code> et <code>Run</code> ont en commun d'être des animations de locomotion sur l'axe des x. Mais rien ne lie <code>Walk</code> et <code>Jump</code> ou <code>Attack</code>.</p>
+	<p>Pour créer un <i>blend tree</i> : clic droit dans un diagramme d'<code>Animator</code> puis <code>Create State > From New Blend Tree</code>. Puis double cliquer dessus.</p>
+	<p>Par défaut, les <i>blend trees</i> sont à une dimension (1D) mais on peut en faire à plusieurs dimensions. Par exemple, <code>2D Freeform Directional</code> permet de poser un état central (0,0) et des états distribués en cercle tout autour.</p>
+	<p>Sélectionner le(s) paramètre(s) dans le menu déroulant contrôlant la transition. Et ajouter un ou plusieurs <code>Motion</code>, c'est-à-dire des animations. On peut en ajouter tant qu’elles ont toutes le même rapport et sont relatives au même paramètre, sinon le rendu risque d'étonner.</p>
+	<p>Exemple d'animation 2D de l'état <code>Idle</code> d'un personnage vu de dessus et qui possède 8 positions relatives au <i>stick</i> gauche de la manette :</p>
+	<ul>
+		<li>créer un <code>BlendTree</code> pour l'état <code>Idle</code>,</li>
+		<li>utiliser deux paramètres <code>float directionX</code>, <code>directionY</code>,</li>
+		<li>paramétrer le <code>BlendTree</code> : <code>2D Simple directional</code>, et en paramètre : les deux variables,</li>
+		<li>dans la liste, on va ajouter toutes les <i>motions</i> pour cet état,</li>
+		<li>créer dans <code>Project</code> un dossier d’animation et un sous dossier <code>Idle</code> qui contient toutes les animations afférentes que l'on va réaliser : <i>idle_south</i>, <i>idle_est</i>...</li>
+		<li>ajouter un objet dans la scène,</li>
+		<li>ajouter un enfant <code>Graphics</code>, lui ajouter <code>Animator</code> comme composant,</li>
+		<li>créer une animation qu’on appelle par exemple : <code>idle_south</code>,</li>
+		<li>glisser dans la fenêtre <code>Animation</code> le ou les <i>sprites</i> correspondant à cet état : <code>Animation</code> présente une nouvelle propriété et une ou plusieurs <i>keyframes</i>,</li>
+		<li>refaire pour toutes les orientations d’<code>Idle</code>,</li>
+		<li>dans le <code>BlendTree</code>, les animations sont représentées par des points bleus, le point rouge représente la position relative aux deux variables ; on peut tout déplacer ; les dégradés représentent l’influence des animations,</li>
+		<li>préférer une distribution en cercle (valeurs intermédiaires à 0.75) pour correspondre au <i>stick</i> analogique de la manette.</li>
+	</ul>
+</section>
+<section id="event">
+	<h2>Animation event</h2>
+	<p>On peut déclencher des <strong>fonctions</strong> depuis l’animation, qu'on appelle <strong><i>Animation Event</i></strong>. Par exemple :</p>
+	<ul>
+		<li>sélectionner l’objet qui contient le composant <code>Animator</code>,</li>
+		<li>dans <code>Animation</code>, sélectionner une animation,</li>
+		<li>dans la <i>timeline</i>, déplacer la tête de lecture jusqu'à la fin de la séquence,</li>
+		<li>cliquer sur l’icone blanche de la fenêtre en forme de tube vertical accompagné d'un <code>+</code> ; cela ajoute un petit rectangle bleu dans la <i>timeline</i> : c’est l’<code>animation event</code></li>
+		<li>créer un script et l’attacher comme composant de l’objet contenant le composant <code>Animator</code>, et y écrire une fonction avec un <code>Debug.Log()</code> pour tester,</li>
+		<li>ensuite, retourner dans l’<code>animation event</code> et y renseigner la fonction.</li>
+	</ul>
+	<p><strong>Attention</strong>, une transition s'arrêtant avant l'<code>animation event</code> ne déclenche pas ce dernier.</p>
+</section>
+<footer>
+	<p>Le 26-02-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
