@@ -1,6 +1,17 @@
 <section>
 	<h1>Concepts</h1>
-	<p class="couleurGris">Objet et composant : deux principes d'Unity.</p>
+	<p class="couleurGris">Les principes d'Unity.</p>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#getc">GameObject & component</a></li>
+			<li><a href="#mesh">Mesh</a></li>
+		</ol>
+	</div>
+</section>
+<section id="getc">
+	<h2>GameObject & component</h2>
+	<p>Documentation officielle : </p>
 	<a class="lien" target="_blank" title="Learn : Essential Unity concepts" href="https://learn.unity.com/tutorial/essential-unity-concepts">Learn : Essential Unity concepts</a>
 	<a class="lien" target="_blank" title="Transform" href="https://docs.unity3d.com/ScriptReference/Transform.html">Documentation officielle : Transform</a>
 	<p><strong><i>GameObject</i></strong> :</p>
@@ -33,7 +44,43 @@ void Gameover()
 	</code></pre>
 	<p><code>gameObject.transform</code> ou <code>transform</code> est <strong>itérable</strong> ; on peut boucler dessus pour trouver un enfant ou la collection des enfants ou utiliser des méthodes spécifiques à l'exploration de la hiérarchie.</p>
 </section>
+<section id="mesh">
+	<h2>Mesh</h2>
+	<a class="lien" target="_blank" href="Learn : https://learn.unity.com/tutorial/geometry-in-unity?language=en#5c7f8528edbc2a002053b592" title="Learn : geometry in Unity">Learn : Geometry in Unity</a>
+	<p>Qu'est-ce qu'un maillage (<i>mesh</i>) ?</p>
+	<ul>
+		<li>Les <strong>sommets</strong> (<i>vertices, vertex, verts</i> en anglais), sont des <strong>points 3D</strong>.</li>
+		<li>Ils sont liés par des <strong>arêtes</strong> (<i>edges</i>), qui sont des segments de droite.</li>
+		<li>3 points reliés par des arêtes 2 à 2 en figure plane forment un <strong>triangle</strong>, la plus petite surface utilisée.</li>
+		<li>Plusieurs triangles forment un <strong>polygone</strong>.</li>
+		<li>L’ensemble des polygones forme le <strong>maillage</strong> d’un objet.</li>
+	</ul>
+	<p><strong>Afficher</strong> (<i>render</i>) le <i>mesh</i> :</p>
+	<ul>
+		<li>on a besoin des composants <code>Mesh Filter</code> (contenu des données du <i>mesh</i>) et <code>Mesh Renderer</code> (composant d’affichage),</li>
+		<li>à l’import de fichier, Unity crée un <i>prefab</i> qui inclut les deux composants,</li>
+		<li>le <code>Mesh Renderer</code> n’affiche pas de <strong><i>skinned mesh</i></strong> : ceci est utilisé pour afficher des personnages car le <i>mesh</i> inclut alors des os et squelette (<i>bones</i>, <i>skeleton</i>). Si on dispose d’un <i>skinned mesh</i>, alors Unity attache un composant <code>Skinned Mesh Renderer</code> au lieu du <code>Mesh Renderer</code>,</li>
+		<li>si un modèle dans la scène est un <code>gameObject</code> <strong>composé</strong> d'objets qui sont autant de <i>meshes</i> différents, alors chaque instance de <i>prefab</i> renvoie à un <i>mesh</i> et a ses composants <code>Mesh Filter</code> et <code>Mesh Renderer</code>.</li>
+	</ul>
+	<p>Le composant <code>Mesh Filter</code> : </p>
+	<ul>
+		<li>contient les <strong>données de maillage</strong> du modèle 3D,</li>
+		<li>passe ces données au <code>Mesh Renderer</code>,</li>
+		<li>a une seule propriété : la <strong>référence au fichier</strong> (<i>asset</i>).</li>
+	</ul>
+	<p>Le composant <code>Mesh Renderer</code> :</p>
+	<ul>
+		<li>récupère les données envoyées par le <code>Mesh Filter</code> et <strong>affiche le contenu</strong> à une position, rotation et échelle définies dans le composant <code>Transform</code>,</li>
+		<li>a des propriétés définissant la <strong>manière d'afficher</strong> le modèle. Cela tombe sous 3 catégories :
+			<ol>
+				<li><strong>ombres</strong> : réception et projection,</li>
+				<li><strong>matériaux</strong> : ceux avec lesquels afficher le modèle. Unity en nécessite au moins 1. Une couleur magenta indique l’absence de matériau,</li>
+				<li><strong><i>light probes</i></strong> : si le modèle tombe sous ce calcul ou non.</li>
+			</ol>
+		</li>
+	</ul>
+</section>
 <footer>
-	<p>Le 28-01-2021</p>
+	<p>Le 03-03-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
