@@ -1,6 +1,6 @@
 <section>
 	<h1>Audio</h1>
-	<p class="couleurGris">Introduction à la gestion des éléments sonores.</p>
+	<p class="couleurGris">Les <i>audio clips</i> sont joués par un <i>audio listener</i> depuis des <i>audio sources</i>  qui sont elle-mêmes traitées par des <i>audio groups</i> gérés par l'<i>Audio Mixer</i>.</p>
 	<div class="blocSommaire">
 		<p>Sommaire</p>
 		<ol id="sommaire">
@@ -8,7 +8,10 @@
 			<li><a href="#audiosource">Audio source</a></li>
 			<li><a href="#audiolistener">Audio listener</a></li>
 			<li><a href="#script">Par script</a></li>
+			<li><a href="#reverbzones">Audio Reverb Zones</a></li>
+			<li><a href="#audiogroup">Audio group</a></li>
 			<li><a href="#mixers">Mixers audio</a></li>
+			<li><a href="#effets">Effets</a></li>
 		</ol>
 	</div>
 </section>
@@ -18,30 +21,28 @@
 </section>
 <section id="audiosource">
 	<h2>Audio source</h2>
-	<p>L'<strong><i>audio source</i></strong> est le composant qui joue le son, par défaut sans spatialisation, donc le son est entendu de partout au même volume. Sa propriété <code>Spatial Blend</code> est à 0 (ou 2D).</p>
+	<p>L'<strong><i>audio source</i></strong> est le composant qui joue le son. Par défaut il est sans spatialisation, c'est-à-dire que le son est entendu de partout au même volume : sa propriété <code>Spatial Blend</code> est à 0 (ou 2D).</p>
 	<p>Pour attacher ce composant :</p>
 	<ul>
 		<li>sélectionner un <code>gameObject</code>,</li>
 		<li>ajouter le composant <code>Audio source</code>,</li>
-		<li>à la propriété <code>AudioClip</code> assigner un fichier (<i>asset</i>) audio,</li>
+		<li>à la propriété <code>AudioClip</code> assigner un <i>asset</i> audio,</li>
 		<li>paramétrer le <strong>volume</strong>, si c'est un fichier en <srong>boucle</strong> ou non, si le son doit être lancé en <code>Awake</code> ou non, etc.</li>
+	</ul>
+	<p>Pour modifier la spatialisation :</p>
+	<ul>
+		<li>assigner à <code>Spatial Blend</code> la valeur maximum (1, 3D),</li>
+		<li>les <code>3D Sound Settings</code> sont alors disponibles comme le <code>Rolloff</code> qui définit la taille dans l'espace et le facteur d'atténuation.</li>
 	</ul>
 </section>
 <section id="audiolistener">
 	<h2>Audio listener</h2>
 	<p>Le son est <strong>joué à partir</strong> d'un <strong><i>audio listener</i></strong>, objet qui détecte un son produit à une position donnée (avec ou sans spatialisation) et le joue à l'utilisateur.</p>
 	<p><strong>Un seul</strong> <code>audio listener</code> par scène. La <strong>caméra</strong> par défaut est dotée d'un tel composant.</p>
-	<p>Pour attacher le composant et tester la spatialisation : </p>
-	<ul>
-		<li>sélectionner un <code>gameObject</code>,</li>
-		<li>ajouter le composant <code>Audio source</code>,</li>
-		<li>assigner à <code>Spatial Blend</code> la valeur maximum (1, 3D),</li>
-		<li>les <code>3D Sound Settings</code> sont alors disponibles comme le <code>Rolloff</code> qui définit la taille dans l'espace et le facteur d'atténuation.</li>
-	</ul>
 </section>
 <section id="script">
 	<h2>Par script</h2>
-	<p>On peut manipuler l'audio avec C#. Dans cet exemple, on veut déclencher un son quand on appuie sur barre espace. Le <code>gameObject</code> doit avoir le composant <code>Audio Source</code>.</p>
+	<p>On peut manipuler l'audio avec C#. Dans l'exemple suivant, on veut déclencher un son quand on appuie sur barre espace. Le <code>gameObject</code> doit avoir le composant <code>Audio Source</code>.</p>
 	<pre><code>
 AudioSource _monAudioSource;
 
@@ -61,20 +62,50 @@ void Update()
 	}
 }
 	</code></pre>
+	<p>Un objet peut lire un <i>audio clip</i> choisi <strong>aléatoirement</strong> depuis un <i>array</i>. Pour cela, ne pas renseigner d'<i>audio clip</i> dans son composant <code>Audio source</code>, décocher la case <code>Play On Awake</code>. Et coder :</p>
+	<pre><code>
+[SerializeField] AudioClip[] _audioClips; // des fichiers à renseigner
+AudioSource _as;
+
+private void Awake()
+{
+	_as = transform.GetComponent&lt;AudioSource&gt;();
+}
+
+void LancerSon()
+{
+	_as.PlayOneShot(_audioClips[Random.Range(0,_audioClips.Length)], 1.0f);
+}
+	</code></pre>
+</section>
+<section id="reverbzones">
+	<h2>Audio Reverb Zones</h2>
+	<p>Unity propose un composant 0<code>Audio Reverb Zone</code> indépendant des <i>audio groups</i> et <i>mixers</i>. Ce composant applique un effet de <strong>réverbération</strong> aux objets ayant le composant <code>Audio source</code> et qui viennent à passer près de lui à une certaine distance.</p>
+	<p>Limite : sa forme est sphérique. Ainsi, s'il est placé au centre d'une pièce cubique, il faudra choisir entre avoir une baisse d'effet dans les coins intérieurs ou avoir un début d'effet depuis l'extérieur.</p>
+	<p>Le composant <code>Audio Source</code> offre des contrôle sur les <i>reverb zones</i> :</p>
+	<ul>
+		<li>cocher <code>Bypass Reverb Zones</code> pour annuler toute réverbération,</li>
+		<li>modifier la valeur de <code>Reverb Zone Mix</code> pour contrôler la quantité de réverbération à appliquer une fois que l'objet est dans la <i>reverb zone</i>.</li>
+	</ul>
+</section>
+<section id="audiogroup">
+	<h2>Audio group</h2>
+	<p>L'<strong><i>audio group</i></strong> rassemble et canalise des <i>audio sources</i>. Ces sont autant de <i>mixers audio</i>.</p>
 </section>
 <section id="mixers">
 	<h2>Mixers audio</h2>
-	<p>Le <strong><i>mixer audio</i></strong> contrôle l'état de <strong>sortie</strong> d'un flux sonore.</p>
-	<p>Créer un dossier <code>Mixers</code> et y créer des <code>Create > Audio Mixer</code>. L'<i>Audio mixer</i> contient des sous-<i>assets</i> de groupe, etc.</p>
-	<p>Ouvrir la fenêtre <code>Audio Mixer</code>. Chaque <i>mixer</i> contient des contrôles de piste : solo, mute, effets de sortie.</p>
-	<p>On peut créer des <strong><i>Groups</i></strong> (ex : SFX, music...) : les <code>AudioClip</code> sont joués dans des <code>AudioSource</code> qui prennent en sortie le <i>mixer</i> choisi. Pour cela, ajouter un <code>gameObject</code>, lui attacher un composant <code>AudioSource</code> puis renseigner dans le champ <code>Output</code> le <i>group</i> voulu. Cela permet de paramétrer toutes les <code>AudioSource</code> à partir d'un seul <i>mixer</i> ; par exemple, en modifiant <code>Master</code>, on contrôle ses enfants. Ensuite :</p>
+	<p>Le <strong><i>mixer audio</i></strong> contrôle la sortie audio des <i>audio clips</i> ou des <i>audio groups</i>.</p>
+	<p>Créer dans <code>Project</code> un dossier <code>Mixers</code> puis clic droit <code>Create > Audio Mixer</code>. L'<strong><i>audio mixer</i></strong> propose déjà des propriétés en cliquant dessus ou sur le triangle à côté de son nom.</p>
+	<p>Double-cliquer dessus ouvre la fenêtre <code>Audio Mixer</code>. Chaque <i>mixer</i> contient des contrôles de piste : solo, mute, effets de sortie.</p>
+	<p>Par défaut, le <code>Master</code> est l'<i>audio group</i> principal ou racine, contenant tous les autres. Par exemple, en en modifiant le volume, on contrôle ses enfants en cascade.</p>
+	<p>On peut créer des <strong><i>Groups</i></strong> (ex : SFX, music...) : les <code>AudioClip</i> sont joués dans des <code>AudioSource</code> qui prennent en <strong>sortie</strong> le <i>group</i> choisi. Pour cela, d'abord ajouter un <i>group</i> (clic droit sur la ligne ou bouton <code>+</code>). Ensuite, ajouter un <code>gameObject</code> à la scène, lui attacher un composant <code>AudioSource</code> puis renseigner dans le champ <code>Output</code> le <i>group</i> voulu. Les <i>groups</i> permettent de paramétrer la sortie des <code>AudioSource</code> dans un seul <i>mixer</i>.</p>
+	<p>Ensuite, on peut <strong>contrôler un effet par script</strong>, en <strong>exposant un paramètre d'effet</strong> :</p>
 	<ul>
-		<li>cliquer sur un <i>mixer</i> (ex : <i>group</i> <code>SFX</code>),</li>
-		<li>dans l'<code>Inspector</code>, faire un clic droit sur un paramètre d'effet (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
-		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis clic droit sur un nom pour renommer (ex : <code>SFXVolume</code>).</li>
+		<li>cliquer sur un <i>mixer</i> (ex : <i>group</i> SFX),</li>
+		<li>dans l'<code>Inspector</code>, faire un c<strong>lic droit sur un paramètre d'effet</strong> (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
+		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis <strong>clic droit sur un nom pour renommer</strong> (ex : SFXVolume),</li>
+		<li>coder :</li>
 	</ul>
-	<p>En mode <code>Game</code>, la fenêtre <code>Audio Mixer</code> propose un bouton <code>Edit in play mode</code> : cocher pour pouvoir éditer (sinon c’est verrouillé pour éviter les erreurs).</p>
-	<p>Les mixers sont contrôlables en C#, par exemple :</p>
 	<pre><code>
 //... autres librairies
 using UnityEngine.Audio; // ajouter pour l'audio
@@ -82,13 +113,10 @@ using UnityEngine.Audio; // ajouter pour l'audio
 public class AudioMixerVolume : MonoBehaviour
 {
 	[SerializeField]
-	AudioMixerGroup _audioMixerGroup; // ou type AudioMixer ; renseigner avec un groupe
-
-	[SerializeField]
-	string _parametre; // renseigner le nom du paramètre exposé
+	AudioMixerGroup _audioMixerGroup; // ou type AudioMixer ; renseigner avec un groupe ou l'Audio Mixer
 
 	public void SetVolume(float value){
-		_audioMixerGroup.SetFloat(_parametre, value);
+		_audioMixerGroup.SetFloat("NomDuParametreExposé", value);
 	}
 }
 	</code></pre>
@@ -100,6 +128,39 @@ void SetVolume(float value)
 	_audioMixerGroup.audioMixer.SetFloat(_parametre, volume);
 }
 	</code></pre>
+</section>
+<section id="effets">
+	<h2>Effets</h2>
+	<p>Les <i>audio groups</i> vus précédemment permettent d'appliquer des <strong>effets</strong> au flux sonore qu'ils canalisent.</p>
+	<p>Par exemple, dans la fenêtre <code>Audio Mixer</code>, si on dispose d'un <i>group</i> nommé Voices, on peut créer un sous-groupe nommé Phone. Sélectionner ce sous-groupe. Dans la partie de la fenêtre représentant le <i>mixer</i>, cliquer sur <code>Add...</code> et choisir <code>Highpass simple</code>. Ainsi, tout son qui passe en <code>Output</code> par ce <i>mixer</i> se verra appliquer cet effet.</p>
+	<p>Les effets sont à placer dans un certain <strong>ordre</strong>. Dans l'<code>Inspector</code>, on peut les déplacer en sélectionnant les en-têtes. Cet ordre <strong>peut néanmoins ne pas être suivi selon les besoins</strong>.</p>
+	<ul>
+		<li><i>Receive, Duck Volume</i></li>
+		<li><i>Lowpass, HighPass</i></li>
+		<li><i>Pitch Shifter</i></li>
+		<li><i>Compressor</i></li>
+		<li><i>ParamEQ</i></li>
+		<li><i>Echo, Flange, Chorus</i></li>
+		<li><i>SFX Reverb</i></li>
+		<li><i>Attenuation</i></li>
+		<li><i>Send</i></li>
+	</ul>
+	<p>Outre le fait de jouer un son avec un effet, on peut aussi vouloir jouer un <strong>effet sur un <i>audio group</i></strong>.</p>
+	<ul>
+		<li>Créer un <i>group</i> nommé Reverb".</li>
+		<li>Lui ajouter les effets <code>SFX Reverb</code> et <code>Receive</code>. Noter que <code>SFV Reverb</code> ne dispose malheureusement pas des <i>presets</i> du composant <code>Reverb Zone</code> : il faut tout renseigner. Placer <code>Receive</code> <strong>en premier</strong>.</li>
+		<li>Dans le <i>group</i> Phone précédent, ajouter un effet <code>Send</code>. Dans le menu déroulant, sélectionner <code>Reverb\Receive</code> (cela cible le <i>group</i> nommé Reverb). Paramétrer le <code>Send Level</code> à 0db. Enfin, placer <code>Send</code> <strong>en dernier</strong>.</li>
+		<li>Maintenant, on peut modifier le niveau de réverbération en modifiant le <strong>volume</strong> du <i>mixer</i> nommé Reverb.</li>
+	</ul>
+	<p>Dans le même esprit, on peut utiliser l'effet <code>Duck Volume</code>, en particulier sur un <i>audio group</i> de musique : on atténue le volume de musique pendant qu'un autre son joue, par exemple un dialogue.</p>
+	<ul>
+		<li>Ajouter un <i>audio group</i> nommé Musics enfant du <i>group</i> principal <i>Master</i>.</li>
+		<li>Lui ajouter un effet <code>Duck Volume</code>.</li>
+		<li>Ajouter un <i>audio group</i> nommé PNJ à un groupe préexistant nommé Voices.</li>
+		<li>Lui <code>Add...</code> l'effet <code>Send</code>. Placer cet effet en fin de liste. En <code>Receive</code>, sélectionner <code>Musics\Duck Volume</code>. En <code>Send Level</code>, renseigner 0db.</li>
+		<li>Maintenant, jouer avec les paramètres du <code>Duck Volume</code> : <code>Threshold</code> définit le seuil et <code>Ratio</code> définit la quantité à appliquer. Lorsque la voix passe le seuil, alors la musique baisse selon le <code>Ratio</code>.</li>
+	</ul>
+	<p>La plupart des modifications peuvent s'effectuer en édition. D'autres nécessitent de passer en mode <code>Game</code>. Unity propose un bouton <code>Edit in Playmode</code> (fenêtre <code>Audio Mixer</Code> ou dans l'<code>Inspector</code> d'un <i>mixer</i>) permettant d'effectuer des modifications qui sont <strong>enregistrées même en mode simulation</strong>.</p>
 </section>
 <footer>
 	<p>Le 25-02-2021</p>
