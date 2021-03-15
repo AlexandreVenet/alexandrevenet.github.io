@@ -147,7 +147,7 @@ void SetVolume(float value)
 	</ul>
 	<p>Outre le fait de jouer un son avec un effet, on peut aussi vouloir jouer un <strong>effet sur un <i>audio group</i></strong>.</p>
 	<ul>
-		<li>Créer un <i>group</i> nommé Reverb".</li>
+		<li>Créer un <i>group</i> nommé Reverb.</li>
 		<li>Lui ajouter les effets <code>SFX Reverb</code> et <code>Receive</code>. Noter que <code>SFV Reverb</code> ne dispose malheureusement pas des <i>presets</i> du composant <code>Reverb Zone</code> : il faut tout renseigner. Placer <code>Receive</code> <strong>en premier</strong>.</li>
 		<li>Dans le <i>group</i> Phone précédent, ajouter un effet <code>Send</code>. Dans le menu déroulant, sélectionner <code>Reverb\Receive</code> (cela cible le <i>group</i> nommé Reverb). Paramétrer le <code>Send Level</code> à 0db. Enfin, placer <code>Send</code> <strong>en dernier</strong>.</li>
 		<li>Maintenant, on peut modifier le niveau de réverbération en modifiant le <strong>volume</strong> du <i>mixer</i> nommé Reverb.</li>
