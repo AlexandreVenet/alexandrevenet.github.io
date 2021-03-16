@@ -1,0 +1,38 @@
+<section>
+	<h1>Sérialisation</h1>
+	<p>La <strong>sérialisation</strong> consiste à fournir une <strong>représentation des données</strong>. Unity s'en sert pour :</p>
+	<ul>
+		<li><strong>garder des informations</strong> : <i>assets</i> changeant de dossier, préférences de projets, informations relatives aux scènes...,</li>
+		<li><strong>gérer les ressources au <i>runtime</i></strong> : instancier un <i>prefab</i>, c’est copier la représentation sérialisée du <i>prefab</i> intégré dans le flux de données à l’exécution.</li>
+	</ul>
+	<p>La sérialisation porte sur des variables, des classes, structs...</p>
+	<p>Elle s'effectue au format <strong>binaire</strong>, <strong>Json</strong>, <strong>XML</strong>...</p>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#fichiers">Dans les fichiers</a></li>
+			<li><a href="#scripts">Sérialisation de scripts</a></li>
+		</ol>
+	</div>
+</section>
+<section id="fichiers">
+	<h2>Dans les fichiers</h2>
+	<p>Créer un cube et en faire un <i>prefab</i>. Afficher dans l’explorateur de fichiers : clic droit dans <code>Project</code> sur le fichier puis <code>Show in Explorer</code>. Ouvrir ce fichier dans Visual Studio.</p>
+	<p>Par défaut, le fichier est sérialisé dans un <strong>mode texte</strong>, au format <i><strong>YAML (Yet Another Markup Language)</strong></i>. On lit dans le fichier, par exemple, les données du composant <code>Transform</code>. Cela vaut aussi pour un fichier de scène ou quoi que ce soit d'autre.</p>
+	<p>Il est possible de changer le mode de sérialisation de l’éditeur dans <code>Edit &gt; Projet Settings &gt; Editor &gt; Asset Serialisation</code>, par exemple pour obtenir un format <strong>binaire</strong>.</p>
+	<p>Unity utilise aussi la sérialisation pour les fichiers <code>.meta</code>. Par exemple, le numéro GUID permet de garder la référence du <i>prefab</i> lors de l’instanciation.</p>
+	<a class="lien" title="Format description" href="https://docs.unity3d.com/Manual/FormatDescription.html" target="_blank">Manuel : format description</a>
+</section>
+<section id="scripts">
+	<h2>Sérialisation de scripts</h2>
+	<p>Les <strong>champs publics</strong> de classes personnelles sont sérialisés et apparaissent dans l’Inspector : <code>string, Vector3, Color, animationCurve, LayerMask</code>, tout y passe.</p>
+	<p>En général, est sérialisable tout type de données dérivé de <code>UnityEngine.Object</code>.</p>
+	<p>Pour <code>GameObject</code>, <code>Rigidbody</code> ou <code>Transform</code>, les champs rendus visibles accueillent des références de composant (par des objets).</p>
+	<p>Les <strong>collections</strong> apparaissent en liste d’éléments après avoir renseigné la longueur.</p>
+	<p>Champs privés ou classes nécessitent un <i><strong>attribute</strong></i> pour être sérialisés. Par exemple, <code>[System.Serializable]</code> juste avant une définition de classe ou de struct permet de rendre visible en <code>Inspector</code> tout champ qui en déclare une instance.</p>
+	<a class="lien" title="script serialization" href="https://docs.unity3d.com/Manual/script-Serialization.html" target="_blank">Manuel : script serialization</a>
+</section>
+<footer>
+	<p>Le 16-03-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
