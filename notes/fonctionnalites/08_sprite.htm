@@ -12,6 +12,7 @@
 			<li><a href="#affichage">Affichage</a></li>
 			<li><a href="#animation">Animation</a></li>
 			<li><a href="#curseur">Curseur</a></li>
+			<li><a href="#9slicing">9-slicing</a></li>
 		</ol>
 	</div>
 </section>
@@ -83,7 +84,18 @@
 	</ul>
 	<p>Un curseur a un <strong><i>hot spot</i></strong> : c’est son point d'interaction. On peut le modifier avec <code>Cursor.SetCursor()</code> et un <code>Vector2</code> qui pose le décalage en pixels.</p>
 </section>
+<section id="9slicing">
+	<h2>9-slicing</h2>
+	<p>Il est possible de disposer d'un <i>sprite</i> de <strong>certaines dimensions</strong> (carré, rectangle) pour l'utiliser à des <strong>dimensions différentes</strong>. Par exemple : un bouton à bords arrondis redimensionnable à loisir, sans déformation des arrondis. Pour cela :</p>
+	<ul>
+		<li>dans les paramètres d'importation de l'image, <code>Sprite mode > Mesh type</code> : sélectionner <code>Full Rect</code>,</li>
+		<li>dans <code>Sprite Editor</code>, déplacer les bords (en vert) de façon à obtenir un découpage où les 4 coins de l'image sont isolés,</li>
+		<li>dans le composant <code>Sprite Renderer</code> (ou <code>Image</code> si on fait de l'UI), sélectionner <code>Draw Mode</code> : <code>Sliced</code> par exemple,</li>
+		<li>modifier éventuellement <code>Pixels Per Unit Multiplier</code> (rapport pixel/unité éditeur) selon la taille du <i>sprite</i> utilisé.</li>
+	</ul>
+	<a class="lien" href="https://docs.unity3d.com/Manual/9SliceSprites.html" target="_blank" title="9 slice sprite">Doc officielle : 9 slice sprite</a>
+</section>
 <footer>
-	<p>Le 24-02-2021</p>
+	<p>Le 29-03-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
