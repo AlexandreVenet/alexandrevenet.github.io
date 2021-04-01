@@ -1,0 +1,196 @@
+<section>
+	<h1>Éclairage</h1>
+	<a class="lien" href="https://learn.unity.com/tutorial/lighting-best-practices" target="_blank" title="Learn : bonnes pratiques d'éclairage">Learn : bonnes pratiques d'éclairage</a>
+	<a class="lien" href="https://docs.unity3d.com/Manual/LightingOverview.html" target="_blank" title="Manual : lighting overview">Manual : lighting overview</a>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#generalites">Généralités</a></li>
+			<li><a href="#parametrages">Paramétrage</a></li>
+			<li><a href="#exemple">Exemple</a></li>
+			<li><a href="#gi">Global illumination</a></li>
+			<li><a href="#lightmodes">Light modes</a></li>
+			<li><a href="#renderingpath">Rendering path</a></li>
+			<li><a href="#spacecolor">Espace de couleur</a></li>
+			<li><a href="#tonemapping">HDR et Tone mapping</a></li>
+			<li><a href="#reflexions">Réflexions</a></li>
+			<li><a href="#ambiante">Lumière ambiante</a></li>
+			<li><a href="#uvs">Lightmap UVs</a></li>
+		</ol>
+	</div>
+</section>
+<section id="generalites">
+	<h2>Généralités</h2>
+	<p>Unity propose toute sorte de <strong>lumières</strong> : omnidirectionnelles, directionnelle, <i>light-mapping</i>, <i>baked</i>...</p>
+	<p>Leur <strong>ombre</strong> (<i>shadow</i>) peut être :</p>
+	<ul>
+		<li>absente (<i>none</i>): pas d’ombre,</li>
+		<li>dure (<i>hard</i>) : franches, nettes, crénelée,</li>
+		<li>douce (<i>soft</i>) : dégradée, douce.</li>
+	</ul>
+	<p>Questions à poser en conception :</p>
+	<ul>
+		<li>qu'est-ce qui m'<strong>attire</strong> visuellement ?</li>
+		<li>quelles sont les <strong>sources principales</strong> ?</li>
+		<li>quelle <strong>impression</strong> l'éclairage me donne-t-il ?</li>
+		<li>quelles informations me donne-t-il de l'<strong>espace</strong> ?</li>
+	</ul>
+	<p>Les lumières peuvent être classées :</p>
+	<ul>
+		<li>par aspect <strong>pratique ou décoratif</strong> : elles permettent de voir la scène / elles contribuent à l'esthétique sans apporter de visibilité,</li>
+		<li>par type <strong>omnidirectionnel ou directionnel</strong> : <i>ambiant</i>, <i>point</i> / <i>spot</i>, <i>directional</i>,</li>
+		<li>par type de <strong>technique</strong> : temps réel / précalculé.</li>
+	</ul>
+</section>
+<section id="parametrages">
+	<h2>Paramétrage</h2>
+	<p>On manipule les lumières à différents endroits selon les besoins :</p>
+	<ul>
+		<li>dans la scène lorsqu'il s'agit d'objets ou composants relatifs à l'éclairage (lumière, caméra),</li>
+		<li>dans la fenêtre <code>Lighting</code>,</li>
+		<li>dans menu <code>Edit &gt; Project settings &gt; Player &gt; Other settings</code>.</li>
+	</ul>
+</section>
+<section id="exemple">
+	<h2>Exemple</h2>
+	<p>Voici un exemple de rendu temps réel dans un environnement éclairé de façon générale. Garder à l'esprit que tous les calculs de lumière sont <strong>combinés</strong> avec chaque nouveau paramètre. Donc, procéder en isolant chaque fonction avant de tout mixer afin de mieux contrôler chaque effet. On paramètre ici :</p>
+	<ul>
+		<li>le <code>Skybox</code>, l'<code>Environment lighting</code>, les <code>Environment reflections</code>,</li>
+		<li>les effets de <code>Post Processing</code>.</li>
+	</ul>
+	<p>Procèdure :</p>
+	<ul>
+		<li>dans un dossier <code>Materials</code>, créer un nouveau <code>Material</code> de type <code>Skybox/Procedural</code> : on le paramètre à loisir (alors que la <code>skybox</code> par défaut est verrouillée),</li>
+		<li>ouvrir la fenêtre <code>Lighting</code>,</li>
+		<li>assigner ce <code>material</code> au champ <code>Skybox Material</code>,</li>
+		<li>dans <code>Environment Lighting</code>, choisir <code>Gradient</code> et manipuler à loisir (exemple : couleur de sol idem que le sol qu'on utilise pour simuler le rebond de lumière) ; cela donne plus de contrôle que d'utiliser seulements les valeurs du <code>Skybox</code>,</li>
+		<li>dans <code>Environment Reflections</code>, modifier l'<code>Intensity Multiplier</code> au besoin, ainsi que les <code>Bounces</code> (nombre de rebonds, par exemple lorsque des miroirs se font face) ; tout ceci affecte les réflexions de l'environnement,</li>
+		<li>décocher <code>Baked Global Illumination</code> pour que l'éclairage soit complètement temps réel,</li>
+		<li>en bas de la fenêtre, décocher <code>Auto generate</code> pour voir les différences à chaque étape et cliquer sur <code>Generate Lighting</code> pour calculer l'éclairage (laisser appuyer pour ouvrir le menu et vider les données si besoin avec <code>Clear Baked Data</code>) ; un dossier portant le nom de la scène est automatiquement créé et contient des données d'éclairage et les <code>Reflections Probes</code>,</li>
+		<li>pour profiter des effets ainsi générés, créer par exemple un <code>material</code> transparent, blanc, <code>Metallic</code> à 1 et <code>Smoothness</code> à 1, et prenant les <code>Specular highlights</code> et <code>Reflections</code>.</li>
+	</ul>
+	<p>Ensuite, on peut vouloir ajouter des effets de <i><strong>Post Processing</strong></i> (voir chapitre idoine) :</p>
+	<ul>
+		<li>installer le package dans <code>Window &gt; Package Manager &gt; Unity Registry &gt; Post Processing</code>,</li>
+		<li>sélectionner la caméra et y ajouter le composant <code>Rendering/Post-process Layer</code>,</li>
+		<li>dans <code>Layer</code>, sélectionner <code>Everything</code>,</li>
+		<li>sélectionner le <code>Mode</code> d'<i>anti-aliasing</i> si besoin,</li>
+		<li>ajouter un autre composant <code>Rendering/Post-process Volume</code>,</li>
+		<li>sélectionner <code>Is Global</code>,</li>
+		<li>cliquer <code>New</code> pour générer un nouvel asset de profil qui contiendra tous les paramètres (utiles pour les réutiliser à loisir dans d'autres projets),</li>
+		<li>à partir de là, ajouter des effets avec <code>add effect...</code>,</li>
+		<li>l'<code>Ambiant occlusion</code> calcule les ombres dans les angles resserrés d'objets,</li>
+		<li>Le <code>bloom</code> génère des éblouissements sur les matériaux avec émission et <code>specular highlights</code>...,</li>
+		<li>le <code>color grading</code> apporte des contrôles fins sur les couleurs (<code>Post-exposure EV</code> et <code>Saturation</code>)</li>
+	</ul>
+</section>
+<section id="gi">
+	<h2>Global illumination</h2>
+	<p>Il existe en 3D l'<strong>éclairage direct et indirect</strong>. Unity propose <strong>deux systèmes d'illumination globale</strong> correspondant à ces deux types d'éclairage et dépendant par ailleurs du type de <i><strong>render pipeline</strong></i> choisi. Ces deux systèmes sont :</p>
+	<ul>
+		<li><i><strong>realtime global illumination</strong></i> : lumières temps réel, <i>light probes</i> ; tend à être déprécié du fait de la dépréciation du <i>built-in render pipeline</i>,</li>
+		<li><i><strong>baked global illumination</strong></i> : <i>lightmap</i>, <i>area light</i>, <i>reflection probes</i>.</li>
+	</ul>
+</section>
+<section id="lightmodes">
+	<h2>Light modes</h2>
+	<p>Précisons les <strong>techniques d'éclairage</strong> ou <strong>modes de lumière (<i>light modes</i>)</strong> pour chaque illumination globale :</p>
+	<ul>
+		<li><strong>temps réel (<i>realtime</i>)</strong> :
+			<ul>
+				<li>tout est calculé à chaque <i>frame</i>,</li>
+				<li>permet d'éclairer et projeter des ombres sur des <strong>objets dynamiques, amenés à changer</strong>,</li>
+				<li>impossible de faire rebondir les rayons lumieux sur les surfaces,</li>
+				<li>les ombres apparaissent complètement noires et ne subissent <strong>aucun effet de lumière indirecte</strong> (rebond), donc c’est non réaliste.</li>
+				<li>peut lourdement impacter les performances si scène complexe,</li>
+			</ul>
+		</li>
+		<li><i><strong>baked GI lighting</strong></i> :
+			<ul>
+				<li>lumières <strong>précalculées</strong> sous forme de texture type <i><strong>lightmap</strong></i> avec prise en charge du <strong>rebond</strong> et d'<strong>éclairage indirect</strong> mais <strong>sans effet sur l'éclairage <i>specular</i></strong>,</li>
+				<li>technique utilisée pour des <strong>objets statiques, amenés à ne pas changer</strong>, définis en <code>static</code></li>
+				<li>les lumières utilisées doivent être <code>baked</code>,</li>
+				<li>les lumières indirectes sont calculées par des <i><strong>light probes</strong></i>,</li>
+				<li>les objets dynamiques ne reçoivent pas ces éclairage ni ses ombres,</li>
+				<li>gain de performances,</li>
+			</ul>
+		</li>
+		<li><i><strong>mixed realtime &amp; GI lighting</strong></i> :
+			<ul>
+				<li>génère une <i>lightmap</i> à partir des objets statiques <strong>ET</strong> prend en charge l'éclairage temps réel,</li>
+				<li>ombres dynamiques et précalculées <strong>ET</strong> contribution à <strong>l’éclairage direct temps réel</strong> et à <strong>l’éclairage indirect précalculé</strong>,</li>
+				<li>ces lumières peuvent être <strong>modifiées en temps réel</strong> mais seulement pour leurs valeurs <i>realtime</i> (et pas les <i>baked</i>),</li>
+				<li>dépend du <code>lighting mode</code> : dans la fenêtre <code>Lighting</code>, cocher la case <code>Baked Global Illumination</code> puis voir le menu déroulant,</li>
+				<li>performances intermédiaires car prenant en compte les deux modes de calcul précédents.</li>
+			</ul>
+		</li>
+	</ul>
+	<p><i>Baked GI lighting</i> et <i>mixed realtime &amp; GI lighting</i> peuvent être utilisés sur des PC dernières générations. Sur des configs moins puissantes (mobiles ou autres), <i>Baked GI lighting</i> est à préférer ; c'est souvent par élimination que le choix est fait.</p>
+	<p>Entre les deux techniques, on peut ne choisir que le traitement <strong>temps réel</strong> pour toute lumière de la scène : ouvrir la fenêtre <code>Lighting</code> et décocher la case <code>Baked Global Illumination</code>.</p>
+	<p>Pour toute technique de <i>lightmap</i> :</p>
+	<ul>
+		<li>Unity utilise un <strong>cache</strong> pour accélérer le traitement. On peut vider ce dernier dans <code>Preferences &gt; GI Cache &gt; Clear cache</code>.</li>
+		<li>les <i><strong>area lights</strong></i> sont des lampes à diffusion carrée,</li>
+		<li>les <i><strong>ligh probes</strong></i> sont des champs de sphères qui donnent chacune une information de couleur selon leur position (moyenne). On s'en sert pour produire une <strong>approximation temps réel</strong> de la <i>lightmap</i> sur les objets dynamiques.</li>
+	</ul>
+</section>
+<section id="renderingpath">
+	<h2>Rendering path</h2>
+	<p>Le <i><strong>Rendering path</strong></i> est une propriété de la <strong>caméra</strong> :</p>
+	<ul>
+		<li><i><strong>forward rendering</strong></i> : chaque objet est rendu par <i>pass</i> pour chaque lumière qui l'affecte. Rapide, permet le <i><strong>multi-sample anti-aliasing (MSAA)</strong></i>,</li>
+		<li><i><strong>deferred rendering</strong></i> : le coût de l'éclairage est proportionnnel au nombre de pixels que la lumière éclaire (et non du nombre de lumières). Plus gourmand mais plus beau.</li>
+	</ul>
+</section>
+<section id="spacecolor">
+	<h2>Espace de couleur</h2>
+	<p>L'<strong>espace de couleur</strong> est défini dans <code>Edit &gt; Project settings &gt; Player &gt; Other settings</code> :</p>
+	<ul>
+		<li><i><strong>linear space</strong></i> : plus naturel mais plus gourmand, parfois non supporté selon le matériel (mobiles par exemple),</li>
+		<li><i><strong>gamma</strong></i> : moins naturel, la luminosité monte très vite et surexpose les couleurs.</li>
+	</ul>
+</section>
+<section id="tonemapping">
+	<h2>HDR et Tone mapping</h2>
+	<p>Par défaut, Unity utilise le <i><strong>Low Dynamic Range (LDR)</strong></i> où les couleurs sont codées sur 8 bits par canal (256x256x256).</p>
+	<p>L'<i><strong>High Dynamic Range (HDR)</strong></i> va au-delà de ces limitation. Quelques caractéristiques :</p>
+	<ul>
+		<li>défini dans les propriétés de la <strong>caméra</strong>,</li>
+		<li>peut ne pas être pris en charge selon la configuration,</li>
+		<li>non supporté avec <i>Forward rendering</i> utilisant MSAA,</li>
+		<li>à utiliser combiné à l'espace de couleur linéaire pour plus de réalisme.</li>
+	</ul>
+	<p>Le <i><strong>tonemapping</strong></i> est un calcul mathématique permettant d'afficher ce qui est <strong>surexposé</strong> dans les lumière et <strong>enterré</strong> dans les ombres ; c'est un <i>package</i> (à récupérer et ensuite installer dans <code>Assets &gt; Import Package &gt; Effects</code>) fournissant un script à ajouter à la <strong>caméra</strong>.</p>
+	<a class="lien" href="https://docs.unity3d.com/Manual/HDR.html" title="Mantuel : HDR" target="_blank">Manuel : HDR</a>
+</section>
+<section id="reflexions">
+	<h2>Réflexions</h2>
+	<p>Les réflexions sont souvent <strong>précalculées</strong> car gourmandes en calcul. Elles prennent la forme de <code>cubemap</code> projetés sur les objets.</p>
+	<p>Elles peuvent êtres <strong>globales</strong> : fenêtre <code>Lighting &gt; Environment Reflections</code>.</p>
+	<p>Elles peuvent être <strong>locales</strong>, avec les <i><strong>Reflection Probes</strong></i> : cubes qui génèrent une <code>skybox</code> à partir d'un point de l'espace et comprenant tout ce qui se trouve à l'intérieur de leur champ (<i>gizmo</i>). Ces <i>probes</i> sont efficaces pour des scènes d'intérieur par exemple, augmentant significativement le réalisme.</p>
+	<p>Les <i>probes</i> présentent deux modes :</p>
+	<ul>
+		<li><i><strong>baked</strong></i> : calcul de réflexion uniquement sur les objets de type <code>Reflection probes static</code> (sur un objet, cliquer à côté de son nom dans l'<code>Inspector</code> et choisir ce paramètre dans la liste),</li>
+		<li>ou <i><strong>real-time</strong></i> : tout objet visible est calculé selon le masque de sélection utilisé.</li>
+	</ul>
+	<p>Dans un <i>probe</i>, <code>Clear Flags</code> et <code>Background</code> permettent d'autonomiser les paramètres par rapport à ceux de la fenêtre <code>Lighting</code>.</p>
+	<p>Le paramètre <code>Intensity</code> contrôle l'intensité de l'effet et trouve d'heureuses combinaisons avec le <i><strong>Post-process</strong></i>, par exemple l'effet <code>Bloom</code>.</p>
+	<p>Pour simuler le métal, l'objet recevant la lumière doit avoir un paramètre métallique et autoriser les réflexions.</p>
+	<a class="lien" href="https://docs.unity3d.com/Manual/class-Cubemap.html" target="_blank" title="Manual : cube map">Manual : cube map</a>
+</section>
+<section id="ambiante">
+	<h2>Lumière ambiante</h2>
+	<p>L'<i><strong>ambiant light</strong></i> ou <i><strong>environment lighting</strong></i> est peu réaliste mais peu gourmande en calcul.</p>
+	<p>Elle est à coupler avec <i>Baked GI Lighting</i> ou <i>Precomputed Realtime GI Lighting</i> pour teinter les intéractions de lumières (effet de lissage visuel réaliste).</p>
+	<p>Elle <strong>n'affecte pas</strong> le rendu du <i>skybox</i>.</p>
+</section>
+<section id="uvs">
+	<h2>Lightmap UVs</h2>
+	<p>Pour qu'un objet présente une texture, il lui faut une <strong>carte UV</strong>.</p>
+	<p>Lors du <i>baking</i>, l'objet peut présenter un affichage non souhaité. Alors, sélectionner le <i>mesh</i> importé et cocher la case <code>Generate Lightmap UVs</code>.</p>
+	<a class="lien" href="https://fr.wikipedia.org/wiki/Cartographie_UV" target="_blank" title="Wikipédia Cartographie UV">Wikipédia : Cartographie UV</a>
+</section>
+<footer>
+	<p>Le 01-04-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
