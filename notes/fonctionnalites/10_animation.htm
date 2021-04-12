@@ -63,7 +63,7 @@
 Animator _animator;
 void Awake()
 {
-	_animatior = transform.Find("Graphics").GetComponent&lt;Animator&gt;();
+	_animator = transform.Find("Graphics").GetComponent&lt;Animator&gt;();
 }
 	</code></pre>
 	<p>Pour modifier les paramètres en C# et déclencher des transitions :</p>
@@ -77,6 +77,10 @@ void Awake()
 	<pre><code>
 float horizontal = Input.GetAxis("Horizontal");
 _animator.SetFloat("SpeedX", Mathf.Abs(horizontal));
+	</code></pre>
+	<p>Pour aller à un état directement, on fait référence au <code>Layer</code> d'animation. On peut également indiquer le temps (normalisé de 0 à 1) à partir duquel jouer :</p>
+	<pre><code>
+_animator.Play("Base Layer.NomEtat", 0, 0f);
 	</code></pre>
 </section>
 <section id="blendtree">
