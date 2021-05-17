@@ -12,6 +12,7 @@
 			<li><a href="#audiogroup">Audio group</a></li>
 			<li><a href="#mixers">Mixers audio</a></li>
 			<li><a href="#effets">Effets</a></li>
+			<li><a href="#pratiques">Pratiques, optimisations</a></li>
 		</ol>
 	</div>
 </section>
@@ -102,7 +103,7 @@ void LancerSon()
 	<p>Ensuite, on peut <strong>contrôler un effet par script</strong>, en <strong>exposant un paramètre d'effet</strong> :</p>
 	<ul>
 		<li>cliquer sur un <i>mixer</i> (ex : <i>group</i> SFX),</li>
-		<li>dans l'<code>Inspector</code>, faire un c<strong>lic droit sur un paramètre d'effet</strong> (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
+		<li>dans l'<code>Inspector</code>, faire un <strong>clic droit sur un paramètre d'effet</strong> (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
 		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis <strong>clic droit sur un nom pour renommer</strong> (ex : SFXVolume),</li>
 		<li>coder :</li>
 	</ul>
@@ -162,7 +163,32 @@ void SetVolume(float value)
 	</ul>
 	<p>La plupart des modifications peuvent s'effectuer en édition. D'autres nécessitent de passer en mode <code>Game</code>. Unity propose un bouton <code>Edit in Playmode</code> (fenêtre <code>Audio Mixer</Code> ou dans l'<code>Inspector</code> d'un <i>mixer</i>) permettant d'effectuer des modifications qui sont <strong>enregistrées même en mode simulation</strong>.</p>
 </section>
+<section id="pratiques">
+	<h2>Pratiques, optimisations</h2>
+	<a class="lien" href="https://gamedevbeginner.com/10-unity-audio-tips-that-you-wont-find-in-the-tutorials/" target="_blank" title="10 Unity audio sur GameDevBeginner">10 Unity audio sur GameDevBeginner</a>
+	<p>Un fichier audio peut être enregistré à différents <strong>taux d'échantillonnage</strong> (<i>sample rate</i>) : 11025Hz (le plus bas), 22050Hz,  48000Hz (idéal). Un taux d'échantillonnage plus élevé entraîne des fichiers plus volumineux. Pour les fichiers audio AIFF et WAV, s'assurer que la <strong>profondeur de bits</strong> (<i>bit depth</i>) est de 32bits et non en virgule flottante.</p>
+	<p>On peut importer un fichier audio au <strong>format de compression</strong> qui est </strong>PCM (pas de compression)</strong>, pour ensuite paramétrer l'encodage dans Unity en fonction de nos besoins.</p>
+	<p>Code :</p>
+	<ul>
+		<li><code>Play()</code> à utiliser de préférence pour les <strong>musiques</strong>, l'<strong>ambiance</strong> et autres effets nécessitant de <strong>boucler la lecture</strong>,</li>
+		<li><code>PlayOneShot()</code> à utiliser de préférence pour les <strong>sons courts non en boucle</strong>. Avantage : pas d'interruption du son qui est déjà en train de jouer (on peut donc faire répéter le son sans coupure, utile pour les pistolets à bulles).</li>
+	</ul>
+	<p>Un son continue de jouer même avec <code>Time.timeScale = 0</code>. Avec la propriété <code>AudioListener.pause = true</code>, le son est suspendu. Pratique pour couper le son lors d'un menu pause. Mais, certains sons peuvent être nécessaires alors qu'on est dans le menu pause : alors, pour chaque <i>audio source</i> utiliser <code>AudioSource.ignoreListenerPause = true</code>.</p>
+	<a class="lien" href="https://gamedevbeginner.com/unity-audio-optimisation-tips/" target="_blank" title="Audio optimisation sur GameDevBeginner">Audio optimisation sur GameDevBeginner</a>
+	<a class="lien" href="https://docs.unity3d.com/Manual/class-AudioClip.html" target="_blank" title="Manuel : classe AudoClip">Manuel : classe AudioClip</a>
+	<p>En vrac :</p>
+	<ul>
+		<li><i>audio clip</i> <code>Force To Mono</code> pour un usage 3D, car la stéréo du fichier s'ajoute au traitement 3D déjà effectué,</li>
+		<li><i>audio clips</i> courts : <code>Decompress on Load</code>,</li>
+		<li><i>audio clips</i> plus longs : <code>Compressed in Memory</code>,</li>
+		<li><i>audio clips</i> de musiques et ambiances : <code>Streaming</code>,</li>
+		<li><i>audio clip</i> nécessaire plus tard dans la séquence de jeu : <code>Load In Background</code>,</li>
+		<li>propriété <code>Preload Audio Data</code> pour éviter les retards de chargement des données audio,</li>
+		<li>les sons ne sont pas ou plus utilisés ? Les supprimer de la mémoire avec <code>audioClip.UnloadAudioData()</code> (Unity ne semble pas le faire automatiquement même s'il n'y a plus d'<i>Audio source</i> dans la scène),</li>
+		<li>préférer désactiver le composant <code>AudioSource</code> plutôt qu'utiliser la propriété <code>Mute</code> qui conserve des données audio ; à moins d'avoir besoin de ces information, évidemment.</li>
+	</ul>
+</section>
 <footer>
-	<p>Le 25-02-2021</p>
+	<p>Le 17-05-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
