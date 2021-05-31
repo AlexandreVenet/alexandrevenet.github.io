@@ -7,6 +7,7 @@
 			<li><a href="#acces">Accès</a></li>
 			<li><a href="#tags">Tags</a></li>
 			<li><a href="#layers">Layers</a></li>
+			<li><a href="#etiquettesperso">Étiquettes personnelles</a></li>
 		</ol>
 	</div>
 </section>
@@ -56,7 +57,33 @@ public class DemoScript : MonoBehaviour
 	</ul>
 	<p>Les <i>layers</i> sont aussi utiles pour définir les interactions physiques avec la <strong>matrice de collision</strong> qui se trouve dans <code>Edit > Project Settings... > Physics</code> ou <code>Physics2D</code>. On peut ainsi autoriser ou exclure des relations entre <i>layers</i> selon les besoins. Par exemple : un objet jouable a un <code>collider</code> aux pieds en interaction avec les obstacles, et un <code>collider</code> en interaction avec des objets destructibles, les deux n'étant pas en interaction (sinon comportements étranges).</p>
 </section>
+<section id="etiquettesperso">
+	<h2>Étiquettes personnelles</h2>
+	<p>Il est possible de créer ses propres étiquettes. Par exemple, en utilisant une <code>enum</code> comme type.</p>
+	<pre><code>
+public enum MesTags
+{
+	Ogre,
+	Gobelin
+}
+	</code></pre>
+	<pre><code>
+public MesTags _myTag = MesTags.Gobelin;
+	</code></pre>
+	<p>Autre exemple avec un <code>struct</code> (qu'on peut rendre <code>static</code> ou non selon les besoins) :</p>
+	<pre><code>
+public struct MesAutresTags
+{
+	public string OgreB = "Ogre de boue";
+	public string Gobelin = "Gobe-lin carnivore";
+}
+	</code></pre>
+	<pre><code>
+if(chose.MonTag == MesAutresTags.Gobelin){ //... }
+	</code></pre>
+	<p>Ces données peuvent enfin être regroupées dans <strong>un même fichier script</strong> qui sert de <strong>paramètres</strong> au projet.</p>
+</section>
 <footer>
-	<p>Le 01-02-2021</p>
+	<p>Le 31-05-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
