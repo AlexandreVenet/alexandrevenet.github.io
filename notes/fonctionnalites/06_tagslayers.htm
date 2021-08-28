@@ -56,6 +56,30 @@ public class DemoScript : MonoBehaviour
 		<li>dans la caméra, dans <code>Culling Mask</code>, retirer <code>ignored by camera</code>.</li>
 	</ul>
 	<p>Les <i>layers</i> sont aussi utiles pour définir les interactions physiques avec la <strong>matrice de collision</strong> qui se trouve dans <code>Edit > Project Settings... > Physics</code> ou <code>Physics2D</code>. On peut ainsi autoriser ou exclure des relations entre <i>layers</i> selon les besoins. Par exemple : un objet jouable a un <code>collider</code> aux pieds en interaction avec les obstacles, et un <code>collider</code> en interaction avec des objets destructibles, les deux n'étant pas en interaction (sinon comportements étranges).</p>
+	<p>La classe <code>LayerMask</code> propose un certain nombre de méthodes dont <code>LayerToName()</code> et <code>NameToLayer()</code> pour obtenir le nom d'un <i>layer</i> ou son numéro dans la liste.</p>
+	<pre><code>
+private void OnTriggerEnter(Collider other)
+{
+	if(other.gameObject.layer == LayerMask.NameToLayer("NomLayer"))
+	{
+		//...
+	}
+}
+	</code></pre>
+	<p>Pour comparer des <i>layers</i>, il faut effectuer des opérations au niveau du bit.</p>
+	<pre><code>
+public LayerMask layerMask;
+
+private void OnCollisionEnter(Collision collision)
+{
+	int objectLayer = collision.gameObject.layer;
+	if((layerMask & 1 << objectLayer) == 1 << objectLayer)
+	{
+		//...
+	}
+}
+	</code></pre>
+	<a class="lien" target="_blank" title="L'éditeur" href="https://answers.unity.com/questions/422472/how_can_i_compare_colliders_layer_to_my_layermask.html">Discussion</a>
 </section>
 <section id="etiquettesperso">
 	<h2>Étiquettes personnelles</h2>
@@ -84,6 +108,6 @@ if(chose.MonTag == MesAutresTags.Gobelin){ //... }
 	<p>Ces données peuvent enfin être regroupées dans <strong>un même fichier script</strong> qui sert de <strong>paramètres</strong> au projet.</p>
 </section>
 <footer>
-	<p>Le 31-05-2021</p>
+	<p>Le 28-08-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
