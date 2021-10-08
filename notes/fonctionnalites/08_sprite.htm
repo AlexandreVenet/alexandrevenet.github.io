@@ -34,7 +34,7 @@
 		<li><code>Filter mode</code> : <code>Point (no filter)</code> pour obtenir plus de netteté,</li>
 		<li>dans le <code>Format</code> de couleur : choisir <code>rgba32</code> pour ne pas modifier le rendu des couleurs,</li>
 		<li><code>Sprite mode</code> : <code>Multiple</code> si l'image contient plusieurs <i>sprites</i>, ce qui fait apparaître le bouton <code>Sprite Editor</code>.</li>
-		<li>Si le <i>sprite</i> affiché en scène est tout petit, alors modifier non pas la caméra mais le <strong>rapport pixel/unité</strong> ; sinon, la physique risque de ne pas fonctionner correctement : <code>Pixel per unit</code> à 16 pour un aspect <i>retro-game</i>.</li>
+		<li>Si le <i>sprite</i> affiché en scène est tout petit, alors modifier non pas la caméra mais le <strong>rapport pixel/unité</strong> ; sinon, la physique risque de ne pas fonctionner correctement : <code>Pixel per unit</code> à 16 pour un aspect <i>retro-game</i> (16 pixels d'images pour 1 unité Unity).</li>
 	</ul>
 	<a class="lien" target="_blank" href="https://learn.unity.com/tutorial/importing-2d-assets-into-unity-2019-3#5f7cfc5cedbc2a0022112cab" title="Learn : importer des assets">Learn : importer des assets</a>
 </section>
@@ -54,24 +54,37 @@
 		<li>cliquer sur <code>Slice</code>,</li>
 		<li>cliquer sur <code>Apply</code> dans le menu de la fenêtre.</li>
 	</ul>
+	<p>Chaque retancle ainsi généré est sélectionnable, modifiable... Les zones générées qui s'avèrent inutiles peuvent être supprimées. On peut aussi simplement cliquer-déplacer dans la fenêtre pour générer des zones rectangulaires.</p>
 </section>
 <section id="affichage">
 	<h2>Affichage</h2>
 	<p>Pour <strong>afficher un <i>sprite</i></strong>, il faut utiliser le composant <code>Sprite Renderer</code> attaché à un <code>gameObject</code>.</p>
-	<p>La <strong>superposition</strong> des <i>sprites</i> est contrôlable grâce à la propriété <code>Sorting Layer</code> : on contrôle alors les <i>sprites</i> un à un selon des <i>layers</i> que l'on crée au besoin. On peut faire de même avec des <strong>groupes</strong> de <code>Sprite Render</code> : attacher le composant <code>Sorting Group</code> au parent avec un <code>Sorting Layer 2D</code>, et dans ce parent, distribuer un <i>layer</i> en partant de 0 ; de cette façon, tout l’objet est traité comme un seul <code>Sprite Renderer</code> indépendamment de son contenu</p>
+	<p>Pour un projet paramétré en 2D, tout objet est affiché à une position Z de 0 pour faciliter le travail. Noter qu'un tel objet possède un composant <code>Transform</code>.</p>
+	<p>La <strong>superposition</strong> des <i>sprites</i> est contrôlable grâce à la propriété <code>Sorting Layer</code> : on contrôle alors les <i>sprites</i> un à un selon des <i>layers</i> que l'on crée au besoin. Dans ces <i>layers</i>, l'ordre de superposition est défini par la valeur de <code>Order in Layer</code>.</p>
+	<p>On peut faire de même avec des <strong>groupes</strong> de <code>Sprite Render</code> : attacher le composant <code>Sorting Group</code> au parent avec un <code>Sorting Layer 2D</code>, et dans ce parent, distribuer un <i>layer</i> en partant de 0 ; de cette façon, tout l’objet est traité comme un seul <code>Sprite Renderer</code> indépendamment de son contenu</p>
 	<p>Documentation officielle :</p>
 	<a class="lien" target="_blank" href="https://docs.unity3d.com/Manual/class-SpriteRenderer.html" title="Sprite renderer">Sprite renderer</a>
 	<a class="lien" target="_blank" href="https://docs.unity3d.com/Manual/class-SortingGroup.html" title="Sorting group">Sorting group</a>
+	<p>Maintenant, à propos des <i>tilemaps</i>, Unity propose un outil d'édition spécifique pour réaliser un décor rapidement sans avoir à ajouter manuellement chaque <i>sprite</i> dans la scène.</p>
+	<ul>
+		<li>Ouvrir menu <code>Window > 2D > Tile Palette</code>.</li>
+		<li>Créer une nouvelle palette de <i>tiles</i> en cliquant sur <code>Create New Palette</code>. Enregistrer le fichier qui sera généré dans le dossier du projet.</li>
+		<li>Cliquer-déplacer les <i>tiles</i> dans la fenêtre de palette (si non visibles, cliquer sur le bouton "rond avec triangle" du <i>sprite</i> pour les afficher).</li>
+		<li>Ajouter à la scène un <code>2D Object > Tilemap</code>. On dispose à présent d'une image à "peindre".</li>
+		<li>Avec la fenêtre de palette toujours à l'écran, sélectionner si non déjà fait l'outil <i>Brush</i>. Sélectionner une tuile à utiliser comme motif de peinture.</li>
+		<li>Cliquer-déplacer dans la scène pour peindre.</li>
+	</ul>
 </section>
 <section id="animation">
 	<h2>Animation</h2>
 	<p>Pour <strong>animer</strong> un ensemble de <i>sprites</i> :</p>
 	<ul>
-		<li>sélectionner tous les <i>assets</i> de type <i>sprite</i> qui se trouvent dans la <i>spritesheet</i>,</li>
+		<li>sélectionner tous les <i>assets</i> de type <i>sprite</i> qui se trouvent dans la <i>spritesheet</i> ou bien sélectionner tous les <i>sprites</i>,</li>
 		<li>glisser dans la scène,</li>
-		<li>enregistrer. L'animation génère un fichier <code>Animator Controller</code>. On en retiendra qu’un seul si on utilise plusieurs animations ; les autres seront à supprimer,</li>
+		<li>enregistrer. L'animation génère un fichier <code>Animator Controller</code> et un fichier d'animation proprement dite. Il peut arriver qu'Unity crée d'autres contrôleurs à mesure qu'on ajoute des animations : on ne retiendra qu’un seul contrôleur, les nouveaux seront à supprimer,</li>
 		<li>créer un objet qui a le composant <code>Animator</code>. Y renseigner le contrôleur précédent. L'édition des états peut commencer.</li>
 	</ul>
+	<p>Astuce : pour améliorer le flux de travail, nommer les fichiers à l'identique avec un numéro incrémenté en fin de nom.</p>
 	<p>Dans une animation de <i>sprite</i>, s’il s’agit de <strong>n’afficher plus rien</strong> (ce qui correspond à assigner la valeur <code>None</code> au champ de saisie), il faut cliquer <code>Record</code> dans <code>Animation</code> et <strong>manuellement sélectionner</strong> <code>None</code> dans le champ de <code>Sprite Renderer</code> : une <i>keyframe</i> correspondante apparait alors dans la <i>timeline</i>.</p>
 </section>
 <section id="curseur">
@@ -96,6 +109,6 @@
 	<a class="lien" href="https://docs.unity3d.com/Manual/9SliceSprites.html" target="_blank" title="9 slice sprite">Doc officielle : 9 slice sprite</a>
 </section>
 <footer>
-	<p>Le 29-03-2021</p>
+	<p>Le 08-10-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
