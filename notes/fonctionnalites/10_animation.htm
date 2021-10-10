@@ -10,7 +10,7 @@
 			<li><a href="#code">Côté code</a></li>
 			<li><a href="#blendtree">Blend tree</a></li>
 			<li><a href="#event">Animation event</a></li>
-			<li><a href="#personnage"></a>Personnage</li>
+			<li><a href="#personnage">Personnage</a></li>
 			<li><a href="#timeline">Timeline</a></li>
 		</ol>
 	</div>
@@ -158,7 +158,7 @@ _animator.Play("Base Layer.NomEtat", 0, 0f);
 	<p>Pour animer un objet, cliquer sur le bouton <code>+</code> de la fenêtre <code>Timeline</code> et choisir <code>Animation Track</code>. Ceci permet d'animer un objet à partir de son composant <code>Animator</code> (ce composant sera ajouté si l'objet n'en a pas déjà). Glisser dans le champ nouvellement apparu l'objet de la <code>Scene</code> que l'on veut animer, par exemple un personnage.</p>
 	<p>Maintenant, dans la partie de droite, glisser un <i>asset</i> d'animation, par exemple l'animation <i>Idle</i> du personnage ; à sa suite, ajouter l'animation <i>Walk</i> ; etc. De la sorte, on définit une séquence d'animations pour cet objet sur la base des animations dont il dispose.</p>
 	<p>Chaque bloc est <strong>déplaçable</strong>. Chaque bloc est aussi <strong>redimensionnable</strong> de façon à jouer l'animation en boucle (si paramétrée de la sorte dans l'<i>asset</i>). Les blocs sont <strong>superposables</strong> de façon à générer une transition entre les animations. Enfin, chaque bloc expose des paramètres en <code>Inspector</code>.</p>
-	<p>Une piste peut être <strong>réécrite>/strong>. Cliquer sur le bouton "3 points" de la piste et sélectionner <code>Add Override Track</code>. Puis éditer la séquence à notre convenance, par exemple en utilisant le bouton "rond rouge" qui sert à enregistrer des paramètres d'éditeur en une <i>keyframe</i>. Particularité : si on utilise une animation présentant également la <strong>translation</strong> (par exemple, le personnage qui marche se déplace vers l'avant sur une certaine distance), alors la piste de réécriture <strong>annule</strong> le déplacement, ce qui permet de paramétrer librement le déplacement, la rotation.</p>
+	<p>Une piste peut être <strong>réécrite</strong>. Cliquer sur le bouton "3 points" de la piste et sélectionner <code>Add Override Track</code>. Puis éditer la séquence à notre convenance, par exemple en utilisant le bouton "rond rouge" qui sert à enregistrer des paramètres d'éditeur en une <i>keyframe</i>. Particularité : si on utilise une animation présentant également la <strong>translation</strong> (par exemple, le personnage qui marche se déplace vers l'avant sur une certaine distance), alors la piste de réécriture <strong>annule</strong> le déplacement, ce qui permet de paramétrer librement le déplacement, la rotation.</p>
 	<p>La piste de réécriture peut enfin être <strong>convertie en séquence normale</strong> pour ensuite pouvoir être manipulée en déplacement, redimension et superposition. Pour cela, clic droit sur la séquence de la piste puis choisir <code>Convert To Clip Track</code>. Cette opération n'est pas nécessaire mais peut être utile en cas de réutilisation ou pour simplement harmoniser la <i>timeline</i>.</p>
 	<p>Les <i>keyframes</i> ne sont pas éditables directement comme dans la fenêtre <code>Animation</code>. Ici, il faut d'abord cliquer sur l'icone "courbes" pour afficher la représentation en courbes de Bézier, puis sélectionner les <i>keyframes</i> et les déplacer.</p>
 </section>
