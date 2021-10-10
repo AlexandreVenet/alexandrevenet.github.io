@@ -10,6 +10,8 @@
 			<li><a href="#code">Côté code</a></li>
 			<li><a href="#blendtree">Blend tree</a></li>
 			<li><a href="#event">Animation event</a></li>
+			<li><a href="#personnage"></a>Personnage</li>
+			<li><a href="#timeline">Timeline</a></li>
 		</ol>
 	</div>
 </section>
@@ -17,13 +19,15 @@
 	<h2>Créer une animation</h2>
 	<p>On peut créer une animation de bien des façons, en voici une procédure :</p>
 	<ul>
-		<li>sélectionner un <code>gameObject</code> qui sert de support à l'animation (il aura un composant <code>Animator</code>),</li>
-		<li>ouvrir la fenêtre <code>Animation</code>. Cliquer sur <code>Create</code>. Enregistrer un nouveau fichier de type <code>Animation clip</code>,</li>
-		<li>la <i>timeline</i> devient disponible. On réalise l'animation en appuyant sur le bouton rouge <code>Record</code> et en modifiant ce qui doit être animé (objet, propriétés). Toute modification dans Unity sera représentée dans la <i>timeline</i> par une propriété et des <i>keyframes</i>,</li>
+		<li>sélectionner un <code>gameObject</code> qui sert de support à l'animation (il aura un composant <code>Animator</code>). Comment choisir cet objet ? Parce qu'il est celui que l'on veut animer ou parce qu'il contient des objets enfants que l'on veut animer,</li>
+		<li>ouvrir la fenêtre <code>Window > Animation > Animation</code>. Cliquer sur <code>Create</code>. Enregistrer un nouveau fichier <code>Animation clip</code>,</li>
+		<li>la <i>Timeline</i> devient disponible. On réalise l'animation en appuyant sur le bouton rouge <code>Record</code> ou bien en modifiant une propriété que l'on choisit en cliquant sur le bouton <code>Add Property</code>. Toute modification dans Unity sera représentée dans la <i>timeline</i> par une propriété et des <i>keyframes</i>,</li>
+		<li>une autre représentation consiste en des courbes de Bézier où l'animation dans les intervalles entre <i>keyframes</i> (pour ajuster la fenêtre, tout sélectionner puis taper la touche <code>F</code>),</li>
 		<li>si l'objet support ne l'a pas déjà, Unity lui attache le composant <code>Animator</code>.</li>
 	</ul>
 	<p>Une animation doit avoir <strong>au moins 1 <i>keyframe</i></strong> enregistrant la propriété à animer ; sinon, rien n’est animé.</p>
 	<p><strong>L’animation verrouille les propriétés animées</strong>. Donc, impossible de modifier ces valeurs par code dans le même temps que l’animation. Si on utilise <code>Animator</code>, alors il faut changer d’état pour ensuite faire quoi que ce soit.</p>
+	<p>Un fichier d'animation a des propriétés : sélectionner le fichier pour les exposer en <code>Inspector</code>.</p>
 </section>
 <section id="controller">
 	<h2>Animation controller</h2>
@@ -119,7 +123,46 @@ _animator.Play("Base Layer.NomEtat", 0, 0f);
 	</ul>
 	<p><strong>Attention</strong>, une transition s'arrêtant avant l'<code>animation event</code> ne déclenche pas ce dernier.</p>
 </section>
+<section id="personnage">
+	<h2>Personnage</h2>
+	<p>Un <strong>personnage</strong> (<i>character</i>) est un <i>mesh</i> comprenant un <strong>squelette</strong> (<i>skeleton</i>, <i>rig</i>) et éventuellement un <strong>ensemble d'animations</strong>. Exemple : un humanoïde qui marche, court, saute et salue.</p>
+	<p>Le fichier importé peut ne pas être immédiatement utilisable, il convient donc d'adapter le fichier à nos besoins. Sélectionner le fichier et consulter l'<code>Inspector</code>.</p>
+	<p>Onglet <code>Rig</code> : </p>
+	<ul>
+		<li>L'<code>Animation Type</code> détermine si le personnage est <strong>non animé</strong>, animé avec l'ancien système d'animation d'Unity (compatibilité), ou animé en tant que <strong>générique</strong> ou <strong>humanoïde</strong>. Générique/humanoïde ou bien générique/générique ne sont pas compatibles et par conséquent on ne peut pas utiliser une animation de l'un avec l'autre ; en revanche, le type humanoïde permet d'utiliser des animations d'autres humanoïdes pour celui que l'on paramètre (établissement d'une bibliothèque d'animations).</li>
+		<li>En <code>Humanoid</code>, une coche à côté du bouton <code>Configure...</code> signale que le squelette est complet. Dans le cas contraire, cliquer sur le bouton pour compléter le squelette. On entre alors en édition : la <code>Scene</code> présente le <i>mesh</i>, les os, leur hiérarchie et l'<code>Inspector</code> affiche les paramètres de  l'<i>asset</i> <strong><i>avatar</i></strong>. L'<i>avatar</i> est une carte générale de l'humanoïde dont les parties réfèrent aux objets de la <code>Hierarchy</code>. Il se peut qu'il manque des références ; dans ce cas, renseigner les objets manquants. L'<i>avatar</i> présente également un onglet <code>Muscles & Settings</code> définissant comment le personnage est déformé par le squelette dans différentes poses par défaut (déplacer les <i>sliders</i> pour l'observer).</li>
+	</ul>
+	<p>Où trouver des animations d'humanoïdes prêts à l'emploi ? Sur le site d'<strong>Adobe Mixamo</strong> ou bien dans la suite de <i>packages</i> <strong>FBX Mocap Librairy</strong> du site d'Unity <i>AssetStore</i>.</p>
+	<p>Onglets <code>Animation</code>.</p>
+	<ul>
+		<li>Si l'objet contient des animations, on voit ici tous leurs paramètres (exemple : boucler ou non).</li>
+	</ul>
+	<p>Par défaut, un personnage est en <strong><i>T pose</i></strong> ou une pose équivalente.</p>
+	<p>Lors de l'import, l'objet peut avoir un composant <code>Animator</code> mais pas d'<code>Animator Controller</code> ; il faut donc créer ce dernier dans Unity et le renseigner dans le composant <code>Animator</code>.</p>
+	<p>L'objet contient des animations ? Parfait. Mais il faut peut-être paramétrer le contrôleur qui, lui, est complètement vide. Pour ajouter une animation d'un personnage au contrôleur :</p>
+	<ul>
+		<li>dans <code>Project</code>, déplier tout dossier ou <i>asset</i> pour identifier le fichier d'animation,</li>
+		<li>cliquer-déplacer l'animation dans la fenêtre <code>Animator</code>, ce qui y ajoute l'état correspondant.</li>
+	</ul>
+</section>
+<section id="timeline">
+	<h2>Timeline</h2>
+	<p><strong><i>Timeline</i></strong> est un module complémentaire d'animation.</p>
+	<ul>
+		<li>Créer un <code>GameObject</code> et le nommer "MaSequence".</li>
+		<li>Ouvrir <code>Windows > Sequencing > Timeline</code>.</li>
+		<li>Cliquer sur <code>Create</code>.</li>
+		<li>Nommer et enregistrer le fichier dans le répertoire des <i>assets</i>.</li>
+		<li>La fenêtre affiche maintenant deux parties : à gauche : le type de pistes (<i>track</i>), à droite : la <i>timeline</i>. Un composant <code>Playable Director</code> a aussi été ajouté automatiquement à l'objet avec quelques paramètres (boucle, démarrage à <code>Awake</code>...).</li>
+	</ul>
+	<p>Pour animer un objet, cliquer sur le bouton <code>+</code> de la fenêtre <code>Timeline</code> et choisir <code>Animation Track</code>. Ceci permet d'animer un objet à partir de son composant <code>Animator</code> (ce composant sera ajouté si l'objet n'en a pas déjà). Glisser dans le champ nouvellement apparu l'objet de la <code>Scene</code> que l'on veut animer, par exemple un personnage.</p>
+	<p>Maintenant, dans la partie de droite, glisser un <i>asset</i> d'animation, par exemple l'animation <i>Idle</i> du personnage ; à sa suite, ajouter l'animation <i>Walk</i> ; etc. De la sorte, on définit une séquence d'animations pour cet objet sur la base des animations dont il dispose.</p>
+	<p>Chaque bloc est <strong>déplaçable</strong>. Chaque bloc est aussi <strong>redimensionnable</strong> de façon à jouer l'animation en boucle (si paramétrée de la sorte dans l'<i>asset</i>). Les blocs sont <strong>superposables</strong> de façon à générer une transition entre les animations. Enfin, chaque bloc expose des paramètres en <code>Inspector</code>.</p>
+	<p>Une piste peut être <strong>réécrite>/strong>. Cliquer sur le bouton "3 points" de la piste et sélectionner <code>Add Override Track</code>. Puis éditer la séquence à notre convenance, par exemple en utilisant le bouton "rond rouge" qui sert à enregistrer des paramètres d'éditeur en une <i>keyframe</i>. Particularité : si on utilise une animation présentant également la <strong>translation</strong> (par exemple, le personnage qui marche se déplace vers l'avant sur une certaine distance), alors la piste de réécriture <strong>annule</strong> le déplacement, ce qui permet de paramétrer librement le déplacement, la rotation.</p>
+	<p>La piste de réécriture peut enfin être <strong>convertie en séquence normale</strong> pour ensuite pouvoir être manipulée en déplacement, redimension et superposition. Pour cela, clic droit sur la séquence de la piste puis choisir <code>Convert To Clip Track</code>. Cette opération n'est pas nécessaire mais peut être utile en cas de réutilisation ou pour simplement harmoniser la <i>timeline</i>.</p>
+	<p>Les <i>keyframes</i> ne sont pas éditables directement comme dans la fenêtre <code>Animation</code>. Ici, il faut d'abord cliquer sur l'icone "courbes" pour afficher la représentation en courbes de Bézier, puis sélectionner les <i>keyframes</i> et les déplacer.</p>
+</section>
 <footer>
-	<p>Le 26-02-2021</p>
+	<p>Le 10-10-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>

@@ -1,6 +1,7 @@
 <section>
 	<h1>Audio</h1>
 	<p class="couleurGris">Les <i>audio clips</i> sont joués par un <i>audio listener</i> depuis des <i>audio sources</i>  qui sont elle-mêmes traitées par des <i>audio groups</i> gérés par l'<i>Audio Mixer</i>.</p>
+	<p>L'audio concerne la bande-son musicale, l'ambiance sonore et l'effet sonore.</p>
 	<div class="blocSommaire">
 		<p>Sommaire</p>
 		<ol id="sommaire">
@@ -12,6 +13,7 @@
 			<li><a href="#audiogroup">Audio group</a></li>
 			<li><a href="#mixers">Mixers audio</a></li>
 			<li><a href="#effets">Effets</a></li>
+			<li><a href="#evenements">Audio events</a></li>
 			<li><a href="#pratiques">Pratiques, optimisations</a></li>
 		</ol>
 	</div>
@@ -28,7 +30,8 @@
 		<li>sélectionner un <code>gameObject</code>,</li>
 		<li>ajouter le composant <code>Audio source</code>,</li>
 		<li>à la propriété <code>AudioClip</code> assigner un <i>asset</i> audio,</li>
-		<li>paramétrer le <strong>volume</strong>, si c'est un fichier en <srong>boucle</strong> ou non, si le son doit être lancé en <code>Awake</code> ou non, etc.</li>
+		<li>paramétrer le <strong>volume</strong>, si c'est un fichier en <srong>boucle</strong> ou non, si le son doit être lancé en <code>Awake</code> ou non, etc., </li>
+		<li>le graphe représente le volume sonore selon la distance au son. On peut modifier cette courbe. La barre verticale rouge représente la position de l'<i>audio listener</i>.</li>
 	</ul>
 	<p>Pour modifier la spatialisation :</p>
 	<ul>
@@ -38,8 +41,9 @@
 </section>
 <section id="audiolistener">
 	<h2>Audio listener</h2>
-	<p>Le son est <strong>joué à partir</strong> d'un <strong><i>audio listener</i></strong>, objet qui détecte un son produit à une position donnée (avec ou sans spatialisation) et le joue à l'utilisateur.</p>
-	<p><strong>Un seul</strong> <code>audio listener</code> par scène. La <strong>caméra</strong> par défaut est dotée d'un tel composant.</p>
+	<p>Le son est <strong>joué à partir</strong> d'un <strong><i>audio listener</i></strong>, objet qui détecte un son produit à une position donnée (avec ou sans spatialisation) et le joue à l'utilisateur. C'est un peu l'oreille de la scène.</p>
+	<p><strong>Un seul</strong> <i>audio listener</i> par scène.</p>
+	<p>La <strong>caméra</strong> par défaut est dotée d'un tel <i>audio listener</i>. On peut préférer l'attribuer à l'objet du <i>player</i>, par exemple dans un jeu à caméra fixe où le sons dépendent de la position du <i>player</i> plutôt que de la caméra.</p>
 </section>
 <section id="script">
 	<h2>Par script</h2>
@@ -78,6 +82,30 @@ void LancerSon()
 	_as.PlayOneShot(_audioClips[Random.Range(0,_audioClips.Length)], 1.0f);
 }
 	</code></pre>
+	<p>Déterminer quand une <i>audio source</i> a fini de jouer :</p>
+	<pre><code>
+private AudioSource _source;
+
+private void Update()
+{
+	if(Input.GetKeyDown(KeyCode.Space))
+	{
+		StopAllCoroutines();
+		_source.Play();
+		StartCoroutine(CheckComplete());
+	}
+}
+
+public IEnumerator CheckComplete()
+{
+	yield return new WaitUntil(() => // attendre que [contenu de la lambda]
+	{
+		_source.isPlaying == false;
+	});
+	// si cela a lieu
+	Debug.Log("lecture terminée");
+}
+	</code></pre>
 </section>
 <section id="reverbzones">
 	<h2>Audio Reverb Zones</h2>
@@ -99,12 +127,13 @@ void LancerSon()
 	<p>Créer dans <code>Project</code> un dossier <code>Mixers</code> puis clic droit <code>Create > Audio Mixer</code>. L'<strong><i>audio mixer</i></strong> propose déjà des propriétés en cliquant dessus ou sur le triangle à côté de son nom.</p>
 	<p>Double-cliquer dessus ouvre la fenêtre <code>Audio Mixer</code>. Chaque <i>mixer</i> contient des contrôles de piste : solo, mute, effets de sortie.</p>
 	<p>Par défaut, le <code>Master</code> est l'<i>audio group</i> principal ou racine, contenant tous les autres. Par exemple, en en modifiant le volume, on contrôle ses enfants en cascade.</p>
-	<p>On peut créer des <strong><i>Groups</i></strong> (ex : SFX, music...) : les <code>AudioClip</code> sont joués dans des <code>AudioSource</code> qui prennent en <strong>sortie</strong> le <i>group</i> choisi. Pour cela, d'abord ajouter un <i>group</i> (clic droit sur la ligne ou bouton <code>+</code>). Ensuite, ajouter un <code>gameObject</code> à la scène, lui attacher un composant <code>AudioSource</code> puis renseigner dans le champ <code>Output</code> le <i>group</i> voulu. Les <i>groups</i> permettent de paramétrer la sortie des <code>AudioSource</code> dans un seul <i>mixer</i>.</p>
+	<p>On peut créer des <strong><i>Groups</i></strong> (ex : SFX, music...) : les <code>AudioClip</code> sont joués dans des <code>AudioSource</code> qui prennent en <strong>sortie</strong> le <i>group</i> choisi. Pour cela, d'abord ajouter un <i>group</i> (clic droit sur la ligne ou bouton <code>+</code>). Ensuite, ajouter un <code>gameObject</code> à la scène, lui attacher un composant <code>AudioSource</code> puis renseigner dans le champ <code>Output</code> le <i>group</i> voulu. Les <i>groups</i> permettent de paramétrer la sortie des <code>AudioSource</code> dans un seul <i>mixer</i>. Si l'on veut que le <i>Master</i> contrôle tous les autres, il suffit créer les <i>groups</i> en tant qu'enfants du <i>group Master</i> avec un clic droit sur ce dernier.
+</p>
 	<p>Ensuite, on peut <strong>contrôler un effet par script</strong>, en <strong>exposant un paramètre d'effet</strong> :</p>
 	<ul>
 		<li>cliquer sur un <i>mixer</i> (ex : <i>group</i> SFX),</li>
-		<li>dans l'<code>Inspector</code>, faire un <strong>clic droit sur un paramètre d'effet</strong> (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code>,</li>
-		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis <strong>clic droit sur un nom pour renommer</strong> (ex : SFXVolume),</li>
+		<li>dans l'<code>Inspector</code>, faire un <strong>clic droit sur un paramètre d'effet</strong> (ex : <code>Attenuation > Volume</code>) et choisir <code>Expose</code> ; un petite flèche apparaît,</li>
+		<li>dans la fenêtre <code>Audio Mixer</code>, ouvrir le menu <code>Exposed Parameters</code> puis <strong>clic droit sur un nom pour renommer</strong> (ex : "SFXVolume" ou le même nom que le paramètre exposé),</li>
 		<li>coder :</li>
 	</ul>
 	<pre><code>
@@ -127,6 +156,43 @@ void SetVolume(float value)
 {
 	float volume = Mathf.Lerp(-80, 20, value);
 	_audioMixerGroup.audioMixer.SetFloat(_parametre, volume);
+}
+	</code></pre>
+	<p>Réaliser un <strong><i>fade-in</i></strong> :</p>
+	<pre><code>
+[SerializeField] private AudioMixer _mixer; // le mixer à manipuler
+[SerializeField] private float _fadeTime = 15f; // un temps de transition
+
+private void Start()
+{
+	StartCoroutine(FadeIn());
+}
+
+public IEnumerator FadeIn()
+{
+   float normalVolume = 0f; // init
+   while(normalVolyme <= 1f)
+   {
+   	_mixer.SetFloat("Volume",NormToDecibel(normalVolume));
+      normalVolume += (1f / _fadeTime) * Time.deltaTime;
+      yield return null;
+   }
+}
+
+// Fonction de conversion d'une valeur en décibels
+public float NormToDecibel(float normal)
+{
+   float db;
+   if(normal != 0)
+   {
+      db = 20f * Mathf.Log10(normal);
+   }
+   else
+   {
+      db = -80f;
+   }
+
+   return decibel
 }
 	</code></pre>
 </section>
@@ -163,6 +229,31 @@ void SetVolume(float value)
 	</ul>
 	<p>La plupart des modifications peuvent s'effectuer en édition. D'autres nécessitent de passer en mode <code>Game</code>. Unity propose un bouton <code>Edit in Playmode</code> (fenêtre <code>Audio Mixer</Code> ou dans l'<code>Inspector</code> d'un <i>mixer</i>) permettant d'effectuer des modifications qui sont <strong>enregistrées même en mode simulation</strong>.</p>
 </section>
+<section id="evenements">
+	<h2>Audio events</h2>
+	<p>Un <strong>événement</strong> ici consiste en l'appel d'une fonction qui se déclenche à un certain moment dans une animation.</p>
+	<p>Par exemple : le bruit de pas d'un personnage qui marche.</p>
+	<ul>
+		<li>Sélectionner une animation dans les <i>assets</i>, cliquer sur l'onglet <code>Animation</code> dans l'<code>Inspector</code> et ouvrir la catégorie <code>Events</code> (cliquer sur le triangle).</li>
+		<li>Se déplacer dans la prévisualisation pour se positionner à une certaine <i>frame</i> de l'animation. Cliquer sur le bouton blanc pour ajouter un événement. Renseigner un nom pour la fonction. On peut ajouter autant d'événements que nécessaire.</li>
+		<li>Cliquer sur <code>Apply</code>.</li>
+		<li>Sélectionner l'objet qui possède le composant <code>Animator</code> et qui utilise cette animation.</li>
+		<li>Créer un nouveau script et l'attacher en frère ou voisin du composant <code>Animator</code>.</li>
+		<li>Ajouter un composant <code>AudioSource</code> et y renseigner l'<i>audio clip</i> de bruit de pas. Décocher <code>Play On Awake</code> et </code>Loop</code>.</li>
+		<li>Coder.</li>
+	</ul>
+	<pre><code>
+private AudioSource _source;
+private void Awake()
+{
+   _source = GetComponent<AudioSource>();
+}
+public void NomFonctionEvenement()
+{
+   _source.Play();
+}
+	</code></pre>
+</section>
 <section id="pratiques">
 	<h2>Pratiques, optimisations</h2>
 	<a class="lien" href="https://gamedevbeginner.com/10-unity-audio-tips-that-you-wont-find-in-the-tutorials/" target="_blank" title="10 Unity audio sur GameDevBeginner">10 Unity audio sur GameDevBeginner</a>
@@ -178,17 +269,17 @@ void SetVolume(float value)
 	<a class="lien" href="https://docs.unity3d.com/Manual/class-AudioClip.html" target="_blank" title="Manuel : classe AudoClip">Manuel : classe AudioClip</a>
 	<p>En vrac :</p>
 	<ul>
-		<li><i>audio clip</i> <code>Force To Mono</code> pour un usage 3D, car la stéréo du fichier s'ajoute au traitement 3D déjà effectué,</li>
-		<li><i>audio clips</i> courts : <code>Decompress on Load</code>,</li>
-		<li><i>audio clips</i> plus longs : <code>Compressed in Memory</code>,</li>
-		<li><i>audio clips</i> de musiques et ambiances : <code>Streaming</code>,</li>
-		<li><i>audio clip</i> nécessaire plus tard dans la séquence de jeu : <code>Load In Background</code>,</li>
-		<li>propriété <code>Preload Audio Data</code> pour éviter les retards de chargement des données audio,</li>
+		<li><i>audio clip</i> <code>Force To Mono</code> pour les sons 3D, car la stéréo du fichier s'ajoute au traitement 3D déjà effectué,</li>
+		<li>cocher la case <code>Load In Background</code> pour les sons qui seront nécessaires plus tard dans la séquence de jeu ou les <i>audio clips</i> longs et pour éviter de bloquer le jeu pour charger ce fichier (décocher pour les courts),</li>
+		<li>sons courts (max 5 secondes) joués à la demande : <code>Load Type</code> à <code>Decompress on Load</code> (tout est chargé en mémoire au lancement de la scène et donc disponible rapidement),</li>
+		<li>sons plus longs : <code>Load Type</code> à <code>Compressed in Memory</code>,</li>
+		<li>musiques et ambiances : <code>Load Type</code> à <code>Streaming</code> (le fichier n'est pas chargé d'un seul coup mais au fur et à mesure),</li>
+		<li><code>Preload Audio Data</code> pour éviter les retards de chargement des données audio,</li>
 		<li>les sons ne sont pas ou plus utilisés ? Les supprimer de la mémoire avec <code>audioClip.UnloadAudioData()</code> (Unity ne semble pas le faire automatiquement même s'il n'y a plus d'<i>Audio source</i> dans la scène),</li>
 		<li>préférer désactiver le composant <code>AudioSource</code> plutôt qu'utiliser la propriété <code>Mute</code> qui conserve des données audio ; à moins d'avoir besoin de ces information, évidemment.</li>
 	</ul>
 </section>
 <footer>
-	<p>Le 17-05-2021</p>
+	<p>Le 10-10-2021</p>
 </footer>
 <script src="../../js/testParent.js"></script>
