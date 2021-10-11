@@ -1,0 +1,140 @@
+<section>
+	<h1>Cinemachine</h1>
+	<p class="couleurGris">Module supplémentaire de gestion de la caméra.</p>
+	<a href="https://learn.unity.com/tutorial/cinemachine?language=en" class="lien" title="Learn : Cinemachine" target="_blank">Learn : Cinemachine</a>
+	<div class="blocSommaire">
+		<p>Sommaire</p>
+		<ol id="sommaire">
+			<li><a href="#presentation">Présentation</a></li>
+			<li><a href="#parametres">Paramètres généraux</a></li>
+			<li><a href="#virtual">Virtual camera</a></li>
+			<li><a href="#free">FreeLook camera</a></li>
+			<li><a href="#track">Track & cart</a></li>
+			<li><a href="#state">State Driven camera</a></li>
+			<li><a href="#clear">Clearshot</a></li>
+			<li><a href="#timeline">Avec Timeline</a></li>
+			<li><a href="#postprocess">Post-processing</a></li>
+			<li><a href="#2d">En 2D</a></li>
+		</ol>
+	</div>
+</section>
+<section id="presentation">
+	<h2>Présentation</h2>
+	<p><i><strong>Cinemachine</strong></i> est un <i>package</i> à installer depuis le <i>Package Manager</i>. Il propose un ensemble d'outils pour la caméra. Une fois installé, la barre de menu propose une nouvelle entrée &quot;Cinemachine&quot;.</p>
+  <p>Tout nouvelle caméra ajoutée avec le menu &quot;Cinemachine&quot; modifie les paramètres de la caméra de la scène (une icone rouge apparait) en ajoutant le composant <code>CinemachineBrain</code>. Cela ajoute également des <strong>caméras virtuelles</strong> à la scène.</p>
+</section>
+<section id="parametres">
+	<h2>Paramètres généraux</h2>
+	<p>La propriété <code>Priority</code> permet de réaliser des transitions entre caméras. Par exemple, la caméra A avec priorité à 10 laissera la place à la caméra B qui a une priorité de 100. Le type de transition se définit dans le composant <code>CinemachineBrain</code> qui est ajouté automatiquement à la caméra : voir la propriété <code>Default Blend</code> et sa durée en seconde.</p>
+  <p><code>Follow</code> définit la caméra de façon à ce qu'elle suive l'objet référencé.</p>
+  <p><code>Look At</code> définit la caméra de façon à ce qu'elle pointe vers l'objet référencé.</p>
+  <p>En fenêtre <code>Game</code> (pas nécessairement en mode <code>Play</code>), un ensemble d'éléments visuels permettent de paramétrer précisément la caméra.</p>
+  <p><code>Lens &gt; Field of view</code> définit la profondeur du champ visuel.</p>
+</section>
+<section id="virtual">
+	<h2>Virtual camera</h2>
+	<p>La <code>Virtual Camera</code> permet de définir une caméra personnalisée.</p>
+  <p><code>Body > Follow Offset</code> définit le décalage entre l'objet suivi et la caméra.</p>
+  <p><code>Aim > Tracked Object Offset</code> définit le décalage entre la cible de la caméra et la caméra elle-même.</p>
+  <p>La fluidité du suivi peut être modifiée avec les valeurs de <code>Damping</code> ; modifier les <i>sliders</i> pour ce faire.</p>
+</section>
+<section id="free">
+	<h2>FreeLook camera</h2>
+	<p>La <code>FreeLook Camera</code> caméra propose un contrôle libre.</p>
+	<p>Sous <code>Axis Control</code> se trouvent les propriétés relatives au déplacement de la caméra autour de sa cible. Par défaut, les contrôles sont effectifs, mais pour les désactiver il suffit d'effacer le contenu des propriétés <code>Input Axis Name</code>.</p>
+	<p>Modifier les paramètres sous <code>Orbits</code> pour définir l'espace de déplacement à partir de trois anneaux alignés en y.</p>
+	<p>Des contrôles plus fins et spécifiques se trouvent ensuite sous les entrées &quot;<i>rig</i>&quot;.</p>
+	<p>Le champ de vision peut être modifié selon la position de la caméra. Pour cela, cocher <code>Use Common Lens Settings</code>, puis modifier la valeur dans, par exemple, <code>BottomRig > Lens > Field Of View</code>.</p>
+	<p>La transition entre chaque anneau est contrôlée par <code>Orbits > Spline Tension</code>.</p>
+	<p>Les propriétés peuvent être contrôlée par une <strong>animation</strong> ou par <strong>script</strong>. Exemple :</p>
+	<pre><code>
+public CinemachineFreeLook m_cam;
+private CinemachineOrbitalTransposer.AxisState _xAxis;
+private void Update()
+{
+m_cam.m_XAxis.Value = 0.5f;
+m_cam.m_YAxis.Value = 0.1f;
+}
+	</code></pre>
+</section>
+<section id="track">
+	<h2>Track & cart</h2>
+	<p>La <code>Dolly Track with Cart</code> propose un objet en mouvement (<i>dolly cart</i>) qui suit un parcours (<i>dolly track</i>) défini par l'utilisateur et ponctué d'étapes-clés (<i>waypoints</i>).</p>
+	<p>Les étapes sont liées par courbes de Bézier, ce qui lisse les déplacements.</p>
+	<p>Pour effectuer le déplacement de la caméra, on peut passer par une animation.</p>
+	<ul>
+		<li>Positionner le <i>track</i>.</li>
+		<li>Y définir, positionner les <i>waypoints</i>.</li>
+		<li>Pour le <i>cart</i>, définir son unité (<code>Position Units</code>) : en mètre ou normalisée.</li>
+		<li>Placer la caméra en enfant du <i>cart</i>.</li>
+		<li>Sélectionner le <i>cart</i> et y ajouter une animation (composant <code>Animator</code>, fenêtre <code>Animation</code>...).</li>
+		<li>Dans la fenêtre <code>Animation</code>, animer la propriété <code>Position</code> du <i>cart</i>. Exemple : si l'unité choisie est normalisée, alors ce sont des valeurs entre 0 et 1 qui seront utilisées.</li>
+	</ul>
+	<p>Cocher la case dans <code>Body > Auto Dolly > Enabled</code> pour que la caméra passe automatiquement d'un <i>waypoint</i> à un autre pour suivre au mieux sa cible.</p>
+</section>
+<section id="state">
+	<h2>State Driven camera</h2>
+	<p>La <i>State Driven camera</i> permet de passer d'une caméra virtuelle à une autre sur la base d'<strong>états</strong>.</p>
+	<p>Ajouter cette caméra génère un objet <code>CM StateDrivenCamera1</code>. Les champs <code>Virtual Camera Children</code> accueillent les références de caméra virtuelles qui vont être utilisées. Cela peut ne pas être toutes les caméras de la scène. On peut glisser-déposer les caméras virtuelles en tant qu'enfant de l'objet <code>CM StateDrivenCamera1</code> de façon à ce que cela renseigne automatiquement les champs.</p>
+	<p>Renseigner un <code>Animator</code> dans le champ <code>Animated Target</code>. En effet, un <code>Animator</code> est un composant structuré en états, donc peut être utilisé comme référence (par exemple, celui du <i>Player</i>).</p>
+	<p>Les états sont détectés automatiquement et apparaissent dans le tableau. Dans la colonne <code>State</code>, on choisit l'état ; dans la colonne <code>Camera</code>, on choisit la caméra que l'on veut faire correspondre à cet état. La colonne <code>Wait</code> accueille un temps en secondes, temps d'attente entre le moment où l'objet passe à cet état et celui où Cinemachine activera cette caméra.</p>
+	<p>Par défaut, le passage d'un état à une autre fait l'objet d'une transition calculée automatiquement. Cette transition peut être paramétée dans <code>Default Blend</code> (type et durée).</p>
+	<p>On peut définir une (ou plusieurs) transition spécifique à un changement d'état, par exemple un <i>cut</i>. Pour cela, sous <code>Custom Blends</code>, cliquer sur <code>Create Asset</code>.</p>
+</section>
+<section id="clear">
+	<h2>Clearshot</h2>
+	<p>Dans certains jeux, le <i>gameplay</i> consiste en des caméras fixes qui ciblent (ou non) un personnage en mouvement. Lorsque le personnage entre dans une certaine zone, une autre caméra est automatiquement choisie à un autre angle de vue.</p>
+	<p>Pour cela, choisir dans le menu <code>Cinemachine > Create ClearShot Virtual Camera</code>. Un onjet <code>CM ClearShot1</code> est créé. On y déplace en enfants les caméras virtuelles que l'on va utiliser. Le composant attaché à cet objet permet également d'ajouter de nouvelles caméras (propriété <code>Virtual Camera Children</code>).</p>
+	<p>Définir ensuite l'objet dans <code>Look At</code> et éventuellement dans <code>Follow</code>. La <code>Priority</code> générale (ou spécifique de chaque caméra dans la liste des enfants) contrôle quelle caméra utiliser : une valeur élevée conduit à utiliser telle caméra plutôt que celles ayant une valeur plus basse. <code>Randomize Choice</code> détermine si le choix d'une caméra s'effectue aléatoirement ou non. <code>Default Blend</code> et <code>Custom Blends</code> définissent le type de transition et leur durée comme la caméra précédente.</p>
+	<p>Ensuite, sélectionner toutes les caméras enfants et leur ajouter le composant <code>Cinemachine Collider</code>.</p>
+	<ul>
+	 <li><code>Collide Against</code> détermine les <i>layers</i> pris en compte pour la collision.</li>
+	 <li><code>Preserve Line Of Sight</code> si la caméra reste en place ou non.</li>
+	 <li><code>Optimal Target Distance</code> détermine à quel point la caméra est choisie.</li>
+	</ul>
+</section>
+<section id="timeline">
+	<h2>Avec Timeline</h2>
+	<p>Prenons l'exemple d'une scène par défaut et ajoutons-lui un cube. Attacher à la caméra le composant <code>CinemachineBrain</code>. Cliquer-déplacer dans la fenêtre <code>Timeline</code> la caméra et choisir <code>CinemachineTrack</code>. Puis clic droit dans la partie droite de la fenêtre et choisir <code>Add Cinemachine Shot Clip</code>.</p>
+	<p>Dans l'<code>Inspector</code>, renseigner dans le champ la caméra virtuelle ou bien cliquer sur <code>Create</code> pour en créer une nouvelle. Les propriétés affichées sont celles de la caméra choisie. Par exemple, renseigner le champ <code>Look At</code> pour orienter la caméra vers le cube. De la sorte, rien de plus n'est à animer et la rotation de la caméra est calculée dynamiquement.</p>
+	<p>Sous la catégorie <code>Aim</code>, les propriétés <code>Dead Zone Width</code> et <code>Dead Zone Height</code> définissent l'espace où la cible peut évoluer sans que la caméra ne se déplace. Si la cible sort de la zone, alors la caméra la suivra.</p>
+	<p>On peut ajouter un autre bloc à la suite du premier (dans la partie droite de <code>Timeline</code>, clic droit puis <code>Add Cinemachine Shot Clip</code> puis créer une nouvelle caméra). Ici, renseigner le champ <code>Follow</code> pour voir que <code>Timeline</code> passe automatiquement d'une caméra de suivi à une autre par un <i>cut</i> cinématographique. Superposer les deux blocs provoquera une transition entre les deux caméras (rotation et translation sont mélangées dans l'intervalle).</p>
+	<p>Pour composer avec la caméra <code>Dolly Track with Cart</code>, utiliser dans <code>Timeline</code> la piste <code>Animation Track</code>. Cliquer sur le bouton enregistrer. Puis, aux étapes désirées, paramétrer la <code>Body > Path Position</code>.</p>
+	<p><code>Timeline</code> propose également l'ajout de piste spéciale : clic droit puis <code>Cinemachine.Timeline > Cinemachine Track</code>. Dans la partie droite, ajouter un bloc par clic droit puis <code>Add Cinemachine Shot Clip</code> et y renseigner une première caméra virtuelle. Puis faire de même avec une seconde caméra. <code>Timeline</code> passera d'une caméra à une autre automatiquement.</p>
+</section>
+<section id="postprocess">
+	<h2>Post-processing</h2>
+	<p>Prenons l'exemple d'une scène qui contient une <code>Timeline</code>. On y trouve 3 caméras virtuelles, animées, et qui se succèdent chacune à une certaine durée.</p>
+	<p>Sélectionner la <strong>caméra principale</strong> (pas les caméras virtuelles). Attribuer un <i>layer</i> <code>Post Processing</code> (aussi à ses enfants si c'est demandé). Lui ajouter un composant <code>Post Process Layer</code>. Définir son <code>Layer</code> à <code>Post Processing</code>.</p>
+	<p>On veut que les effets soient partagés entre les caméras, c'est-à-dire des effets <strong>globaux</strong>. Pour cela, ajouter à la caméra un composant <code>Post Process Volume</code> et cocher <code>Is Global</code>. Cliquer sur <code>New</code> pour créer un nouveau profil et paramétrer les effets.</p>
+	<p>Maintenant, sélectionner une <strong>caméra virtuelle</strong>. Dans le composant <code>Cinemachiine Virtual Camera</code>, tout en bas dans <code>Add Extension</code>, sélectionner <code>cinemachinePostProcessing</code>. Cliquer sur <code>New</code> pour créer un nouveau profil. On peut maintenant ajouter des <strong>effets spécifiques à cette caméra</strong>.</p>
+	<p>On peut également superposer des effets sur certaines caméras. Pour cela, ajouter un <code>3D Object > Post-Process Volume</code> à la scène. Cet objet contient un <i>collider</i>. Sélectionner son <i>layer</i> à <code>Post Processing</code>.</p>
+	<ul>
+		<li><code>Blend Distance</code> définit la transition entre les effets actuels et ceux appliqués au volume lorsque la caméra entre dans le <i>collider</i>. Une valeur à 0 effectue une transition de type <i>cut</i> entre les deux effets.</li>
+	</ul>
+	<p>La transition entre les deux caméras peut aussi être contrôlée par la <code>Timeline</code>.</p>
+	<ul>
+		<li>Créer deux caméras virtuelles et les placer en succession dans l'animation : clic droit puis <code>Add Cinemachine Shot Clip</code> dans la partie droite.</li>
+		<li>Dans l'<code>Inspector</code>, glisser la caméra dans le champ <code>Virtual Camera</code>.</li>
+		<li>Leur ajouter un composant <code>Cinemachine Post Processing</code> et créer un nouveau profil pour chacun.</li>
+		<li>Paramétrer la profondeur de champ de la première caméra inverse de la seconde : net de près et flou de loin pour la première caméra puis flou de près et net de loin pour la seconde,</li>
+		<li>Superposer les blocs de façon à créer une transition automatique.</li>
+		<li>Résultat : on a simulé l'effet de changement de profondeur de champ de la caméra, le <i>pull focus effect</i>.</li>
+		<li>Noter que le composant <code>Cinemachine Post Processing</code> présente la propriété <code>Focus Tracks Target</code> qui opère l'effet <i>pull focus</i> automatiquement au changement de caméra et sur la base de la distance entre la cible et la caméra.</li>
+	</ul>
+</section>
+<section id="2d">
+	<h2>En 2D</h2>
+	<p>Cinemachine fonctionne aussi pour les projets 2D. Par exemple, on peut utiliser une <code>Virtual Camera</code> qui <code>Follow</code> le <i>player</i> dans un jeu de <i>scrolling</i> de côté.</p>
+	<ul>
+		<li>Le zoom est défini avec <code>Lens &gt; Orthographic Size</code>.</li>
+		<li>Les paramètres <code>Dead Zone Width/Height</code> définissent la zone à partir de laquelle la caméra se met à se suivre le <i>player</i>.</li>
+		<li>Dans la fenêtre <code>Game</code>, déplacer le gizmo, par exemple un peu à gauche de l'écran pour laisser plus de vue sur le décor qui apparaît à droite.</li>
+		<li><code>Dead Zone Height</code> à 0 et <code>Soft Zone Height</code> à 0.8 pour établir un retard de déplacement au saut du <i>player</i>.</li>
+		<li>Pour limiter le déplacement de la caméra à une zone, ajouter l'extension <code>CinemachineConfiner</code>. Ajouter un <i>collider</i> (le type <i>polygon</i> fonctionne également) sur un objet, par exemple sur l'image de fond du plateau. Renseigner cela dans la propriété <code>Bounding Shape 2D</code> de l'extension.</li>
+	</ul>
+</section>
+<footer>
+	<p>Le 11-10-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
