@@ -6,95 +6,100 @@
 		<ol id="sommaire">
 			<li><a href="#interfaces">Interfaces</a></li>
 			<li><a href="#canvas">Canvas</a></li>
-			<li><a href="resolutions">Exporter pour différentes résolutions</a></li>
+			<li><a href="#resolutions">Résolutions</a></li>
 			<li><a href="#composants">Composants</a></li>
 			<li><a href="#button">Composant Button</a></li>
 			<li><a href="#text">Composant Text</a></li>
-			<li><a href="#tmpro">Composant TextMeshPro</a></li>
+			<li><a href="#textmeshpro">Composant TextMeshPro</a></li>
 			<li><a href="#image">Composant Image</a></li>
 			<li><a href="#panel">Composant Panel</a></li>
 			<li><a href="#autres">Autres composants</a></li>
 			<li><a href="#responsive">Responsive design</a></li>
+			<li><a href="#ancres">Ancres</a></li>
+			<li><a href="#layout-group">Layout group</a></li>
+			<li><a href="#canvas-group">Canvas group</a></li>
 			<li><a href="#sorting">Sorting</a></li>
 			<li><a href="#layers">Layers</a></li>
 			<li><a href="#interactivite">Interactivité</a></li>
 			<li><a href="#code">Code</a></li>
-			<li><a href="#manetteclavier">Manette et clavier</a></li>
+			<li><a href="#manette-et-clavier">Manette et clavier</a></li>
 		</ol>
 	</div>
 </section>
 <section id="interfaces">
 	<h2>Interfaces</h2>
-	<p>Les <strong>interfaces</strong> sont distinguées selon qu'elles sont <strong>dans l'espace 3D ou non</strong> et qu'elles <strong>existent ou non dans le monde du jeu</strong> :</p>
+	<p>Les <strong>types d'interfaces</strong> sont distingués selon qu'elles sont <strong>dans l'espace 3D ou non</strong> et qu'elles <strong>existent ou non dans le monde du jeu</strong> :</p>
 	<ul>
 		<li>l'UI est <i><strong>diegetic</strong></i> lorsque les objets d'UI font partie de <strong>l'espace 3D et du monde du jeu</strong>. Elle suppose que le <strong>joueur sache</strong> où se trouvent ces objets. Exemple : un point de sauvegarde,</li>
 		<li>l'UI est <i><strong>non-diegetic</strong></i> lorsqu'il est fait usage d'un calque ou d'une couche d'UI (<i><strong>overlay UI</strong></i>) <strong>en dehors de l'espace 3D et du monde du jeu</strong>. C'est non le joueur qui intervient dessus mais l'<strong>utilisateur</strong>. Exemple : un HUD, un panneau de meilleurs scores visible par l'utilisateur seulement,</li>
-		<li>l'UI est <i><strong>spatial</strong></i> lorsqu'elle est une chose <strong>dans le monde 3D</strong> du jeu mais qui <strong>ne fait pas sens pour le monde du jeu</strong>. Exemple : particules ou <em>shaders</em> qui indiquent d'autres joueurs ou un lieu à atteindre ou son propre personnage jouable,</li>
+		<li>l'UI est <i><strong>spatial</strong></i> lorsqu'elle est une chose <strong>dans le monde 3D</strong> du jeu mais qui <strong>ne fait pas sens pour le monde du jeu</strong>. Exemple : particules ou <i>shaders</i> qui indiquent d'autres joueurs ou un lieu à atteindre ou son propre personnage jouable,</li>
 		<li>l'UI est <i><strong>meta</strong></i> lorsqu'elle est une chose <strong>dans le monde du jeu</strong> mais <strong>pas dans l'espace 3D</strong> et dont <strong>le joueur semble ne pas considérer</strong>. Exemple : traces d'eau de pluie sur la caméra que le joueur ignore complètement (sait-il qu'il est suivi par une caméra ?) mais que l'utilisateur considère.</li>
 	</ul>
 </section>
 <section id="canvas">
 	<h2>Canvas</h2>
-	<p>Créer un <code>UI &gt; Canvas</code> dans la scène. Cela ajoute un objet <code>EventSystem</code> nécessaire au fonctionnement et qui gère les événements utilisateur. On peut aussi ajouter dans la scène un <code>gameObject</code> déjà paramétré avec un composant d'UI, ce qui provoque automatiqument la création d'un <code>canvas</code> et de l'objet d'UI choisi à l'intérieur.</p>
-	<p>Un <strong>canevas ou une toile (<i>canvas</i>)</strong> est ce qu'utilise Unity pour afficher l'UI. Cela possède des <code>Render modes</code> :</p>
-	<ul>
-		<li>le <i><strong>Screen Space - Overlay</strong></i> : couche ou étiquette utilisée <strong>à l'écran</strong>. Si on met un <code>gameObject</code> 3D enfant du <code>canvas</code>, on ne le voit pas ; si on le met enfant de la caméra, on le voit,</li>
-		<li>le <i><strong>Screen Space - Camera</strong></i> : couche utilisée <strong>dans la vue de la caméra</strong>, associée à la caméra. Il faut renseigner la caméra dans un champ <code>Render Camera</code>. Ce <code>canvas</code> est projeté à une certaine distance de la caméra. La caméra verra un HUD à cette distance ; donc pour que le HUD soit visible :
-			<ul>
-			<li>modifier le <code>Clipping Plane : Far</code> de la caméra (ex : 10 en <code>Projection</code> perspective),</li>
-			<li><strong>ET</strong> modifier le <code>Plane Distance</code> du <code>canvas</code> (ex : 5).</li>
-			</ul>
-		</li>
-		<li>le <i><strong>World Space</strong></i> : les objets d'UI sont vus dans le monde. Cela autorise toutes sortes de manipulations en 3D des objets d'UI : plans dans le décor, bulles de dialogues... Limite : l'objet d'UI est une surface, donc possède une normale, donc il faut penser comment résoudre le problème des plans vus d'une face mais pas de l'autre.</li>
-</ul>
+ 	<p>Créer un <code>UI > Canvas</code> dans la scène. Cela ajoute un objet <code>EventSystem</code> nécessaire au fonctionnement et qui gère les événements utilisateur. On peut aussi ajouter dans la scène un <code>gameObject</code> déjà paramétré avec un composant d'UI, ce qui provoque automatiquement la création d'un <code>canvas</code> et de l'objet d'UI choisi à l'intérieur.</p>
+ 	<p>Un <strong>canevas ou une toile (<i>canvas</i>)</strong> est ce qu'utilise Unity pour afficher l'UI. Par défaut, ce <code>canvas</code> correspond à la taille de l'écran définie dans la fenêtre <code>Game</code>.</p>
+ 	<p>Ce <i>canvas</i> possède des <code>Render modes</code> :</p>
+ 	<ul>
+   	<li>le <i><strong>Screen Space - Overlay</strong></i> : couche ou vignette utilisée <strong>à l'écran au-dessus de tout</strong>. Si on met un <code>gameObject</code> 3D enfant du <code>canvas</code>, on ne le voit pas ; si on le met enfant de la caméra, on le voit,</li>
+   	<li>le <i><strong>Screen Space - Camera</strong></i> : couche utilisée <strong>dans la vue de la caméra</strong>, associée à la caméra. Il faut renseigner la caméra dans un champ <code>Render Camera</code>. Ce <code>canvas</code> est projeté à une certaine distance de la caméra. La caméra verra un HUD à cette distance ; donc pour que le HUD soit visible :
+	   	<ul>
+	      	<li>modifier le <code>Clipping Plane : Far</code> de la caméra (ex : 10 en <code>Projection</code> perspective),</li>
+	      	<li><strong>ET</strong> modifier le <code>Plane Distance</code> du <code>canvas</code> (ex : 5).</li>
+	   	</ul>
+   	</li>
+   	<li>le <i><strong>World Space</strong></i> : les objets d'UI sont vus dans le monde. Cela autorise toutes sortes de manipulations en 3D des objets d'UI : plans dans le décor, bulles de dialogues... Limite : l'objet d'UI est une surface, donc possède une normale, donc il faut penser comment résoudre le problème des plans vus d'une face mais pas de l'autre.</li>
+ 	</ul>
 </section>
 <section id="resolutions">
-	<h2>Exporter pour différentes résolutions</h2>
-	<p>On <strong>exporte/compile</strong> (<i><strong>build</strong></i>) un projet pour <strong>différentes résolutions</strong> selon le terminal utilisé. Par exemple : PC : haute résolution ; HTML5 web : intermédiaire ; mobile horizontal/vertical...</p>
-	<p>Ces résolutions peuvent être définies pour le produit final dans <code>File &gt; Build settings...</code>. On y choisit la <strong>destination</strong>.</p>
+	<h2>Résolutions</h2>
+	<p>On <strong>exporte</strong> (<i><strong>build</strong></i>) un projet pour <strong>différentes résolutions</strong> selon le terminal utilisé. Par exemple : PC : haute résolution ; HTML5 web : intermédiaire ; mobile horizontal/vertical...</p>
+	<p>Ces résolutions peuvent être définies pour le produit final dans <code>File > Build settings...</code>. On y choisit la <strong>destination</strong>.</p>
 	<p>Cliquer sur <code>Player settings</code> et sur l'encart <code>Resolution and Presentation</code>. Dans les <code>Supported Aspect Ratios</code>, on peut sélectionner les rapports qui nous intéressent selon la destination du projet. Or, ici on ne voit pas les effets de ces choix.</p>
 	<p>Pour voir l'effet des choix de résolution et ratios, aller dans la fenêtre <code>Game</code> et dans son menu, choisir les rapports disponibles pour cette destination (on peut ajouter d'autres résolutions et rapports en cliquant sur <code>+</code>).</p>
-	<p>Par exemple, si on veut exporter pour 16:9 à 1280x720px, il se peut qu'on ne voit qu'une partie du <code>canvas</code> d'UI et non plus sa totalité. Pour résoudre ce problème :</p>
-<ul>
-	<li>sélectionner le <code>canvas</code> et consulter le composant <code>Canvas Scaler</code>,</li>
-	<li>dans <code>UI Scale Mode</code>, choisir <code>Scale with screen size</code>,</li>
-	<li>dans la <code>Reference resolution</code> indiquer la résolution 1280x720,</li>
-	<li>il peut être nécessaire de poser le <code>Match</code> à 0.5 : mix entre l'utilisation de la hauteur et de la largeur.</li>
-</ul>
-<p>Une autre possibilité est de choisir <code>UI Scale Mode : Constant Pixel Size</code> et de modifier le <code>Scale Factor</code> de façon à gérer l'affichage (cela peut améliorer le lissage texte).</p>
-<p>Une fois ces paramètrages effectués, on <code>Build</code> au ratio 19:9.</p>
-<p>Pour exporter en <strong>WebGL</strong>, on peut définir la <strong>résolution du <i>canvas</i> web</strong>.</p>
-<p>Pour exporter sur <strong>Android</strong>, d'autres paramètres de <code>Resolution and Presentation</code> sont disponibles :</p>
-<ul>
-	<li><code>Aspect ratio mode</code> : défini ou personnalisé (utilise un <code>float</code>),</li>
-	<li><code>Orientation</code> : auto, portrait...</li>
-	<li><code>Allowed orientations for auto rotation</code> : si le paramètre précédent est <code>auto</code>.</li>
-</ul>
+	<p>Par exemple, si on veut exporter pour 16:9 à 1280x720px, il se peut qu'on ne voit qu'une partie du <code>canvas</code> d'UI et non plus sa totalité. Pour résoudre ce problème, on peut paramétrer le <i>canvas</i> de façon à ce qu'il s'adapte à la résolution de sortie :</p>
+	<ul>
+		<li>sélectionner le <code>canvas</code> et consulter le composant <code>Canvas Scaler</code>,</li>
+		<li>dans <code>UI Scale Mode</code>, choisir <code>Scale with screen size</code>,</li>
+		<li>dans la <code>Reference resolution</code> indiquer la résolution 1280x720. Cela pose, à titre indicatif, la définition de travail, celle pour laquelle l'UI a été réalisée,</li>
+		<li>il peut être nécessaire de poser le <code>Match</code> à 0.5 : association de la hauteur et de la largeur.</li>
+	</ul>
+	<p>Une autre possibilité est de choisir <code>UI Scale Mode : Constant Pixel Size</code> et de modifier le <code>Scale Factor</code> de façon à gérer l'affichage (cela peut améliorer le lissage texte).</p>
+	<p>Une fois ces paramètrages effectués, on <code>Build</code> au ratio 16:9.</p>
+	<p>Pour exporter en <strong>WebGL</strong>, on peut définir la <strong>résolution du <i>canvas</i> web</strong>.</p>
+	<p>Pour exporter sur <strong>Android</strong>, d'autres paramètres de <code>Resolution and Presentation</code> sont disponibles :</p>
+	<ul>
+		<li><code>Aspect ratio mode</code> : défini ou personnalisé (utilise un <code>float</code>),</li>
+		<li><code>Orientation</code> : auto, portrait...</li>
+		<li><code>Allowed orientations for auto rotation</code> : si le paramètre précédent est <code>auto</code>.</li>
+	</ul>
 </section>
 <section id="composants">
 	<h2>Composants</h2>
 	<p>Les objets d'UI sont nombreux et leur avantage est qu'ils se prêtent très bien à la déformation, <i>a contrario</i> des objets 3D dont les transformations risquent de nuire au fonctionnement ou au rendu (<i>collider</i>, texture... ). Les déformations s'effectuent avec l'outil <code>Rect Tool</code> (touche <code>T</code>).</p>
+	<p>Les objets 3D ont un composant <code>transform</code> ; en UI, les objets sont toujours en 3D mais sans épaisseur et ont un <code>Rect Rransform</code>. Ce composant fournit le nécessaire pour positionner et redimensionner l'objet selon son objet parent.</p>
 </section>
 <section id="button">
 	<h2>Composant Button</h2>
-	<p>Un <strong>bouton</strong> classique, Unity en fournit deux (<code>UI</code> ou <code>TextMeshPro</code>). Particularité : le composant <code>Image</code> du bouton peut être supprimé sans problème si jugé inutile, par exemple pour des boutons sans fond et n'ayant que du texte.</p>
+	<p>Un <strong>bouton</strong> classique, Unity en fournit deux versions : <code>UI</code> et <code>TextMeshPro</code>. Particularité : le composant <code>Image</code> du bouton peut être supprimé sans problème si jugé inutile, par exemple pour des boutons sans fond et n'ayant que du texte.</p>
 </section>
 <section id="text">
 	<h2>Composant Text</h2>
 	<a class="lien" href="https://learn.unity.com/tutorial/textmesh-pro-basics" title="Text Mesh Pro sur Unity Learn" target="_blank">Learn : Text Mesh Pro</a>
-	<p>Ajoutons à notre <code>canvas</code> un <code>UI &gt; Text</code>.</p>
+	<p>Ajoutons à notre <code>canvas</code> un <code>UI > Text</code>.</p>
 	<p>Il prend en charge des paramètres de fonte, style, etc.</p>
 	<p>En particulier, <code>Best fit</code> permet de contrôler la taille du texte selon la taille du <code>gameObject</code> ; par exemple : les valeurs 14 et 60 définissent les limites de taille de texte quelle que soit la taille de l'objet.</p>
-	<p>On peut ajouter des composants de <code>UI &gt; Effets</code> comme <code>Shadow</code> ou <code>Outline</code>.</p>
+	<p>On peut ajouter des composants de <code>UI > Effets</code> comme <code>Shadow</code> ou <code>Outline</code>.</p>
 	<p>Pour que le texte de ce genre soit lisse à l'écran, cela dépend non pas du texte mais du <code>canvas</code>. Par exemple : un <code>canvas</code> de <code>Render mode : World space</code> et un autre en <code>Screen Space - Overlay</code> qui contient du texte. Le premier est très petit par rapport au second. La solution est de sélectionner le <code>canvas</code> et de modifier le <code>Canvas Scaler</code> : <code>Dynamic pixels per unit</code> à 5 ou 10 par exemple.</p>
 	<p>L'inconvénient de ce procédé est lié au fait que <code>Text</code> utilise <strong>une fois pour toute</strong> un bitmap (image pixelisée) pour rendre tout <i>glyph</i> de la fonte.</p>
 </section>
-<section id="tmpro">
+<section id="textmeshpro">
 	<h2>Composant TextMeshPro</h2>
-	<p><code>TextMeshPro</code> est un <i>package</i> à installer depuis <code>Window &gt; Package manager &gt; TextMeshPro</code>. Ce type de texte est plus complet que le <code>text</code> par défaut d'Unity. Il fournit :</p>
+	<p><code>TextMeshPro</code> est un <i>package</i> à installer depuis <code>Window > Package manager > TextMeshPro</code>. Ce type de texte est plus complet que le <code>text</code> par défaut d'Unity. Il fournit :</p>
 	<ul>
 		<li>plus de contrôle,</li>
-		<li>un générateur de fonte depuis les fontes disponibles dans le <code>Project</code> ; aller dans <code>Window &gt; TextMeshPro &gt; Font Asset Creator</code>,</li>
+		<li>un générateur de fonte depuis les fontes disponibles dans le <code>Project</code> ; aller dans <code>Window > TextMeshPro > Font Asset Creator</code>,</li>
 		<li>un contrôle sur le texte (<i>extra settings</i>, rectangle jaune) indépendant du contrôle de l'objet.</li>
 	</ul>
 	<p>Par exemple, le texte peut avoir un <strong>dégradé (<i>gradient</i>)</strong>. Pour ce faire, il faut créer dans <code>Project</code> un nouveau <code>Color gradient</code>. Puis, dans le composant du texte :</p>
@@ -107,18 +112,19 @@
 </section>
 <section id="image">
 	<h2>Composant Image</h2>
-	<p>La <strong>texture</strong> est un fichier image importé dans le <code>Project</code> et configuré en vue de son usage (<i>sprite</i>, <i>cursor</i>...). On peut la plaquer sur un objet directement, ce qui définit l'albedo de l'objet. Si une texture est paramétrée comme <i>sprite</i>, alors ce <i>sprite</i> peut être affiché sur un <i>mesh</i> avec le composant <code>Sprite Renderer</code>. Avec l'UI, c'est différent.</p>
+	<p>La <strong>texture</strong> est une image importée dans le <code>Project</code> et configurée en vue d'un usage (<i>sprite</i>, <i>cursor</i>...). On peut la plaquer sur un objet directement, ce qui définit l'albedo de l'objet. Si une texture est paramétrée comme <i>sprite</i>, alors ce <i>sprite</i> peut être affiché sur un <i>mesh</i> avec le composant <code>Sprite Renderer</code>, ce qui conduit à réaliser un objet pour l'affichage 2D. Avec l'UI, c'est différent.</p>
 	<p>La <i><strong>Raw image</strong></i> est réservée pour l'UI et dépend du <code>canvas</code> (son <i>renderer</i> est le <code>canvas</code>). Elle ne prend en charge qu'une <strong>texture</strong>.</p>
 	<p>Une <i><strong>Image</strong></i> est réservée pour l'UI et dépend du <code>canvas</code> (son <i>renderer</i> est le <code>canvas</code>). Elle permet d'afficher un <i>sprite</i> avec des options :</p>
 	<ul>
-		<li><i><strong>Tiled</strong></i> : pavage et remplissage,</li>
 		<li><i><strong>Simple</strong></i> : une seule image dans le cadre,</li>
+		<li><i><strong>Sliced</strong></i> : remplissage. L'image est découpée selon les manipulations effectuées dans <i>Sprite Editor</i>,</li>
+		<li><i><strong>Tiled</strong></i> : pavage et remplissage. Idem précédent mais les parties de remplissages sont répétées,</li>
 		<li><i><strong>Filled</strong></i> : contrôle sur remplissage horizontal ou vertical ou radial.</li>
 	</ul>
 </section>
 <section id="panel">
 	<h2>Composant Panel</h2>
-	<p>On peut <strong>organiser</strong> l'UI dans la <code>Hierarchy</code> par <strong>écran</strong>. Pour cela, on utilise des  <code>Empty object</code> ou des <code>Panel</code> dans le <code>canvas</code> comme autant d'écrans, et on y place tous les objets enfants nécessaires.</p>
+	<p>On peut <strong>organiser</strong> l'UI dans la <code>Hierarchy</code> par <strong>écran</strong>. Pour cela, on utilise des  <code>Empty object</code> ou bien des <code>Panel</code> dans le <code>canvas</code> comme autant d'écrans, et on y place tous les objets enfants nécessaires.</p>
 	<p>L'organisation peut aller au-delà des contenus du <code>canvas</code>, par exemple en dédiant des <strong>scènes</strong> à des écrans d'UI.</p>
 </section>
 <section id="autres">
@@ -132,18 +138,30 @@
 		<li><code>Input field</code> : champ de saisie,</li>
 		<li><code>ScrollView</code> : zone d’affichage dont l'enfant <code>Content</code> reçoit les éléments à afficher et scroller si besoin.</li>
 	</ul>
-	<p>L'UI peut aussi prendre en charge l'affichage de vidéo grâce au composant <code>Video &gt; Video player</code>.</p>
+	<p>L'UI peut aussi prendre en charge l'affichage de vidéo grâce au composant <code>Video > Video player</code>.</p>
 </section>
 <section id="responsive">
 	<h2>Responsive design</h2>
-	<p>Le <i>responsive design</i> est une méthode de conception où l'interface graphique <strong>s'adapte</strong> aux dimensions, résolution, <i>pixel ratio</i> de l'écran et ce en temps réel. Dans Unity, cela s'effectue au moyen des <strong>ancres (<i>anchors</i>)</strong> et des <i><strong>groups</strong></i>.</p>
+	<p>Le <i>responsive design</i> est une méthode de conception où l'interface graphique <strong>s'adapte</strong> aux dimensions, résolution, <i>pixel ratio</i> de l'écran et ce en temps réel. Dans Unity, cela s'effectue au moyen des <strong>ancres (<i>anchors</i>)</strong> et des <i><strong>layout groups</strong></i>.</p>
+</section>
+<section id="ancres">
+	<h2>Ancres</h2>
 	<p>Les <strong>ancres</strong> se configurent dans le composant <code>Rect Transform</code>, le gros carré.</p>
 	<ul>
 		<li>Paramètre par défaut : modifier le point d'ancrage relatif au parent, qui peut être subdivisé pour étirer (<code>stretch</code>),</li>
 		<li>avec <code>Shift</code> : modification du pivot en plus,</li>
 		<li>avec <code>Alt</code> : positionner au point d'ancrage en plus.</li>
 	</ul>
-	<p>Les <i><strong>groups</strong></i> sont des <code>gameObjet</code> ayant le composant <code>Components &gt; Layout &gt; Grid layout group</code>. Ensuite, sélectionner <code>Child alignment : Middle Center</code> et <code>Constraint : Flexible</code> (pour des dimensions déterminées, préférer éventuellements les paramètres <code>Fixed</code>). Ajouter ensuite des images dans cet objet et redimensionner cet objet : les enfants se repositionnent en fonction de leur nombre et de la distribution choisie. Une fois l'encombrement maximum atteint, les objets dépassent du parent ; on peut alors redimensionner le <code>group</code> ou paramétrer son <code>Cell size</code> pour ajuster.</p>
+</section>
+<section id="layout-group">
+	<h2>Layout group</h2>
+ 	<p>Les <i><strong>groups</strong></i> sont des <code>gameObjet</code> ayant le composant <code>Components > Layout > Grid layout group</code>. Ensuite, sélectionner <code>Child alignment : Middle Center</code> et <code>Constraint : Flexible</code> (pour des dimensions déterminées, préférer éventuellements les paramètres <code>Fixed</code>). Ajouter ensuite des images dans cet objet et redimensionner cet objet : les enfants se repositionnent en fonction de leur nombre et de la distribution choisie. Une fois l'encombrement maximum atteint, les objets dépassent du parent ; on peut alors redimensionner le <code>group</code> ou paramétrer son <code>Cell size</code> pour ajuster.</p>
+ 	<p>Il existe aussi des <i>layout groups</i> orientés par axe : <code>Horizontal Layout Group</code> et <code>Vertical Layout Group</code>.</p>
+</section>
+<section id="canvas-group">
+	<h2>Canvas group</h2>
+	<p>Par défaut, chaque objet d'UI est indépendant. Cela signifie que, par exemple, changer la couleur ou la transparence d'un élément ne se répercute pas en cascade sur les objets enfants.</p>
+	<p>Unity propose un composant <code>Canvas Group</code> qui permet à une hiérarchie d'objets de se comporter comme un seul objet. La propriété <code>Alpha</code> a été pensée pour réaliser des fondus enchaînés : la transparence y est répercutée sur les objets enfants.</p>
 </section>
 <section id="sorting">
 	<h2>Sorting</h2>
@@ -156,50 +174,54 @@
 	<p>Posons dans un <code>canvas</code> deux images l'une sur l'autre. Comment définir l'ordre d'affichage ?</p>
 	<ul>
 		<li>Changer l'ordre des deux images dans la <code>Hierarchy</code> fonctionne.</li>
-		<li>Ou bien ajouter un composant <code>Layout &gt; Canvas</code> aux images et cocher <code>Override Sorting</code>, ce qui fournit un champ <code>Sort order</code> accueillant un nombre entier permettant de définir l'ordre d'affichage du premier plan au dernier plan par ordre décroissant.</li>
+		<li>Ou bien ajouter un composant <code>Layout > Canvas</code> aux images et cocher <code>Override Sorting</code>, ce qui fournit un champ <code>Sort order</code> accueillant un nombre entier permettant de définir l'ordre d'affichage du premier plan au dernier plan par ordre décroissant.</li>
 	</ul>
 </section>
-<section id="Layers">
-	<h2>Layers</h2>
-	<p>Les <i><strong>layers</strong></i> permettent de définir ce qui doit être vu ou caché par la caméra. Par exemple :</p>
+<section id="layers">
+  <h2>Layers</h2>
+  <p>Les <i><strong>layers</strong></i> permettent de définir ce qui doit être vu ou caché par la caméra. Par exemple :</p>
+  <ul>
+   	<li>Dans la caméra du monde, dans <code>Culling mask</code> ne pas sélectionner <code>UI</code> (s'il y en , la caméra ne le verra pas).</li>
+   	<li>Si la caméra possède une image en objet enfant, définir le <i>layer</i> de cet enfant à <code>Default</code> pour qu'il apparaisse comme image de fond de la caméra.</li>
+  </ul>
+</section>
+<section id="interactivite">
+	<h2>Interactivité</h2>
+	<p>L'interactivité vient des scripts que l'on appelle depuis chaque objet d'UI, comme les boutons. On peut :</p>
 	<ul>
-		<li>Dans la caméra du monde, dans <code>Culling mask</code> ne pas sélectionner <code>UI</code> (s'il y en , la caméra ne le verra pas).</li>
-		<li>Si la caméra possède une image en objet enfant, définir le <i>layer</i> de cet enfant à <code>Default</code> pour qu'il apparaisse comme image de fond de la caméra.</li>
+   	<li>créer <strong>un script par objet</strong>,</li>
+   	<li>ou bien <strong>centraliser toutes les fonctions</strong> dans un seul attaché comme composant au <code>canvas</code> ou à un objet dédié <i>UIController</i>...</li>
+   	<li>ou appeler des <strong>fonctions déjà prévues</strong> à partir des composants d'UI,</li>
+   	<li>ou <strong>mélanger les façons de faire</strong>,</li>
+   	<li>ou encore faire autrement... c'est selon le <strong>besoins</strong> et les <strong>habitudes</strong>.</li>
 	</ul>
-	<section id="interactivite">
-		<h2>Interactivité</h2>
-		<p>L'interactivité vient des scripts que l'on appelle depuis chaque objet d'UI, comme les boutons. On peut :</p>
-		<ul>
-			<li>créer <strong>un script par objet</strong>,</li>
-			<li>ou bien <strong>centraliser toutes les fonctions</strong> dans un seul attaché comme composant au <code>canvas</code> ou à un objet dédié <i>UIController</i>...</li>
-			<li>ou <strong>mélanger les façons de faire</strong>,</li>
-			<li>ou encore faire autrement... c'est selon le <strong>besoins</strong> et les <strong>habitudes</strong>.</li>
-		</ul>
-		<p>Les <strong>appels de fonction</strong> s'effectuent dans le composant de l'objet, par exemple <code>OnClick()</code> d'un <code>Button</code>. On y renseigne dans le champ la référence de l'objet ayant le composant script et on choisit dans le menu déroulant la fonction <code>public</code> désirée. C'est la méthode préconisée par Unity car elle est facile, rapide, elle permet le travail d'équipe avec des non-codeurs... <strong>Attention</strong> : ces blocs d'événements ne permettent que des <strong>fonctions ne prenant au maximum qu'1 seul paramètre</strong>, ce qui peut s'avérer parfois problématique. Cette méthode repose sur les <i><strong>Unity Events</strong></i>.</p>
-		<p>Exemple : on veut un bouton réagissant à l'événement <code>onClick</code> :</p>
-		<ul>
-			<li>créer une fonction <code>public</code> quelque part,</li>
-			<li>dans le comportement du bouton, dans <code>On Click()</code>, cliquer sur <code>+</code>,</li>
-			<li>renseigner dans le champ le composant ou objet où le script se trouve,</li>
-			<li>dans le menu déroulant, choisir la fonction.</li>
-		</ul>
-		<p>Astuce : la méthode précédente autorise les références par exemple de composants <code>AudioSource</code>, que l'on peut <code>Play()</code> sans avoir à créer de nouveau script car Unity fournit dans le menu déroulant les méthodes spécifiques et <code>public</code> pour le composant renseigné.</p>
-		<p>Exemple : on veut un bouton réagissant à l'événement de survol de la souris :</p>
-		<ul>
-			<li>créer une fonction <code>public</code> quelque part,</li>
-			<li>sélectionner le bouton et ajouter le composant <code>Event &gt; Event Trigger</code>,</li>
-			<li>ajouter un <code>New Event Type</code> et choisir <code>Pointer Enter</code>,</li>
-			<li>dans la liste faire comme précédemment : renseigner la référence du script et la fonction.</li>
-		</ul>
-		<p>Exemple : à partir de l'exemple précédent, on veut aussi le <i>drag 'n drop</i> :</p>
-		<ul>
-		<li>ajouter des <code>New event type</code> : <code>Drag</code> et <code>EndDrag</code>,</li>
-		<li>coder des fonctions afférentes à chaque événement,</li>
-		<li>les renseigner dans chaque bloc d'événement,</li>
-		<li>le script de <code>drag</code> par exemple :</li>
-		</ul>
-		<pre><code>
-[SerializeField] Canvas _canvas;
+	<p>Les <strong>appels de fonction</strong> s'effectuent dans le composant de l'objet, par exemple <code>OnClick()</code> d'un <code>Button</code>. On y renseigne dans le champ la référence de l'objet ayant le composant script et on choisit dans le menu déroulant la fonction <code>public</code> désirée. C'est la méthode préconisée par Unity car elle est facile, rapide, elle permet le travail d'équipe avec des non-codeurs... <strong>Attention</strong> : ces blocs d'événements ne permettent que des <strong>fonctions ne prenant au maximum qu'1 seul paramètre</strong>, ce qui peut s'avérer parfois problématique. Cette méthode repose sur les <i><strong>Unity Events</strong></i>.</p>
+	<p>Noter que le champ peut aussi accueillir une référence au <code>canvas</code>. Alors, la liste des fonctions disponibles couvre tous les composants de ce dernier. On y trouvera par exemple  <code>GameObject > SetActive(bool)</code> qui permet d'activer/désactiver non l'objet actuel mais le <code>canvas</code> passé en référence et ce sans avoir à coder quoi que ce soit. Par conséquent, il faut veiller à bien sélectionner l'objet car il est autant la référence que la cible du comportement.</p>
+	<p>Exemple : on veut un bouton réagissant à l'événement <code>onClick</code> :</p>
+	<ul>
+   	<li>créer une fonction <code>public</code> quelque part,</li>
+   	<li>dans le comportement du bouton, dans <code>On Click()</code>, cliquer sur <code>+</code>,</li>
+   	<li>renseigner dans le champ le composant ou objet où le script se trouve,</li>
+   	<li>dans le menu déroulant, choisir la fonction.</li>
+	</ul>
+	<p>Astuce : la méthode précédente autorise les références par exemple de composants <code>AudioSource</code>, que l'on peut <code>Play()</code> sans avoir à créer de nouveau script car Unity fournit dans le menu déroulant les méthodes spécifiques et <code>public</code> pour le composant renseigné. Dans le même ordre d'idée, le champ peut accueillir une référence au <code>canvas</code>. Alors, la liste des fonctions disponibles couvre tous les composants de ce dernier. On y trouvera par exemple  <code>GameObject > SetActive(bool)</code> qui permet d'activer/désactiver non l'objet actuel mais le <code>canvas</code> passé en référence et ce sans avoir à coder quoi que ce soit. Par conséquent, il faut veiller à bien sélectionner l'objet car il est autant la <strong>référence</strong> que la <strong>cible</strong> du comportement.</p>
+	<p>Exemple : on veut un bouton réagissant à l'événement de survol de la souris :</p>
+	<ul>
+   	<li>créer une fonction <code>public</code> quelque part,</li>
+   	<li>sélectionner le bouton et ajouter le composant <code>Event > Event Trigger</code>,</li>
+   	<li>ajouter un <code>New Event Type</code> et choisir <code>Pointer Enter</code>,</li>
+   	<li>dans la liste faire comme précédemment : renseigner la référence du script et la fonction.</li>
+	</ul>
+	<p>Exemple : à partir de l'exemple précédent, on veut aussi le <i>drag 'n drop</i> :</p>
+	<ul>
+   	<li>ajouter des <code>New event type</code> : <code>Drag</code> et <code>EndDrag</code>,</li>
+   	<li>coder des fonctions afférentes à chaque événement,</li>
+   	<li>les renseigner dans chaque bloc d'événement,</li>
+   	<li>le script de <code>drag</code> par exemple :</li>
+	</ul>
+	<pre><code>
+[SerializeField]
+Canvas _canvas;
 Vector2 _position;
 
 public void onDrag()
@@ -207,35 +229,35 @@ public void onDrag()
 	RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out _position);
 	transform.position = canvas.transform.TransformPoint(_position);
 }
-		</code></pre>
-		<p>Sur un <code>Slider</code> ou un <code>Toggle</code>, lorsqu’on ajoute une fonction au gestionnaire <code>OnValueChanged</code>, on peut choisir entre <code>Dynamic</code> et <code>Static</code>. Pour que cela fonctionne, il faut que la fonction prenne en paramètre une variable du <strong>type</strong> de la valeur de l'élément. Par exemple avec un <code>Slider</code> :</p>
-		<ul>
-			<li><code>Dynamic</code> : <strong>lien avec la valeur</strong> du <code>Slider</code>,</li>
-			<li><code>Static</code> : définition des valeurs dans la fonction personnelle <strong>sans lien à la valeur</strong> du <code>Slider</code>.</li>
-		</ul>
-		<pre><code>
+	</code></pre>
+	<p>Sur un <code>Slider</code> ou un <code>Toggle</code>, lorsqu’on ajoute une fonction au gestionnaire <code>OnValueChanged</code>, on peut choisir entre <code>Dynamic</code> et <code>Static</code>. Pour que cela fonctionne, il faut que la fonction prenne en paramètre une variable du <strong>type</strong> de la valeur de l'élément. Par exemple avec un <code>Slider</code> :</p>
+	<ul>
+   	<li><code>Dynamic</code> : <strong>lien avec la valeur</strong> du <code>Slider</code>,</li>
+   	<li><code>Static</code> : définition des valeurs dans la fonction personnelle <strong>sans lien à la valeur</strong> du <code>Slider</code>.</li>
+	</ul>
+	<pre><code>
 public void TestSlider(float value)
 {
 	//...
 }
-		</code></pre>
+	</code></pre>
 </section>
 <section id="code">
 	<h2>Code</h2>
 	<p>Pour manipuler :</p>
 	<ul>
-		<li>un composant <code>TextMeshPro</code> :
-			<ul>
-			<li><strong>librairie</strong> <code>using TMPro;</code>,</li>
-			<li><strong>type</strong> d'objet par exemple <code>TextMeshProUGUI</code>,</li>
-			</ul>
-		</li>
-		<li>un composant d'<code>UI</code> :
-			<ul>
-				<li><strong>librairie</strong> <code>using UnityEngine.UI;</code>,</li>
-				<li><strong>type</strong> d'objet par exemple <code>Button</code>.</li>
-			</ul>
-		</li>
+   	<li>un composant <code>TextMeshPro</code> :
+      	<ul>
+      		<li><strong>librairie</strong> <code>using TMPro;</code>,</li>
+      	<li><strong>type</strong> d'objet par exemple <code>TextMeshProUGUI</code>,</li>
+      	</ul>
+    	</li>
+    	<li>un composant d'<code>UI</code> :
+      	<ul>
+        		<li><strong>librairie</strong> <code>using UnityEngine.UI;</code>,</li>
+        		<li><strong>type</strong> d'objet par exemple <code>Button</code>.</li>
+      	</ul>
+    	</li>
 	</ul>
 	<p>Exemples de récupération de valeur selon le type de composant d'UI :</p>
 	<pre><code>
@@ -246,8 +268,8 @@ bool toggleIsOn = GetComponent&lt;Toggle&gt;().isOn;
 	</code></pre>
 	<p>Outre la méthode préconisée par Unity, il est tout à fait possible de <strong>coder complètement l'interactivité</strong> :</p>
 	<ul>
-		<li>ajouter différents boutons,</li>
-		<li>leur ajouter le même composant <code>script</code>, par exemple :</li>
+   	<li>ajouter différents boutons,</li>
+   	<li>leur ajouter le même composant <code>script</code>, par exemple :</li>
 	</ul>
 	<pre><code>
 using System.Collections;
@@ -261,27 +283,27 @@ public class MesBoutons : MonoBehaviour
 
 	void Start()
 	{
-		button = GetComponent&lt;Button&gt;();
-		button.onClick.AddListener(direBonjour); // définir l'écouteur d'événement onClick appelant la fonction DireBonjour() SANS parenthèses car on veut référer à la fonction et non déclencher cette fonction
+   	button = GetComponent&lt;Button&gt;();
+    	button.onClick.AddListener(direBonjour); // définir l'écouteur d'événement onClick appelant la fonction DireBonjour() SANS parenthèses car on veut référer à la fonction et non déclencher cette fonction
 	}
 
 	void DireBonjour()
 	{
-		Debug.Log(button.gameObject.name + &quot; a été cliqué.&quot;
+   	Debug.Log(button.gameObject.name + &quot; a été cliqué.&quot;);
 	}
 }
-	</code></pre>
+</code></pre>
 </section>
-<section id="manetteclavier">
+<section id="manette-et-clavier">
 	<h2>Manette et clavier</h2>
 	<p>Unity prend en charge la <strong>navigation</strong> à la manette ou aux touches clavier.</p>
 	<p>Pour cela, cliquer sur un bouton et cliquer sur <code>Visualize</code> : des flèches jaunes apparaissent indiquant le parcours <strong>automatique</strong>, calculé par Unity.</p>
 	<p>Le menu déroulant <code>Navigation</code> propose d'autres options, notamment <code>Explicit</code> qui permet d'indiquer quel est le prochain objets à sélectioner en fonction du type d'entrée utilisateur.</p>
 	<p>On peut déclarer <code>Explicit</code> un bouton mais pas le suivant si ce dernier en <code>Automatic</code> agit comme attendu.</p>
 	<p>Pour les manettes, il faut déclarer quel est le premier bouton sélectionné. Cela s'effectue dans l'<code>Event System</code> et le champ <code>First selected</code>. Cela se contrôle aussi par code.</p>
-	<p>Egalement dans l'<code>Event System</code>, le composant <code>Standalone Input Module</code> permet de définir quel entrée utiliser, entrées que l'on définit dans <code>Edit &gt; Project Settings &gt; Input Manager</code>. Exemple (générant de la confusion) : définir l'entrée <code>Vertical</code> pour le contrôle par axe horizontal.</p>
+	<p>Egalement dans l'<code>Event System</code>, le composant <code>Standalone Input Module</code> permet de définir quel entrée utiliser, entrées que l'on définit dans <code>Edit > Project Settings > Input Manager</code>. Exemple (générant de la confusion) : définir l'entrée <code>Vertical</code> pour le contrôle par axe horizontal.</p>
 </section>
 <footer>
-	<p>Le 15-03-2021</p>
+	<p>Le 18-10-2021</p>
 </footer>
 <script
