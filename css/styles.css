@@ -1,6 +1,6 @@
 /*
 	CSS réalisé par Alexandre Venet pour https://alexandrevenet.github.io
-	Version du 23-01-2021
+	Version du 19-10-2021
 */
 
 /*
@@ -146,7 +146,7 @@ main{
 		align-items: stretch;
 	}
 	nav{
-		flex-basis: 17em;
+		flex-basis: 16em;
 		flex-grow:0;
 		flex-shrink: 0;
 		display: block;
