@@ -1,0 +1,141 @@
+<section>
+  <h1>Particules</h1>
+  <div class="blocSommaire">
+    <p>Sommaire</p>
+    <ol id="sommaire">
+      <li><a href="#shuriken">Shuriken</a></li>
+      <li><a href="#parametres">Paramètres</a></li>
+      <li><a href="#collisions">Collisions</a></li>
+      <li><a href="#exemple">Exemple</a></li>
+      <li><a href="#exemplescode">Exemples de code</a></li>
+      <li><a href="#vfx-graph">VFX Graph</a></li>
+    </ol>
+  </div>
+</section>
+<section id="shuriken">
+  <h2>Shuriken</h2>
+  <a class="lien" title="Manual : Particle System" href="https://docs.unity3d.com/Manual/class-ParticleSystem.html" target="_blank">Manual : Particle System</a>
+  <p>Le premier <strong>système de particules</strong> d'Unity est le moteur <strong>Shuriken</strong>. On ajoute un <strong>composant</strong> permettant de réaliser des copies à la volée de petits objets, par exemple des plans texturés, des volumes, etc. C'est utile pour simuler des flammes, de la fumée...</p>
+  <p>Comme c'est un composant, il peut donc être ajouté à n'importe quel <code>gameObject</code>.</p>
+  <p>Unity fournit un raccourci pour créer un objet doté d'un système de particules :</p>
+  <ul>
+    <li>clic-droit dans la <code>Hierarchy</code> puis <code>Effects &gt; Particle system</code>,</li>
+    <li>ou avec le menu <code>GameObject &gt; Effets &gt; Particule system</code>.</li>
+  </ul>
+  <p>Penser à télécharger le <i><strong>Simple particle pack</strong></i> dans l'<i><strong>AssetStore</strong></i> ; il est founit par Unity et présente plein de possibilités prêtes à l'emploi.</p>
+</section>
+<section id="parametres">
+  <h2>Paramètres</h2>
+  <p>Le composant présente des propriétés classées en sous-composants activables selon les besoins.</p>
+  <p>Le paramétrage minimum par défaut comprend :</p>
+  <ul>
+    <li>les <strong>paramètres généraux</strong>,</li>
+    <li>la catégorie <code>Emission</code> : projeter des particules,</li>
+    <li>la catégorie <code>Shape</code> : la forme de la projection,</li>
+    <li>la catégorie <code>Renderer</code> : afficher les particules.</li>
+  </ul>
+  <p>Catégorie <code>Emission</code> :</p>
+  <ul>
+    <li><code>Rate over time</code> : fréquence d'émission par seconde,</li>
+    <li><code>Bursts</code> : autant de déclenchements ponctuels d'une certaine quantité de particules. Attention : cela revient en boucle car ces déclenchements dépendent de la <strong>durée</strong> d'émission et si le système est en <code>Looping</code> (voir paramètres généraux du système).</li>
+  </ul>
+  <p>Ci-après quelques <strong>paramètres</strong>.</p>
+  <ul>
+    <li><code>Velocity over Lifetime</code> : la valeur <code>Speed Modifier</code> contrôle la <strong>vitesse</strong> de propagation.</li>
+    <li><code>Play On Awake</code> : si case cochée, déclenche le système au démarrage du jeu.</li>
+    <li>Les valeurs numériques peuvent faire l'objet de <strong>contrôles divers</strong> (aléatoire entre deux valeurs, valeur unique, courbe...) ; pour cela, cliquer sur le <strong>triangle pointant vers le bas</strong> à droite du champ de saisie.</li>
+  </ul>
+</section>
+<section id="collisions">
+  <h2>Collisions</h2>
+  <p>La collision des particules avec autre chose peut être détectée, par exemple pour que particule et <i>player</i> soient tous les deux détruits. Pour cela, activer le sous-groupe idoine. Puis paramétrer comme suit.</p>
+  <ul>
+  <li><code>Type : World</code> pour calculer à partir de la géométrie de la scène.</li>
+  <li><code>Bounce : 0</code> pour que la particule ne rebondisse pas.</li>
+  <li><code>Lifetime Loss : 1</code> pour que la perte de durée de vie soit maximale (pourcentage normalisé).</li>
+  <li>Cocher la case <code>Send Collision Messages</code> pour recevoir des messages d'événement afin d'avoir un contrôle par code.</li>
+  <li>Créer un fichier script Health.cs et l'attacher un objet dont le nom et le <i>tag</i> sont <i>Player</i>.</li>
+  </ul>
+  <p>Codons le <i>Player</i> :</p>
+  <pre><code>
+public float m_healthPoints = 100f
+
+private void Update()
+{
+  if(m_healthPoints &lt;= 0f)
+  {
+    Destroy(gameObject);
+  }
+}
+  </code></pre>
+  <p>Codons un nouveau script pour le système de particule. Le script doit être attaché à l'objet qui présente le composant <code>Particle System</code>.</p>
+  <pre><code>
+public float _damagePower = 20f;
+
+private void OnParticleCollision(GameObject obj) // gestionnaire natif
+{
+  if(!obj.CompareTag(&quot;Player&quot;)) return;
+
+  Obj.GetComponent&lt;Health&gt;().m_healthPoints -= _damagePower;
+}
+  </code></pre>
+</section>
+<section id="exemple">
+  <h2>Exemple</h2>
+  <ul>
+    <li>Créer un <code>material</code>. Définir son <i>shader</i> à Particules/Standard <code>unlit</code> : les particules ne seront pas affectées par la lumière et l'ombre et seront affichées en couleur solide.</li>
+    <li><code>Rendering Mode &gt; Fade</code>.</li>
+    <li><code>Color Mode &gt; Multiply</code>.</li>
+    <li>Choisir une texture pour l'albedo (cliquer le petit rond) : choisir <code>default-Particle</code> (dégradé).</li>
+    <li>Cliquer le champ <code>HDR</code> et rentrer dans l'intensité une valeur de 2.7.</li>
+    <li>Créer un système de particules.</li>
+    <li>Assigner le <code>material</code> au système de particules.</li>
+  </ul>
+</section>
+<section id="exemplescode">
+  <h2>Exemples de code</h2>
+  <p>On peut lancer et arrêter un système de particules avec <code>Play()</code> et <code>Stop()</code>. Par exemple, lancer un système de particule en tant que c'est un objet enfant d'un parent scripté :</p>
+  <pre><code>
+ParticleSystem _explosionParticules;
+
+void Start()
+{
+  _explosionParticules = gameObject.transform.Find(&quot;MesParticulesExplosion&quot;).GetComponent&lt;ParticleSystem&gt;();
+  _explosionParticules.Play();
+}
+  </code></pre>
+</section>
+<section id="vfx-graph">
+  <h2>VFX Graph</h2>
+  <a class="lien" title="Manual : VFX Graph" href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@12.1/manual/index.html" target="_blank">Manual : VFX Graph</a>
+  <p>L'<i><strong>HDR pipeline</strong></i> propose un autre système de particule : <i><strong>VFX Graph</strong></i>.</p>
+  <p>Dans <code>Project</code>, clic droit puis <code>Create &gt; Visual Effects &gt; Visual Effect Graph</code>. Double-cliquer sur ce fichier pour ouvrir la fenêtre d'édition (ancrer pour le confort). Ajouter à la scène le fichier. Vérifier que les <i>Visual Effect Graphs</i> sont affichés en consultant le menu de la fenêtre <code>Scene</code>. On dispose maintenant de la prévisualisation et de la fenêtre d'édition et de l'<code>Inspector</code> qui affiche les propriétés (du fichier et aussi bien des propriétés sélectionnées comme on va le voir).</p>
+  <p>Lors de l'édition, le fichier est enregistré automatiquement mais il peut y avoir un délai entre le paramétrage et le rendu dans la scène. Si la mise à jour n'est pas automatique, cliquer sur <code>Auto</code> dans la fenêtre de graphe ; le bouton <code>Compile</code> permet de compiler manuellement.</p>
+  <p>La fenêtre d'édition présente des <strong>groupes</strong>.</p>
+  <ul>
+    <li><i><strong>Spawn</strong></i> : le <code>Rate</code> définit la quantité de particules à générer</li>
+    <li><i><strong>Initialize Particle</strong></i> : <code>Capacity</code> détermine le nombre total de particules pour une <i>frame</i>.</li>
+    <li><i><strong>Update Particle</strong></i> : équivalent du gestionnaire <code>Update</code> où les particules peuvent changer.</li>
+    <li><i><strong>Output Particle Quad</strong></i> : la façon dont la particule apparaît.</li>
+  </ul>
+  <p>Tous ces groupes peuvent être déplacés. On peut également les supprimer mais attention, certains ne peuvent pas être recréés ; donc on préfèrera les conserver quelque part dans la fenêtre sans les lier à quoi que ce soit. On peut enfin en créer avec clic droit dans l'espace vide puis <code>Create Node</code>.</p>
+  <p>Créons un <code>Context &gt; Output Particle Lit Quad</code> qui consiste en un effet de particules soumis à l'éclairage (la version par défaut est <i>unlit</i>). Cliquer sur la sphère de sortie de l'<i>Update Particle</i> et déplacer vers la sphère d'entrée du nouveau groupe. Voilà, un lien est effectué. Cliquer sur le lien vers l'autre groupe, puis clic droit et <code>Delete</code>.</p>
+  <p>Maintenant, paramétrons notre groupe.</p>
+  <ul>
+    <li><code>Base Color Map</code> : sélectionner un <i>sprite</i> pour la particule, par exemple une séquence d'images.</li>
+    <li><code>UV Mode</code> : choisir <code>Flipbook Blend</code> pour n'afficher de la séquence qu'une image à la fois.</li>
+    <li><code>Flip Book Size</code> : entrer le nombre de colonnes et lignes pour la séquence d'image (cela doit correspondre à la configuration de l'image). Par exemple : si on dispose d'une image en grille de 6x6, alors renseigner 6 en <code>x</code> et <code>y</code>.</li>
+    <li>Clic droit dans la zone d'ajout puis choisir <code>Orient : Face Camera Position</code> pour que les particles se tournent toujours face à la caméra.</li>
+  </ul>
+  <p>Il faut paramétrer le groupe <i>Update Particle</i> de façon à afficher une image de la séquence à chaque <i>frame</i>. Clic droit dans ce groupe puis <code>Create Block &gt; FlipBook &gt; FlipBook Player</code>.</p>
+  <p>Maintenant, on peut paramétrer la façon dont les particules sont initialisées. Dans le groupe <i>Initialize Particle</i>, modifier les valeurs de <code>Set Velocity Random</code> (intervalle entre deux valeurs pour générer de la variation), par exemple : A (-0.1,0.2,-0.02), B (0.1,0.3,0.02).</p>
+  <p>Ajoutons des modificateurs. Dans l'<i>Output Particle Lit Quad</i>, clic droit puis <code>Create Block</code> :</p>
+  <ul>
+    <li>choisir <code>Multiply Size</code> pour pouvoir modifier la taille de la particule (poucentage normalisé),</li>
+    <li>choisir <code>Add Color over Life</code> pour manipuler la couleur actuelle de la particule. Définir <code>Sample Mode : Over Life</code> et <code>Color mode : Color And Alpha</code>. Paramétrer le dégradé selon nos besoins.</li>
+  </ul>
+</section>
+<footer>
+   <p>Le 18-11-2021</p>
+</footer>
+<script src="../../js/testParent.js"></script>
