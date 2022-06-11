@@ -94,8 +94,8 @@ class ConverterMDHTML
                 }
                 else
                 {
-                    let ligne = element.slice(0,element.length+1); 
-                    this.tableauFinal.push(ligne);
+                    // let ligne = element.slice(0,element.length+1); 
+                    this.tableauFinal.push(element);
                 }
             }
             // liste UL ou OL
