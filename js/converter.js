@@ -33,7 +33,7 @@ class ConverterMDHTML
         for (let i = 0; i < texteTableau.length; i++) {
             let element = texteTableau[i];
 
-            console.log(element);
+            // console.log(element);
 
             let isUL = element.substring(0,2) == '- ';
             let isOL = element.match(this.regExOL);
@@ -96,6 +96,19 @@ class ConverterMDHTML
                 {
                     let ligne = element.slice(0,element.length-1); 
                     this.tableauFinal.push(ligne);
+                }
+            }
+            // ligne vide, possiblement du code (pas de \r pour github)
+            else if(element == '')
+            {
+                if(!this.debutCode)
+                {
+                    continue;
+                }
+                else
+                {
+                    let ligne = element.slice(0,element.length); // rien à enlenver
+                    tableauFinal.push(ligne);
                 }
             }
             // liste UL ou OL
