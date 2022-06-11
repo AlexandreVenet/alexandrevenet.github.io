@@ -324,7 +324,7 @@ function StructureHTML(tableau)
 
 // -------------------- LANCEMENT
 
-document.addEventListener('load',()=>{
+document.addEventListener('DOMContentLoaded',()=>{
 
 	nav = document.getElementsByTagName('nav')[0];
 	nav.addEventListener('click', clickNav);
