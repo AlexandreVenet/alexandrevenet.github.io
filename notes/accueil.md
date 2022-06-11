@@ -57,4 +57,4 @@ Pour les grandes largeurs d'écran, la fin d'une page présente un bloc vide hau
 
 Le présent site est herbergé sur **Github** et utilise la fonction **Github Pages**.
 
-Du fait des limitations de Github (et aussi pour le plaisir), j'ai tenté de réaliser un **convertisseur personnel de Markdown en HTML côté client en Javascript**, ce qui me permet d'éditer les contenus de ce site seulement avec des fichiers `.md` (le script utilisé ici est une version `class` de mon script de travail).
+Du fait des limitations de Github (et aussi pour le plaisir), j'ai tenté de réaliser un **convertisseur personnel de Markdown en HTML côté client en Javascript**, ce qui me permet d'éditer les contenus de ce site seulement avec des fichiers `.md` (le script utilisé ici est une version `class` de mon script de travail et adaptée pour Github).
