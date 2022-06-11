@@ -36,17 +36,17 @@ Le site est en ce qu'on appelle « mode sombre » afin de réduire la consommati
 
 Les blocs de code sont présentés de cette manière : 
 ```
-entrée de code
-    ligne indentée
+entrée de code 
+    ligne indentée 
 ```
 ```
-entrée
+entrée 
 {
-    Cette ligne est indentée et très longue pour afficher la barre de défilement horizontale. On peut naviguer avec SHIFT + molette souris...
+    Cette ligne est indentée et très longue pour afficher la barre de défilement horizontale. On peut naviguer avec SHIFT + molette souris... 
 
-    saut de ligne
+    saut de ligne 
 
-    Les chevrons sont transformés en HTML entities : <button>
+    Les chevrons sont transformés en HTML entities : <button> 
 }
 ```
 

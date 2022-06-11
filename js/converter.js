@@ -94,23 +94,11 @@ class ConverterMDHTML
                 }
                 else
                 {
-                    let ligne = element.slice(0,element.length-1); 
-                    this.tableauFinal.push(ligne);
+                    // let ligne = element.slice(0,element.length-1); 
+                    this.tableauFinal.push(element);
                 }
             }
             // ligne vide, possiblement du code (pas de \r pour github)
-            else if(element == '')
-            {
-                if(!this.debutCode)
-                {
-                    continue;
-                }
-                else
-                {
-                    let ligne = element.slice(0,element.length); // rien à enlenver
-                    tableauFinal.push(ligne);
-                }
-            }
             // liste UL ou OL
             else if(isUL || isOL)
             {
