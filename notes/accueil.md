@@ -42,11 +42,11 @@ entrée de code
 ```
 entrée 
 {
-    Cette ligne est indentée et très longue pour afficher la barre de défilement horizontale. On peut naviguer avec SHIFT + molette souris...
-    
-    saut de ligne
-    
-    Les chevrons sont transformés en HTML entities : <button>
+	Cette ligne est indentée et très longue pour afficher la barre de défilement horizontale. On peut naviguer avec SHIFT + molette souris...
+	
+	saut de ligne
+	
+	Les chevrons sont transformés en HTML entities : <button>
 }
 ```
 

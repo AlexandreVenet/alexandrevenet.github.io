@@ -27,7 +27,7 @@ public class DemoScript : MonoBehaviour
 		// Trouver un objet avec le tag indiqué
 		_player = GameObject.FindWithTag("nomTag");
 	}
-
+	
 	private void Update(){
 		// Se tourner en permanence vers l'objet
 		transform.LookAt(_player.transform);
