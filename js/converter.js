@@ -86,7 +86,7 @@ class ConverterMDHTML
                 }
             }
             // ligne vide, possiblement du code
-            else if(element == '\r')
+            else if(element == '\r' || element == '\n')
             {
                 if(!this.debutCode)
                 {
@@ -94,8 +94,9 @@ class ConverterMDHTML
                 }
                 else
                 {
-                    // let ligne = element.slice(0,element.length+1); 
-                    this.tableauFinal.push(element);
+                    // pour win
+                    let ligne = element.slice(0,element.length-1); 
+                    this.tableauFinal.push(ligne);
                 }
             }
             // liste UL ou OL
@@ -191,7 +192,8 @@ class ConverterMDHTML
                 }
                 else 
                 {
-                    let ligne = element.slice(0,element.length-1); 
+                    // let ligne = element.slice(0,element.length-1); // \r windows
+                    let ligne = element; 
                     ligne = ligne.replaceAll('<','&lt;');
 				    ligne = ligne.replaceAll('>','&gt;');
                     this.tableauFinal.push(ligne);
