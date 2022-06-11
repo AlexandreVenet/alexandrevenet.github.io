@@ -24,7 +24,6 @@ class ConverterMDHTML
         // let texteSansRetours = texte.replace(/\r+/g,'');
 
         let texteTableau = texte.split('\n');
-        console.log(texteTableau);
 
         this.tableauFinal = [];
         this.debutCode = false;
@@ -33,6 +32,8 @@ class ConverterMDHTML
         
         for (let i = 0; i < texteTableau.length; i++) {
             let element = texteTableau[i];
+
+            console.log(element);
 
             let isUL = element.substring(0,2) == '- ';
             let isOL = element.match(this.regExOL);
