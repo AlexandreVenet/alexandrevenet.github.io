@@ -95,8 +95,11 @@ class ConverterMDHTML
                 else
                 {
                     // pour win
-                    let ligne = element.slice(0,element.length-1); 
-                    this.tableauFinal.push(ligne);
+                    // let ligne = element.slice(0,element.length-1); 
+                    // this.tableauFinal.push(ligne);
+
+                    // pour github
+                    this.tableauFinal.push(element);
                 }
             }
             // liste UL ou OL
