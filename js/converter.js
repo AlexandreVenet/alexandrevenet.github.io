@@ -192,8 +192,11 @@ class ConverterMDHTML
                 }
                 else 
                 {
-                    // let ligne = element.slice(0,element.length-1); // \r windows
-                    let ligne = element; 
+                    let ligne = element;
+                    if(element.slice(element.length-1, element.length) == "\r")
+                    {
+                        ligne = element.slice(0,element.length-1);
+                    }
                     ligne = ligne.replaceAll('<','&lt;');
 				    ligne = ligne.replaceAll('>','&gt;');
                     this.tableauFinal.push(ligne);
