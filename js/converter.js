@@ -67,7 +67,7 @@ class ConverterMDHTML
                 this.tableauFinal.push(ligne);
             }
             // bloc de code ```
-            else if(element == '```\r')
+            else if(element == '```')
             {
                 this.VerifierFinUL2();
                 this.VerifierFinOL2();
