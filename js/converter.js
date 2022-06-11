@@ -24,6 +24,7 @@ class ConverterMDHTML
         // let texteSansRetours = texte.replace(/\r+/g,'');
 
         let texteTableau = texte.split('\n');
+        console.log(texteTableau);
 
         this.tableauFinal = [];
         this.debutCode = false;
