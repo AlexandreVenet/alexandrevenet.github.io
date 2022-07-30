@@ -64,4 +64,4 @@ Définir des *assemblies* influence la reconnaissances des *packages* dans le pr
 - `Unity.TextMeshPro`,
 - `Unity.TextMeshPro.Editor`.
 
-Un autre problème est celui des **références en boucle** : en effet, deux assemblages se référencent l'une l'autre. Ceci est source d'erreur. Le problème ici n'est pas technique mais structurel : si deux assemblages se référencent l'un l'autre, alors ne faut-il pas les fusionner en un seul ou bien refactoriser le code ?
+Un autre problème est celui des **références en boucle** où deux assemblages se référencent l'un l'autre. Ceci est source d'erreur. Le problème ici n'est pas technique mais structurel : si deux assemblages se référencent l'un l'autre, alors ne faut-il pas les fusionner en un seul ou bien refactoriser le code ?

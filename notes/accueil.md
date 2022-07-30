@@ -37,7 +37,7 @@ Le site est en ce qu'on appelle « mode sombre » afin de réduire la consommati
 Les blocs de code sont présentés de cette manière : 
 ```
 entrée de code
-    ligne indentée
+		ligne indentée de 2 tabulations
 ```
 ```
 entrée 
