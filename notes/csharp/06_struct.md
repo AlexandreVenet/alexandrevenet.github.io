@@ -43,7 +43,7 @@ public struct Toto
 internal class Program
 {
 	public static Toto toto;
-
+	
 	static void Main(string[] args)
 	{
 		toto = new("Toto");
