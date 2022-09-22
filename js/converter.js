@@ -11,7 +11,7 @@ class ConverterMDHTML
 
     regExOL = /^[0-9]*\. /gm;
     regExOL2 = /^   [0-9]*\. /gm
-    regExLien = /\[.*?\)/g;
+    regExLien = /\[([^"`]*)\]\((.*?)\)/g;
     regExCode = /`.*?`/g;
     regExStrongI = /\*{3}.*?\*{3}/g;
     regExStrong = /\*{2}.*?\*{2}/g;
