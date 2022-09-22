@@ -88,20 +88,26 @@ class ConverterMDHTML
             // ligne vide, possiblement du code
             else if(element == '\r' || element == '\n' || element == '\r\n')
             {
-                console.log(element.charCodeAt(0));
-                // if(!this.debutCode)
-                // {
-                //     continue;
-                // }
-                // else
-                // {
+                /*
+                if(!this.debutCode)
+                {
+                    continue;
+                }
+                else
+                {
                     // pour win
                     // let ligne = element.slice(0,element.length-1); 
                     // this.tableauFinal.push(ligne);
 
                     // pour github
                     this.tableauFinal.push(element);
-                // }
+                }*/
+                let ligne = element; 
+    			if(element.charCodeAt(0) == 13)
+    			{
+    				ligne = ligne.slice(0,ligne.length-1); 
+    			}
+    			tableauFinal.push(ligne);
             }
             // liste UL ou OL
             else if(isUL || isOL)
