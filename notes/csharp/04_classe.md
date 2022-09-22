@@ -81,9 +81,9 @@ Exemple de déclaration (sans assignation) d'un champ :
 private int monEntier;
 ```
 
-On peut expliciter l'accessibilité des variables en préfixant leur nom d'un identifiant. Par exemple, la **notation hongroise** https://fr.wikipedia.org/wiki/Notation_hongroise :
+On peut expliciter l'accessibilité des variables en préfixant leur nom d'un identifiant. Par exemple, la **notation hongroise** ([Wikipédia Notation hongroise](https://fr.wikipedia.org/wiki/Notation_hongroise "Wikipédia Notation hongroise")) :
 - les champs `private` et `protected` avec un ***underscore*** `_`,
-- les champs `public` avec `m_` (pour "membre"),
+- les champs `public` avec `m_` (pour « membre »),
 - les propriétés avec `m_` ou `p_`.
 
 Toute variable est **privée par défaut**, ceci pour respecter et inciter le développeur à respecter le principe d'**encapsulation** (réduire l'exposition des membres). C# autorise l'**absence du mot-clé** `private` mais l'explicitation reste une bonne pratique. En général, tout membre doit être d'abord pensé `private` ; c'est seulement s'il est **nécessaire** d'y accéder autrement qu'on change sa visibilité. 
@@ -283,7 +283,7 @@ monObjet.NomMethode(paramètres);
 
 ## Champs et propriétés
 
-Doc Microsoft : https://docs.microsoft.com/fr-fr/dotnet/csharp/properties
+[MSDN Propiétés](https://docs.microsoft.com/fr-fr/dotnet/csharp/properties "MSDN Propriétés")
 
 Les **champs** sont des variables, accompagnés du modificateur d'accès, déclarés à la racine de la classe. 
 
@@ -302,7 +302,7 @@ void Start(){
 }
 ```
 
-Ces champs sont accessibles en général en **lecture** et **écriture**. Ils reçoivent toute valeur selon leur type. Exemple : l'âge d'un chat serait alors -500.22, 0, 5, 15623... Or, on peut vouloir que ces valeurs représentent une certaine réalité, aient un sens d'un point de vue "métier". Alors, il s'agit d'éviter que l'utilisateur de la classe produise des contenus incohérents. Pour cela, l'enjeu est :
+Ces champs sont accessibles en général en **lecture** et **écriture**. Ils reçoivent toute valeur selon leur type. Exemple : l'âge d'un chat serait alors -500.22, 0, 5, 15623... Or, on peut vouloir que ces valeurs représentent une certaine réalité, aient un sens d'un point de vue « métier ». Alors, il s'agit d'éviter que l'utilisateur de la classe produise des contenus incohérents. Pour cela, l'enjeu est :
 - **limiter l'accès** aux membres de la classe avec des **modificateurs d'accessibilité**,
 - **contrôler la valeur** des champs... mais comment ?
 
@@ -322,7 +322,7 @@ public bool SetNombre(int num)
 public int GetNombre() => nombre; // raccourci avec opérateur lambda
 ```
 
-MSDN : https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/lambda-operator
+[MSDN Opérateur lambda](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/lambda-operator "MSDN Opérateur lambda")
 
 C# propose aussi les **propriétés**. Une propriété **encapsule** un champ. Lors de l'utilisation, cela donne l'impression de modifier un champ. En général, le nom est en UpperCamelCase et est le même que le champ encapsulé. Une fois la propriété réalisée, penser à placer le champ correspondant en `private` si ce n'est pas fait automatiquement, pour que le champ reste sous le seul contrôle de la propriété (au moins vis-à-vis de l'extérieur de la classe), ce qui respecte le principe de l'encapsulation.
 ```
@@ -330,7 +330,7 @@ private type champ;
 public type Champ 
 {
 	get { return champ; }
-	set	{ champ = value; }
+	set { champ = value; }
 }
 ```
 
@@ -410,7 +410,7 @@ Les **propriétés auto-implémentées** sont un moyen commode et rapide de déc
 public bool Youpi {get; private set;} = true;
 ```
 
-On peut définir une propriété de façon à ce que la **valeur soit définie une seule fois à la création de l'instance** (ne fonctionne pas en classe `static`). On utilise le mot clé `init`.Le comportement est le suivant :
+On peut définir une propriété de façon à ce que la **valeur soit définie une seule fois à la création de l'instance** (ne fonctionne pas en classe `static`). On utilise le mot clé `init`. Le comportement est le suivant :
 - lors de l'instanciation, le constructeur peut *set* une valeur en utilisant la propriété,
 - une fois l'objet créé, le *setter* n'est plus disponible.
 ```
@@ -426,7 +426,7 @@ On peut accéder à une variable par son nom lors d'une **exploration des membre
 ```
 public class MonObj
 {
-	public float toto;
+	public float toto = 10.5f;
 }
 
 MonObj obj = new MonObj();
