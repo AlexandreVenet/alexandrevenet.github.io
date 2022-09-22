@@ -86,7 +86,7 @@ class ConverterMDHTML
                 }
             }
             // ligne vide, possiblement du code
-            else if(element == '\r' || element == '\n' || element == '\r\n')
+            else if(element == '\r' || element == '\n' || element == '\r\n' || element.charCodeAt(0) == 13)
             {
                 /*
                 if(!this.debutCode)
@@ -102,12 +102,7 @@ class ConverterMDHTML
                     // pour github
                     this.tableauFinal.push(element);
                 }*/
-                let ligne = element; 
-    			if(element.charCodeAt(0) == 13)
-    			{
-    				ligne = ligne.slice(0,ligne.length-1); 
-    			}
-    			this.tableauFinal.push(ligne);
+    			this.tableauFinal.push(element);
             }
             // liste UL ou OL
             else if(isUL || isOL)
