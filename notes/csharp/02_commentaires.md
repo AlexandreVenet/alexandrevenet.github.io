@@ -36,7 +36,7 @@ ARCHITECTURE
 
 ## Dans Unity
 
-L'*attribute* `[Tooltip("texte")]` proposé par Unity est utilisable sur les champs. Cet attribut fonctionne ET pour Visual Studio ET pour l'*Inspector* (passer le curseur de la souris sur le nom du champ concerné).
+L'*attribute* `Tooltip` d'Unity est utilisable sur les champs. Cet attribut fonctionne ET pour Visual Studio ET pour l'*Inspector* (passer le curseur de la souris sur le nom du champ concerné).
 ```
 [Tooltip("Des infos sur un Collider.")]
 [SerializeField] private Collider _collider;
