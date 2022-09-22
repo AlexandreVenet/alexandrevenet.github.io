@@ -30,7 +30,7 @@ Références :
 
 Une fois l'environnement installé, le terminal Windows fournit des commandes utiles.
 
-Connaître *runtimes* installés ou les SDKs installés, ou encore les deux.
+Connaître les *runtimes* installés ou les SDKs installés, ou encore les deux.
 ```
 dotnet --list-runtimes
 ```
@@ -87,7 +87,7 @@ public class DemoScript : MonoBehaviour // La classe peut être attribuée comme
 	}
 	void Update()
 	{
-
+		
 	}
 }
 ```
