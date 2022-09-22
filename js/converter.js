@@ -99,7 +99,7 @@ class ConverterMDHTML
                     // this.tableauFinal.push(ligne);
 
                     // pour github
-                    this.tableauFinal.push('\n');
+                    this.tableauFinal.push(element);
                 }
             }
             // liste UL ou OL
