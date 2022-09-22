@@ -16,7 +16,7 @@ public Vector3 deplacer; // accessible de partout et visible en Inspector
 
 [SerializeField] // ce qui suit visible en Inspector
 private string nom;
-	
+
 private void Start()
 {
 	transform.position = deplacer;
