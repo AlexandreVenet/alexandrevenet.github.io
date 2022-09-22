@@ -107,7 +107,7 @@ class ConverterMDHTML
     			{
     				ligne = ligne.slice(0,ligne.length-1); 
     			}
-    			tableauFinal.push(ligne);
+    			this.tableauFinal.push(ligne);
             }
             // liste UL ou OL
             else if(isUL || isOL)
