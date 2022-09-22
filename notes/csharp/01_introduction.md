@@ -89,7 +89,7 @@ public class DemoScript : MonoBehaviour // La classe peut être attribuée comme
 	}
 	void Update()
 	{
-
+		
 	}
 }
 ```
