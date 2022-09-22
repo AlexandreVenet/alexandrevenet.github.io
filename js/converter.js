@@ -86,21 +86,21 @@ class ConverterMDHTML
                 }
             }
             // ligne vide, possiblement du code
-            else if(element == '\r' || element == '\n')
+            else if(element == '\r' || element == '\n' || element == '\r\n')
             {
-                if(!this.debutCode)
-                {
-                    continue;
-                }
-                else
-                {
+                // if(!this.debutCode)
+                // {
+                //     continue;
+                // }
+                // else
+                // {
                     // pour win
                     // let ligne = element.slice(0,element.length-1); 
                     // this.tableauFinal.push(ligne);
 
                     // pour github
                     this.tableauFinal.push(element);
-                }
+                // }
             }
             // liste UL ou OL
             else if(isUL || isOL)
