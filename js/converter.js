@@ -23,7 +23,7 @@ class ConverterMDHTML
     {
         // let texteSansRetours = texte.replace(/\r+/g,'');
 
-        let texteTableau = texte.split('\r');
+        let texteTableau = texte.split('\n');
 
         this.tableauFinal = [];
         this.debutCode = false;
