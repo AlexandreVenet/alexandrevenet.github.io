@@ -12,9 +12,11 @@ Voici un certain nombre de ressources utiles pour débuter :
 - [Beginner Gameplay Scripting](https://learn.unity.com/project/beginner-gameplay-scripting "Beginner Gameplay Scripting")
 - [Tutorial Teacher](https://www.tutorialsteacher.com/ "Tutorial Teacher")
 
-## Expression, instruction
+## Vocabulaire, notions
 
 En programmation impérative, l'**instruction** désigne la commande que l'on souhaite que la machine effectue. Elle est composée d'une ou plusieurs **expressions** : toute combinaison de valeurs, d'opérateurs et de méthodes qui **retourne une valeur**. Exemple : l'expression booléenne qui renvoie une valeur `true` ou `false`.
+
+Une **constante littérale** est une représentation explicite de la donnée : ce que l'on écrit est ce qui est traité. Cette donnée est typée et vaut pour les nombres positifs, les caractères et les chaînes de caractères. *A contrario*, par exemple un nombre négatif ne représente pas littéralement la donnée car il est obtenu par  composition (opérateur unaire `-` et donnée en valeur absolue).
 
 ## Sur .NET
 
@@ -61,7 +63,7 @@ L'***assembly*** est un ensemble de code prêt à l'emploi.
 - Fichier .exe : ***assembly* de processus**, lance l’application,
 - Fichier .dll : ***assembly* de bibliothèques**, peut être partagé entre plusieurs applications.
 
-Unity est un logiciel utilisant .NET et est adossé à C#.
+Unity est un logiciel utilisant .NET et est adossé à C#. Il peut avoir du retard sur les évolutions de .NET ou bien n'utiliser qu'une partie ou version de l'environnement. Sur ce sujet, on peut consulter la documentation ou la feuille de route de développement. [Feuille de route Unity](https://unity.com/roadmap/unity-platform "Feuille de route Unity")
 
 ## Scripts Unity
 

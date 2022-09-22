@@ -164,7 +164,7 @@ Une donnée de type référence est soit une référence à une instance de clas
 
 Référence : [MSDN Tour C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/tour-of-csharp/ "MSDN Tour C#")
 
-Le (mal nommé) **type universel** `var` déclare un type **implicite** (et non explicite comme précédemment) : le **compilateur** définira le type adéquat en calculant l'expression située à droite de l'opérateur d'assignation, ce qui augmente la charge de travail lors de la compilation (aucun effet sur le produit final). On est en fait en face d'un mot-clé plutôt que d'un nom de type. Caractéristiques : 
+Le (mal nommé) **type universel** `var` déclare un type **implicite** (donc non explicite) : le **compilateur** définira le type adéquat en calculant l'expression située à droite de l'opérateur d'assignation, ce qui augmente la charge de travail lors de la compilation (aucun effet sur le produit final). On est en fait en face d'un mot-clé plutôt que d'un nom de type. Caractéristiques : 
 - une déclaration de variable de ce type requiert une assignation, 
 - une déclaration en ligne ou multiligne est impossible,
 - ce type peut servir dans les boucles,
@@ -219,9 +219,11 @@ object o = i; // boxing
 int j = (int) o; // unboxing
 ```
 
+*Boxing* et *unboxing* sont néannmoins des processus coûteux en termes de calcul. On tentera de trouver d'autres solutions.
+
 ## Postfixes
 
-Avec les nombres, le postfixe ("l", ou "d"...) définit que le nombre est bien du type défini. Si on omet cette lettre, alors **le compilateur opère une conversion**. Exemple :
+Avec les nombres, le postfixe (« l », ou « d »...) définit que le nombre est bien du type défini. Si on omet cette lettre, alors **le compilateur opère une conversion**. Exemple :
 ```
 double d = 3; // 3 entier puis converti en double
 double dd = 3d; // pas de conversion
