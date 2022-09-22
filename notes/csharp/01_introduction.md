@@ -83,11 +83,11 @@ public class DemoScript : MonoBehaviour // La classe peut être attribuée comme
 	// Des méthodes héritées de MonoBehaviour
 	void Start()
 	{
-
+	
 	}
 	void Update()
 	{
-		
+	
 	}
 }
 ```
