@@ -88,7 +88,6 @@ class ConverterMDHTML
             // ligne vide, possiblement du code
             else if(element == '\r' || element == '\n' || element == '\r\n')
             {
-                /*
                 if(!this.debutCode)
                 {
                     continue;
@@ -101,11 +100,6 @@ class ConverterMDHTML
 
                     // pour github
                     this.tableauFinal.push(element);
-                }*/
-                
-                if(element.charCodeAt(0) == 13)
-                {
-        			this.tableauFinal.push(element);
                 }
             }
             // liste UL ou OL

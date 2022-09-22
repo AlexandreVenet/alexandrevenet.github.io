@@ -32,7 +32,7 @@ On définit une `struct` de la même manière qu'une classe avec le mot-clé ido
 public struct Toto
 {
 	public string nom;
-
+	
 	public Toto(string nom)
 	{
 		this.nom = nom;
@@ -49,11 +49,11 @@ internal class Program
 		toto = new("Toto");
 		Toto titi;
 		Toto tutu = new();
-
+	
 		Console.WriteLine(toto.Name);
 		Console.WriteLine(titi.Name); // titi non assignée
 		Console.WriteLine(tutu.Name); // rien
-
+	
 		Console.WriteLine("Fin programme");
 		Console.Read();
 	}
