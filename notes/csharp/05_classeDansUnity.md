@@ -61,7 +61,7 @@ public class Outil
 		this.munitions = munitions;
 	}
 }
- 
+	
 public class Joueur : MonoBehaviour{
 	public Outil pistoletPeinture;
 	void Start()
