@@ -16,7 +16,7 @@ public Vector3 deplacer; // accessible de partout et visible en Inspector
 
 [SerializeField] // ce qui suit visible en Inspector
 private string nom;
- 
+	
 private void Start()
 {
 	transform.position = deplacer;
@@ -52,7 +52,7 @@ public class Outil
 	public string nom;
 	public float vitesseTir;
 	public int munitions;
- 
+
 	// constructeur
 	public Outil(string nom, float vitesseTir, int munitions)
 	{
@@ -85,7 +85,7 @@ public class Item
 	public string nom;
 	public int id;
 	public string description;
- 
+
 	public Item(string nom, int id, string description)
 	{
 		this.nom = nom;
@@ -100,7 +100,7 @@ public class Inventaire : MonoBehaviour
 	Item hache;
 	Item marteau;
 	Item savon;
- 
+
 	void Start(){
 		// on peut instancier directement...
 		hache = new Item("Hache", 1, "Pour couper du bois.");
@@ -109,7 +109,7 @@ public class Inventaire : MonoBehaviour
 		marteau = CreerItem("Marteau, 2, "Pour enfoncer des clous.");
 		savon = CreerItem("Savon", 3, "Pour nettoyer des surfaces.");
 	}
- 
+
 	private Item CreerItem(string nom, int id, string description)
 	{
 		var item = new Item(nom, id, description);
@@ -131,7 +131,7 @@ public class Item
 	public int id;
 	public string description;
 	public Sprite icone;
- 
+
 	public Item(string nom, int id, string description)
 	{
 		this.nom = nom;
