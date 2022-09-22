@@ -79,17 +79,17 @@ Unity insère automatiquement une **structure de code par défaut** :
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; // Ceci pour que la classe hérite de MonoBehaviour
-	
+
 public class DemoScript : MonoBehaviour // La classe peut être attribuée comme composant à un objet
 {
 	// Des méthodes héritées de MonoBehaviour
 	void Start()
 	{
-	
+
 	}
 	void Update()
 	{
-	
+
 	}
 }
 ```
