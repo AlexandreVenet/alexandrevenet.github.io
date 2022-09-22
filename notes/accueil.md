@@ -1,12 +1,12 @@
 # Github // Alexandre Venet
 
-Le 28-05-2022
+Le 20-09-2022
 
-Bienvenue dans mon espace GitHub consacré à l'environnement 3D temps réel Unity et le C#.
+Bienvenue dans mon espace GitHub consacré à l'environnement 3D temps réel Unity et au C#.
 
 ## Présentation
 
-Je publie ici mes notes de cours à la **3WA**, des parcours officiels **Unity Technologies** et de mon **expérience personnelle**. Par souci de pédagogie, les articles suivent une certaine progressivité par catégorie, mais Unity dépendant du langage C#, on n'hésitera pas à relier les articles d'une catégorie à ceux d'une autre.
+Je publie ici mes notes de cours (**3WA**, **M2i**), des parcours officiels **Unity Technologies** et de mon **expérience personnelle**. Par souci de pédagogie, les articles suivent une certaine progressivité par catégorie, mais Unity dépendant du langage C#, on n'hésitera pas à relier les articles d'une catégorie à ceux d'une autre.
 
 Les **documentations officielles** :
 - [Microsoft C#](https://docs.microsoft.com/fr-fr/dotnet/csharp "Microsoft C#")
@@ -18,13 +18,13 @@ Pour en savoir plus sur moi-même, consulter mon site [Alhomepage.com](https://w
 
 ## Contenus
 
-La partie **Généralités** présente Unity dans son contexte industriel.
+La partie **Unity en général** présente Unity dans son contexte industriel.
 
-La partie **C# dans Unity** présente l'essentiel du langage C# dans le contexte du framework.
+Dans les **Fonctions d'Unity**, on trouvera un tour d'horizon des briques élémentaires d'Unity.
 
-Dans les **Fonctionnalités**, on trouvera un tour d'horizon des briques élémentaires d'Unity.
+La partie **Langage C#** présente l'essentiel du langage C#.
 
-Dans **Patrons de conception** sont regroupés des *design patterns* utilisables dans Unity.
+Dans **Patrons de conception** sont regroupés des *design patterns*.
 
 ## Colophon
 
