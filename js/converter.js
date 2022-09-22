@@ -86,8 +86,9 @@ class ConverterMDHTML
                 }
             }
             // ligne vide, possiblement du code
-            else if(element == '\r' || element == '\n' || element == '\r\n' || element.charCodeAt(0) == 13)
+            else if(element == '\r' || element == '\n' || element == '\r\n')
             {
+                console.log(element.charCodeAt(0));
                 // if(!this.debutCode)
                 // {
                 //     continue;
