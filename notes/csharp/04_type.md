@@ -111,10 +111,6 @@ A ne pas confondre avec la **déclaration** qui alloue la mémoire en *Stack* ma
 int x;
 ```
 
-Puisque de type valeur, la `struct` ne peut pas avoir de valeur `null`. On peut néanmoins lui donner l'attribut `nullable` : ajouter `?` en suffixe de type. Alors la valeur `null` est autorisée.
-```
-MonTypeValeur? x = null;
-```
 
 ## Type référence : class
 

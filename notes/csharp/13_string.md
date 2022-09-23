@@ -239,17 +239,17 @@ Console.WriteLine($"[{texte.PadRight(20, '-')}]");
 Voici un exemple de traitements par Microsoft (code puis sortie). Ici, pour un programme Console, dans une culture fr-FR.
 ```
 Console.OutputEncoding = System.Text.Encoding.UTF8; // disposer du caractère €
-
+	
 string produit1 = "Gain magique";
 decimal retours1 = 0.1275m;
 decimal gains1 = 55000000.0m;
-
+	
 string produit2 = "Avenir radieux";
 decimal retours2 = 0.13125m;
 decimal gains2 = 63000000.0m;
-
+	
 string comparisonMessage = "";
-
+	
 comparisonMessage = "[";
 comparisonMessage += produit1.PadRight(20);
 comparisonMessage += String.Format("{0:P}", retours1).PadRight(10);
@@ -259,7 +259,7 @@ comparisonMessage += produit2.PadRight(20);
 comparisonMessage += String.Format("{0:P}", retours2).PadRight(10);
 comparisonMessage += String.Format("{0:C}", gains2).PadRight(20);
 comparisonMessage += "]";
-
+	
 Console.WriteLine(comparisonMessage);
 ```
 ```
