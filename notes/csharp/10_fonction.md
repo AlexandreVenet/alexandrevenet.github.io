@@ -76,12 +76,12 @@ III - `FixedUpdate()`, **moteur physique** :
 
 IV - **Moteur de rendu** :
 - `Update()` :
-	- appelée **avant chaque *frame* de moteur visuel**,
-	- c'est ici qu'on code l'**action** des objets : bouger des objets non physiques, chronomètres (*timers*) simples, entrées...
-	- ne dépend pas du temps mais de la complexité du calcul à opérer : si une *frame* est plus longue à calculer qu'une autre, alors il faudra attendre qu'elle ait fini pour passer à la suivante.
+   - appelée **avant chaque *frame* de moteur visuel**,
+   - c'est ici qu'on code l'**action** des objets : bouger des objets non physiques, chronomètres (*timers*) simples, entrées...
+   - ne dépend pas du temps mais de la complexité du calcul à opérer : si une *frame* est plus longue à calculer qu'une autre, alors il faudra attendre qu'elle ait fini pour passer à la suivante.
 - `LateUpdate()` :
-	- appelée à la **fin de chaque *frame***, après `Update()`,
-	- utile pour les **caméras** : l'objet est d'abord calculé (collisions, positions, etc.) sans influencer la caméra codée en fin de traitement.
+   - appelée à la **fin de chaque *frame***, après `Update()`,
+   - utile pour les **caméras** : l'objet est d'abord calculé (collisions, positions, etc.) sans influencer la caméra codée en fin de traitement.
 
 Noter que si un script n’a pas `Update()`, alors on ne peut pas activer/désactiver ce composant dans l’`Inspector` et il reste toujours actif.
 
@@ -102,13 +102,13 @@ Une bonne pratique est de créer des fonctions **par rôle ou action** et ne lai
 ```
 public int health = 100;
 Light maLampe;
-
+	
 void Start ()
 {
 	transform.position = SetPosition(0,0,0);
 	maLampe = gameObject.GetComponent<Light>(); 
 }
-
+	
 void Update()
 {
 	if(Input.GetKey("space"))
@@ -117,13 +117,13 @@ void Update()
 	if(Input.GetKeyUp(KeyCode.L))
 		GererLampe();
 }
-
+	
 Vector3 SetPosition(float x, float y, float z)
 {
 	Vector3 pos = new Vector3(x, y, z);
 	return pos; 
 }
-
+	
 int Damage(int damageAmount)
 {
 	health -= damageAmount;
@@ -133,7 +133,7 @@ int Damage(int damageAmount)
 		Destroy(this.gameObject);
 	}
 }
-
+	
 void GererLampe()
 {
 	maLampe.enabled = !maLampe.enabled;
@@ -238,7 +238,7 @@ public bool TryDoThing(string str, out int toto)
 	{
 		toto = str.Length;
 	}
-
+	
 	return true;
 }
 ```

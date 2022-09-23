@@ -12,7 +12,7 @@ Une ***struct*** est une unité logique comme la classe mais beaucoup plus lég�
 - allouée sur la *stack* (et non sur la *heap* comme la classe), elle est de **type valeur** (l'opérateur d'assignation produit une copie),
 - pas d'allocation mémoire en *heap*, donc pas de passage du *garbage collector*.
 - non prise en charge de l'héritage (hormis d'`Object`),
-- peut implémenter des interfaces.
+- peut implémenter des interfaces, des propriétés, des méthodes, statiques ou non.
 
 Noter que les types simples comme `bool` sont en fait des *structs* (taper `F12` sur un type et constater).
 

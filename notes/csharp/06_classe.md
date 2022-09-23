@@ -187,16 +187,16 @@ Exemple :
 ```
 public class Personnage
 {
-	private Vector3 _position;
+	public Vector3 m_position;
 	
 	public Personnage()
 	{
-		_position = Vector3.zero;
+		m_position = Vector3.zero;
 	}
 	
 	public Personnage(Vector3 position)
 	{
-		_position = position;
+		m_position = position;
 	}
 	
 	public void DireBonjour()

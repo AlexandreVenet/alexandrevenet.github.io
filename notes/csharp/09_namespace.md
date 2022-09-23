@@ -41,7 +41,7 @@ Si on tape du code et qu'une librairie manque, alors faire un clic droit sur le 
 
 Les *namespaces* permettent d'isoler du code sous un nom réservé, ce qui évite les conflits éventuels avec d'autres classes qui auraient le même nom. Côté fichiers, on essaie de respecter la nomenclature utilisée et de l'appliquer à l'arborescence de fichiers et dossiers.
 
-**Exemple** : le script de la librairie situé dans un dossier par exemple `Auteur/MaChosePack` et le script appelant cette librairie :
+**Exemple** : le script de la librairie situé dans un dossier par exemple `Auteur/x` et le script appelant cette librairie :
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -104,7 +104,7 @@ public class TypeX : MonoBehaviour
 }
 ```
 
-On peut aussi écrire dans un seul fichier, sous le même *namespace* plusieurs types.
+On peut aussi écrire plusieurs types dans un seul fichier et sous le même *namespace*.
 ```
 namespace Toto
 {
