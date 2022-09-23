@@ -96,7 +96,7 @@ Dans la classe, pour accéder à un membre, on peut :
 
 Utiliser `this`, c'est **référer à l'instance courante**. Ce mot-clé peut toutefois ne pas être utilisé car le compilateur l'ajoutera automatiquement s'il manque.
 
-Dans Visual Studio, taper `this.` a pour effet d'afficher l'IntelliSense et de proposer les membres.
+Dans Visual Studio, taper `this.` a pour effet d'afficher l'*IntelliSense* et de proposer les membres.
 
 ## Constructeur
 
@@ -162,7 +162,7 @@ private readonly DateTime maintenant = DateTime.Now.Date;
 class MaClasse
 {
 	private readonly DateTime maintenant;
-
+	
 	public MaClasse()
 	{
 		maintenant = DateTime.Now.Date;
@@ -188,17 +188,17 @@ Exemple :
 public class Personnage
 {
 	private Vector3 _position;
-
+	
 	public Personnage()
 	{
 		_position = Vector3.zero;
 	}
-
+	
 	public Personnage(Vector3 position)
 	{
 		_position = position;
 	}
-
+	
 	public void DireBonjour()
 	{
 		Debug.Log("Bonjour"):
@@ -223,12 +223,12 @@ public class MaClasse
 {
 	private static int compteur = 0; // valeur définie à la compilation
 	private int identifiant;
-
+	
 	static MaClasse()
 	{
 		compteur = 100; // valeur définie à l'exécution
 	}
-
+	
 	public MaClasse()
 	{
 		identifiant = MaClasse.compteur;
@@ -293,10 +293,10 @@ Les champs ne peuvent pas se référer les uns aux autres au niveau racine. Pour
 int difficulteFacile = 0;
 int difficulteMoyenne = 1;
 int difficulteDure = 2;
-
+	
 // public int maDifficulte = difficulteFacile; // génère une erreur
 public int maDifficulte;
-
+	
 void Start(){
 	maDifficulte = difficulteFacile; // ok	
 }
@@ -366,12 +366,12 @@ public class GameManager : MonoBehaviour
 			_isGameOver = value; // affecter la valeur
 		}
 	}
-
+	
 	void Start()
 	{
 		IsGameOver = false; // écriture
 	}
-
+	
 	void Update()
 	{
 		if(Input.GetKey(KeyCode.Space))
@@ -428,8 +428,8 @@ public class MonObj
 {
 	public float toto = 10.5f;
 }
-
+	
 MonObj obj = new MonObj();
-
+	
 float monFloat = (float) obj.GetType().GetField("toto").GetValue(obj);
 ```
