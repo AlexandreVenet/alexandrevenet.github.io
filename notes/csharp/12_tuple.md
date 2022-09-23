@@ -11,8 +11,8 @@ Le type `tuple` est **type valeur** qui permet de **regrouper des données** de 
 Les tuples sont utiles en particulier lorsqu'une **fonction** doit retourner plusieurs valeurs (voir le chapitre Fonction). 
 
 Références :
-- https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/builtin-types/value-tuples
-- https://learn.microsoft.com/fr-fr/dotnet/api/system.tuple
+- [Microsoft Learn Tuples](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/builtin-types/value-tuples "Microsoft Learn Tuples")
+- [Microsoft System Tuple](https://learn.microsoft.com/fr-fr/dotnet/api/system.tuple "Microsoft System Tuple")
 
 ## Usages standards
 

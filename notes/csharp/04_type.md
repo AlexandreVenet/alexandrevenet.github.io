@@ -78,7 +78,7 @@ On utilise des **unités de mesure** qui dérivent du code binaire :
 
 ![Les types intégrés C#.](../../media/csharp/types.svg)
 
-L'espace en mémoire qui est réservé pour un type n'est pas extensible. Par conséquent, **le type limite la valeur**. Ainsi, notamment avec les nombres, on choisira un type selon les besoins et en gardant à l'esprit de ne pas encombrer la mémoire inutilement. 
+**Le type limite la valeur**. Ainsi, notamment avec les nombres, on choisira un type selon les besoins et en gardant à l'esprit de ne pas encombrer la mémoire inutilement. 
 
 Par exemple, le type `int` ne conserve d'un nombre à virgule que la partie entière (c'est non un arrondi mais une troncature). Les **types numériques à virgule flottante** présentent la caractéristique de **précision**. 
 ```
