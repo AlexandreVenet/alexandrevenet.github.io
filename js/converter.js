@@ -291,7 +291,7 @@ class ConverterMDHTML
         texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>');
         texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>');
         texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>');
-        tex = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
+        texte = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
         
         return texte;
     }
