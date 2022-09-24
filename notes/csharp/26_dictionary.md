@@ -6,9 +6,7 @@ Une collection non triée de paires clé-valeur.
 
 ## Introduction
 
-Le type `Dictionary<TKey,TValue>` est une **collection** de données **à taille modifiable** dont les données sont stockées par **paires clé-valeur** (*key-value pair*). Chaque **clé est unique**, **immutable** et **non** `null`. Une clé doit exister pour être explorée ou appelée.
-
-Les clés sont **uniques** (sinon levée d'exception), doivent être **immutables** et **non** `null`. Les valeurs peuvent être en doublon, `null`.
+Le type `Dictionary<TKey,TValue>` est une **collection** de données **à taille modifiable** dont les données sont stockées par **paires clé-valeur** (*key-value pair*). Chaque **clé est unique**, **immutable** et **non** `null` (sinon levée d'exception). Une clé doit exister pour être explorée ou appelée. Les valeurs peuvent être en doublon, `null`.
 
 Le type `Dictionary<TKey,TValue>` **ne s'affiche pas** dans l'*Inspector* d'Unity. On trouvera donc des alternatives (changer de type de collection ou créer alimenter automatiquement une `List` ou faire tout autre chose...).
 
@@ -30,7 +28,7 @@ Dictionary<int, string> test = new Dictionary<int, string>()
 
 ## Ajouts
 
-Ajout de données avec `Add()`.
+Ajout de données avec `.Add()`.
 ```
 test.Add(3, "Trois");
 test.Add(1, "Un");
@@ -39,6 +37,8 @@ test.Add(4, null);
 test.Add(10, "dix");
 test.Add(5, "Cinq");
 ```
+
+On peut tester l'ajout avec `.TryAdd()`.
 
 ## Accès 
 
@@ -51,12 +51,7 @@ test[10] = "Dix"; // modification
 test[6] = "Six"; // ajout
 ```
 
-`.ElementAt()` fournit une paire clé-valeur à l'index spécifié.
-```
-Console.WriteLine(test.ElementAt(6));
-```
-
-Les clé et valeur peuvent être **testées avant lecture** avec `ContainsKey()` et `TryGetValue()`.
+Les clé et valeur peuvent être **testées avant lecture** avec `.ContainsKey()` et `.TryGetValue()`. 
 ```
 Console.WriteLine(test.ContainsKey(5));
 
