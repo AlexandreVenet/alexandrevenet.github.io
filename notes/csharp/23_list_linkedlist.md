@@ -206,4 +206,6 @@ private LinkedList<int> mesNums = new LinkedList<int>();
 
 Des méthodes utiles :
 - `LinkedList.First.Value` : consulter une valeur,
+- `LinkedList.AddFirst()` : ajouter au début,
+- `LinkedList.AddLast()` : ajouter à la fin,
 - `LinkedList.RemoveFirst()` : supprimer.
