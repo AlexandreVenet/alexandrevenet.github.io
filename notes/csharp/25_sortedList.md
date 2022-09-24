@@ -2,7 +2,7 @@
 
 Le 24-09-2022
 
-Une liste triée automatiquement.
+Une liste triée automatiquement. [MS Learn SortedList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist "MS Learn SortedList")
 
 ## Introduction 
 
@@ -51,7 +51,7 @@ test[10] = "Dix"; // modification
 test[6] = "Six"; // ajout
 ```
 
-Les clé et valeur peuvent être **testées avant lecture** avec `ContainsKey()` et `TryGetValue()`.
+Les clé et valeur peuvent être **testées avant lecture** avec `.ContainsKey()` et `.TryGetValue()`.
 ```
 Console.WriteLine(test.ContainsKey(5));
 

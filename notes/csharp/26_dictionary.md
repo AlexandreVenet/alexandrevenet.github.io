@@ -2,7 +2,7 @@
 
 Le 24-09-2022
 
-Une collection non triée de paires clé-valeur.
+Une collection non triée de paires clé-valeur. [MS Learn Dictionary](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2 "MS Learn Dictionary")
 
 ## Introduction
 
