@@ -25,18 +25,16 @@ Le type n'est pas transformé. En fait, il est encapsulé dans le type `Nullable
 Nullable<int> entierNullable = null;
 ```
 
-Lorsque la valeur est `null`, il s'agit en réalité d'une instance dont la propriété `Nullable<T>.HasValue` renvoie `false`. Avec une autre valeur, la méthode renvoie `true`.
+Lorsque la valeur est `null` pour un type nullable, il s'agit en réalité d'une instance dont la propriété `Nullable<T>.HasValue` renvoie `false`. Avec une autre valeur, la méthode renvoie `true`.
 
 Un certain nombre de méthodes et propriétés sont disponibles sur le type nullable.
 - `Nullable<T>.HasValue` : l'instance nullable a-t-elle `null` pour valeur ?
 - `Nullable<T>.Value` : obtenir la valeur si `.HasValue` renvoie `true`, sinon levée d'exception `InvalidOperationException`,
 - `Nullable<T>.GetValueOrDefault()` : renvoie la valeur si non `null`, sinon renvoie `null`.
 
-## Conversions
+## Tests et conversions
 
-Assigner une valeur d'un nullable à un type non nullable peut s'effectuer en utilisant `.GetValueOrDefault()`. 
-
-On peut aussi utiliser l'**opérateur de coalescence nulle** (*null-coalescing operator*) : `??`. Le principe est : si x est null, alors prendre la valeur indiquée.
+C# fournit l'**opérateur de fusion** ou **opérateur de coalescence nulle** (*null-coalescing operator*) : `??`. Si la valeur de l'opérande de gauche est non `null`, alors elle est renvoyée ; sinon c'est la valeur de l'opérande de droite qui est renvoyée.
 ```
 int? a = 1;
 int b = a ?? 0; // b = 1
@@ -46,7 +44,22 @@ int? a = null;
 int b = a ?? 0; // b = 0
 ```
 
-On peut encore passer par une conversion explicite. Une exception est levée si la valeur est `null`.
+Ceci est cumulable avec l'opérateur `?`. Dans cet exemple : 
+- si `maSource` est `null`, alors i = 10,
+- si `maSource` est non `null` :
+   - si `.maValeur` est `null` prendre la valeur 10,
+   - sinon prendre la valeur de `.maValeur`.
+```
+int i = maSource?.maValeur ?? 10;
+```
+
+Maintenant, on peut aussi assigner la valeur d'un nullable à un type non nullable avec `.GetValueOrDefault()`. 
+```
+float? x = 12.34f;
+float y = x.GetValueOrDefault();
+```
+
+On peut encore passer par une conversion explicite. Une exception est alors levée si la valeur est `null`.
 ```
 int? i = null;
 int j = (int) i; // erreur
