@@ -6,14 +6,14 @@ Effectuer des opérations sur les valeurs.
 
 ## Généralités
 
-Les **opérateurs** sont des moyens d'effectuer des **opérations** sur des **variables de même type**. L'opération s'effectue sur un ou plusieurs **opérandes** (substantif masculin). [MS LEarn Opérateurs](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/ "MSDN Opérateurs")
+Les **opérateurs** sont des moyens d'effectuer des **opérations** sur des **variables de même type**. L'opération s'effectue sur un ou plusieurs **opérandes** (substantif masculin). [MS Learn Opérateurs](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/ "MS Learn Opérateurs")
 
 Opérateurs les plus courants :
 - affectation : `=`
 - opérateurs arithmétiques : `+`, `-`, `*`, `/` `%`, `()`, incrémentation `++`, décrémentation `--`,
 - concaténation : `+`
 - raccourcis (opération et affectation): `+=`, `-=`, `*=`, `/=`, `%=`
-- comparaison : `==` (voir aussi `Equals()`), `!=`, >=`, `>`, `<`, `<=`
+- comparaison : `==` (voir aussi `Equals()`), `!=`, `>=`, `>`, `<`, `<=`,
 - opérateurs booléens : `&&`, `||`, `!`.
 
 Exemple : connaître une année bisextile. Lorsque le modulo vaut 0, cela signifie que le dividende est divisible par le diviseur et cela sans reste.

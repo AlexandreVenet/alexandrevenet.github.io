@@ -58,7 +58,7 @@ if(isWatching)
 
 `switch` permet de **tester une seule valeur**. 
 
-`break` permet d'arrêter le test ; si absent, les tests sont combinés (équivalent au "ou" inclusif) jusqu'au prochain. 
+`break` permet d'arrêter le test ; si absent, les tests sont combinés (équivalent du OU inclusif) jusqu'au prochain. 
 
 L'instruction `default` (équivalent au `else`) est optionnelle.
 

@@ -8,7 +8,7 @@ Une structure de donnée qui accueille un ensemble de valeurs de même type.
 
 Source : [Unity Docs Array](https://docs.unity3d.com/ScriptReference/Array.html "Unity Docs Array")
 
-Un ***array*** (**tableau**) est un **ensemble d'items de même type, non redimensionnable.**. La taille doit être définie à la création. Le tableau présente des valeurs à des **index** et le premier index est 0.
+Un ***array*** (**tableau**) est un **ensemble d'items de même type, non redimensionnable**. La taille doit être définie. Le tableau présente des valeurs à des **index** et le premier index est 0.
 
 L'*array* est disponible dans la classe `System.Array`.
 
@@ -54,7 +54,7 @@ arrayInt[^1] = 1;
 
 ## Dimensions
 
-Réf : https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/arrays/multidimensional-arrays
+[MSDN Tableaux multidimensionnels](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/arrays/multidimensional-arrays "MSDN Tableaux multidimensionnels")
 
 Un tableau peut avoir **plusieurs dimensions** (*multidimensional arrays*). Exemple : un tableau bidimensionnel comprend 2 indices : un pour la ligne, un autre pour la colonne. Le nombre de dimension est défini par le nombre de virgules utilisées.0
 
@@ -87,13 +87,13 @@ int[][] tableauNombres = new int[2][];
 // création d'1 tableau contenant 2 tableaux de int
 // tableauNombres[0] vaut null
 // tableauNombres[1] vaut null
-
+	
 tableauNombres[0] = new int[3];
 // création d'un tableau de longueur 3 sans valeurs
 // tableauNombres[0] a un tableau pour valeur
 // tableauNombres[0][0] vaut 0 (valeur par défaut de l'int)
 // tableauNombres[1] vaut null
-
+	
 tableauNombres[0][1] = 12;
 // premier tableau à l'index 0 > second tableau à l'index 1 > la valeur est 12
 ```
@@ -224,7 +224,7 @@ Console.WriteLine($"Tableau : [{string.Join(" ", tab)}]");
 
 ## Dans Unity
 
-Les tableaux peuvent être utilisés pour gérer des inventaires. Dans l'exemple suivant, on utilise une classe de données (*data-class*) avec un **attribut** `[System.Serializable]` pour l'afficher dans l'`Inspector`.
+Les tableaux peuvent être utilisés pour gérer des inventaires. Dans l'exemple suivant, on utilise une classe de données (*data-class*) avec un **attribut** `[System.Serializable]` pour l'afficher dans l'*Inspector*.
 ```
 [System.Serializable]
 public class Objet
@@ -267,7 +267,7 @@ public class Inventaire : MonoBehaviour{
 }
 ```
 
-Dans Unity, on peut renseigner des tableaux de tout type, par exemple `GameObject`. Dans l'exemple suivant, on suppose que dans la scène sont placés 3 objets de ***tag*** "*Player*" nommés librement, et 3 *textMesh* nommés respectivement `td0`, `td1`, `td2` où le nombre est l'index du tableau. 
+Dans Unity, on peut renseigner des tableaux de tout type, par exemple `GameObject`. Dans l'exemple suivant, on suppose que dans la scène sont placés 3 objets de ***tag*** « *Player* » nommés librement, et 3 *textMesh* nommés respectivement `td0`, `td1`, `td2` où le nombre est l'index du tableau. 
 ```
 public class ArraysScript : MonoBehaviour
 {

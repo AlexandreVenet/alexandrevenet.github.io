@@ -147,7 +147,7 @@ do{
 
 ## Foreach
 
-`foreach` permet de parcourir des objets implémentant l'interface `IEnumerable`. Cette boucle ne peut effectuer que des itérations "vers l'avant" (du début à la fin, item par item).
+`foreach` permet de parcourir des objets implémentant l'interface `IEnumerable`. Cette boucle ne peut effectuer que des itérations « vers l'avant » (du début à la fin, item par item).
 
 ```
 string[] tableauDeMots = {"pipi","caca","popo"};
