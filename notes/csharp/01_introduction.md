@@ -20,7 +20,7 @@ Une **constante littérale** est une représentation explicite de la donnée : c
 
 ## Sur .NET
 
-**.NET** de Microsoft existe depuis l'année 2000 et est un **environnement de développement et d'exécution de programmes** pour toute plateforme ou destination, et plus spécifiquement un **environnement unifié de *frameworks***. 
+**.NET** de Microsoft existe depuis l'année 2002 et est un **environnement de développement et d'exécution de programmes** pour toute plateforme ou destination, et plus spécifiquement un **environnement unifié de *frameworks***. 
 - Le programme ***CLR (Common Language Runtime)*** gère la mémoire, les allocations et désallocations, l'exécution de l'application et les dépendances. Comme Java, .NET est un **environnement d'exécution contrôlée**.
 - Le code est dit **code managé**, c'est-à-dire pris en charge par le CLR. 
 - .NET prend en charge les langages respectant les spécifications de l'unification des types (VB, F#, C#...).
@@ -29,6 +29,7 @@ Références :
 - [Site web officiel](https://dotnet.microsoft.com "DotNet")
 - [Page de téléchargement](https://dotnet.microsoft.com/en-us/download "Page de téléchargement")
 - [MSDN .NET](https://learn.microsoft.com/fr-fr/dotnet "MSDN .NET")
+- [Historique des versions](https://www.tutorialsteacher.com/csharp/csharp-version-history "Historique des versions")
 
 Une fois l'environnement installé, le terminal Windows fournit des commandes utiles.
 
