@@ -2,7 +2,7 @@
 
 Le 24-09-2022
 
-Les tableaux sont de longueur fixe, les collections sont de longueur ariable.
+Les tableaux sont de longueur fixe, les collections sont de longueur variable.
 
 ## Introduction
 
@@ -23,7 +23,7 @@ Les collections génériques dans C# :
 - `Dictionary<TKey, TValue>` : éléments conservés par paires clé-valeur,
 - `SortedList<TKey, TValue>` : idem précédent avec tri automatique par ordre croissant,
 - `Queue<T>` : enregistrement *FIFO* (*First In First Out*), les données gardent leur place par ordre d'arrivée,
-- `Stack<T>` : enregistrement *LIFO* (*Last In First Out*),
+- `Stack<T>` : enregistrement *LIFO* (*Last In First Out*), idem,
 - `HashSet<T>` : collection de valeurs uniques (pas de doublons).
 
 ## Collections non génériques
@@ -35,3 +35,9 @@ Les collections non génériques dans C# :
 - `Stack` : enregistrement *LIFO* (*Last In First Out*),
 - `HashTable` : collection par paires clé-valeur. Les valeurs sont restituées en comparant le *hash* des clés (et non les clés elles-mêmes),
 - `BitArray` : tableau de bits représentés par des booléens (`true` : 1, `false` : 0).
+
+## Comparaisons
+
+`List<T>` est plus rapide et moins ouvert à l'erreur que `ArrayList`.
+
+`SortedList<TKey, TValue>` utilise moins de mémoire que `SortedDictionary<TKey, TValue>`.

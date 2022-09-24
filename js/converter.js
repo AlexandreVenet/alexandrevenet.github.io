@@ -17,6 +17,8 @@ class ConverterMDHTML
     regExStrong = /\*{2}.*?\*{2}/g;
     regExI = /\*{1}.*?\*{1}/g;
 
+    regExVrac = /<{1}(T|U|V){1}>{1}/g;
+
     // constructor(){}
 
     AnalyseMD(texte)
@@ -289,7 +291,8 @@ class ConverterMDHTML
         texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>');
         texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>');
         texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>');
-
+        tex = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
+        
         return texte;
     }
 
