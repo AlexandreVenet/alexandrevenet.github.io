@@ -287,13 +287,13 @@ class ConverterMDHTML
             }
         }
 
-        texte = this.VerifierTexteTags(texte, this.regExCode, 1, '<code>', '</code>');
+        // texte = this.VerifierTexteTags(texte, this.regExCode, 1, '<code>', '</code>');
         texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>');
         texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>');
         texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>');
         // texte = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
         
-        let codes = [...texte.matchAll(regExCode)];
+        let codes = [...texte.matchAll(this.regExCode)];
     	if(codes.length != 0)
     	{
     		for (let i = 0; i < codes.length; i++) {
