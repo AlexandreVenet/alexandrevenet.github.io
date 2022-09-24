@@ -287,30 +287,18 @@ class ConverterMDHTML
             }
         }
 
-        // texte = this.VerifierTexteTags(texte, this.regExCode, 1, '<code>', '</code>');
-        texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>');
-        texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>');
-        texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>');
+        texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>', false);
+        texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>', false);
+        texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>', false);
+        texte = this.VerifierTexteTags(texte, this.regExCode, 1, '<code>', '</code>', true);
         // texte = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
         
-        let codes = [...texte.matchAll(this.regExCode)];
-    	if(codes.length != 0)
-    	{
-    		for (let i = 0; i < codes.length; i++) {
-    			const e = codes[i][0];
-    			let justeLeTexte = e.substring(1,e.length-1);
-    			justeLeTexte = justeLeTexte.replaceAll('<','&lt;');
-    			justeLeTexte = justeLeTexte.replaceAll('>','&gt;');
-    			let mot = `<code>${justeLeTexte}</code>`;
-    			texte = texte.replace(e,mot);
-    		}
-    	}
-        
+       
         return texte;
     }
 
 
-    VerifierTexteTags(texte, regex, index, tagDebut, tagFin)
+    VerifierTexteTags(texte, regex, index, tagDebut, tagFin, remplacerChevrons)
     {
         let instances = [...texte.matchAll(regex)];
         if(instances.length != 0)
@@ -318,6 +306,11 @@ class ConverterMDHTML
             for (let i = 0; i < instances.length; i++) {
                 const e = instances[i][0];
                 let justeLeTexte = e.substring(index, e.length-index);
+                if(remplacerChevrons)
+    			{
+    				justeLeTexte = justeLeTexte.replaceAll('<','&lt;');
+    				justeLeTexte = justeLeTexte.replaceAll('>','&gt;');
+    			}
                 let texteEtTags = `${tagDebut}${justeLeTexte}${tagFin}`;
                 texte = texte.replace(e, texteEtTags);
             }
