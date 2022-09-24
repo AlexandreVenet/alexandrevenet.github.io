@@ -15,7 +15,7 @@ class ConverterMDHTML
     regExCode = /`.*?`/g;
     regExStrongI = /\*{3}.*?\*{3}/g;
     regExStrong = /\*{2}.*?\*{2}/g;
-    regExI = /\*{1}.*?\*{1}/g;
+    regExI = /(?!`|\/)\*{1}[^`]*?\*{1}(?!`|\/)/g;
 
     regExVrac = /<{1}(T|U|V|TKey,TValue){1}>{1}/g;
 
