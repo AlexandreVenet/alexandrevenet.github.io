@@ -17,7 +17,7 @@ class ConverterMDHTML
     regExStrong = /\*{2}.*?\*{2}/g;
     regExI = /(?!`|\/)\*{1}[^`]*?\*{1}(?!`|\/)/g;
 
-    regExVrac = /<{1}(T|U|V|TKey,TValue){1}>{1}/g;
+    // regExVrac = /<{1}(T|U|V|TKey,TValue){1}>{1}/g;
 
     // constructor(){}
 
@@ -291,7 +291,20 @@ class ConverterMDHTML
         texte = this.VerifierTexteTags(texte, this.regExStrongI, 3, '<strong><i>', '</i></strong>');
         texte = this.VerifierTexteTags(texte, this.regExStrong, 2, '<strong>', '</strong>');
         texte = this.VerifierTexteTags(texte, this.regExI, 1, '<i>', '</i>');
-        texte = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
+        // texte = this.VerifierTexteTags(texte, this.regExVrac, 1, '&lt;', '&gt;');
+        
+        let codes = [...texte.matchAll(regExCode)];
+    	if(codes.length != 0)
+    	{
+    		for (let i = 0; i < codes.length; i++) {
+    			const e = codes[i][0];
+    			let justeLeTexte = e.substring(1,e.length-1);
+    			justeLeTexte = justeLeTexte.replaceAll('<','&lt;');
+    			justeLeTexte = justeLeTexte.replaceAll('>','&gt;');
+    			let mot = `<code>${justeLeTexte}</code>`;
+    			texte = texte.replace(e,mot);
+    		}
+    	}
         
         return texte;
     }
