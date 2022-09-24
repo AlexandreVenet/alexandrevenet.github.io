@@ -1,4 +1,4 @@
-# List
+# List et LinkedList
 
 Le 24-09-2022
 
@@ -6,7 +6,7 @@ Une collection de valeurs de taille variable.
 
 ## List
 
-La `List` est une collection de **longueur variable**. Elle contient comme l'`array` des valeurs de même type. 
+La `List` est une collection de **longueur variable**. Elle contient comme l'`array` des valeurs de même type. Pour fonctionner, elle enveloppe un tableau.
 
 Des méthodes : 
 - `IndexOf()` : obtenir l'index d'une valeur,
@@ -194,3 +194,16 @@ foreach(int item in monTableau)
 	Debug.Log(item);
 }
 ```
+
+## LinkedList
+
+La `LinkedList` est similaire à la `List`. Sa particularité : chaque cellule contient ses données, une référence à la cellule précédente et une référence à la cellule suivante. Au début de la collection, la référence précédente est `null` et en fin de collection, la référence suivante est `null`.
+
+Cette collection permet facilement des insertions, suppressions, et modification de l'ordre des cellules car il suffit de modifier les références (la `List`, elle, tire sa facilité des ajouts et suppression à la fin de la collection). Limitation : l'accès par index n'est pas direct et il faut passer par une boucle de recherche (la `List`, elle, enveloppe un tableau et peut donc accéder rapidement à un index).
+```
+private LinkedList<int> mesNums = new LinkedList<int>();
+```
+
+Des méthodes utiles :
+- `LinkedList.First.Value` : consulter une valeur,
+- `LinkedList.RemoveFirst()` : supprimer.
