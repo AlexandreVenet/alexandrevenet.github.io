@@ -20,8 +20,8 @@ En général, on préfèrera utiliser les versions génériques qui sont plus ra
 
 Les collections génériques dans C# :
 - `List<T>` : collection d'éléments de même type,
-- `Dictionary<TKey, TValue>` : éléments conservés par paires clé-valeur,
-- `SortedList<TKey, TValue>` : idem précédent avec tri automatique par ordre croissant,
+- `Dictionary<TKey,TValue>` : éléments conservés par paires clé-valeur,
+- `SortedList<TKey,TValue>` : idem précédent avec tri automatique par ordre croissant,
 - `Queue<T>` : enregistrement *FIFO* (*First In First Out*), les données gardent leur place par ordre d'arrivée,
 - `Stack<T>` : enregistrement *LIFO* (*Last In First Out*), idem,
 - `HashSet<T>` : collection de valeurs uniques (pas de doublons).
@@ -40,4 +40,4 @@ Les collections non génériques dans C# :
 
 `List<T>` est plus rapide et moins ouvert à l'erreur que `ArrayList`.
 
-`SortedList<TKey, TValue>` utilise moins de mémoire que `SortedDictionary<TKey, TValue>`.
+`SortedList<TKey,TValue>` utilise moins de mémoire que `SortedDictionary<TKey,TValue>`.

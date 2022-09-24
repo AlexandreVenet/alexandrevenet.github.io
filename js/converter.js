@@ -17,7 +17,7 @@ class ConverterMDHTML
     regExStrong = /\*{2}.*?\*{2}/g;
     regExI = /\*{1}.*?\*{1}/g;
 
-    regExVrac = /<{1}(T|U|V){1}>{1}/g;
+    regExVrac = /<{1}(T|U|V|TKey,TValue){1}>{1}/g;
 
     // constructor(){}
 
