@@ -12,7 +12,7 @@ Par exemple, si les clés sont des nombres entiers, alors elles sont triées dan
 
 Les clés sont **uniques** (sinon levée d'exception), doivent être **immutables** et **non** `null`. Les valeurs peuvent être en doublon, `null`.
 
-## Usages
+## Initialisations
 
 Initialisation :
 ```
@@ -63,7 +63,7 @@ if(test.TryGetValue(5, out int result))
 
 ## Exploration
 
-On peut accéder aux clé et valeur dans une boucle avec les propriétés `Keys` et `Values`.
+On peut accéder aux clés et valeurs dans une boucle avec les propriétés `Keys` et `Values`. Par exemple dans une boucle `for` :
 ```
 for(int i = 0; i < test.Count; i++)
 {

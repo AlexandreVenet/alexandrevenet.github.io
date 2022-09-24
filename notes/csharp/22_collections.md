@@ -41,5 +41,5 @@ Les collections non génériques dans C# :
 
 `List<T>` est plus rapide et moins ouvert à l'erreur que `ArrayList`.
 
-`SortedList<TKey,TValue>` utilise moins de mémoire que `SortedDictionary<TKey,TValue>` et est plus rapide à trouver des données une fois triées. Elle est aussi plus lented à l'insertion et la suppression de données.
+`SortedList<TKey,TValue>` utilise moins de mémoire que `SortedDictionary<TKey,TValue>` et est plus rapide à trouver des données une fois triées. Elle est aussi plus lente à l'insertion et la suppression de données.
 

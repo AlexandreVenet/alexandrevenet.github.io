@@ -74,7 +74,7 @@ La donnée occupe un **espace de mémoire vive** et cette **taille** dépend du 
 
 On utilise des **unités de mesure** qui dérivent du code binaire :
 - **bit** (*binary digit*) : nombre soit de valeur 0 soit de valeur 1 (2 états),
-- **byte** ou **octet** : composé de 8 bits. Exemple : 16 bytes = 2 × 2 × 2 × 2 bits.
+- **byte** ou **octet** : composé de 8 bits. Exemple : 2 bytes = 16 bits = 2 × 2 × 2 × 2 bits.
 
 ![Les types intégrés C#.](../../media/csharp/types.svg)
 
