@@ -74,3 +74,4 @@ partial class ClassePartielle
 		Debug.Log(b);
 	}
 }
+``` 
