@@ -111,6 +111,7 @@ A ne pas confondre avec la **déclaration** qui alloue la mémoire en *Stack* ma
 int x;
 ```
 
+Bonus : [Mémo types intégrés](https://alexandrevenet.github.io/media/csharp/types_memo.svg "Mémo types intégrés")
 
 ## Type référence : class
 
