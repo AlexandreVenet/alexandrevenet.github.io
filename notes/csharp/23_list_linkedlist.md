@@ -29,9 +29,9 @@ Des propriétés :
 - `Count` : lire le nombre d'éléments actuels, 
 - `Capacity` : lire ou écrire le nombre d'éléments que la liste **peut** accueillir sans se redimensionner. Si `.count` augmente, alors la `Capacity` aussi. [Capacity sur GeeksForGeeks](https://www.geeksforgeeks.org/c-sharp-capacity-of-a-list/ "Capacity sur GeeksForGeeks")
 
-Exemples d'usage : l'`array` pour des ensemble fermés comme un inventaire, des notes d'épreuve en philosophie ; la `list` pour des collections ouvertes comme une base de données, des références d'objets dont le nombre varie.
+Exemples d'usage : l'`Array` pour des ensemble fermés comme un inventaire, des notes d'épreuve en philosophie ; la `List` pour des collections ouvertes comme une base de données, des références d'objets dont le nombre varie.
 
-La `list` est une **classe générique**. Pour l'utiliser, on a besoin de la **librairie** afférente : 
+La `List` est une **classe générique**. Pour l'utiliser, on a besoin de la **librairie** afférente : 
 ```
 using System.Collections.Generic;
 ```
@@ -43,7 +43,7 @@ Il faut en spécifier le **type** entre **chevrons**.
 public List<string> maListeDeNoms;
 ```
 
-Lors de l'**instanciation**, remarquer les parenthèses : la `list` étant une classe, on en appelle le **constructeur**. Pour passer des valeurs, on utilise les **initialiseurs de collection**.
+Lors de l'**instanciation**, remarquer les parenthèses : la `List` étant une classe, on en appelle le **constructeur**. Pour passer des valeurs, on utilise les **initialiseurs de collection**.
 ```
 List<string> mesStrings; // vaut null
 List<string> mesStrings = new List<string>(); // liste vide
@@ -61,9 +61,9 @@ int i = nbre[0]; // 10
 
 ## Exploration
 
-Pour **explorer** une `list`, on utilise souvent une **boucle**.
+Pour **explorer** une `List`, on utilise souvent une **boucle**.
 
-Comparons avec l'`array` dans un exemple avec Unity :
+Comparons avec l'`Array` dans un exemple avec Unity :
 ```
 public GameObject[] objetsQuiArrivent = new GameObject[10]; // longueur de 10
 public List<GameObject> ennemisQuiArrivent = new List<GameObject>(); // pas de longueur
@@ -168,7 +168,7 @@ public class MaClasse
 
 ## Renvoyer un tableau
 
-Un objet de type `List<>` présente la méthode `ToArray()` qui permet de retourner le contenu de la collection sous forme de `System.Array`.
+Un objet de type `List` présente la méthode `ToArray()` qui permet de retourner le contenu de la collection sous forme de `System.Array`.
 ```
 private List<int> maListe = new List<int>();
 maListe.Add(100);

@@ -51,7 +51,7 @@ test[10] = "Dix"; // modification
 test[6] = "Six"; // ajout
 ```
 
-Les clé et valeur peuvent être **testées avant lecture** avec `.ContainsKey()` et `.TryGetValue()`. 
+Les clé et valeur peuvent être **testées avant traitement** avec `.ContainsKey()` et `.TryGetValue()`. 
 ```
 Console.WriteLine(test.ContainsKey(5));
 
@@ -67,7 +67,7 @@ On peut accéder aux clés et valeurs dans une boucle avec les propriétés `Key
 ```
 foreach(KeyValuePair<int,string> item in test)
 {
-	Console.Writeline($"{item.Key} : {item.Value}");
+	Console.WriteLine($"{item.Key} : {item.Value}");
 }
 ```
 
@@ -79,7 +79,7 @@ test.Remove(4);
 test.Remove(99); // pas d'erreur si clé introuvable
 ```
 
-Le `Dictionary` peut être vidé avec `.Clear()`.
+La collection se vide avec `.Clear()`.
 ```
 test.Clear();
 ```

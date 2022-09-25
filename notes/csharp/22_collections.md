@@ -43,3 +43,15 @@ Les collections non génériques dans C# :
 
 `SortedList<TKey,TValue>` utilise moins de mémoire que `SortedDictionary<TKey,TValue>` et est plus rapide à trouver des données une fois triées. Elle est aussi plus lente à l'insertion et la suppression de données.
 
+`HashTable` retrouve plus lentement les données qu'un `Dictionary<TKey,TValue>` car il doit effectuer du *boxing*/*unboxing*.
+
+## Usage d'interfaces
+
+Les collections sont similaires car elles implémentent souvent les **mêmes interfaces** (voir chapitre idoine), en versions générique ou non générique.
+
+Par exemple :
+- `ICollection<T>` fournit des méthodes et propriétés pour gérer une collection,
+- `IEnumerable<T>` fournit la possibilité d'itérer,
+- `IDictionary<TKey,TValue>` fournit des propriétés et méthodes pour gérer une collection par paire clé-valeur.
+
+Ces interfaces étant disponibles, on peut les implémenter dans nos classes personnelles. 

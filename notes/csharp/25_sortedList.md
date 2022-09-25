@@ -67,7 +67,7 @@ On peut accéder aux clés et valeurs dans une boucle avec les propriétés `Key
 ```
 for(int i = 0; i < test.Count; i++)
 {
-	Console.Writeline($"{test.Keys[i]} : {test.Values[i]}");
+	Console.WriteLine($"{test.Keys[i]} : {test.Values[i]}");
 }
 ```
 
