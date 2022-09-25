@@ -318,13 +318,13 @@ nav section div a{
 {
     transform:rotate(180deg);
 }
-@media screen and (min-width:1024px)
+/* @media screen and (min-width:1024px)
 {
     .mobileSumm
     {
         display: none;
     }
-}
+} */
 main section > a:first-child /* section de contenu : lien*/
 {
     display: flex;
