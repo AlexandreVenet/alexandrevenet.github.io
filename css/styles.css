@@ -391,13 +391,13 @@ h1 + p
 {
     border-top: 1px solid var(--couleurNavFond);
 } 
-@media screen and (min-width:1024px)
+/* @media screen and (min-width:1024px)
 {
     .mainContent section:nth-child(3)
     {
         border-top: 0;
     } 
-}
+} */
 /* .texteCadre
 {
     font-style: italic;
