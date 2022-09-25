@@ -1,6 +1,6 @@
 # Héritage
 
-Le 29-09-2022
+Le 25-09-2022
 
 Genre et espèce en programmation orientée objet.
 
