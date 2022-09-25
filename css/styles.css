@@ -296,11 +296,12 @@ nav section div a{
     align-items: center;
     margin: 1em;
     padding:1.5em 2em;
-    background-image: var(--backGroundImageDeg);
+    /* background-image: var(--backGroundImageDeg); */
+    background-color: var(--couleurNavFond);
 	overflow: hidden;
     /* max-height: 2em; */
     height: 2em;
-    width: 17em;
+    width: 16em;
     border-radius: 0.4em;
 }
 .mobileSumm p
