@@ -6,7 +6,7 @@ Réécrire des méthodes d'une classe de base dans une classe dérivée.
 
 ## Virtual... override
 
-On peut définir qu'une **méthode de classe de base soit modifiable par la classe dérivée**. On parle de*method overriding*. Pour cela, il faut :
+On peut définir qu'une **méthode de classe de base soit modifiable par la classe dérivée**. On parle de *method overriding*. Pour cela, il faut :
 - ajouter le mot-clé `virtual` à la méthode de la classe de base,
 - redéclarer la méthode dans la classe dérivée et lui ajouter le mot-clé `override` (taper ce mot-clé dans Visual Studio pour afficher les méthodes disponibles) : 
 ```
@@ -70,7 +70,7 @@ public class Canard : Animal
 }
 ```
 
-## Lors de l'instanciation
+## Avec l'upcasting
 
 La méthode utilisée en *runtime* est toujours celle du type au *runtime*, c'est-à-dire le type avec lequel on écrit `new`.
 
