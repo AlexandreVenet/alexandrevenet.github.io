@@ -95,6 +95,8 @@ double d3 = 3.2; // ?
 
 ![Plages de valeur, suffixes et précision.](../../media/csharp/types_plages_precision.svg)
 
+Bonus : [Mémo types intégrés](https://alexandrevenet.github.io/media/csharp/types_memo.svg "Mémo types intégrés")
+
 ## Type valeur : struct ou enum
 
 Tous les **types valeur** sont des `struct` (héritage de C) ou `enum`. 
@@ -110,8 +112,6 @@ A ne pas confondre avec la **déclaration** qui alloue la mémoire en *Stack* ma
 ```
 int x;
 ```
-
-Bonus : [Mémo types intégrés](https://alexandrevenet.github.io/media/csharp/types_memo.svg "Mémo types intégrés")
 
 ## Type référence : class
 
