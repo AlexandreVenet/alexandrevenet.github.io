@@ -2,7 +2,7 @@
 
 Le 24-09-2022
 
-Les tableaux sont de longueur fixe, les collections sont de longueur variable.
+Les tableaux sont de longueur fixe, les collections sont de longueur variable. [MS Learn Collections](https://learn.microsoft.com/fr-fr/dotnet/api/system.collections "MS Learn Collections")
 
 ## Introduction
 

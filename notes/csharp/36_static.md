@@ -2,7 +2,7 @@
 
 Le 25-09-2022
 
-Utiliser quelque chose sans passer par un objet.
+Appeler une méthode de classe sans passer par un objet.
 
 ## Principe
 

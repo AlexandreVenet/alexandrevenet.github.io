@@ -20,6 +20,10 @@ Console.WriteLine(test.MonEntier + test.Message);
 Ce type dérive directement de `object`. Le compilateur génère automatiquement une classe avec un nom et déduit le type de chaque propriété. Le nom n'est pas disponible dans le code source mais on peut obtenir le type.
 ```
 Console.WriteLine(test.GetType().ToString());
+
+Console.WriteLine(new Object().GetType().ToString());
+Console.WriteLine(new Object() { }.GetType().ToString());
+Console.WriteLine(new { }.GetType().ToString());
 ```
 
 ## Usages 
