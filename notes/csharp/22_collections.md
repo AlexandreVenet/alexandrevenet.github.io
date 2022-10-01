@@ -23,8 +23,8 @@ Les collections génériques dans C# :
 - `LinkedList<T>` : idem sans tableau, idéale pour accéder de façon linéaire aux éléments considérés comme nœuds de chaîne,
 - `Queue<T>` : enregistrement *FIFO* (*First In First Out*), les données gardent leur place par ordre d'arrivée,
 - `Stack<T>` : enregistrement *LIFO* (*Last In First Out*), idem,
-- `SortedList<TKey,TValue>` : idem précédent avec tri automatique par ordre croissant,
 - `Dictionary<TKey,TValue>` : éléments conservés par paires clé-valeur,
+- `SortedList<TKey,TValue>` : idem précédent avec tri automatique par ordre croissant,
 - `HashSet<T>` : collection de valeurs uniques (pas de doublons).
 
 ## Collections non génériques
