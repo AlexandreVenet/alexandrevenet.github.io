@@ -18,7 +18,7 @@ La référence faible en C# s'établit à partir du type `WeakReference`. On ins
 
 Maintenant, on peut spécifier `true` dans le constructeur du type `WeakReference` de façon à converser une référence de notre objet même si ce dernier a été finalisé. Notre objet peut donc être récupéré même après la collecte... mais, ici, Microsoft précise que « l'état de l'objet reste imprévisible » ; par conséquent, il existe toujours une incertitude sur le résultat car si l'objet est collecté par le *garbage collector*, alors l'objet `WeakReference` renverra `null`. Il s'agit de **référence faible longue**. 
 
-Dans les deux cas, cet objet de type `WeakReferenc` est aussi *managé*. Par conséquent, il est lui aussi collecté par le *garbage collector* une fois qu'il n'est plus utilisé dans le programme. 
+Dans les deux cas, cet objet de type `WeakReference` est aussi *managé*. Par conséquent, il est lui aussi collecté par le *garbage collector* une fois qu'il n'est plus utilisé dans le programme. 
 
 Exemple avec un programme Console :
 
@@ -94,5 +94,5 @@ internal class Program
 La référence faible peut servir à conserver de très gros objets dont l'initialisation est coûteuse, qui doivent être finalisés si inutilisés mais qui peuvent éventuellement être réutilisés avant finalisation. C'est le principe de la **mise en cache**.
 
 Plus d'informations chez Microsoft :
-- [Classe WeakReference](https://learn.microsoft.com/fr-fr/dotnet/api/system.weakreference)
-- [Références faibles](https://learn.microsoft.com/fr-fr/dotnet/standard/garbage-collection/weak-references)
+- [Classe WeakReference](https://learn.microsoft.com/fr-fr/dotnet/api/system.weakreference "Classe WeakReference")
+- [Références faibles](https://learn.microsoft.com/fr-fr/dotnet/standard/garbage-collection/weak-references "Références faibles")
