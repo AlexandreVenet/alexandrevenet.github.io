@@ -99,11 +99,9 @@ public class DemoScript : MonoBehaviour // La classe peut être attribuée comme
 
 Unity propose des fonctions comme `Debug.Log()` ou des classes comme `Mathf` qui n'existent pas dans l'environnement **.NET**, et il prend en charge les fonctions de cet environnement. On consultera donc les documentations de l'un et l'autre pour s'orienter.
 
-Obtenir un **nombre aléatoire** avec la classe d'Unity : 
+**Instancier** un `prefab` avec `Instantiate()` et ses surcharges.
 
-**Instancier** par exemple un `prefab` avec `Instantiate()` qui prend plusieurs options de paramètres.
-
-Pour les nombres, 
+Pour les nombres :
 - l'astuce de l'arrondi à un nombre de décimales : `Mathf.Round(myFloat * 100.0f) / 100.0f`,
 - retourner le plus petit ou le plus grand nombre de plusieurs valeurs : `Mathf.Min()`, `Mathf.Max()`,
 - nombre aléatoire `int` : `Random.Range(x inclus, y exclu)`,
