@@ -55,7 +55,7 @@ Fichier *ClassePartielle1.cs* :
 partial class ClassePartielle
 {
 	public bool isOk = true;
-
+	
 	partial void Methode(bool b);
 }
 ```
@@ -68,10 +68,10 @@ partial class ClassePartielle
 	{
 		Debug.Log(isOk);
 	}
-
+	
 	partial void Methode(bool b)
 	{
 		Debug.Log(b);
 	}
 }
-``` 
+```

@@ -247,7 +247,7 @@ Maintenant, les types références peuvent avoir la valeur `null`. Donc, avec `r
 
 ## Syntaxe simplifiée
 
-C# propose la **syntaxe simplifiée des fonctions à une ligne** ; le `return` y est alors implicite. Ceci fonctionne aussi avec les fonctions `void`.
+C# propose la **syntaxe simplifiée des fonctions à une ligne** ; le `return` y est alors implicite. Ceci fonctionne aussi avec les fonctions `void`. C'est la syntaxe d'**expression lambda**. [Microsoft Learn](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/lambda-expressions)
 ```
 public int Quotient(int nombre, double diviseur) => (int)(nombre/diviseur); // noter la troncature
 ```

@@ -108,7 +108,7 @@ On **alloue l'espace mémoire** pour une `struct` avec le mot-clé `new` (appel 
 int x = new int(); // 0 comme valeur par défaut
 ```
 
-A ne pas confondre avec la **déclaration** qui alloue la mémoire en *Stack* mais **sans** affectation de valeur (c'est la valeur par défaut qui est utilisée) :
+À ne pas confondre avec la **déclaration** qui alloue la mémoire en *Stack* mais **sans** affectation de valeur (c'est la valeur par défaut qui est utilisée) :
 ```
 int x;
 ```

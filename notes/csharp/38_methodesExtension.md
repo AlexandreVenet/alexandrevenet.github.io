@@ -6,7 +6,7 @@ Ajouter des méthodes à une classe sans intervenir sur la classe elle-même. [M
 
 ## Principe
 
-Les ***extension methods*** ajoutent des fonctionnalités à une chose d'un certain type, sans avoir à passer par l'**héritage** ou l'**interface**. Ainsi, on peut **étendre une classe**. Utile, surtout lorsque la classe n'est pas éditable directement. 
+Les ***extension methods*** ajoutent des fonctionnalités à une chose d'un certain type, sans avoir à passer par l'**héritage** ou l'**interface**. Ainsi, on peut **étendre une classe**. Utile, surtout lorsque la classe n'est pas éditable directement. Cet ajout est relatif au contexte de l'application.
 
 Ces méthodes sont écrites dans une classe spécifique, non générique, et `static`. Ce qui les distingue d'une méthode `static` ordinaire est l'usage du mot-clé `this` dans le paramètre qui cible le type à étendre. 
 
