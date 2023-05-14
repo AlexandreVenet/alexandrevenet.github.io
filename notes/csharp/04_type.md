@@ -164,30 +164,3 @@ int j = (int) o; // unboxing
 ```
 
 *Boxing* et *unboxing* sont néanmoins des processus lourds en calcul.
-
-## Type anonyme
-
-Référence : [Microsoft Learn](https://learn.microsoft.com/fr-fr/dotnet/csharp/fundamentals/types/anonymous-types) 
-
-Le **type anonyme** permet de définir des objets à la volée comprenant des **propriétés en lecture seule**. Pour l'initialisation, on utilise simplement `new {}` :
-```
-var x = new
-{
-	"Tete" = 0,
-	"Corps" = "THX1138"
-};
-```
-
-Maintenant, si notre **classe** utilise une **propriété** (voir chapitre sur la classe), alors il suffit d'écrire le nom de la propriété en tant que membre de l'objet de type anonyme. En effet, c'est le compilateur qui mettra les entités en relation. L'exemple suivant utilise la syntaxe d'**instruction lambda** (voir chapitre idoine) pour renvoyer un objet de type anonyme.
-```
-public class Chose
-{
-	private string Prop { get; set; }
-	
-	public object Test() => new
-	{
-		Prop,
-		"Autre" = 0
-	};
-}
-```
