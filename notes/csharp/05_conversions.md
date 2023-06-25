@@ -64,7 +64,7 @@ int i2 = Convert.ToInt32(1.5m); // arrondi supérieur, conversion par classe d'a
 
 Parmi les fonctions et propriétés spécifiques, les type proposent aussi des **méthodes de conversion spécifiques à leur type**, comme `Parse()` ou `TryParse()` du type `int`. 
 
-Ces fonctions sont sûres et permettent des conversion entre types qui ne sont **pas de la même catégorie**. Exemple : chaîne de caractères vers entier.
+Ces fonctions sont sûres et permettent des conversions entre types qui ne sont **pas de la même catégorie**. Exemple : chaîne de caractères vers entier.
 ```
 // Effectuer la conversion quelle que soit la valeur d'entrée
 int i = int.Parse("2");
