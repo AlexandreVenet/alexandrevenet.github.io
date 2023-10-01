@@ -10,9 +10,9 @@ Références :
 - [MS Learn Static class & members](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members "MS Learn Static class & members")
 - [MS Learn Static constructors](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/static-constructors "MS Learn Static constructors")
 
-`static` est un mot-clé utilisé pour accéder à une classe ou membre **sans passer par un objet** (classe, variable, méthode, propriété, opérateur, événement, constructeur...). L'entité est alors dite « partaée » avec toutes les instances de classe ou avec toutes classes du programme.
+`static` est un mot-clé utilisé pour accéder à une classe ou membre **sans passer par un objet** (classe, variable, méthode, propriété, opérateur, événement, constructeur...). L'entité est alors dite « partagée » avec toutes les instances de classe ou avec toutes classes du programme.
 
-Un membre `static` dépend de la classe et non pas d'une instance de la classe. Il est unique pour toutes les instances. On appelle le membre statique **par la classe**. Exemples en .NET : `WriteLine()`, classe `Main`.
+Un membre `static` dépend de la classe et non pas d'une instance de la classe. Il est unique pour toutes les instances. On appelle le membre statique **par la classe**. Exemples en .NET : `Console.WriteLine()`, `Program.Main`.
 
 Sur la mémoire : 
 - `static` permet de conserver un **espace mémoire permanent** pour l'entité, ce qui a pour conséquence de demander plus de mémoire pour utiliser l'application,
@@ -120,7 +120,7 @@ public class Chose : MonoBehaviour{
 
 ## Constructeur
 
-Le **constructeur** d'une classe peut être `static`. Il est alors lancé **une seule fois**, **avant la première instanciation** si classe non `static` ou **avant le premier appel**si classe `static` et **avant tout constructeur d'instance**. Pas de visibilité à définir. 
+Le **constructeur** d'une classe peut être `static`. Il est alors lancé **une seule fois**, **avant la première instanciation** si classe non `static` ou **avant le premier appel** si classe `static` et **avant tout constructeur d'instance**. Pas de visibilité à définir. 
 
 Cela peut être utile pour en premier lieu définir la valeur de champs eux-mêmes `static`.
 ```

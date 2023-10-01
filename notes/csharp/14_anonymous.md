@@ -51,7 +51,7 @@ Il est utile dans le cas de requêtes `SELECT` avec LINQ. Un compromis est alors
 
 ## Restrictions
 
-Le type anonyme n'est disponique que localement (dans la méthode qui le définit). Il ne peut pas servir aux chose suivantes : valeur de retour, paramètre de méthode, déclarer un champ, une propriété ou un événement.
+Le type anonyme n'est disponible que localement (dans la méthode qui le définit). Il ne peut pas servir aux chose suivantes : valeur de retour, paramètre de méthode, déclarer un champ, une propriété ou un événement.
 
 On peut passer un type anonyme en paramètre de méthode en le déclarant du type `object` mais cela rend le principe du type anonyme inutile. Dans ce cas, mieux vaut penser à définir une structure spécifique au besoin.
 
