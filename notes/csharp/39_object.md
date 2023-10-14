@@ -36,7 +36,7 @@ string titi = $"{uneChose} est aléatoire."
 
 ## ReferenceEquals()
 
-`ReferenceEquals()` est une méthode `static`. Elle test si **deux objets sont identiques en mémoire** dans le *heap* et retourne une valeur booléenne (elle renvoie `false` pour des types valeurs et n'est alors d'aucune utilité).
+`ReferenceEquals()` est une méthode `static`. Elle teste si **deux objets sont identiques en mémoire** dans le *heap* et retourne une valeur booléenne (elle renvoie `false` pour des types valeurs et n'est alors d'aucune utilité).
 ```
 MaClasse c1 = new MaClasse();
 MaClasse c2 = new MaClasse();
