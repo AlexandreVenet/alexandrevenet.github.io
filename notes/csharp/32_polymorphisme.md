@@ -19,7 +19,11 @@ On peut également créer des méthodes dans les classes les plus générales de
 
 ## Tester le type
 
-Le **type** d'une instance peut être testé avec `is` qui renvoie un booléen.
+Le type peut être manipulé avec :
+- `typeof()` qui prend un nom de type connu **à la compilation**,
+- `GetType()` qui prend une instance d'objet dont le type est connu **à l'exécution**,
+- `is` qui teste si **l'objet hérite d'un type**.
+
 ```
 public class Troop{};
 public class Barbarian : Troop{};
@@ -35,7 +39,6 @@ if(myTroop is Barbarian)
 
 [MSDN Tester le type et conversion](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/type-testing-and-cast "MSDN Tester le type et conversion")
 
-Le type peut également être testé avec `GetType()` (qui renvoie un type `Type`) et `typeof()`.
 ```
 // Admettons deux classes
 class TypeDeBase {}
@@ -126,3 +129,4 @@ if (n is string s)
     Console.WriteLine(s);
 }
 ```
+
