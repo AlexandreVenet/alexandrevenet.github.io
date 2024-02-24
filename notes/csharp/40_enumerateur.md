@@ -2,7 +2,7 @@
 
 Le 27-09-2022
 
-L'**énumérateur** servt à l'exporation de données de façon plus abstraite, éventuellement avec des points d'arrêt. Dans Unity, l'énumérateur fonde la **coroutine**. 
+L'**énumérateur** sert à l'exporation de données de façon plus abstraite, éventuellement avec des points d'arrêt. Dans Unity, l'énumérateur fonde la **coroutine**. 
 
 ## IEnumerable
 

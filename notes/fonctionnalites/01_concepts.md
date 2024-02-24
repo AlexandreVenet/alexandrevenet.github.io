@@ -21,7 +21,7 @@ Une référence utilisée pour rédiger le présent article : [Essential Unity C
 - propriété de `gameObject` : lumière, physique, script... 
 - un composant est un script C# spécifiant un comportement, une fonctionnalité.
 
-Le **type** (`GameObject`, `Transform`) commence une majuscule (c'est une convention de nommage des classes). Une *instance* de type commence par une minuscule (`toto.transform`). Mais en *Inspector*, les noms commencent tous par une majuscule. Pour rédiger mes articles techniques, j'écris avec une majuscule pour référer à la classe, sauf lorsqu'il s'agit par exemple de code.
+Le **type** (`GameObject`, `Transform`) commence avec une majuscule (c'est une convention de nommage des classes). Une *instance* de type commence par une minuscule (`toto.transform`). Mais en *Inspector*, les noms commencent tous par une majuscule. Pour rédiger mes articles techniques, j'écris avec une majuscule pour référer à la classe, sauf lorsqu'il s'agit par exemple de code.
 
 `GameObject` et `Transform` sont **interdépendants**. Par conséquent, il est possible de chercher un composant avec `GetComponent<>()` à partir de l'un ou l'autre. `gameObject` est accessible à partir de n'importe quel type dérivé.
 ```
