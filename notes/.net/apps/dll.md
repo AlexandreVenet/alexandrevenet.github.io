@@ -34,12 +34,7 @@ Pour générer les fichiers `.dll` et `.nupkg` :
 - choisir `Compresser` (en anglais : *Pack*),
 - les fichiers se trouvent dans le dossier `Debug` (ou `Release` pour une version de production).
 
-Les *packages* sont copiés dans le disque local à ce chemin : 
-
-```
-C:\Users\[nom_utilisateur]\.nuget\packages
-
-```
+Les *packages* sont copiés dans le disque local à ce chemin : `C:\Users\[nom_utilisateur]\.nuget\packages`
 
 Lorsqu'on crée une nouvelle version de *package*, il faudrait supprimer l'ancien de ce chemin pour ensuite seulement, dans Visual Studio, pouvoir installer ou mettre à jour le *package* en question représentant une dépendance dans la solution que l'on programme. Ceci n'étant absolument pas pratique, on préfère gérer les **numéros de version** de façon à générer un *package* tout neuf à chaque fois et simplement mettre à niveau la dépendance dans notre programme. La gestion des versions s'effectue dans les **propriétés du projet** :
 - fenêtre **Explorateur de solutions**, 
