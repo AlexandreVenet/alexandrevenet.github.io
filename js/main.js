@@ -317,11 +317,10 @@ let navSousSectionClick = async (e) =>
 		
 		nav.classList.remove('ouvrir');
 		
-		mainContenu.scrollTop = 0;
-		aside.scrollTop = 0;
-		
 		chargerPage(debutCheminFichiersMD + chapitreChoisi.pathname, (texte) =>
 			{
+				mainContenu.scrollTop = 0;
+				aside.scrollTop = 0;
 				const html = new Convertisseur().analyser(texte, debutCheminImages);
 				construirePage(html);
 				initPage();

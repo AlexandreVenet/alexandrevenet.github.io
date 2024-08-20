@@ -63,7 +63,7 @@ Sélection multiple :
 
 Avec `CTRL` pressée, la sélection permet d'obtenir l'instruction directement (pas besoin de sélectionner tout le terme). Attention car `CTRL` permet aussi, lorsque c'est possible, de cliquer sur l'instruction pour atteindre sa définition.
 
-Le retour ligne est nommé "enveloppement de mot". Remplacer le raccourci par celui-ci : `ALT Z` (idem VSCode).
+Le retour ligne est nommé « enveloppement de mot ». Remplacer le raccourci par celui-ci : `ALT Z` (idem VSCode).
 
 Sélectionner du code puis taper `CTRL K S` : affiche un menu pour sélectionner un *snippet* (bloc de code prérempli, par exemple `for`).
 

@@ -123,5 +123,5 @@
 
 ## Apps en vrac
 
-[DLL](.net/apps/dll.md)
+[*DLL*](.net/apps/dll.md)
 [App config](.net/apps/appconfig.md)
