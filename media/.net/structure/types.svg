@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="600"
+   height="686"
+   viewBox="0 0 600 686"
+   version="1.1"
+   id="svg206"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs203">
+    <marker
+       style="overflow:visible"
+       id="marker1168"
+       refX="0"
+       refY="0"
+       orient="auto"
+       viewBox="0 0 17.773854 10.156488"
+       markerWidth="17.773853"
+       markerHeight="10.156488"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1166" />
+    </marker>
+  </defs>
+  <rect
+     style="display:inline;fill:#20242b;fill-opacity:1;stroke:none;stroke-width:2.24226;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
+     id="rect12"
+     width="600.39661"
+     height="686"
+     x="0"
+     y="0" />
+  <path
+     style="fill:none;stroke:#60656c;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0,48.127286 H 600.39658"
+     id="path15073" />
+  <path
+     style="fill:none;stroke:#60656c;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0,87.99152 H 600.39658"
+     id="path18554" />
+  <path
+     style="fill:none;stroke:#484c51;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:4.6906, 4.6906;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 0,171.23389 H 600.39658"
+     id="path23513" />
+  <path
+     style="fill:none;stroke:#484c51;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:4.6906, 4.6906;stroke-dashoffset:0;stroke-opacity:1"
+     d="M 0,446.75608 H 600.39658"
+     id="path34420" />
+  <path
+     style="fill:none;stroke:#60656c;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0,558.1384 H 600.39658"
+     id="path35894" />
+  <path
+     style="fill:none;stroke:#60656c;stroke-width:1.17265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 0,598.00262 H 600.39658"
+     id="path35896" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.459496"
+     x="11.937573"
+     y="32.054699"
+     id="text25"><tspan
+       id="tspan23"
+       x="11.937573"
+       y="32.054699"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;stroke-width:0.459496;fill-opacity:1">Alias</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.459496"
+     x="450.8024"
+     y="32.054699"
+     id="text423"><tspan
+       id="tspan421"
+       x="450.8024"
+       y="32.054699"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;stroke-width:0.459496;fill-opacity:1">Type </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.459496"
+     x="325.3165"
+     y="32.054699"
+     id="text427"><tspan
+       id="tspan425"
+       x="325.3165"
+       y="32.054699"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;stroke-width:0.459496;fill-opacity:1">Taille</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.459496"
+     x="114.14564"
+     y="32.054699"
+     id="text439"><tspan
+       id="tspan437"
+       x="114.14564"
+       y="32.054699"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.453px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;stroke-width:0.459496;fill-opacity:1">Description</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="72.922661"
+     id="text13180"><tspan
+       id="tspan13178"
+       x="10.444398"
+       y="72.922661"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">Types valeur : struct</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="111.62009"
+     id="text17687"><tspan
+       id="tspan17685"
+       x="10.444398"
+       y="111.62009"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">bool</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="111.62009"
+     id="text17691"><tspan
+       id="tspan17689"
+       x="448.78152"
+       y="111.62009"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Boolean</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="111.62009"
+     id="text19790"><tspan
+       id="tspan19788"
+       x="115.79528"
+       y="111.62009"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Valeur true/false</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="111.62009"
+     id="text19900"><tspan
+       id="tspan19898"
+       x="325.69949"
+       y="111.62009"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">8 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="223.0218"
+     id="text20010"><tspan
+       id="tspan20008"
+       x="10.444398"
+       y="223.0218"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">sbyte</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="223.0218"
+     id="text20014"><tspan
+       id="tspan20012"
+       x="448.78152"
+       y="223.0218"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.SByte</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="223.0218"
+     id="text20018"><tspan
+       id="tspan20016"
+       x="115.79528"
+       y="223.0218"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="223.0218"
+     id="text20022"><tspan
+       id="tspan20020"
+       x="325.69949"
+       y="223.0218"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">8 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="246.47479"
+     id="text20072"><tspan
+       id="tspan20070"
+       x="10.444398"
+       y="246.47479"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">byte</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="246.47479"
+     id="text20076"><tspan
+       id="tspan20074"
+       x="448.78152"
+       y="246.47479"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Byte</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="246.47479"
+     id="text20080"><tspan
+       id="tspan20078"
+       x="115.79528"
+       y="246.47479"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier non signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="246.47479"
+     id="text20084"><tspan
+       id="tspan20082"
+       x="325.69949"
+       y="246.47479"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">8 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#484c51;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="196.05087"
+     id="text20316"><tspan
+       id="tspan20314"
+       x="10.444398"
+       y="196.05087"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#484c51;fill-opacity:1;stroke-width:0.586325">Nombres entiers</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="135.07309"
+     id="text30800"><tspan
+       id="tspan30798"
+       x="10.444398"
+       y="135.07309"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">char</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="135.07309"
+     id="text30804"><tspan
+       id="tspan30802"
+       x="448.78152"
+       y="135.07309"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Char</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="135.07309"
+     id="text30808"><tspan
+       id="tspan30806"
+       x="115.79528"
+       y="135.07309"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Caractère UTF-16</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="135.07309"
+     id="text30812"><tspan
+       id="tspan30810"
+       x="325.69949"
+       y="135.07309"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">16 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="269.9278"
+     id="text32711"><tspan
+       id="tspan32709"
+       x="10.444398"
+       y="269.9278"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">short</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="269.9278"
+     id="text32715"><tspan
+       id="tspan32713"
+       x="448.78152"
+       y="269.9278"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Int16</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="269.9278"
+     id="text32719"><tspan
+       id="tspan32717"
+       x="115.79528"
+       y="269.9278"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="269.9278"
+     id="text32723"><tspan
+       id="tspan32721"
+       x="325.69949"
+       y="269.9278"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">16 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="293.38077"
+     id="text32814"><tspan
+       id="tspan32812"
+       x="10.444398"
+       y="293.38077"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">ushort</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="293.38077"
+     id="text32818"><tspan
+       id="tspan32816"
+       x="448.78152"
+       y="293.38077"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.UInt16</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="293.38077"
+     id="text32822"><tspan
+       id="tspan32820"
+       x="115.79528"
+       y="293.38077"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier non signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="293.38077"
+     id="text32826"><tspan
+       id="tspan32824"
+       x="325.69949"
+       y="293.38077"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">16 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="316.83374"
+     id="text33113"><tspan
+       id="tspan33111"
+       x="10.444398"
+       y="316.83374"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">int</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="316.83374"
+     id="text33117"><tspan
+       id="tspan33115"
+       x="448.78152"
+       y="316.83374"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Int32</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="316.83374"
+     id="text33121"><tspan
+       id="tspan33119"
+       x="115.79528"
+       y="316.83374"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="316.83374"
+     id="text33125"><tspan
+       id="tspan33123"
+       x="325.69949"
+       y="316.83374"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">32 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="340.28674"
+     id="text33236"><tspan
+       id="tspan33234"
+       x="10.444398"
+       y="340.28674"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">uint</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="340.28674"
+     id="text33240"><tspan
+       id="tspan33238"
+       x="448.78152"
+       y="340.28674"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.UInt32</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="340.28674"
+     id="text33244"><tspan
+       id="tspan33242"
+       x="115.79528"
+       y="340.28674"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier non signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="340.28674"
+     id="text33248"><tspan
+       id="tspan33246"
+       x="325.69949"
+       y="340.28674"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">32 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="363.73975"
+     id="text33369"><tspan
+       id="tspan33367"
+       x="10.444398"
+       y="363.73975"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">long</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="363.73975"
+     id="text33373"><tspan
+       id="tspan33371"
+       x="448.78152"
+       y="363.73975"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Int64</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="363.73975"
+     id="text33377"><tspan
+       id="tspan33375"
+       x="115.79528"
+       y="363.73975"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="363.73975"
+     id="text33381"><tspan
+       id="tspan33379"
+       x="325.69949"
+       y="363.73975"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="387.19272"
+     id="text33512"><tspan
+       id="tspan33510"
+       x="10.444398"
+       y="387.19272"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">ulong</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="387.19272"
+     id="text33516"><tspan
+       id="tspan33514"
+       x="448.78152"
+       y="387.19272"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.UInt64</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="387.19272"
+     id="text33520"><tspan
+       id="tspan33518"
+       x="115.79528"
+       y="387.19272"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier non signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="387.19272"
+     id="text33524"><tspan
+       id="tspan33522"
+       x="325.69949"
+       y="387.19272"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="410.64572"
+     id="text33931"><tspan
+       id="tspan33929"
+       x="10.444398"
+       y="410.64572"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">nint</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="410.64572"
+     id="text33935"><tspan
+       id="tspan33933"
+       x="448.78152"
+       y="410.64572"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.IntPtr</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="410.64572"
+     id="text33939"><tspan
+       id="tspan33937"
+       x="115.79528"
+       y="410.64572"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="410.64572"
+     id="text33943"><tspan
+       id="tspan33941"
+       x="325.69949"
+       y="410.64572"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">32/64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="434.09872"
+     id="text34094"><tspan
+       id="tspan34092"
+       x="10.444398"
+       y="434.09872"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">nuint</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="434.09872"
+     id="text34098"><tspan
+       id="tspan34096"
+       x="448.78152"
+       y="434.09872"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.UIntPtr</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="434.09872"
+     id="text34102"><tspan
+       id="tspan34100"
+       x="115.79528"
+       y="434.09872"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Entier non signé</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="434.09872"
+     id="text34106"><tspan
+       id="tspan34104"
+       x="325.69949"
+       y="434.09872"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">32/64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#484c51;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="471.6235"
+     id="text34426"><tspan
+       id="tspan34424"
+       x="10.444398"
+       y="471.6235"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#484c51;fill-opacity:1;stroke-width:0.586325">Nombres à virgule flottante</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="498.59445"
+     id="text34588"><tspan
+       id="tspan34586"
+       x="10.444398"
+       y="498.59445"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">float</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="498.59445"
+     id="text34592"><tspan
+       id="tspan34590"
+       x="448.78152"
+       y="498.59445"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Single</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="498.59445"
+     id="text34596"><tspan
+       id="tspan34594"
+       x="115.79528"
+       y="498.59445"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Réel flottant</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="498.59445"
+     id="text34600"><tspan
+       id="tspan34598"
+       x="325.69949"
+       y="498.59445"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">32 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="522.04742"
+     id="text34944"><tspan
+       id="tspan34942"
+       x="10.444398"
+       y="522.04742"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">double</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="522.04742"
+     id="text34948"><tspan
+       id="tspan34946"
+       x="448.78152"
+       y="522.04742"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Double</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="522.04742"
+     id="text34952"><tspan
+       id="tspan34950"
+       x="115.79528"
+       y="522.04742"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Réel flottant</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="522.04742"
+     id="text34956"><tspan
+       id="tspan34954"
+       x="325.69949"
+       y="522.04742"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="545.50043"
+     id="text35498"><tspan
+       id="tspan35496"
+       x="10.444398"
+       y="545.50043"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">decimal</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="545.50043"
+     id="text35502"><tspan
+       id="tspan35500"
+       x="448.78152"
+       y="545.50043"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Decimal</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="545.50043"
+     id="text35506"><tspan
+       id="tspan35504"
+       x="115.79528"
+       y="545.50043"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Réel flottant</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="545.50043"
+     id="text35510"><tspan
+       id="tspan35508"
+       x="325.69949"
+       y="545.50043"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">128 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="583.02515"
+     id="text35900"><tspan
+       id="tspan35898"
+       x="10.444398"
+       y="583.02515"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">Types référence : class</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="158.52608"
+     id="text36097"><tspan
+       id="tspan36095"
+       x="10.444398"
+       y="158.52608"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">datetime</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="158.52608"
+     id="text36101"><tspan
+       id="tspan36099"
+       x="448.78152"
+       y="158.52608"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.DateTime</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="158.52608"
+     id="text36105"><tspan
+       id="tspan36103"
+       x="115.79528"
+       y="158.52608"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Date et heure </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="158.52608"
+     id="text36109"><tspan
+       id="tspan36107"
+       x="325.69949"
+       y="158.52608"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">64 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="621.7226"
+     id="text36730"><tspan
+       id="tspan36728"
+       x="10.444398"
+       y="621.7226"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">object</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="621.7226"
+     id="text36734"><tspan
+       id="tspan36732"
+       x="448.78152"
+       y="621.7226"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Object</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="621.7226"
+     id="text36738"><tspan
+       id="tspan36736"
+       x="115.79528"
+       y="621.7226"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Référence d'objet</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="621.7226"
+     id="text36742"><tspan
+       id="tspan36740"
+       x="325.69949"
+       y="621.7226"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">variable</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="645.17554"
+     id="text36746"><tspan
+       id="tspan36744"
+       x="10.444398"
+       y="645.17554"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">string</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="645.17554"
+     id="text36750"><tspan
+       id="tspan36748"
+       x="448.78152"
+       y="645.17554"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.String</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="645.17554"
+     id="text36754"><tspan
+       id="tspan36752"
+       x="115.79528"
+       y="645.17554"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Tableau de caractères</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="645.17554"
+     id="text36758"><tspan
+       id="tspan36756"
+       x="325.69949"
+       y="645.17554"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">n × 16 bits</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="10.444398"
+     y="668.62854"
+     id="text36762"><tspan
+       id="tspan36760"
+       x="10.444398"
+       y="668.62854"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#c3cbd4;fill-opacity:1;stroke-width:0.586325">dynamic</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="448.78152"
+     y="668.62854"
+     id="text36766"><tspan
+       id="tspan36764"
+       x="448.78152"
+       y="668.62854"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">System.Dynamic</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="115.79528"
+     y="668.62854"
+     id="text36770"><tspan
+       id="tspan36768"
+       x="115.79528"
+       y="668.62854"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">Objet variable</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;line-height:1.25;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke:none;stroke-width:0.586325"
+     x="325.69949"
+     y="668.62854"
+     id="text36774"><tspan
+       id="tspan36772"
+       x="325.69949"
+       y="668.62854"
+       style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:15.6353px;font-family:Montserrat;-inkscape-font-specification:'Montserrat, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;text-anchor:start;fill:#787e87;fill-opacity:1;stroke-width:0.586325">variable</tspan></text>
+</svg>

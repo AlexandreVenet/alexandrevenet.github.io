@@ -1,212 +1,318 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alexandrevenet.github.io</title>
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-    <!-- styles -->
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-
-    <header>
-        <div>
-            <a href="https://alexandrevenet.github.io/">alexandrevenet<span>.github.io</span></a>
-            <a href="#" id="menuBtn">
-                <img src="media/ui/menu.svg" alt="menu" height="16">
-            </a>
-        </div>
-    </header>
-
-    <div class="layout">
-        <div>
-            <nav>
-                <section>
-                    <a href="#" title="Unity en général">Unity en général</a>
-                    <div>
-                        <a href="#" data-src="notes/generalites/01_competences.md" title="Compétences">Compétences</a>
-                        <a href="#" data-src="notes/generalites/02_phasesproduction.md" title="Phases de production">Phases de production</a>
-                        <a href="#" data-src="notes/generalites/03_definition.md" title="Qu'est-ce qu'Unity">Qu'est-ce qu'Unity</a>
-                        <a href="#" data-src="notes/generalites/04_designdocument.md" title="Design document">Design document</a>
-                        <a href="#" data-src="notes/generalites/05_feedbackettesting.md" title="Feedback & testing">Feedback & testing</a>
-                        <a href="#" data-src="notes/generalites/06_jeu.md" title="Jeu-vidéo">Jeu-vidéo</a>
-                    </div>
-                </section>
-                <section>
-                    <a href="#" title="Fonctions d'Unity">Fonctions d'Unity</a>
-					<div>
-                        <a href="#" data-src="notes/fonctionnalites/00_editeurs.md" title="Éditeurs">Éditeurs</a>
-						<a href="#" data-src="notes/fonctionnalites/01_concepts.md" title="Concepts">Concepts</a>
-						<a href="#" data-src="notes/fonctionnalites/02_interface.md" title="Interface">Interface</a>
-						<a href="#" data-src="notes/fonctionnalites/03_compiler.md" title="Compiler">Compiler</a>
-						<a href="#" data-src="notes/fonctionnalites/04_prefab.md" title="Prefab">Prefab</a>
-						<a href="#" data-src="notes/fonctionnalites/05_tagslayers.md" title="Tags, layers">Tags, layers</a>
-						<a href="#" data-src="notes/fonctionnalites/06_camera.md" title="Camera">Camera</a>
-						<a href="#" data-src="notes/fonctionnalites/07_sprite.md" title="Sprite">Sprite</a>
-						<a href="#" data-src="notes/fonctionnalites/08_audio.md" title="Audio">Audio</a>
-						<a href="#" data-src="notes/fonctionnalites/09_animation.md" title="Animation">Animation</a>
-						<a href="#" data-src="notes/fonctionnalites/10_cinemachine.md" title="Cinemachine">Cinemachine</a>
-						<a href="#" data-src="notes/fonctionnalites/11_ui.md" title="UI">UI</a>
-						<a href="#" data-src="notes/fonctionnalites/12_serialisation.md" title="Sérialisation">Sérialisation</a>
-						<a href="#" data-src="notes/fonctionnalites/13_playerprefs.md" title="PlayerPrefs">PlayerPrefs</a>
-						<a href="#" data-src="notes/fonctionnalites/14_eclairage.md" title="Éclairage">Éclairage</a>
-						<a href="#" data-src="notes/fonctionnalites/15_postprocessing.md" Title="Post-processing">Post-processing</a>
-						<a href="#" data-src="notes/fonctionnalites/16_materiaux.md" title="Matériaux">Matériaux</a>
-						<a href="#" data-src="notes/fonctionnalites/18_particules.md" title="Particules">Particules</a>
-						<a href="#" data-src="notes/fonctionnalites/19_physique.md" title="Physique">Physique</a>
-						<a href="#" data-src="notes/fonctionnalites/20_assembly.md" title="Assembly definition">Assembly definition</a>
-					</div>
+	<head>
+		<meta charset="UTF-8">
+		<title>alexandrevenet.github.io</title>
+		<meta name="author" content="Nom...">
+		<meta name="description" content="Description...">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+		<!-- Styles -->
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+		
+		<header>
+			<div>
+				<a id="menuBtn" href="#" title="Menu">
+					<svg height="14" width="14" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1">
+						<path id="svgPath" d="M 3.2,11.428571 C 3.2,9.1567143 5.0424286,7.3142855 7.3142857,7.3142855 H 56.685714 c 2.275715,0 4.114286,1.8424288 4.114286,4.1142855 0,2.275715 -1.838571,4.114286 -4.114286,4.114286 H 7.3142857 C 5.0424286,15.542857 3.2,13.704286 3.2,11.428571 Z m 0,20.571428 c 0,-2.275714 1.8424286,-4.114285 4.1142857,-4.114285 H 56.685714 c 2.275715,0 4.114286,1.838571 4.114286,4.114285 0,2.275715 -1.838571,4.114286 -4.114286,4.114286 H 7.3142857 C 5.0424286,36.114285 3.2,34.275714 3.2,31.999999 Z M 56.685714,56.685714 H 7.3142857 C 5.0424286,56.685714 3.2,54.847143 3.2,52.571428 3.2,50.295714 5.0424286,48.457143 7.3142857,48.457143 H 56.685714 c 2.275715,0 4.114286,1.838571 4.114286,4.114285 0,2.275715 -1.838571,4.114286 -4.114286,4.114286 z" fill="#ffffff"/>
+					</svg>
+				</a>
+				<a class="titre" href="https://alexandrevenet.github.io" title="alexandrevenet.github.io">alexandrevenet.github.io</a>
+			</div>
+		</header>
+		
+		<div class="principal">
+			<div class="colVide"></div>
+			<nav>
+				<section id="navSectionMain">
+					<!-- 
+					<a href="#categorie1" title="Unity">Unity</a>
+					<a href="#categorie2" title=".NET C#">.NET C#</a> 
+					-->
 				</section>
-                <section>
-                    <a href="#" title="Langage C#">Langage C#</a>
-                    <div>
-                        <a href="#" data-src="notes/csharp/01_introduction.md" title="Introduction">Introduction</a>
-                        <a href="#" data-src="notes/csharp/02_commentaires.md" title="Commentaires">Commentaires</a>
-                        <a href="#" data-src="notes/csharp/03_variables.md" title="Variables">Variables</a>
-                        <a href="#" data-src="notes/csharp/04_type.md" title="Types de données">Types de données</a>
-                        <a href="#" data-src="notes/csharp/05_conversions.md" title="Conversions">Conversions</a>
-                        <a href="#" data-src="notes/csharp/06_classe.md" title="Classe">Classe</a>
-                        <a href="#" data-src="notes/csharp/07_classeDansUnity.md" title="Classe dans Unity">Classe dans Unity</a>
-                        <a href="#" data-src="notes/csharp/08_struct.md" title="Struct">Struct</a>
-                        <a href="#" data-src="notes/csharp/09_namespace.md" title="Namespace">Namespace</a>
-                        <a href="#" data-src="notes/csharp/10_fonction.md" title="Fonction">Fonction</a>
-                        <a href="#" data-src="notes/csharp/11_enum.md" title="Type Enum">Type Enum</a>
-                        <a href="#" data-src="notes/csharp/12_tuple.md" title="Type Tuple">Type Tuple</a>
-                        <a href="#" data-src="notes/csharp/13_string.md" title="Type String">Type String</a>
-                        <a href="#" data-src="notes/csharp/14_anonymous.md" title="Type Anonyme">Type Anonyme</a>
-                        <a href="#" data-src="notes/csharp/15_nullable.md" title="Type Nullable">Type Nullable</a>
-                        <a href="#" data-src="notes/csharp/16_dynamic.md" title="Type Dynamic">Type Dynamic</a>
-                        <a href="#" data-src="notes/csharp/17_operateurs.md" title="Opérateurs">Opérateurs</a>
-                        <a href="#" data-src="notes/csharp/18_conditions.md" title="Conditions">Conditions</a>
-                        <a href="#" data-src="notes/csharp/19_boucles.md" title="Boucles">Boucles</a>
-                        <a href="#" data-src="notes/csharp/20_array.md" title="Array">Array</a>
-                        <a href="#" data-src="notes/csharp/21_generiques.md" title="Génériques">Génériques</a>
-                        <a href="#" data-src="notes/csharp/22_collections.md" title="Collections">Collections</a>
-                        <a href="#" data-src="notes/csharp/23_list_linkedlist.md" title="List, LinkedList">List, LinkedList</a>
-                        <a href="#" data-src="notes/csharp/24_queue_stack.md" title="Queue, Stack">Queue, Stack</a>
-                        <a href="#" data-src="notes/csharp/25_sortedList.md" title="SortedList">SortedList</a>
-                        <a href="#" data-src="notes/csharp/26_dictionary.md" title="Dictionary">Dictionary</a>
-                        <a href="#" data-src="notes/csharp/27_hashtable_hashset.md" title="HashTable, HashSet">HashTable, HashSet</a>
-                        <a href="#" data-src="notes/csharp/28_indexeur.md" title="Indexeur">Indexeur</a>
-                        <a href="#" data-src="notes/csharp/29_classesImbriquees.md" title="Classes imbriquées">Classes imbriquées</a>
-                        <a href="#" data-src="notes/csharp/30_partial.md" title="Partial">Partial</a>
-                        <a href="#" data-src="notes/csharp/31_heritage.md" title="Héritage">Héritage</a>
-                        <a href="#" data-src="notes/csharp/32_polymorphisme.md" title="Polymorphisme">Polymorphisme</a>
-                        <a href="#" data-src="notes/csharp/33_methodOverriding.md" title="Réécriture de méthode">Réécriture de méthode</a>
-                        <a href="#" data-src="notes/csharp/34_abstract.md" title="Abstract">Abstract</a>
-                        <a href="#" data-src="notes/csharp/35_associations.md" title="Associations">Associations</a>
-                        <a href="#" data-src="notes/csharp/36_static.md" title="Static">Static</a>
-                        <a href="#" data-src="notes/csharp/37_interface.md" title="Interface">Interface</a>
-                        <a href="#" data-src="notes/csharp/38_methodesExtension.md" title="Méthodes d'extension">Méthodes d'extension</a>
-                        <a href="#" data-src="notes/csharp/39_object.md" title="Object">Object</a>
-                        <a href="#" data-src="notes/csharp/40_enumerateur.md" title="Énumérateur">Énumérateur</a>
-                        <a href="#" data-src="notes/csharp/41_exceptions.md" title="Exceptions">Exceptions</a>
-                        <a href="#" data-src="notes/csharp/42_delegate.md" title="Delegate">Delegate</a>
-                        <a href="#" data-src="notes/csharp/43_event.md" title="Event">Event</a>
-                        <a href="#" data-src="notes/csharp/44_action.md" title="Action">Action</a>
-                        <a href="#" data-src="notes/csharp/45_func.md" title="Func">Func</a>
-                        <a href="#" data-src="notes/csharp/46_lambdaexpression.md" title="Expression lambda">Expression lambda</a>
-                        <a href="#" data-src="notes/csharp/47_callback.md" title="Callback">Callback</a>
-                        <a href="#" data-src="notes/csharp/48_predicate.md" title="Predicate">Predicate</a>
-                        <a href="#" data-src="notes/csharp/49_weakReference.md" title="WeakReference">WeakReference</a>
-                    </div>
-                </section>
-				<section>
-					<a href="#" title="Patrons de conception">Patrons de conception</a>
-					<div>
-						<!-- <a href="#" data-src="notes/designpatterns/01_statemachine.htm" title="State machine">State machine</a>
-						<a href="#" data-src="notes/designpatterns/02_unityevents.htm" title="Unity Events">Unity Events</a> -->
-					</div>
+				<section id="navSectionContenu" class="invisible">
+					<section class="titre">
+						<a id="retourAccueil" href="#" title="Accueil">Accueil</a>
+						<div id="navTitre">[Titre]</div>
+					</section>
+					<!-- <section id="categorie1" class="invisible">
+						<section>
+							<a href="#" title="Généralités">Généralités</a>
+							<div class="invisible">
+								<a href="notes/generalites/01_competences.md" title="Compétences">Compétences</a>
+								<a href="notes/generalites/02_phasesproduction.md" title="Phases de production">Phases de production</a>
+								<a href="notes/generalites/03_definition.md" title="Qu'est-ce qu'Unity">Qu'est-ce qu'Unity</a>
+								<a href="notes/generalites/04_designdocument.md" title="Design document"><i>Design document</i></a>
+								<a href="notes/generalites/05_feedbackettesting.md" title="Feedback & testing"><i>Feedback</i> & tests</a>
+								<a href="notes/generalites/06_jeu.md" title="Jeu-vidéo">Jeu-vidéo</a>
+							</div>
+						</section>
+						<section>
+							<a href="#" title="Fonctions" >Fonctions</a>
+							<div class="invisible">
+								<a href="notes/fonctionnalites/00_editeurs.md" title="Éditeurs">Éditeurs</a>
+								<a href="notes/fonctionnalites/01_concepts.md" title="Concepts">Concepts</a>
+								<a href="notes/fonctionnalites/02_interface.md" title="Interface">Interface</a>
+								<a href="notes/fonctionnalites/03_compiler.md" title="Compiler">Compiler</a>
+								<a href="notes/fonctionnalites/04_prefab.md" title="Prefab">Prefab</a>
+								<a href="notes/fonctionnalites/05_tagslayers.md" title="Tags, layers"><i>Tags</i>, <i>layers</i></a>
+								<a href="notes/fonctionnalites/06_camera.md" title="Caméra">Caméra</a>
+								<a href="notes/fonctionnalites/07_sprite.md" title="Sprite"><i>Sprite</i></a>
+								<a href="notes/fonctionnalites/08_audio.md" title="Audio">Audio</a>
+								<a href="notes/fonctionnalites/09_animation.md" title="Animation">Animation</a>
+								<a href="notes/fonctionnalites/10_cinemachine.md" title="Cinemachine">Cinemachine</a>
+								<a href="notes/fonctionnalites/11_ui.md" title="UI">UI</a>
+								<a href="notes/fonctionnalites/12_serialisation.md" title="Sérialisation">Sérialisation</a>
+								<a href="notes/fonctionnalites/13_playerprefs.md" title="PlayerPrefs">PlayerPrefs</a>
+								<a href="notes/fonctionnalites/14_eclairage.md" title="Éclairage">Éclairage</a>
+								<a href="notes/fonctionnalites/15_postprocessing.md" Title="Post-processing"><i>Post-processing</i></a>
+								<a href="notes/fonctionnalites/16_materiaux.md" title="Matériaux">Matériaux</a>
+								<a href="notes/fonctionnalites/18_particules.md" title="Particules">Particules</a>
+								<a href="notes/fonctionnalites/19_physique.md" title="Physique">Physique</a>
+								<a href="notes/fonctionnalites/20_assembly.md" title="Assembly definition"><i>Assembly definition</i></a>
+							</div>
+						</section>
+						...
+						Script C#
+						Trigonométrie
+						...
+					</section>
+					<section id="categorie2" class="invisible">
+						<section>
+							<a href="#" title="Introduction">Introduction</a>
+							<div class="invisible">
+								<a href="..." title=".NET">.NET</a> 
+								<a href="..." title="Visual Studio">Visual Studio</a>
+								<a href="..." title="Commentaires">Commentaires</a>
+							</div>
+						</section>
+						<section>
+							<a href="#" title="Données">Structure</a>
+							<div class="invisible">
+								<a href="..." title="Variables">Variables</a> 
+								<a href="..." title="Types">Types</a> 
+								<a href="..." title="Conversions">Conversions</a> 
+								<a href="..." title="Classe">Classe</a>
+								<a href="..." title="Classe imbriquée">Classe imbriquée</a>
+								<a href="..." title="Struct">Struct</a>
+								<a href="..." title="Namespace">Namespace</a>
+								<a href="..." title="Fonction">Fonction</a>
+								<a href="..." title="Partial">Partial</a>
+								<a href="..." title="Généricité">Généricité</a>
+							</div>
+						</section>
+						<section>
+							<a href="#" title="POO">POO</a>
+							<div class="invisible">
+								<a href="#" title="Héritage">Héritage</a>
+								<a href="#" title="Polymorphisme">Polymorphisme</a>
+								<a href="#" title="Réécriture">Réécriture de méthode</a>
+								<a href="#" title="Abstract">Abstract</a>
+								<a href="#" title="Associations">Associations</a>
+								<a href="#" title="Static">Static</a>
+								<a href="#" title="Interface">Interface</a>
+								<a href="#" title="Méthodes d'extension">Méthodes d'extension</a>
+								<a href="#" title="Object">Object</a>
+							</div>
+						</section>
+						<section>
+							<a href="#" title="Types">Types</a>
+							<div class="invisible">
+								<a href="..." title="Enum">Enum</a>
+								<a href="..." title="Tuple">Tuple</a>
+								<a href="..." title="String">String</a>
+								<a href="..." title="Anonyme">Anonyme</a>
+								<a href="..." title="Nullable">Nullable</a>
+								<a href="..." title="Dynamic">Dynamic</a>
+								<a href="..." title="WeakReference">WeakReference</a>
+							</div>
+						</section>
+						<section>
+							<a href="..." title="Opérations">Opérations</a>
+							<div class="invisible">
+								<a href="..." title="Opérateurs">Opérateurs</a>
+								<a href="..." title="Conditions">Conditions</a>
+								<a href="..." title="Boucles">Boucles</a>
+							</div>
+						</section>
+						<section>
+							<a href="..." title="Exceptions">Exceptions</a>
+							<div class="invisible">
+								<a href="..." title="Exceptions">Exceptions</a>
+								<a href="..." title="Personnaliser">Personnaliser</a>
+							</div>
+						</section>
+						<section>
+							<a href="..." title="Collections et tableau">Collections et tableau</a>
+							<div class="invisible">
+								<a href="..." title="Array">Array</a>
+								<a href="..." title="Collections">Collections</a>
+								<a href="..." title="List, LinkedList">List, LinkedList</a>
+								<a href="..." title="Queue, Stack">Queue, Stack</a>
+								<a href="..." title="ShortedList">ShortedList</a>
+								<a href="..." title="Dictionary">Dictionary</a>
+								<a href="..." title="HashTable, HashSet">HashTable, HashSet</a>
+								<a href="..." title="Indexeur">Indexeur</a>
+							</div>
+						</section>
+						<section>
+							<a href="#" title="Delegate">Delegate</a>
+							<div class="invisible">
+								<a href="..." title="Delegate">Delegate</a>
+								<a href="..." title="Event">Event</a>
+								<a href="..." title="Action">Action</a>
+								<a href="..." title="Func">Func</a>
+								<a href="..." title="Expression lambda">Expression lambda</a>
+								<a href="..." title="Callback">Callback</a>
+								<a href="..." title="Prédicat">Prédicat</a>
+							</div>
+						</section>
+					</section> -->
 				</section>
-            </nav>
-            <main>
-                <!-- <div class="mainContent">
-                    <section id="haut">
-                        <div>
-                            <h1>GitHub // Alexandre Venet</h1>
-                            <p>Le 19-05-2022</p>
-                        </div>
-                        <p>Bienvenue dans mon espace GitHub consacré à l'environnement 3D temps réel Unity et le C#.</p>
-                    </section>
-                    <a href="#" class="mobileSumm" id="modeSummBtn">
-                        <p>Mode sommaire</p>
-                        <img src="media/caretUp.svg" alt="Icone">
-                    </a>
-                    <section id="section1">
-                        <a href="#">
-                            <h2>Présentation</h2>
-                            <img src="media/chevron.svg" alt="Icone">
-                        </a>
-                        <div class="sectionDiv">
-                            <p>Je publie ici mes notes de cours à la <strong>3WA</strong>, des parcours officiels <strong>Unity Technologies</strong> et de mon <strong>expérience personnelle</strong>. Par souci de pédagogie, les articles suivent une certaine progressivité par catégorie, mais Unity dépendant du langage C#, on n'hésitera pas à relier les articles d'une catégorie à ceux d'une autre.</p>
-                            <p>Liens vers les <strong>documentations officielles</strong> :</p>
-                            <ul>
-                                <li><a href="https://docs.microsoft.com/fr-fr/dotnet/csharp" target="_blank" title="Microsoft C#" rel="noopener noreferrer">Microsoft C#</a></li>
-                                <li><a href="https://docs.microsoft.com/fr-fr/dotnet/api" target="_blank" title="Microsoft .NET API" rel="noopener noreferrer">Microsoft .NET API</a></li>
-                                <li><a href="https://docs.unity3d.com/Manual" target="_blank" title="Unity : manuel" rel="noopener noreferrer">Unity : manuel</a></li>
-                                <li><a href="https://docs.unity3d.com/ScriptReference" target="_blank" title="Unity : API" rel="noopener noreferrer">Unity : API</a></li>
-                            </ul>
-                            <p>Pour en savoir plus sur moi-même, consulter mon site : <a href="https://www.alhomepage.com" target="_blank" title="Alhomepage.com" rel="noopener noreferrer">Alhomepage.com</a>.</p>
-                        </div>
-                    </section>
-                    <section id="section2">
-                        <a href="#">
-                            <h2>Contenus</h2>
-                            <img src="media/chevron.svg" alt="Icone">
-                        </a>
-                        <div class="sectionDiv">
-                            <p>La partie <strong>Généralités</strong> présente Unity dans son contexte industriel.</p>
-                            <p>La partie <strong>C# dans Unity</strong> présente l'essentiel du langage C# dans le contexte du <i>framework</i>.</p>
-                            <p>Dans les <strong>Fonctionnalités</strong>, on trouvera un tour d'horizon des briques élémentaires d'Unity.</p>
-                            <p>Dans <strong>Patrons de conception</strong> sont regroupés des <i>design patterns</i> utilisables dans Unity.</p>
-                        </div>
-                    </section>
-                    <section id="section3">
-                        <a href="#">
-                            <h2>Colophon</h2>
-                            <img src="media/chevron.svg" alt="Icone">
-                        </a>
-                        <div class="sectionDiv">
-                            <p>L'ergonomie du présent site est <strong><i>responsive</i></strong> avec un palier à 1024px de large.</p>
-                            <p>Les typographies sont <strong>Montserrat</strong> et <strong>Roboto</strong> et sont chargées à partir de <strong>Google Fonts</strong> ; les typographies pour le <code>code</code> sont à chasse fixe et font partie des standards  (installées par défaut dans le système d'exploitation du terminal de consultation) : <strong>Consolas</strong>, <strong>Lucida Console</strong>, <strong>Courier</strong>.</p>
-                            <p>Le site est en "mode sombre" afin de réduire la consommation électrique (écran). J'essaie de trouver un contraste satisfaisant entre le fond et le texte, d'un côté pour le confort de lecture, de l'autre pour réduire voire éviter l'effet de bandes horizontales en persistance rétinienne.</p>
-                            <p>Les blocs de code sont présentés de cette manière : </p>
-                            <pre><code>
-entrée de code
-    ligne indentée
-                            </code></pre>
-                            <p>La fin d'une page présente un bloc vide long : contrainte technique afin que le sommaire, si affiché à droite de l'écran, soit correctement mis à jour.</p>
-                            <p>Le présent site est herbergé sur <strong>Github</strong> et utilise la fonction <strong>Github Pages</strong>.</p> 
-                            <p>Du fait des limitations de Github, j'ai tenté de réaliser un <strong>convertisseur personnel de Markdown en HTML côté client en Javascript</strong>, ce qui me permet d'éditer les contenus de ce site seulement avec des fichiers <code>.md</code> (le script utilisé ici est une version <code>class</code> de mon script de travail).</p>
-                            <img src="media/img320.png" alt="Image 320x240px">
-                            <p>Une autre image, plus grande cette fois.</p>
-                            <img src="media/img800.png" alt="Image 800x600px">
-                            <figure>
-                                <img src="media/img320.png" alt="Image 320x240p">
-                                <figcaption>Légende de l'image. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus repudiandae, corporis temporibus cupiditate sapiente rerum labore quidem. Laboriosam culpa molestiae ea nesciunt blanditiis quos soluta commodi. Accusamus perspiciatis porro vitae.</figcaption>
-                            </figure>                            
-                        </div>
-                    </section>
-                    <div class="last">
-                        <p>Fin de page</p>
-                    </div>
-                </div>
-                <aside>
-                    <a href="#" data-src="#haut" class="currentSection" title="GitHub // Alexandre Venet">GitHub // Alexandre Venet</a>
-                    <a href="#" data-src="#section1" title="Présentation">Présentation</a>
-                    <a href="#" data-src="#section2" title="Contenus">Contenus</a>
-                    <a href="#" data-src="#section3" title="Colophon">Colophon</a>
-                </aside> -->
-            </main>
-        </div>
-    </div>
-        
-    <script src="js/converter.js"></script>
-    <script src="js/main.js"></script>
-    </body>
+			</nav>
+			<main>
+				<div class="mainConteneur">
+					<div class="mainContenu">
+						<!-- <section id="hautDePage">
+							<h1>Titre</h1>
+							<p>Le 21/07/2024</p>
+							<p>Ceci est le texte de présentation de l'article, court. Il peut contenir des liens, de l'<i>italique</i>...</p>
+						</section>
+						<section id="s0">
+							<div class="sousTitre">
+								<h2>Présentation</h2>
+								<img src="medias/ui/chevron.svg" alt="Chevron" title="Ouvrir/Fermer" width="16" height="16"/> 
+							</div>
+							<div class="sectionTexte">
+								<p>Lorem ipsum <code>dolor</code> sit <b>amet</b>, <i>consectetur</i> adipisicing <b><i>elit</i></b>. Voluptates in, suscipit, doloremque eius harum quis amet fuga laborum velit quidem, <a href="#" title="mon titre" target="_blank" rel="noopener noreferrer">maxime voluptas</a> earum officiis itaque commodi!</p>
+								<div class="tableConteneur">
+									<table>
+										<thead>
+											<tr>
+												<th>😀</th>
+												<th>Deuxième</th>
+												<th>Troisième</th>
+												<th>Quatrième</th>
+												<th>Cinquième</th>
+												<th>Sixième</th>
+											</tr>
+										</thead>
+									  <tbody>
+										<tr>
+											<td>😀</td>
+											<td>En veux-tu en voilà</td>
+											<td>a, b, c</td>
+											<td>a, b, c</td>
+											<td>En veux-tu en voilà</td>
+											<td>Encore ? Eh bien, quelle gourmandise !</td>
+										</tr>
+										<tr>
+											<td>😀</td>
+											<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, tenetur!</td>
+											<td>Lorem ipsum dolor sit amet.</td>
+											<td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae aperiam debitis qui impedit, iure, officia harum dicta nobis ipsam earum minus nulla, totam amet fuga. Tempore impedit facilis soluta sed!</td>
+											<td>Lorem ipsum dolor sit amet.</td>
+											<td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas nemo natus odio eaque distinctio voluptatum rerum aliquam fugit vero a!</td>
+										</tr>
+										<tr>
+											<td>😀</td>
+											<td>2</td>
+											<td>3</td>
+											<td>4</td>
+											<td>5</td>
+											<td>6</td>
+										</tr>
+										</tbody>
+									</table>	
+								</div>								  
+								<p>Paragraphe suivant</p>
+								<ul>
+									<li>du texte</li>
+									<li>du texte</li>
+									<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo temporibus doloribus numquam facere blanditiis inventore. Id in repellendus consequuntur maxime.</li>
+									<li>du texte</li>
+								</ul>
+								<pre><code>entrée 
+{
+	Cette ligne est indentée et très longue pour afficher la barre de défilement horizontale. On peut naviguer avec SHIFT + molette souris...
+	Retour à la ligne
+
+	Les chevrons sont transformés en HTML entities : &lt;button&gt;
+}</code></pre>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, rerum.</p>
+								<figure>
+									<img src="medias/ImageSVG.svg" alt="Image" Title="Image"/>
+									<figcaption>Exemple d'une image au format SVG, 320x240px, suivie de sa légende, légende qui peut être sur plusieurs lignes.</figcaption>
+								</figure>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto, rerum.</p>
+							</div>
+						</section>
+						<section id="s1">
+							<div class="sousTitre">
+								<h2>Contenus</h2>
+								<img src="medias/ui/chevron.svg" alt="Chevron" title="Ouvrir/Fermer" width="16" height="16"/> 
+							</div>
+							<div class="sectionTexte">
+								<p>Liste numérotée :</p>
+								<ol>
+									<li>
+										un,
+										<ul>
+											<li>1</li>
+											<li>2</li>
+										</ul>
+									</li>
+									<li>
+										deux,
+										<ul>
+											<li>3</li>
+											<li>4</li>
+										</ul>
+									</li>
+									<li>
+										trois,
+										<ul>
+											<li>5</li>
+											<li>6</li>
+										</ul>
+									</li>
+								</ol>
+							</div>
+						</section>
+						<section id="s2">
+							<div class="sousTitre">
+								<h2>Colophon</h2>
+								<img src="medias/ui/chevron.svg" alt="Chevron" title="Ouvrir/Fermer" width="16" height="16"/> 
+							</div>
+							<div class="sectionTexte">
+								<p>Des infos...</p>
+								<p>Des infos...</p>
+							</div>
+						</section>
+						<section class="finDePage">
+							<p>Fin de page</p>
+						</section> -->
+					</div>
+					<aside>
+						<!-- 
+						<a href="#hautDePage" class="articleSectionChoisie" title="GitHub // Alexandre Venet">GitHub // Alexandre Venet</a>
+						<a href="#s0" title="Présentation">Présentation</a>
+						<a href="#s1" title="Contenus">Contenus</a>
+						<a href="#s2" title="Colophon">Colophon</a> 
+						-->
+					</aside>
+				</div>
+			</main>
+		</div>
+										
+	<script src="./js/convertisseur.js"></script>	
+	<script src="./js/main.js"></script>
+		
+	</body>
 </html>
