@@ -162,18 +162,15 @@ let construirePage = (contenu) =>
 			const divSectionTexte = creerDivSectionTexte();
 			currentSection.appendChild(divSectionTexte);
 		}
+		else if(node.tagName === 'TABLE')
+		{
+			const conteneurTable = creerElementAvecClasseCss('div', 'tableConteneur');
+			conteneurTable.appendChild(node.cloneNode(true));
+			currentSection.querySelector('div.sectionTexte').appendChild(conteneurTable);
+		}
 		else
 		{
-			if(node.tagName === 'TABLE')
-			{
-				const conteneurTable = creerElementAvecClasseCss('div', 'tableConteneur');
-				conteneurTable.appendChild(node.cloneNode(true));
-				currentSection.querySelector('div.sectionTexte').appendChild(conteneurTable);
-			}
-			else
-			{
-				currentSection.querySelector('div.sectionTexte').appendChild(node.cloneNode(true));
-			}
+			currentSection.querySelector('div.sectionTexte').appendChild(node.cloneNode(true));
 		}
 	};
 	
