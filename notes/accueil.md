@@ -22,9 +22,9 @@ Pour les grandes largeurs d'écran, la fin d'une page présente un bloc vide hau
 
 Le présent site est herbergé sur **Github** et utilise la fonction **Github Pages**.
 
-Du fait des limitations de Github (et aussi pour le plaisir), j'ai tenté de réaliser un **convertisseur personnel de Markdown en HTML côté client en Javascript**, ce qui me permet d'éditer les contenus de ce site seulement avec des fichiers `.md` (navigation et pages).
+Du fait des limitations de Github (et aussi pour le plaisir), j'ai essayé de réaliser un **convertisseur personnel de Markdown en HTML côté client en Javascript**, ce qui me permet d'éditer les contenus de ce site seulement avec des fichiers `.md` (navigation et pages).
 
-Les blocs de code sont présentés de la manière suivante. Si les lignes sont trop longues, le bloc est défilable horizontalement. 
+Les blocs de code sont présentés de la manière suivante. Si les lignes sont trop longues, le bloc est défilable horizontalement. Un bloc de code dont le langage a été renseigné présente la **coloration syntaxique**, traitement qui est assuré par [Highlight.js](https://highlightjs.org _blank) (dépendance installée dans le *repository*).
 
 ```
 entrée de code

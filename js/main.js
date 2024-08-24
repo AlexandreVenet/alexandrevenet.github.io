@@ -162,15 +162,45 @@ let construirePage = (contenu) =>
 			const divSectionTexte = creerDivSectionTexte();
 			currentSection.appendChild(divSectionTexte);
 		}
-		else if(node.tagName === 'TABLE')
-		{
-			const conteneurTable = creerElementAvecClasseCss('div', 'tableConteneur');
-			conteneurTable.appendChild(node.cloneNode(true));
-			currentSection.querySelector('div.sectionTexte').appendChild(conteneurTable);
-		}
 		else
 		{
-			currentSection.querySelector('div.sectionTexte').appendChild(node.cloneNode(true));
+			const divSectionTexte = currentSection.querySelector('div.sectionTexte');
+			
+			if(node.tagName === 'TABLE')
+			{
+				const conteneurTable = creerElementAvecClasseCss('div', 'tableConteneur');
+				conteneurTable.appendChild(node.cloneNode(true));
+				divSectionTexte.appendChild(conteneurTable);
+			}
+			else if(node.tagName === 'PRE')
+			{
+				const nodeCode = node.querySelector('code');
+				const langage = nodeCode.dataset.langage;
+				let langageSortie = '';
+				if(langage)
+				{
+					switch (langage.toLowerCase()) 
+					{
+						case 'c#':
+						case 'csharp':
+							langageSortie = 'csharp';
+							break;
+						case 'js':
+						case 'javascript':
+							langageSortie = 'js';
+							break;
+						default:
+							langageSortie = langage; // xml, json...
+							break;
+					}
+					nodeCode.classList.add('language-' + langageSortie);
+				}
+				divSectionTexte.appendChild(node.cloneNode(true));
+			}
+			else
+			{
+				divSectionTexte.appendChild(node.cloneNode(true));
+			}
 		}
 	};
 	
@@ -204,7 +234,7 @@ let construirePage = (contenu) =>
 }
 
 let initPage = () =>
-{
+{		
 	asideLiens = document.querySelectorAll('aside a');
 	aside.scrollTop = 0;
 	
@@ -236,6 +266,21 @@ let initPage = () =>
 		window.addEventListener('resize', resize);
 		windowEcouteResize = true;
 	}	
+	
+	// Highlight.js
+	document.querySelectorAll('pre code').forEach((el) => 
+		{
+			if(el.classList.length > 0) 
+			{
+				el.classList.forEach(element => 
+					{
+						if(element.startsWith('language-'))	
+						{
+							hljs.highlightElement(el);
+						}
+					});
+			}
+		});
 }
 
 let navSectionMainClick = async (e) =>
