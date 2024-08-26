@@ -27,7 +27,7 @@ Ensuite, on lance **Visual Studio** proprement dit.
 
 Le modèle a créé une application qui affiche un « Hello, World! ». Deux choses essentielles : 
 - la fenêtre du script principal **Program.cs** : c'est le code de ce programme Console,
-- la fenêtre nommée **Explorateur de solutions**. Elle donne une représentation de la solution ; oui, c'est une représentation de la solution et non pas des fichiers physiques sur le disque car on peut exclure des fichiers (ce que Visual Studio fait par exemple avec les dossiers **bin** et **obj**, ils sont générés mais non représentés - ceci peut se changer dans `menu Projet > Afficher tous les fichiers`).
+- la fenêtre nommée **Explorateur de solutions**. Elle donne une représentation de la solution ; oui, c'est une représentation de la solution et non pas des fichiers physiques sur le disque car on peut exclure des fichiers (ce que Visual Studio fait par exemple avec les dossiers **bin** et **obj**, ils sont générés mais non représentés - ceci peut se changer dans le menu `Projet` puis `Afficher tous les fichiers`).
 
 ![Program.cs](../../../media/.net/introduction/program.jpg)
 
@@ -41,17 +41,17 @@ Posons un peu de vocabulaire à l'aide d'une image :
 
 ## Compiler
 
-Pour voir notre programme en action, il faut **compiler**. Pour cela, utiliser le raccourci `CTRL F5` ou bien appuyer sur le bouton « *Play* vert vide », ce qui lance le programme en mode sans débogage.
+Pour voir notre programme en action, il faut **compiler**. Pour cela, utiliser le raccourci `CTRL F5` ou bien appuyer sur le bouton « *Play* vert vide », ce qui lance le programme en mode sans débogage. 
 
 ![Compiler](../../../media/.net/introduction/compilerSansDebogage.jpg)
 
 !- Le bouton « *Play* vert vide » dans la barre de navigation principale de Visual Studio.
 
-## Mode *Debug*
+## *Debug* et *Release*
 
-Si on souhaite compiler en mode *Debug*, on utilise le bouton « *Play* vert plein ». Mais cette fois, c'est le programme final qui est débogué, c'est-à-dire tel qu'il serait lancé dans son contexte d'utilisation. Par conséquent, par défaut, la fenêtre se ferme à la fin de la procédure. Dans le mode *Debug*, Visual Studio propose des outils de diagnostic, d'analyse du programme pendant son exécution.
+Si on souhaite compiler en mode *Debug*, on utilise le bouton « *Play* vert plein ». Le nom du projet apparaît à côté du bouton (menu déroulant permettant de choisir le projet à tester parmi ceux que la solution contient). Dans le mode *Debug*, Visual Studio propose des outils de diagnostic, d'analyse du programme pendant son exécution.
 
-Or, on souhaite garder la fenêtre à l'écran une fois le programme terminé. On peut simplement demander à l'utilisateur ou l'utilisatrice du programme d'entrer une donnée. Deux commandes sont possibles ici, au choix : `Console.ReadKey()` pour saisir une lettre ou bien `Console.ReadLine()` pour saisir une ligne.
+Par défaut, la fenêtre se ferme à la fin de la procédure. Or, on souhaite garder la fenêtre à l'écran une fois le programme terminé. Pour cela, on peut simplement attendre une action de l'utilisateur ou de l'utilisatrice du programme. Par exemple, `Console.ReadKey()` pour saisir une lettre ou bien `Console.ReadLine()` pour saisir une ligne.
 
 ```C#
 namespace MonApp
@@ -67,11 +67,29 @@ namespace MonApp
 }
 ```
 
-Mais ceci nous oblige à modifier notre programme. On préfèrerait ne pas. Alors, Visual Studio propose un paramètre pour garder la fenêtre ouverte en fin de procédure. Aller dans le menu Outils > Options... puis chercher « console » puis décocher la case **Fermer automatiquement la console à l'arrêt du débogage**.
+Mais ceci nous oblige à modifier notre programme. On préfèrerait ne pas. Alors, Visual Studio propose un paramètre pour garder la fenêtre ouverte en fin de procédure. Aller dans le menu `Outils`, choisir `Options...` puis chercher « console » puis décocher la case **Fermer automatiquement la console à l'arrêt du débogage**.
 
 ![Garder la console](../../../media/.net/introduction/console_garder.jpg)
 
 !- Le paramètre pour garder ou non la fenêtre de la Console affichée après débogage.
+
+Enfin, on peut encore utiliser les [directives de préprocesseur](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/preprocessor-directives _blank). Il s'agit ici de compiler certaines portions du code selon une condition, en ce qui nos occupe si on est en mode *Debug*. Ceci conduit alors à penser un autre mode : le mode *Release*, c'est-à-dire une version achevée du programme, une version à déployer. Donc, dans notre exemple, en *Debug*, une action de l'utilisateur ou de l'utilisatrice est requise ; en *Release*, cette instruction n'existe pas. Le changement de mode s'effectue dans la barre d'outil principale, au moyen d'un menu déroulant. Les versions du programme sont compilées dans le sous-répertoire **bin** du projet.
+
+```C#
+namespace MonApp
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, World!");
+#if DEBUG
+			Console.ReadKey();
+#endif
+		}
+	}
+}
+```
 
 ## Valeur de sortie
 
