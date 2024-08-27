@@ -125,3 +125,4 @@
 
 [*DLL*](.net/apps/dll.md)
 [App config](.net/apps/appconfig.md)
+[Console](.net/apps/console.md)

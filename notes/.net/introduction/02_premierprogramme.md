@@ -73,7 +73,7 @@ Mais ceci nous oblige à modifier notre programme. On préfèrerait ne pas. Alor
 
 !- Le paramètre pour garder ou non la fenêtre de la Console affichée après débogage.
 
-Enfin, on peut encore utiliser les [directives de préprocesseur](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/preprocessor-directives _blank). Il s'agit ici de compiler certaines portions du code selon une condition, en ce qui nos occupe si on est en mode *Debug*. Ceci conduit alors à penser un autre mode : le mode *Release*, c'est-à-dire une version achevée du programme, une version à déployer. Donc, dans notre exemple, en *Debug*, une action de l'utilisateur ou de l'utilisatrice est requise ; en *Release*, cette instruction n'existe pas. Le changement de mode s'effectue dans la barre d'outil principale, au moyen d'un menu déroulant. Les versions du programme sont compilées dans le sous-répertoire **bin** du projet.
+Enfin, on peut encore utiliser les [directives de préprocesseur](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/preprocessor-directives _blank). Il s'agit ici de compiler certaines portions du code selon une condition, en ce qui nos occupe si on est en mode *Debug*. Ceci conduit alors à penser un autre mode : le mode *Release*, c'est-à-dire une version achevée du programme, une version à déployer. Donc, dans notre exemple, en *Debug*, une action de l'utilisateur ou de l'utilisatrice est requise ; en *Release*, cette instruction n'existe pas. Le changement de mode s'effectue dans la barre d'outils principale, au moyen d'un menu déroulant. Les versions du programme sont compilées dans le sous-répertoire **bin** du projet.
 
 ```C#
 namespace MonApp
@@ -104,6 +104,22 @@ namespace MonApp
 		{
 			Console.WriteLine("Hello, World!");
 			return 0;
+		}
+	}
+}
+```
+
+D'une autre manière, on peut utiliser une méthode dédiée :
+
+```C#
+namespace MonApp
+{
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, World!");
+			Environment.Exit(0);
 		}
 	}
 }
