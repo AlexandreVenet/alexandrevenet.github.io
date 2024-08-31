@@ -83,7 +83,9 @@ On utilise des **unités de mesure** qui dérivent du code binaire :
 
 -! Types intégrés de C#
 
-**Le type limite la valeur**. Ainsi, notamment avec les nombres, on choisira un type selon les besoins et en gardant à l'esprit de ne pas encombrer la mémoire inutilement. Par exemple, le type `int` ne conserve d'un nombre à virgule que la partie entière (c'est non un arrondi mais une troncature). Les **types numériques à virgule flottante** présentent la caractéristique de **précision**. 
+**Le type limite la valeur**. Ainsi, notamment avec les nombres, on choisira un type selon les besoins et en gardant à l'esprit de ne pas encombrer la mémoire inutilement. Par exemple, le type `int` ne conserve d'un nombre à virgule que la partie entière (c'est non un arrondi mais une troncature). 
+
+Les **types numériques à virgule flottante** présentent la caractéristique de **précision** : le nombre de chiffres. Par exemple, le type decimal convient aux calculs financiers en raison de la quantité de nombres après la virgule.
 
 ```C#
 int num = 1 / 2 ; 

@@ -23,7 +23,7 @@ Console.WriteLine("...");
 **Lire un caractère** à partir du flux standard d'entrée (le retour ligne, la tabulation... sont aussi des caractères).
 
 ```c#
-Console.Read();
+char caractere = (char) Console.Read();
 ```
 
 **Lire une chaîne** en tant qu'elle est une ligne.

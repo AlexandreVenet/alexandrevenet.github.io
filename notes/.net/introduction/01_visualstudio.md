@@ -9,11 +9,11 @@ L'environnement de développement intégré proposé par Microsoft.
 **Visual Studio** est l'*IDE* (*Integrated Development Environment*) proposé par Microsoft pour les développeurs qui codent en .NET mais aussi en C++ par exemple. Il contient un ensemble d'outils permettant de travailler efficacement, par exemple :
 - Git et les relations avec GitHub ou Azure DevOps. [Plus d'Infos](https://learn.microsoft.com/fr-fr/visualstudio/version-control/git-with-visual-studio _blank),
 - une fenêtre de tâches (*tasks*) qu'on alimente par mots-clés. [Plus d'infos](https://learn.microsoft.com/fr-fr/visualstudio/ide/using-the-task-list _blank),
-- des thèmes, par exemple [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro _blank).
+- des thèmes, par exemple [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=adrianwilczynski.one-dark-pro _blank),
+- un compilateur qui vérifie la syntaxe des scripts,
+- un débogueur pour tester le programme pendant son exécution.
 
-Documentations
-- [Portail Visual Studio](https://docs.microsoft.com/fr-FR/visualstudio _blank)
-- [Actions rapides](https://docs.microsoft.com/fr-fr/visualstudio/ide/common-quick-actions _blank)
+Documentations : [Portail Visual Studio](https://docs.microsoft.com/fr-FR/visualstudio _blank), [Actions rapides](https://docs.microsoft.com/fr-fr/visualstudio/ide/common-quick-actions _blank)
 
 ## Installation
 

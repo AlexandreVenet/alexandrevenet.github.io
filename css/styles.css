@@ -93,13 +93,15 @@ b
 }
 p a,
 ul a,
-ol a
+ol a,
+table a
 {
 	color:var(--couleurAttention);
 }
 p a:hover,
 ul a:hover,
-ol a:hover
+ol a:hover,
+table a:hover
 {
 	text-decoration: underline;
 }
@@ -161,7 +163,7 @@ pre code
 }
 .tableConteneur
 {
-	margin: 2rem 0;
+	margin-top: 2rem;
 	overflow-x: auto;
 	scrollbar-width: thin;
 	scrollbar-color: var(--couleurTresSombre) var(--couleurSombre);
