@@ -73,15 +73,18 @@ Sélectionner du code puis taper `CTRL K S` : affiche un menu pour sélectionner
 - Menu `Edition > Avancé > Mettre le document en forme`.
 
 **Colorisation des accolades**
-- Menu `Outils > Options > Éditeur de texte` : cocher la case `Activer la colorisation des paires d’accolades`.
+- Menu `Outils > Options... > Éditeur de texte` : cocher la case `Activer la colorisation des paires d’accolades`.
 
 **Mise en forme adaptative & IntelliSense**
 - Après avoir pressé la touche `TAB`, l'IntelliSense insère le code choisi avec des espaces. Pourquoi pas des tabulations ?
-- Menu `Outils > Options > Éditeur de textes > Avancé`, décocher la case `Utiliser la mise en forme adaptative`.
-- Menu `Outils > Options > Éditeur de textes`, choisir `Tabulation uniquement` dans le menu déroulant `Mode de complétion IntelliSense par défaut`.
+- Menu `Outils > Options... > Éditeur de textes > Avancé`, décocher la case `Utiliser la mise en forme adaptative`.
+- Menu `Outils > Options... > Éditeur de textes`, choisir `Tabulation uniquement` dans le menu déroulant `Mode de complétion IntelliSense par défaut`.
 
 **Défilement épinglé**
-- Menu `Outils > Options > Éditeur de texte > Général > Défilement collant`. 
+- Menu `Outils > Options... > Éditeur de texte > Général > Défilement collant`. 
+
+**Nettoyer le cache NuGet**
+- Menu `Outils > Options... > Gestionnaire de package NuGet`, presser le bouton `Effacer tout le stockage`.
 
 ## Solution et projets
 
@@ -143,11 +146,20 @@ Les références de *packages* apparaissent également dans le fichier avec leur
 
 `.csproj` peut accueillir des **commandes personnaliées**, par exemple supprimer les répertoires `bin` et `obj`, voire `.vs`, à chaque lancement de la commande `Nettoyer la solution`. Source : [Stack Overflow](https://stackoverflow.com/questions/1088593/how-to-fully-clean-bin-and-obj-folders-within-visual-studio _blank)
 
-```
+```XML
 <Target Name="Nettoyer la solution" AfterTargets="Clean">
 	<RemoveDir Directories="$(TargetDir)" /> <!-- bin -->
 	<RemoveDir Directories="$(SolutionDir).vs" /> <!-- .vs (omettre si jugé excessif) -->
 	<RemoveDir Directories="$(ProjectDir)$(BaseIntermediateOutputPath)" /> <!-- obj -->
+</Target>
+```
+
+Autre exemple :
+
+```XML
+<Target Name="NettoyagePerso" AfterTargets="Clean">
+	<Message Importance="high" Text="Nettoyage personnalisé en cours..."/>
+	<RemoveDir Directories="bin;obj"/>
 </Target>
 ```
 

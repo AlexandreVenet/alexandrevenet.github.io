@@ -66,6 +66,8 @@ Pour avoir le signe « € » et autres non ASCII, ajouter ceci en démarrage de
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 ```
 
+L'instruction consistant à écrire une ligne en sortie de console étant si courante, Visual Studio propose un raccourci clavier : saisir `cw` puis presser la touche `TAB` pour écrire `Console.WriteLine()`.
+
 ## Couleurs
 
 Afficher du texte en couleur avec `Console.ForegroundColor` ou `Console.BackgroundColor`.
