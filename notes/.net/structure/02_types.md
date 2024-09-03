@@ -81,7 +81,7 @@ On utilise des **unités de mesure** qui dérivent du code binaire :
 
 ![Types intégrés de C#](../../../media/.net/structure/types.svg)
 
--! Types intégrés de C#
+!- Types intégrés de C#
 
 **Le type limite la valeur**. Ainsi, notamment avec les nombres, on choisira un type selon les besoins et en gardant à l'esprit de ne pas encombrer la mémoire inutilement. Par exemple, le type `int` ne conserve d'un nombre à virgule que la partie entière (c'est non un arrondi mais une troncature). 
 

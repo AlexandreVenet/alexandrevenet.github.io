@@ -127,3 +127,4 @@
 [App config](.net/apps/appconfig.md)
 [Console](.net/apps/console.md)
 [Système de fichier](.net/apps/systemeFichier.md)
+[Sérialisation](.net/apps/serialisation.md)
