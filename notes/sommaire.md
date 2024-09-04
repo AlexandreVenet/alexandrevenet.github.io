@@ -128,3 +128,4 @@
 [Console](.net/apps/console.md)
 [Système de fichier](.net/apps/systemeFichier.md)
 [Sérialisation](.net/apps/serialisation.md)
+[Hash](.net/apps/hash.md)
