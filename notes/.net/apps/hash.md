@@ -10,13 +10,13 @@ Sources : [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storag
 
 Une donnée qui doit être maintenue secrète, comme un mot de passe par exemple, n'est pas conservée dans un état qui en facilite la lecture. La donnée fait l'objet d'une conversion en un ***hash***.
 
-En anglais, l'OWASP distingue ***hashing*** et ***encryption***. Un mot de passe doit être hashé car le hashage est une **opération à sens unique**, alors que l'*encryption* est à double sens (on peut retrouver de l'autre et inversement).
+En anglais, l'OWASP distingue ***hashing*** et ***encryption***. Un mot de passe doit être hashé car le hashage est une **opération à sens unique**, alors que l'*encryption* est à double sens (on peut retrouver l'un de l'autre et inversement).
 
-Le hash est une série de bits de **longueur fixe**. Comme le hashage est une opération à sens unique, on dit que le hash est **unidirectionnel**. Le hash est **déterministe** car la même entrée produit le même hash (sinon, ce n'est que du brouillage inutile).
+Le hash est de **longueur fixe**. Comme le hashage est une opération à sens unique, on dit que le hash est **unidirectionnel**. Le hash est **déterministe** car la même entrée produit le même hash (sinon, ce n'est que du brouillage inutile).
 
-Le hash doit permettre la comparaison de valeur : si j'entre un mot de passe, il faut ensuite le hasher puis le comparer avec le hash stocké.
+Le hash doit permettre la comparaison de valeur : si je renseigne un mot de passe dans un formulaire, il faut ensuite hasher ce mot de passe puis le comparer avec le hash stocké.
 
-Maintenant, en pratique, obtenir un hash s'effectue par une méthode de calcul. Il existe de nombreuses méthodes de calcul de hash qui sont plus ou moins efficaces, rapides, consommatrices de ressources... Exemples : Argon2id, scrypt, bcrypt, PBKDF2. La qualité des hashs obtenus est donc variable et il convient de trouver une bonne méthode, c'est-à-dire une méthode qui corresponde aux besoins, au contexte.
+Maintenant, en pratique, un hash s'obtient par une méthode de calcul. Il existe de nombreuses méthodes de calcul de hash qui sont plus ou moins efficaces, rapides, consommatrices de ressources... Exemples : Argon2id, scrypt, bcrypt, PBKDF2. La qualité des hashs obtenus est donc variable et il convient de trouver une bonne méthode, c'est-à-dire une méthode qui corresponde aux besoins, au contexte.
 
 Le hashage doit (prescription) effectuer des opérations qui assurent une bonne **entropie** (du désordre). 
 - **Hashage** : méthode de calcul proprement dite.
@@ -24,8 +24,7 @@ Le hashage doit (prescription) effectuer des opérations qui assurent une bonne 
 - **Poivre** : ajout de valeur unique, utilisée pour toutes les données. Le poivre est conservé non pas en base de donnée, mais par exemple en coffre-fort, ou dans la configuration du programme, ou en variable d'environnement... 
 - **Itérations** : on parle de *work factor*. Itérer augmente la complexité du chiffrement. Il y a un équilibre à trouver : si itérer augmente la sécurité, cela nécessite du temps de calcul (temps qui peut être exploité par exemple pour faire un déni de service).
 
-Hash, sel, poivre existent quelque part (stockage en base de données, en mémoire...). Dans tous les cas, il faut penser leur **format** :  binaire, base64, hexadécimal... 
-
+Hash, sel, poivre existent quelque part (stockage en base de données, en mémoire...). Dans tous les cas, il faut penser leur **format** (binaire, base64, hexadécimal...) et les **conversions** nécessaires. 
 
 ## Exemple
 
