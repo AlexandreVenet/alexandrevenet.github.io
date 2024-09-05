@@ -21,7 +21,7 @@ Maintenant, en pratique, un hash s'obtient par une méthode de calcul. Il existe
 Le hashage doit (prescription) effectuer des opérations qui assurent une bonne **entropie** (du désordre). 
 - **Hashage** : méthode de calcul proprement dite.
 - **Sel** : ajout de valeur aléatoire, unique, spécifique du hash. Le sel doit être stocké en base de données avec le hash. Il est réutilisé pour effectuer la comparaison.
-- **Poivre** : ajout de valeur unique, utilisée pour toutes les données. Le poivre est conservé non pas en base de donnée, mais par exemple en coffre-fort, ou dans la configuration du programme, ou en variable d'environnement... 
+- **Poivre** : ajout de valeur unique, utilisée pour toutes les données. Le poivre est conservé non pas en base de données, mais par exemple en coffre-fort, ou dans la configuration du programme, ou en variable d'environnement... 
 - **Itérations** : on parle de *work factor*. Itérer augmente la complexité du chiffrement. Il y a un équilibre à trouver : si itérer augmente la sécurité, cela nécessite du temps de calcul (temps qui peut être exploité par exemple pour faire un déni de service).
 
 Hash, sel, poivre existent quelque part (stockage en base de données, en mémoire...). Dans tous les cas, il faut penser leur **format** (binaire, base64, hexadécimal...) et les **conversions** nécessaires. 
@@ -217,7 +217,7 @@ public void Demarrer()
 	AfficherInfos(chaine2, sel64, ConvertirBytesEnBase64(hash2));
 	
 	bool hashsIdentiques = ComparerHashs(hash, hash2);
-	// LINQ (extension) : bool hashsIdentiques = hashSel.SequenceEqual(hashSelItere2);
+	// LINQ (extension) : bool hashsIdentiques = hash.SequenceEqual(hash2);
 	
 	AfficherComparaison(hashsIdentiques);
 }
