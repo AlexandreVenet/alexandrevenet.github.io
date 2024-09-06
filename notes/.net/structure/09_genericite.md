@@ -72,7 +72,7 @@ instance.ModifierChose(5);
 
 Exemple de classe générique : `System.Collections.Generic.List`. Faire un clic droit dessus puis choisir ***Go To Definition*** pour obtenir la liste des interfaces que ce type implémente.
 
-## Default()
+## Valeur par défaut
 
 Avec les génériques, on peut utiliser `default(T)` qui permet de **renvoyer la valeur par défaut du type**.
 
@@ -85,7 +85,7 @@ public T EssayerDeFaireCeci()
 
 ## *Where*
 
-Ces méthodes et classes génériques sont limitées aux types utilisés et leur compatibilité. On peut contrôler plus finement les entrée en ajoutant des **contraintes** avec `where` suivi des types séparés par des virgules. 
+Ces méthodes et classes génériques sont limitées aux types utilisés et leur compatibilité. On peut limiter les types à utiliser en ajoutant des **contraintes** avec `where` suivi des types séparés par des virgules. 
 - `where T : class` : ce sera un type référence,
 - `where T : struct` : ce sera un type valeur,
 - `where T : new()` : il y aura un constructeur public sans paramètres,
@@ -98,7 +98,16 @@ public void Methode<T>(T item) where T : struct
 ```
 
 ```C#
-public class ClassGenerique<T> where T : IComparable<T> 
+public void Methode<T, TComparateur>(T item) where TComparateur : IComparer<T>, new() 
+{ 
+	// Instanciation obligatoire avec constructeur sans paramètre et du type indiqué 
+	var comparateur = new TComparateur(); 
+	//...
+}
+```
+
+```C#
+public class ClassGenerique<T> where T : IComparable<T>
 { }
 ```
 
