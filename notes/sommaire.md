@@ -121,6 +121,11 @@
 [Callback](.net/delegate/callback.md)
 [Predicate](.net/delegate/predicate.md)
 
+## Tests
+
+[Tests](.net/tests/tests.md)
+[Projet de tests](.net/tests/projetTest.md)
+
 ## Apps en vrac
 
 [*DLL*](.net/apps/dll.md)
