@@ -134,3 +134,41 @@
 [Système de fichier](.net/apps/systemeFichier.md)
 [Sérialisation](.net/apps/serialisation.md)
 [Hash](.net/apps/hash.md)
+
+# Design patterns
+
+## Généralités
+
+[Généralités](patterns/generalites/introduction.md)
+
+## GoF Création
+
+[*Singleton*](patterns/GoF_creation/singleton.md)
+[*Prototype*](patterns/GoF_creation/prototype.md)
+[*Factory*](patterns/GoF_creation/factory.md)
+[*Abstract Factory*](patterns/GoF_creation/factoryAbstract.md)
+[*Builder*](patterns/GoF_creation/builder.md)
+
+## GoF Structure
+
+[*Bridge*](patterns/GoF_structure/bridge.md)
+[*Facade*](patterns/GoF_structure/facade.md)
+[*Adapter*](patterns/GoF_structure/adapter.md)
+[*Composite*](patterns/GoF_structure/composite.md)
+[*Proxy*](patterns/GoF_structure/proxy.md)
+[*Flyweight*](patterns/GoF_structure/flyweight.md)
+[*Decorator*](patterns/GoF_structure/decorator.md)
+
+## GoF Comportement
+
+[*Chain of responsibility*](patterns/GoF_comportement/chainOfResponsibility.md)
+[*Command*](patterns/GoF_comportement/command.md)
+[*Interpreter*](patterns/GoF_comportement/interpreter.md)
+[*Iterator*](patterns/GoF_comportement/iterator.md)
+[*Mediator*](patterns/GoF_comportement/mediator.md)
+[*Memento*](patterns/GoF_comportement/memento.md)
+[*Observer*](patterns/GoF_comportement/observer.md)
+[*State*](patterns/GoF_comportement/state.md)
+[*Strategy*](patterns/GoF_comportement/strategy.md)
+[*Template Method*](patterns/GoF_comportement/templateMethod.md)
+[*Visitor*](patterns/GoF_comportement/visitor.md)

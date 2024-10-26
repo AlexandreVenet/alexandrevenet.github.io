@@ -47,7 +47,7 @@ if(myTroop is Barbarian)
 class TypeDeBase 
 {}
 
-classe TypeDerive : TypeDeBase 
+class TypeDerive : TypeDeBase 
 {}
 	
 //... et cette méthode

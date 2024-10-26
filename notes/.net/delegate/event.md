@@ -94,7 +94,7 @@ Comme l'`event` encapsule un `delegate`, cela signifie que le même système peu
 
 L'exemple précédent montre l'**autonomie** des objets : il est toujours possible de scripter un objet de façon à ce qu'il fasse tout autre chose que colorer en rouge, du moment que la fonction ajoutée à l'événement respecte la signature du type du délégué utilisé. Ainsi, il n'est pas nécessaire de coder de façon centralisée et verrouillée le comportement de tous les objets : des comportements différents ont un ou plusieurs événements en commun.
 
-L'exemple précédent utilise un script `Main` qui sert en fait d'`EventManager`. On peut ainsi clarifier l'application en utilisant un **gestionnaire global et centralisé** de l'événement (diffusion) et toutes sortes d'objets abonnés qui n'ont aucun rapports entre eux (peu de dépendance).
+L'exemple précédent utilise un script `Main` qui sert en fait d'`EventManager`. On peut ainsi clarifier l'application en utilisant un **gestionnaire global et centralisé** de l'événement (diffusion) et toutes sortes d'objets abonnés qui n'ont aucun rapport entre eux (peu de dépendance).
 
 ## EventHandler Delegate
 

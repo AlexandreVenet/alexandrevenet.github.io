@@ -243,12 +243,12 @@ Ici, je vais créer le modèle `VilleModel`. Les propriétés `siren`, `codeEpci
 ```C#
 class VilleModel
 {
-    public string Nom { get; set; }
-    public string Code { get; set; }
-    public string[] CodesPostaux { get; set; } = Array.Empty<string>();
+	public string Nom { get; set; }
+	public string Code { get; set; }
+	public string[] CodesPostaux { get; set; } = Array.Empty<string>();
 	public string CodeRegion { get; set; }
-    public int Population { get; set; }
-    
+	public int Population { get; set; }
+
 	public override string ToString()
 	{
 		StringBuilder sb = new ();
@@ -328,7 +328,7 @@ public class MaSauvegarde // public nécessairement
 	public string Nom { get; set; } = "Nom renseigné";
 	
 	[IgnoreMember]
-    public string PrenomNom 
+	public string PrenomNom 
 	{
 		get => Prenom + ' ' + Nom; 
 		//set; 
