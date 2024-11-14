@@ -16,7 +16,7 @@ Le constructeur est `private` ou `protected` pour forcer à utiliser la méthode
 
 Dans un langage basé sur les prototypes (Javascript par exemple), *Singleton* désigne simplement un objet sans copie et qui ne sert pas non plus de modèle à d'autres objets.
 
-![Diagramme UML de classe](../../../media/patterns/GofCreation/singleton.svg)
+![Diagramme UML de classe](../../../media/patterns/GoFCreation/singleton.svg)
 
 !- Diagramme UML de classe du patron *Singleton*.
 

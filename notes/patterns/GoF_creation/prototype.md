@@ -12,7 +12,7 @@ La mise en œuvre passe par une classe `abstract` possédant une méthode de cop
 
 Les classes dérivées ne sont pas instanciées (pas de `new`). On utilise leur méthode de copie. 
 
-![Diagramme UML de classe](../../../media/patterns/GofCreation/prototype.svg)
+![Diagramme UML de classe](../../../media/patterns/GoFCreation/prototype.svg)
 
 !- Diagramme UML de classe du patron *Prototype*
 
