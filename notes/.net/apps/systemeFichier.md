@@ -165,7 +165,7 @@ File.AppendAllText(chemin, "Message");
 
 ## FileInfo, DirectoryInfo
 
-Les classes précédentes classes sont statiques et cette staticité est pertinente pour des actions complexes, répétées dans le programme. Lorsqu'il s'agit d'effectuer une seule action, Microsoft conseille l'utilisation des classes concrètes [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo _blank) ou [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo _blank) car il faut moins de mémoire pour que le programme fonctionne.
+Les classes précédentes sont statiques et cette staticité est pertinente pour des actions complexes, répétées dans le programme. Lorsqu'il s'agit d'effectuer une seule action, Microsoft conseille l'utilisation des classes concrètes [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo _blank) ou [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo _blank) car il faut moins de mémoire pour que le programme fonctionne.
 
 [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo _blank) et [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo _blank) sont aussi préférables lorsqu'il s'agit de réutiliser une entité. En effet, [File](https://learn.microsoft.com/en-us/dotnet/api/system.io.file _blank) et [Directory](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory _blank) effectuent des vérifications de sécurité pour chacune de leurs méthodes à chaque déclenchement, ce qui peut être inutile lorsque ces vérifications ont déjà été effectuées sur l'entité à réutiliser.
 
