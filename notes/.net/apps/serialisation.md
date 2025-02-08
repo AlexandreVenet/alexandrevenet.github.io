@@ -192,7 +192,7 @@ Autres manipulations dans mon *repository* [TP JSON File](https://github.com/Ale
 
 ## JSON : API distante
 
-Utiliser des API sur le web requiert [HttpClient](https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient _blank). Pour cet exemple, on va utiliser faire une requête de verbe HTTP `GET` à une [API du service public français](https://api.gouv.fr _blank), l'API du découpage administratif  : [API Geo](https://api.gouv.fr/documentation/api-geo _blank)
+Utiliser des API sur le web requiert [HttpClient](https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient _blank). Pour cet exemple, effectuons une requête de verbe HTTP `GET` à une [API du service public français](https://api.gouv.fr _blank), l'API du découpage administratif  : [API Geo](https://api.gouv.fr/documentation/api-geo _blank)
 
 On peut simplement récupérer les données au format texte. J'ai codé cette fonction asynchrone que j'appelle dans un contexte synchrone ou asynchrone.
 
