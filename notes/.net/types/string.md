@@ -1,6 +1,6 @@
 # String
 
-Le 18-08-2024
+Le 24-07-2025
 
 Un texte est toujours en *string*.
 
@@ -145,13 +145,37 @@ int monAge = 10;
 Console.WriteLine($@"Mon âge est de {{{monAge}}} ""zans"".");
 ```
 
+C# 11 apporte le **littéral de chaîne brute** (*raw string litteral*). Cela permet  d'écrire des chaînes de caractères multi-lignes sans avoir à échapper des caractères (guillemets, antislash). La chaîne s'ouvre avec au moins trois guillemets `"""`. Les lignes doivent commencer par le même espace que la dernière ligne car cela définit la colonne du fer à gauche (cela résout le problème de l'indentation du code qui était prise en compte dans la mise en forme du texte).
+
+```C#
+string exemple1 = """
+Ouvrir la chaîne avec 3 guillemets.
+    Tabulations fonctionnelles.
+Avec des "guillemets" et des \ backslashes \ sans échappement.
+""";
+```
+
+```C#
+string exemple2 = """""""Texte avec """ à l'intérieur""""""";
+```
+
+```C#
+string exempleJson = """
+{
+	"prenom": "Boba",
+	"nom": "Fett",
+	"passions": ["chasse", "primes", "voyage"]
+}
+""";
+```
+
 Certaines données peuvent être mises en forme, par l'interpolation et la mise en forme composite, selon la « **culture informatique** » de l'utilisateur, c'est-à-dire les paramètres de **pays** et de **langue** du système d'exploitation utilisé. Le **code de culture** est une chaîne de 5 caractères présentant ces deux informations. Exemple : francophone en France avec `fr-FR`, francophone au Canada avec `fr-CA`. Adapter la mise en forme selon le code de culture se nomme la **localisation**.
 
 ```C#
 // Affichage des nombres
 decimal valeur = 123456.78912m;
 Console.WriteLine($"Valeur = {valeur:N}");
-// En culture en-U, valeur = 123,456.79
+// En culture en-US, valeur = 123,456.79
 	
 // Précision à 4 décimales (troncature)
 Console.WriteLine($"Valeur = {valeur:N4}");
@@ -167,21 +191,32 @@ Console.WriteLine($"Taxe = {taxe:P2}");
 
 ```C#
 // Valeurs monétaires
+CultureInfo cultureFr = new CultureInfo("fr-FR");
 decimal prix = 123.45m;
 int remise = 50;
-Console.WriteLine($"Prix = {prix:C} - Remise = {remise:C}");
-// Sans prise en charge de la culture, prix = ¤123.45 et remise = ¤50.00
-// En culture fr-FR, prix = 12,45€ et remise = 50,00€ 
+Console.WriteLine($"""
+	Prix = {prix:C}
+	Remise = {remise.ToString("C")}
+	Montant = {prix - remise:C2} ({prix-remise:.00})
+	""");
+/*
+Sans prise en charge de la culture, prix = ¤123.45 et remise = ¤50.00
+Sortie avec culture fr-FR :
+	Prix = 123,45 €
+	Remise = 50,00 €
+	Montant = 73,45 € (73,45)
+*/
 ```
 
 Sources :
 - [Interpolation de chaîne](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/tokens/interpolated _blank)
+- [Littéraux de chaîne brute](https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/tokens/raw-string _blank)
 - [Utiliser des données dans C#](https://docs.microsoft.com/fr-fr/learn/paths/csharp-data _blank)
 - [Formatage des nombres](https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings _blank)
 
 ## Méthodes
 
-`String` est un type embarquant un certain nombre de méthodes comme `Contains()` permettant de tester si la chaîne contient une sous-chaîne. Il existe aussi `StartsWith()`, `EndsWith()`, `Substring()`, `IndexOf()`, `LastIndexOf()`.
+`String` est un type embarquant un certain nombre de méthodes comme `Contains()` permettant de tester si la chaîne contient une sous-chaîne (ceci exactement ou bien en ignorant la casse par exemple). Il existe aussi `StartsWith()`, `EndsWith()`, `Substring()`, `IndexOf()`, `LastIndexOf()`.
 
 ```C#
 const string spanOuvrant = "<span>";
@@ -189,7 +224,7 @@ const string spanFermant = "</span>";
 	
 string message = "Youpi la vie (c'est chouette). <span>Bisous !</span>";
 	
-if (message.Contains("Youpi"))
+if (message.Contains("YoUpI", StringComparison.CurrentCultureIgnoreCase))
 {
     Console.WriteLine("Joie.");
 	
