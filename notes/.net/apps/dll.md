@@ -19,7 +19,7 @@ En général, un programme Windows peut avoir été compilé en **intégrant** s
 
 Maintenant, les *DLL* réalisées avec .NET sous forme d'*assemblies* de bibliothèque diffèrent des *DLL* Microsoft Win32. Pourquoi ? Parce qu'en .NET, il existe le *CLR* qui assure la gestion de ces dépendances : manifeste, versions, exécution... [Microsoft *Learn*](https://learn.microsoft.com/fr-fr/troubleshoot/windows-client/setup-upgrade-and-drivers/dynamic-link-library _blank)
 
-La communautés des développeurs et développeuses crée aussi des *DLL* .NET. La distribution de ces bibliothèques s'effectue par un empaquetage sous forme de ***packages* NuGet** (fichier ZIP contenant la *DLL*). Ces dépendances ne sont pas nécessairement installées dans le *GAC* mais peuvent être intégrées à l'*assembly* du programme (par exemple un seule `.exe` très lourd) ou bien générées à côté du programme (un fichier `.exe` très léger et toutes les dépendances à côté de lui). [Microsoft *Learn* NuGet](https://learn.microsoft.com/fr-fr/nuget/what-is-nuget _blank)
+La communauté des développeurs et développeuses crée aussi des *DLL* .NET. La distribution de ces bibliothèques s'effectue par un empaquetage sous forme de ***packages* NuGet** (fichier ZIP contenant la *DLL*). Ces dépendances ne sont pas nécessairement installées dans le *GAC* mais peuvent être intégrées à l'*assembly* du programme (par exemple un seule `.exe` très lourd) ou bien générées à côté du programme (un fichier `.exe` très léger et toutes les dépendances à côté de lui). [Microsoft *Learn* NuGet](https://learn.microsoft.com/fr-fr/nuget/what-is-nuget _blank)
 
 ## Créer la *DLL*
 
