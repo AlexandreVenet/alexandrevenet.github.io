@@ -424,6 +424,7 @@ Barre de nav
 	scrollbar-width: thin;
 	scrollbar-color: var(--couleurTresSombre) var(--couleurSombre);
 	height: calc(100% - 6.8rem);
+	min-height: calc(100% - 6.8rem);
 }
 #navSectionMain a,
 #retourAccueil,
