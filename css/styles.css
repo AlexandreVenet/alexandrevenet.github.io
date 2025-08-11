@@ -314,7 +314,7 @@ Mise en page générale
 .principal
 {
 	display: flex;
-	height:calc(100vh - 3.7rem); 
+	height:calc(100vh - 3.7rem);
 	overflow: hidden;
 	position: relative;
 }
@@ -336,6 +336,7 @@ nav
 	background-color: var(--couleurSombre);
 	transform: translateX(var(--largeurNavMoins));
 	transition: transform 0.25s ease-in-out;
+	height: 100%;
 }
 nav.ouvrir
 {
