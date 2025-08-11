@@ -58,6 +58,10 @@ Généralités
 	display: none;
 }
 
+html, body
+{
+	min-height: 100dvh;
+}
 body
 {
 	font-family: var(--fonteCorps);
@@ -68,7 +72,6 @@ body
 	text-align: justify;
 	overflow: hidden;
 	min-width: 320px;
-	min-height: 100dvh;
 }
 
 h1
