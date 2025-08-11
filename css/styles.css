@@ -68,6 +68,7 @@ body
 	text-align: justify;
 	overflow: hidden;
 	min-width: 320px;
+	min-height: 100vh;
 }
 
 h1
@@ -332,7 +333,7 @@ nav
 	position:absolute;
 	z-index: 1;
 	width: var(--largeurNav);
-	min-height: 100%;
+	height: 100%;
 	background-color: var(--couleurSombre);
 	transform: translateX(var(--largeurNavMoins));
 	transition: transform 0.25s ease-in-out;
