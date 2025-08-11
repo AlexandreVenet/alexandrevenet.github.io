@@ -8,7 +8,7 @@ Bienvenue dans mon espace GitHub Pages.
 
 Je publie ici des notes (cours, tests, projets...) sur différentes technologies.
 
-Pour en savoir plus sur moi-même, consulter [Alhomepage.com](https://www.alhomepage.com "Alhomepage" _blank). Pour mes dépôts GitHub : [Github Alexandre Venet](https://github.com/AlexandreVenet "Github Alexandre Venet" _blank).
+Pour mes dépôts GitHub : [Github Alexandre Venet](https://github.com/AlexandreVenet "Github Alexandre Venet" _blank).
 
 ## Colophon
 
