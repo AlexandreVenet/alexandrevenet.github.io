@@ -315,7 +315,7 @@ Mise en page générale
 {
 	display: flex;
 	height: calc(100vh - 3.7rem);
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 }
 /* .colVide utilisée seulement en HTML pour identifier la colonne vide ^^ */
