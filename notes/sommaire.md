@@ -172,3 +172,23 @@
 [*Strategy*](patterns/GoF_comportement/strategy.md)
 [*Template Method*](patterns/GoF_comportement/templateMethod.md)
 [*Visitor*](patterns/GoF_comportement/visitor.md)
+
+# Artisanat logiciel
+
+## Clean Code
+
+[Introduction](artisanatLogiciel/cleanCode/00_introduction.md)
+[Code propre](artisanatLogiciel/cleanCode/01_codePropre.md)
+[Noms significatifs](artisanatLogiciel/cleanCode/02_nomsSignificatifs.md)
+[Fonctions](artisanatLogiciel/cleanCode/03_fonctions.md)
+[Commentaires](artisanatLogiciel/cleanCode/04_commentaires.md)
+[Mise en forme](artisanatLogiciel/cleanCode/05_miseEnForme.md)
+[Objets, données](artisanatLogiciel/cleanCode/06_objetDonnees.md)
+[Erreurs](artisanatLogiciel/cleanCode/07_erreurs.md)
+[Limites](artisanatLogiciel/cleanCode/08_limites.md)
+[Tests unitaires](artisanatLogiciel/cleanCode/09_testsUnitaires.md)
+[Classes](artisanatLogiciel/cleanCode/10_classes.md)
+[Systèmes](artisanatLogiciel/cleanCode/11_systemes.md)
+[Émergences](artisanatLogiciel/cleanCode/12_emergences.md)
+[Concurrence](artisanatLogiciel/cleanCode/13_concurrence.md)
+[Indicateurs et heuristiques](artisanatLogiciel/cleanCode/14-17_IndicateursHeuristiques.md)

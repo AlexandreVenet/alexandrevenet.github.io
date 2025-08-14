@@ -26,7 +26,7 @@ On peut écrire des **regions** pour organiser des blocs de code à **réduire/d
 #endregion  
 ```
 
-Les même préprocesseurs permettent de **spécialiser du code pour une certaine destination**. [Compilation sous conditions](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html "Compilation sous conditions").
+Les même préprocesseurs permettent de **spécialiser du code pour une certaine destination**. [Compilation sous conditions](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html "Compilation sous conditions"  _blank).
 ```
 #define UNITY_EDITOR // ligne pouvant être requise en début de script
 //...
@@ -62,4 +62,4 @@ On peut aussi utiliser **Visual Studio Code**. Pour l'installation :
 D'autres modules peuvent être utiles (par exemple pour avoir **toutes** les commandes en *Intellisense*):
 - Debugger for Unity,
 - Unity Code Snippets,
-- .NET nécessaire : [Développement Unity avec VS Code](https://code.visualstudio.com/docs/other/unity "Développement Unity avec VS Code").
+- .NET nécessaire : [Développement Unity avec VS Code](https://code.visualstudio.com/docs/other/unity "Développement Unity avec VS Code" _blank).
