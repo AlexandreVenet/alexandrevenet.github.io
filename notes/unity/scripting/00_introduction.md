@@ -20,7 +20,7 @@ En général, **les noms du fichier et de la classe doivent être identiques**.
 
 Unity insère automatiquement une **structure de code par défaut** :
 
-```
+```C#
 // Namespaces, pour appeler les bibliothèques utiles
 using System.Collections;
 using System.Collections.Generic;

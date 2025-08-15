@@ -131,17 +131,17 @@ Options :
 Les entrées `Debug.Log` sont enregistrées dans des **fichiers log**. Plus d'infos : [Fichiers logs](https://docs.unity3d.com/Manual/LogFiles.html "Fichiers logs" _blank).
 
 Astuce : pour debug un `array` sans boucler dessus, utiliser `string.Join()` car Unity (ou le C#) n'opère aucune conversion automatique : 
-```
+```C#
 Debug.Log(string.Join(",", monArray));
 ```
 
 La console autorise des **styles** sur le modèle HTML :
-```
+```C#
 Debug.Log("Je parle <color=red><b>rouge</b></color>.");
 ```
 
 Une méthode personnelle de *debug*, qu'on modifiera au besoin :
-```
+```C#
 using System.Reflection;
 void MyDebug(string message)
 {

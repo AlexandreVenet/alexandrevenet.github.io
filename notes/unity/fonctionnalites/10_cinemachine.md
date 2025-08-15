@@ -49,7 +49,7 @@ Le champ de vision peut être modifié selon la position de la caméra. Pour cel
 La transition entre chaque anneau est contrôlée par `Orbits > Spline Tension`.
 
 Les propriétés peuvent être contrôlée par une **animation** ou par **script**. Exemple :
-```
+```C#
 public CinemachineFreeLook m_cam;
 private CinemachineOrbitalTransposer.AxisState _xAxis;
 private void Update()

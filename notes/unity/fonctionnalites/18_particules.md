@@ -44,7 +44,7 @@ La **collision** des particules avec autre chose peut être détectée, par exem
 - Cocher la case `Send Collision Messages` pour recevoir des messages d'événement afin d'avoir un contrôle par code.
 - Créer un fichier script Health.cs et l'attacher un objet dont le nom et le *tag* sont « Player ». Codons le script :
 
-```
+```C#
 public float m_healthPoints = 100f;
 
 private void Update()
@@ -58,7 +58,7 @@ private void Update()
 
 Codons un nouveau script pour le système de particules. Le script doit être attaché à l'objet qui présente le composant `Particle System`.
 
-```
+```C#
 public float _damagePower = 20f;
 
 private void OnParticleCollision(GameObject obj) // gestionnaire natif
@@ -83,7 +83,7 @@ private void OnParticleCollision(GameObject obj) // gestionnaire natif
 
 On peut lancer et arrêter un système de particules avec `Play()` et `Stop()`. Par exemple, lancer un système de particule en tant que c'est un objet enfant d'un parent scripté :
 
-```
+```C#
 ParticleSystem _explosionParticules;
 
 void Start()

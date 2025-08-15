@@ -56,7 +56,7 @@ Un état peut accueillir des transitions vers lui-même.
 
 En C#, on a besoin de référer au composant `Animator`. Pour cela, renseigner un champ sérialisé ou récupérer le composant dans `Awake()`. Par exemple, imaginons un objet `Player` ayant un enfant `Graphics` qui a le composant `Animator` (cet enfant contient des enfants animés), et un composant script de `Player` :
 
-```
+```C#
 private Animator _animator;
 private void Awake()
 {
@@ -72,20 +72,20 @@ Pour modifier les paramètres en C# et déclencher des transitions :
 
 Pour gérer les transitions avec `GetAxis`, il faut utiliser une valeur absolue car `GetAxis` renvoie des valeurs comprises entre `[-1,1]` alors que par exemple `SetFloat()` utilise des valeurs entre `[0,1]`.
 
-```
+```C#
 float horizontal = Input.GetAxis("Horizontal");
 _animator.SetFloat("SpeedX", Mathf.Abs(horizontal)); 
 ```
 
 Pour aller à un état directement, on fait référence au `Layer` d'animation. On peut également indiquer le temps (normalisé de 0 à 1) à partir duquel jouer :
 
-```
+```C#
 _animator.Play("Base Layer.NomEtat", 0, 0f);
 ```
 
 L'état de l'animation peut être testé grâce à son nom :
 
-```
+```C#
 AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
 if(_animStateInfo.IsName("nomEtat"))
 {

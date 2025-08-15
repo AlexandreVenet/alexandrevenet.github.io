@@ -34,7 +34,7 @@ La **caméra** par défaut est dotée d'un tel *audio listener*. On peut préfé
 ## Par script
 
 On peut manipuler l'audio avec C#. Dans l'exemple suivant, on veut déclencher un son quand on appuie sur barre espace. Le `GameObject` doit avoir le composant `AudioSource` et ce composant présente un champ `Audio Clip` vide.
-```
+```C#
 AudioSource _monAudioSource;
 
 // à renseigner en éditeur
@@ -56,7 +56,7 @@ private void Update()
 ```
 
 Un objet peut lire un *audio clip* choisi **aléatoirement** depuis un *array*. Pour cela, ne pas renseigner d'*audio clip* dans son composant *Audio source*, décocher la case `Play On Awake`. Et coder :
-```
+```C#
 [SerializeField] AudioClip[] _audioClips; 
 private AudioSource _as;
 
@@ -72,7 +72,7 @@ private void LancerSon()
 ```
 
 Déterminer quand une *audio source* a **fini de jouer** :
-```
+```C#
 private AudioSource _source;
 
 private void Update()
@@ -98,7 +98,7 @@ public IEnumerator CheckComplete()
 
 Par défaut, la **tête de lecture** de l'*audio clip* est positionnée par l'*audio source* au début, c'est-à-dire à la valeur 0. Cette tête de lecture peut être positionnée plus tard dans la courbe audio avec la propriété `time`.
 
-```
+```C#
 _audioSource.time = 0.3f; // la tête de lecture démarre à tel temps
 _audioSource.Play();
 ```
@@ -135,7 +135,7 @@ Ensuite, on peut **contrôler un effet par script**, en **exposant un paramètre
 - dans la fenêtre *Audio Mixer*, ouvrir le menu `Exposed Parameters` puis **clic droit sur un nom pour renommer** (ex : « SFXVolume » ou bien le même nom que le paramètre exposé),
 - coder :
 
-```
+```C#
 //... autres librairies
 using UnityEngine.Audio; // ajouter pour l'audio
 
@@ -153,7 +153,7 @@ public class AudioMixerVolume : MonoBehaviour
 
 Si on veut utiliser un `slider` d'UI, il faudra convertir les valeurs min/max -80/20 en échelle 0/1. Le script est à ajouter au `slider` (ou `GameObject` dédié) et le `Slider` doit le renseigner dans `OnValueChanged` puis dans l'ensemble `Dynamic Float`. Exemple de calcul linéaire (hors courbe logarithmique) :
 
-```
+```C#
 private void SetVolume(float value)
 {
 	float volume = Mathf.Lerp(-80, 20, value);
@@ -163,7 +163,7 @@ private void SetVolume(float value)
 
 Réaliser un *fade-in* :
 
-```
+```C#
 [SerializeField] private AudioMixer _mixer; 
 [SerializeField] private float _fadeTime = 15f; 
 
@@ -245,7 +245,7 @@ Par exemple : le bruit de pas d'un personnage qui marche.
 - Ajouter un composant `AudioSource` et y renseigner l'*audio clip* de bruit de pas. Décocher `Play On Awake` et `Loop`.
 - Coder.
 
-```
+```C#
 private AudioSource _source;
 private void Awake()
 {

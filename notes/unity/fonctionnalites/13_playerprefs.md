@@ -12,7 +12,7 @@ C’est un `Dictionary` enregistrant les données par **paires clé-valeur**, un
 
 Au `Start()`, vérifier les clés :
 
-```
+```C#
 private void Start()
 {
 	if(PlayerPrefs.HasKey("Volume"))
@@ -24,14 +24,14 @@ private void Start()
 
 Pour créer ou mettre à jour : 
 
-```
+```C#
 PlayerPrefs.SetFloat("Volume", 0.5f) ;
 PlayerPrefs.Save(); // enregistre et gère l’existence du fichier texte
 ```
 
 Pour **effacer une clé** : 
 
-```
+```C#
 if(Input.GetMouseButtonDown(0))
 {
 	PlayerPrefs.DeleteKey("Volume");
@@ -40,7 +40,7 @@ if(Input.GetMouseButtonDown(0))
 
 Pour **effacer toutes les clés** (le fichier n'est toutefois pas effacé) : 
 
-```
+```C#
 if(Input.GetMouseButtonDown(1))
 {
 	PlayerPrefs.DeleteAll();
@@ -51,7 +51,7 @@ if(Input.GetMouseButtonDown(1))
 
 Posons le code suivant :
 
-```
+```C#
 PlayerPrefs.SetInt("test int", 34) ;
 PlayerPrefs.Save() ;
 ```

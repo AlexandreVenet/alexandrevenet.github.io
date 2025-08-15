@@ -24,7 +24,7 @@ Par conséquent, il y a de grandes chances que le corps d'un `if`, `else` ou `wh
 
 Dans le cas contraire, le lecteur peut ne pas déterminer si une expression est un concept essentiel ou un détail. Pire : des détails mélangés à des concepts essentiels conduisent à de plus en plus de détails.
 
-```JS
+```Java
 getHTML();
 string pagePathName = PathParser.render(pagePath);
 toto.append("\n");

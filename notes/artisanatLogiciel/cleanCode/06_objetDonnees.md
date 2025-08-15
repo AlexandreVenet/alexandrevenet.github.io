@@ -88,7 +88,7 @@ public class Square implements Shape
 	private double side;
 	public double GetArea() 
 	{
-		return side*side;
+		return side * side;
 	}
 }
 

@@ -20,14 +20,14 @@ Pour que `CTRL+’` ouvre le navigateur avec la **documentation officielle** :
 - dans le menu déroulant juste au-dessus, choisir le raccourci voulu si non sélectionné.
 
 On peut écrire des **regions** pour organiser des blocs de code à **réduire/développer**. Par exemple pour classer ce qui est *private*, *Show in inspector*, ou *Frame cycle*... Ce sont des **préprocesseurs**. [Directives de préprocesseur](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/preprocessor-directives "Directives de préprocesseur").
-```
+```C#
 #region Titre de ma région
 //... code...
 #endregion  
 ```
 
 Les même préprocesseurs permettent de **spécialiser du code pour une certaine destination**. [Compilation sous conditions](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html "Compilation sous conditions"  _blank).
-```
+```C#
 #define UNITY_EDITOR // ligne pouvant être requise en début de script
 //...
 #if UNITY_EDITOR

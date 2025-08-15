@@ -24,7 +24,7 @@ Une référence utilisée pour rédiger le présent article : [*Essential Unity 
 Le **type** (`GameObject`, `Transform`) commence avec une majuscule (c'est une convention de nommage des classes). Une **instance** de type commence par une minuscule (`toto.transform`). Mais en *Inspector*, les noms commencent tous par une majuscule. Pour rédiger mes articles techniques, j'écris avec une majuscule pour référer à la classe, sauf lorsqu'il s'agit par exemple de code.
 
 `GameObject` et `Transform` sont **interdépendants**. Par conséquent, il est possible de chercher un composant avec `GetComponent<>()` à partir de l'un ou l'autre. `gameObject` est accessible à partir de n'importe quel type dérivé.
-```
+```C#
 [SerializeField] private TextMeshProUGUI _gameoverText; 
 
 void Gameover()
@@ -34,7 +34,7 @@ void Gameover()
 ```
 
 On peut préfixer/suffixer les noms de variables selon le type choisi ; cela peut faciliter (ou empêcher) la compréhension du code. Par exemple avec la **notation hongroise** :
-```
+```C#
 GameObject _myObject;
 public Transform m_tr_oiseau; // membre public "m_", transform "tr_", nom
 ```
@@ -42,10 +42,10 @@ public Transform m_tr_oiseau; // membre public "m_", transform "tr_", nom
 `gameObject.transform` ou `transform` (c'est idem) est **itérable** ; on peut boucler dessus pour trouver la  **collection** des `transform` enfants ou utiliser des méthodes spécifiques à l'exploration de la hiérarchie.
 
 Un objet peut être enfant d'un autre avec `transform.parent`.
-```
+```C#
 _monObj.parent = _objetTransformParent; 
 ```
-```
+```C#
 _objetTransform.parent = null; 
 // le Transform n'a plus de parent, il se trouve à la racine de la scène
 ```

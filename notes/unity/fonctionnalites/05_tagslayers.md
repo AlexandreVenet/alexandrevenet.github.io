@@ -18,7 +18,7 @@ Le menu `Layers` de la barre d'outils permet un accès rapide à la fenêtre d'�
 
 Les ***tags*** sont des **étiquettes d'ensemble** d'objets. Grâce à eux, les objets intéragissent non pas entre eux particulièrement mais selon l'ensemble dans lequels ils sont inclus.
 
-```
+```C#
 public class DemoScript : MonoBehaviour
 {
 	private GameObject _player;
@@ -53,7 +53,7 @@ Les ***layers*** permettent de **restreindre** des fonctionnalités par ensemble
 Les *layers* sont aussi utiles pour définir les interactions physiques avec la **matrice de collision** qui se trouve dans `Edit > Project Settings... > Physics` ou `Physics2D`. On peut ainsi autoriser ou exclure des relations entre *layers* selon les besoins. Par exemple : un personnage jouable a un `Collider` aux pieds en interaction avec les obstacles, et un `Collider` en interaction avec des objets destructibles, les deux n'étant pas en interaction (sinon comportements étranges).
 
 La classe `LayerMask` propose un certain nombre de méthodes dont `LayerToName()` et `NameToLayer()` pour obtenir le nom d'un *layer* ou son numéro dans la liste.
-```
+```C#
 private void OnTriggerEnter(Collider other)
 {
 	if (other.gameObject.layer == LayerMask.NameToLayer("NomLayer"))
@@ -64,7 +64,7 @@ private void OnTriggerEnter(Collider other)
 ```
 
 Pour comparer des *layers*, il faut effectuer des opérations au niveau du bit.
-```
+```C#
 public LayerMask layerMask;
  
 private void OnCollisionEnter(Collision collision)
@@ -82,19 +82,19 @@ Plus d'infos dans cette discussion : [Comparer des layers](https://answers.unity
 ## Étiquettes personnelles
 
 Il est possible de créer ses propres étiquettes. Par exemple, en utilisant une `enum` : 
-```
+```C#
 public enum MesTags
 {
 	Ogre,
 	Gobelin
 }
 ```
-```
+```C#
 public MesTags _myTag = MesTags.Gobelin;
 ```
 
 Autre exemple avec un type `struct` (qu'on peut rendre `static` ou non selon les besoins)  :
-```
+```C#
 public struct MesAutresTags
 {
 	public static string OgreB = "Ogre de boue";
@@ -103,7 +103,7 @@ public struct MesAutresTags
 ```
 
 Exemple de comparaison :
-```
+```C#
 if(chose.monTag == MesAutresTags.Gobelin)
 { 
 	//... 

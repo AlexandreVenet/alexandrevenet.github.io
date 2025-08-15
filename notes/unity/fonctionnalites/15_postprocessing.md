@@ -6,9 +6,8 @@ Le *post-processing* désigne l'ensemble des effets appliqués à l'image, une f
 
 ## Références
 
-[Manual : Post-processing](https://docs.unity3d.com/Manual/PostProcessingOverview.html "Manual : Post-processing" _blank)
-
-[Package : URP](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/index.html "Package : URP" _blank)
+- [Manual : Post-processing](https://docs.unity3d.com/Manual/PostProcessingOverview.html "Manual : Post-processing" _blank)
+- [Package : URP](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/index.html "Package : URP" _blank)
 
 ## Paramétrage 
 

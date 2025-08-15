@@ -117,7 +117,7 @@ L'intersection fait l'objet d'**événements** qui sont autant de fonctions nati
 
 `OnTriggerEnter` : événement survenant lors d'un contact avec un `collider trigger`. Par exemple,  un *powerup* :
 
-```
+```C#
 private bool _hasPowerUp;
 
 private void OnTriggerEnter(Collider other)
@@ -132,7 +132,7 @@ private void OnTriggerEnter(Collider other)
 
 `OnCollisionEnter` : événement survenant lors d'un contact physique entre objets. En suivant l'exemple précédent, détecter un ennemi selon qu'on a pris un *powerup* :
 
-```
+```C#
 private void OnCollisionEnter(Collision collision)
 {
 	if(collision.gameObject.CompareTag("Ennemi") && _hasPowerUp)
@@ -146,7 +146,7 @@ private void OnCollisionEnter(Collision collision)
 
 On peut **appliquer des forces** à l'objet avec la fonction `AddForce()` qui admet différentes options (avec ou sans `ForceMode` par exemple) :
 
-```
+```C#
 public class PlayerController : MonoBehaviour
 {
 	public Rigidbody _playerRB;
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
 
 La **gravité** appliquée à **tout objet de la scène** peut être modifiée avec `Physics.gravity`. Ici, valeur par défaut de `1`, aucune force de gravité avec `0`. 
 
-```
+```C#
 public float _gravityModifier = 1f;
 
 private void Start()
@@ -188,7 +188,7 @@ Préparer le **joueur** :
 - ajouter un composant `Rigidbody`,
 - lui ajouter ce script :
 
-```
+```C#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

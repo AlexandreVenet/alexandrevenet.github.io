@@ -174,6 +174,9 @@ let construirePage = (contenu) =>
 			}
 			else if(node.tagName === 'PRE')
 			{
+				const conteneurPre = document.createElement('div');
+				conteneurPre.classList.add('blocCode');
+				
 				const nodeCode = node.querySelector('code');
 				const langage = nodeCode.dataset.langage;
 				let langageSortie = '';
@@ -194,8 +197,14 @@ let construirePage = (contenu) =>
 							break;
 					}
 					nodeCode.classList.add('language-' + langageSortie);
+				
+					const infoDiv = document.createElement('div');
+					infoDiv.textContent = langage;
+					infoDiv.classList.add('infoLangage');
+					conteneurPre.appendChild(infoDiv);
 				}
-				divSectionTexte.appendChild(node.cloneNode(true));
+				conteneurPre.appendChild(node.cloneNode(true));
+				divSectionTexte.appendChild(conteneurPre);
 			}
 			else
 			{

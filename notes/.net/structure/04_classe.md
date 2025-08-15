@@ -114,7 +114,7 @@ Dans Visual Studio, taper `this.` a pour effet d'afficher l'*IntelliSense* et de
 
 On appelle **méthode** une fonction lorsqu'elle existe dans le contexte d'une classe. Le modèle est le suivant :
 
-```C#
+```
 accessibilité typeRetour Nom(paramètres)
 {
 	instructions
