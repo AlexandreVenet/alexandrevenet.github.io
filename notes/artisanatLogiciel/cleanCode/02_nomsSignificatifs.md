@@ -13,7 +13,7 @@ Les questions à se poser pour trouver le nom d'une entité sont :
 - son rôle : **que fait-elle** ?
 - son utilisation : **comment l'utiliser** ?
 
-```JS
+```Javascript
 var d = 0; // n'évoque rien
 var distance = 0; // représente ce qui est écrit
 ```
@@ -50,18 +50,18 @@ Ne pas utiliser des lettres qui ressemblent à des nombres dans certaines police
 
 Utiliser des noms différents pour des choses différentes et que ces noms signifient des choses. 
 
-```JS
+```Javascript
 MaFonction(int a, int b){...}
 MaFonction(int source, int destination){...}
 ```
 
-```JS
+```Javascript
 ProductData
 ProductInfo
 // Quelle est la spécificité de ces entités ?
 ```
 
-```JS
+```Javascript
 Customer
 CustomerObject
 CustomerInfo
@@ -72,7 +72,7 @@ CustomerInfo
 
 Choisir des noms prononçables, qui portent une signification, et pouvant être utilisés en langue naturelle.
 
-```JS
+```Javascript
 genymdhms
 // On prononce comment en danois ?
 ```
@@ -83,7 +83,7 @@ Je considère que ceci dépend du contexte linguistique des individus, de l'équ
 
 Le lecteur ne doit pas avoir à faire des conversions mentales d'un nom écrit en un nom compris.
 
-```JS
+```Javascript
 r 
 // version en minuscule de URL où hôte et schéma sont supprimés, c'est ok ?
 ```
@@ -92,7 +92,7 @@ r
 
 Le nom d'une classe, d'un objet, doit être concret et non pas abstrait, doit être un substantif.
 
-```JS
+```Javascript
 CharacterManager
 DataController
 ControllerManager
@@ -145,7 +145,7 @@ Eviter les plaisanteries ou jeux de mots car ces choses ne sont pas compréhensi
 
 Une fois un concept nommé, conserver le nom pour le même concept quelles que soient les entités. Ceci afin d'éviter de devoir produire un lexique pour les mêmes comportements.
 
-```JS
+```Javascript
 Solde.Get();
 CompteBancaire.Get();
 Bilan.Get();
@@ -153,7 +153,7 @@ Bilan.Get();
 
 Attention à ce que le nom de fonction et le comportement soient respectés d'un point de vue **sémantique**. 
 
-```JS
+```Javascript
 Add(a) { _maValeur + a; }
 Add(a) { _maListe.Add(a); }
 // Même nom mais sens/comportement différent. 

@@ -96,7 +96,7 @@ Personnaliser le fichier est tout à fait possible : il s'agit d'ajouter des **s
 
 Côté C#, on utilise les espaces de nom suivants pour .NET 5 par exemple. En .NET 8, Visual Studio propose d'installer le *package* **System.Configuration.ConfigurationManager**.
 
-```c#
+```C#
 using System.Collections.Specialized;
 using System.Configuration;
 ```

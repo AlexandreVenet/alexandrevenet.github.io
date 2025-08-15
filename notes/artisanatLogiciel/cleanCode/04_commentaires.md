@@ -18,12 +18,12 @@ Ne pas compenser un mauvais code par un commentaire ; préférer réorganiser le
 
 Au lieu de décrire des instructions complexes, envelopper cette complexité dans une fonction dont le nom est clair. Comparer :
 
-```JS
+```Javascript
 // Vérifier si l’employé peut bénéficier de tous les avantages.
 if ((employee.flags & HOURLY_FLAG) && (employee.age > 65))
 ```
 
-```JS
+```Javascript
 if (employee.isEligibleForFullBenefits())
 ```
 
@@ -41,14 +41,14 @@ Le commentaire pour signifier qu'une instruction apparaît en *Debug* ou *Releas
 
 Les informations légales sont des éléments nécessaires que l'on place en commentaire en début de fichier. Ne pas écrire les termes du contrat ; préférer faire référence à un document spécifique prévu à cet effet. Voici un exemple de contenu suffisant :
 
-```JS
+```Javascript
 // Copyright (C) 2003, 2004 par Tutu La Praline. Tous droits réservés.
 // Publié sous les termes de la Licence Publique Générale de GNU version 2 ou ultérieure.
 ```
 
 Le commentaire est justifié lorsqu'il éclaire une intention de l'auteur.
 
-```JS
+```Javascript
 // Voici notre meilleure solution pour obtenir une condition de concurrence.
 // Nous créons un grand nombre de threads.
 ```
@@ -69,7 +69,7 @@ assertTrue(bb.compareTo(ba) == 1); // bb > ba
 
 Le commentaire est justifié lorsqu'il informe de conséquences ou sert à alerter.
 
-```JS
+```Javascript
 // Ne pas exécuter, sauf si vous avec du temps à tuer
 writeLinesToFile(10000000);
 ```
@@ -102,7 +102,7 @@ De même, inutile d'ajouter un commentaire indiquant qui a modifié quoi car l'o
 
 Utiliser les titres de sections avec parcimonie car si on les repère facilement, ils encombrent aussi facilement.
 
-```JS
+```Javascript
 // Titre ////////////////////
 ```
 
