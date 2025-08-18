@@ -1,6 +1,6 @@
 # Collection
 
-Le 19-08-2024
+Le 18-08-2025
 
 Les tableaux sont de longueur fixe, les collections sont de longueur variable. [Microsoft *Learn*](https://learn.microsoft.com/fr-fr/dotnet/api/system.collections _blank)
 
@@ -15,6 +15,8 @@ Les collections se présentent sous deux formes :
 - génériques dans le *namespace* `System.Collections.Generic`.
 
 En général, on préfèrera utiliser les versions génériques qui sont plus rapides que le non génériques et réduisent la levée d'exception par l'utilisation d'erreurs à la compilation.
+
+Les *ranges* (plages) fonctionnent aussi avec les collections. [MS *Learn Ranges*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/ranges "Ranges" _blank).
 
 ## Collections génériques
 

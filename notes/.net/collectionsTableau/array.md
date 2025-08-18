@@ -1,6 +1,6 @@
 # Array
 
-Le 19-08-2024
+Le 18-08-2025
 
 Une structure de donnée qui accueille un ensemble de valeurs de même type.
 
@@ -45,7 +45,7 @@ Une valeur s'obtient par son **index** (sa place) dans le tableau. Le premier in
 string[] mesNoms = new string[3];
 	
 // Accès à chaque index et assignation de valeur
-mesNoms[0] = "pipi;
+mesNoms[0] = "pipi";
 mesNoms[1] = "caca";
 mesNoms[2] = "popo";
 ```
@@ -126,6 +126,38 @@ string[][] melange = { array1, array2 };
 ```
 
 Dans le tableau principal, les tableaux « internes » peuvent être de **tailles différentes**.
+
+## Extraire un tableau de tableau
+
+Pour un autre tableau plage de valeurs d'un tableau principal, on peut utiliser une boucle sur une valeur de début et une valeur de fin (incluse ou non). C# propose en raccourci les *ranges* (plages) fondés sur les types `System.Index` et `System.Range` ; la syntaxe est : `[début..fin exclue]` (sucre syntaxique). Plus d'info chez [MS *Learn Ranges*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/ranges "Ranges" _blank).
+
+```C#
+string chaine = "a, b, c, d, e, f, 1, 2, 3";
+string[] items = chaine.Split(", ");
+
+foreach (string item in items[1..4])
+{
+	Console.WriteLine(item.ToUpper());
+}
+/*
+	B
+	C
+	D
+ */
+```
+```C#
+// De l'index spécifié jusqu'à la fin
+string[] nombres = items[6..]; // 1, 2, 3
+
+// De l'index spécifié en partant de la fin jusqu'à la fin
+string[] nombresDepuisLaFin = items[^3..]; // 1, 2, 3
+
+// Du début jusqu'à l'index spécifié (0 est la valeur par défaut)
+string[] lettres = items[0..6]; // a, b, c, d, e, f
+string[] lettres = items[..6]; // a, b, c, d, e, f
+```
+
+
 
 ## Propriétés et méthodes
 
@@ -222,7 +254,7 @@ string chaineAvecJoin = String.Join(",", chaineArrayChar);
 Console.WriteLine(chaineAvecJoin);
 ```
 
-Créer un tableau de chaînes à partir d'un caractère délimiteur avec `Split()` sur une chaîne (la méthode reçoit un type `char` en paramètre).
+Créer un tableau de chaînes à partir d'un caractère délimiteur avec `Split()` sur une chaîne. Dans cet exemple, la méthode reçoit un type `char` en paramètre mais il existe des surcharges. [String.Split() chez MS Lean](https://learn.microsoft.com/fr-fr/dotnet/api/system.string.split "Ouvrir le lien dans un nouvel onglet" _blank).
 
 ```C#
 string chaine = "a,b,c,d,e,f,1,2,3";
