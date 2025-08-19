@@ -61,7 +61,7 @@ L'exemple suivant (inspiré de cette source [StackOverflow](https://stackoverflo
 - l'exploration des paramètres de cette culture informatique (type `DateTimeFormat`),
 - l'application de la culture informatique à une date (type `DateTime`).
 
-```c#
+```C#
 CultureInfo us = new CultureInfo("en-US");
 
 string shortUsDateFormatString = us.DateTimeFormat.ShortDatePattern;
