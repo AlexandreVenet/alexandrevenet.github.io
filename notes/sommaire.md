@@ -89,6 +89,7 @@
 [Dynamic](.net/types/dynamic.md)
 [WeakReference](.net/types/weakReference.md)
 [Lazy](.net/types/lazy.md)
+[Regex](.net/types/regex.md)
 
 ## Opérations
 
