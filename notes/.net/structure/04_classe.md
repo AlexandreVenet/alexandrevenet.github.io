@@ -273,7 +273,7 @@ class MaClasse
 
 ## Champs et propriétés
 
-[MSDN Propiétés](https://docs.microsoft.com/fr-fr/dotnet/csharp/properties _blank)
+Source : [MSDN Propiétés](https://docs.microsoft.com/fr-fr/dotnet/csharp/properties _blank)
 
 Les **champs** sont des variables, accompagnés du modificateur d'accès, déclarés à la racine de la classe. 
 
@@ -317,7 +317,7 @@ public bool SetNombre(int num)
 public int GetNombre() => nombre; // raccourci avec opérateur lambda
 ```
 
-[MSDN Opérateur lambda](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/lambda-operator _blank)
+Source : [MSDN Opérateur lambda](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/operators/lambda-operator _blank)
 
 C# propose aussi les **propriétés**. Une propriété **encapsule** un champ. Lors de l'utilisation, **la propriété donne l'impression de manipuler un champ**. En général, le nom est en UpperCamelCase et est le même que le champ encapsulé. Une fois la propriété réalisée, penser à placer le champ correspondant en `private` si ce n'est pas fait automatiquement, pour que le champ reste sous le seul contrôle de la propriété (au moins vis-à-vis de l'extérieur de la classe), ce qui respecte le principe de l'encapsulation.
 
@@ -399,26 +399,64 @@ public bool PauseGame
 
 Noter que C# autorise la **création de propriété sans champ correspondant**. Avantage : rapidité, données dynamiques. 
 
-Les **propriétés auto-implémentées** sont un moyen commode et rapide de déclarer les *getters* et *setters* lorsqu'il n'est pas exigé de contrôler plus avant le contenu. Dans Visual Studio, taper `prop` et deux fois la touche de tabulation ; ou sélectionner un champ puis `CTRL+R` ou `CTRL+E` ou bien clic droit `Refactoriser > Encapsuler le champ...`) pour en générer une propriété. Particularités :
+Les **propriétés auto-implémentées** sont un moyen commode et rapide de déclarer les *getters* et *setters* lorsqu'il n'est pas exigé de contrôler plus avant le contenu. Dans Visual Studio, taper `prop` et deux fois la touche de tabulation ; ou sélectionner un champ puis `CTRL+R` ou `CTRL+E` ou bien clic droit `Refactoriser > Encapsuler le champ...` pour en générer une propriété. Particularités :
 - les contrôles ne peuvent pas être codés plus spécifiquement,
 - `get` et `set` doivent être présents,
 - le compilateur intègre le champ automatiquement. Par exemple, le champ `nombre` et la propriété `Nombre{get;set;}` ne sont absolument pas corrélés même si leur nom respecte une certaine syntaxe.
-- avant C#6, impossible d'assigner une valeur de départ, il faut passer par une initialisation différée (dans `Start()` par exemple). Avec C#6, un peu de bonheur :
+- avant C# 6, impossible d'assigner une valeur de départ, il faut passer par une initialisation différée (dans `Start()` par exemple). Avec C# 6, un peu de bonheur :
 
 ```C#
 public bool Youpi {get; private set;} = true;
 ```
 
-On peut définir une propriété de façon à ce que la **valeur soit définie une seule fois à la création de l'instance** (ne fonctionne pas en classe `static`). On utilise le mot clé `init`. Le comportement est le suivant :
+On peut définir une propriété de façon à ce que la **valeur soit définie une seule fois à la création de l'instance** (ne fonctionne pas en classe `static`). On utilise le mot clé `init`. Le mot-clé fonctionne également avec une propriété encapsulant un champ déclaré. Pour une propriété de type valeur, si aucune assignation n'est effectuée, alors la propriété prendra la valeur par défaut du type ; pour un type référence, renseigner une valeur sera obligatoire à l'instanciation. Le comportement est le suivant :
 - lors de l'instanciation, le constructeur peut *set* une valeur en utilisant la propriété,
 - une fois l'objet créé, le *setter* n'est plus disponible.
 
 ```C#
-public int Id { get => id; private set => id = value; }
+public class MaClasse
+{
+	public string Nom { get; init; }
+	
+	public int Valeur { get; init; } = 10;
+	
+	private int _id;
+	public int Id 
+	{ 
+		get => _id; 
+		init => _id = value; 
+	}
+
+	public MaClasse(string nom)
+	{
+		Nom = nom;
+	}
+}
+
+// Usage
+
+MaClasse sousClasse = new ("Toto");
+
+Console.WriteLine(sousClasse.Nom); // Toto
+Console.WriteLine(sousClasse.Valeur); // 10
+Console.WriteLine(sousClasse.Id); // 0
+
+MaClasse autre = new (); // compilation impossible
 ```
 
+Or, il peut se présenter le cas où on ne peut/veut pas utiliser de constructeur pour une propriété marquée `init` et à laquelle il faut pourtant assigner une valeur depuis l'extérieur de l'instance. Alors, comment effectuer l'affectation à l'instanciation ? En utilisant la syntaxe d'initialiseur (voir paragraphe suivant). Alors, lors de l'écriture de l'instruction, Visual Studio affiche en IntelliSense que le champ est obligatoire.
+
 ```C#
-public int Id { get => id; init => id = value; }
+public class Chose
+{
+	public required string Nom { get; init; }
+}
+
+// Usage
+
+Chose bidule = new() { Nom = "Bibi" };
+
+Console.WriteLine(bidule.Nom); // Bibi
 ```
 
 ## Initialiseurs
