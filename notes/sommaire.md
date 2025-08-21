@@ -90,6 +90,7 @@
 [WeakReference](.net/types/weakReference.md)
 [Lazy](.net/types/lazy.md)
 [Regex](.net/types/regex.md)
+[Temps](.net/types/temps.md)
 
 ## Opérations
 
