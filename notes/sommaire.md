@@ -65,7 +65,6 @@
 [Fonction](.net/structure/07_fonction.md)
 [Partial](.net/structure//08_partial.md)
 [Généricité](.net/structure/09_genericite.md)
-[Formatage](.net/structure/10_formatage.md)
 
 ## POO
 
@@ -91,12 +90,14 @@
 [Lazy](.net/types/lazy.md)
 [Regex](.net/types/regex.md)
 [Temps](.net/types/temps.md)
+[Record](.net/types/record.md)
 
 ## Opérations
 
 [Opérateurs](.net/operations/operateurs.md)
 [Conditions](.net/operations/conditions.md)
 [Boucles](.net/operations/boucles.md)
+[Formatage](.net/operations/formatage.md)
 
 ## Exceptions
 
