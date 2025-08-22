@@ -65,6 +65,7 @@
 [Fonction](.net/structure/07_fonction.md)
 [Partial](.net/structure//08_partial.md)
 [Généricité](.net/structure/09_genericite.md)
+[Annotations](.net/structure/10_annotations.md)
 
 ## POO
 
