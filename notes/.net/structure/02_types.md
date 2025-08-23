@@ -92,12 +92,18 @@ int num = 1 / 2 ;
 // 0 (et non pas 0.5)
 ```
 
-Avec les nombres, le suffixe (`l` ou `d`...) définit que le nombre est bien du type défini. Si on omet ce suffixe, alors **le compilateur opère une conversion**.
+Avec les nombres, le suffixe (`l` ou `d`...) définit que la valeur est bien du type défini. Si on omet ce suffixe, alors **le compilateur peut opérer une conversion**.
 
 ```C#
 double d1 = 3; // entier converti en double
 double d2 = 3d; // pas de conversion
-double d3 = 3.2; // ?
+double d3 = 3.2; // pas de conversion
+```
+
+Un grand nombre peut être difficile à lire. Heureusement, il est possible d'insérer des *underscore* pour figurer des espaces, sans changer la valeur :
+
+```C#
+int nombre = 1_000_001;
 ```
 
 ![Plages de valeur, suffixes et précision.](../../../media/.net/structure/types_plages_precision.svg)

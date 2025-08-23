@@ -38,7 +38,7 @@ Console.WriteLine(toto1 == toto2);
 
 Tester l'égalité de valeur à partir de classes implique donc de créer une méthode dédiée qui teste toutes les propriétés, ou bien d'`override` la méthode `Equals()` héritée de `System.Object`. Ce peut être fastidieux. `record` résout cette complexité : **deux instances avec les mêmes valeurs de propriétés sont considérées égales**. 
 
-## Immutabilité
+## Immuabilité
 
 Les propriétés d'un type `record` sont définies avec `init` plutôt que `set`. 
 
@@ -97,7 +97,7 @@ Console.WriteLine($"{p.X} {p.Y} {p.Z}");
 // -1 2 3
 ```
 
-Pour imposer l'immutabilité, il faut donc remplacer `set` par `init`.
+Pour imposer l'immuabilité, il faut donc remplacer `set` par `init`.
 
 ```C#
 public record struct Point
