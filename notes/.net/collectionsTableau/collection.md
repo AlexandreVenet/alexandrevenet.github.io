@@ -8,13 +8,13 @@ Les tableaux sont de longueur fixe, les collections sont de longueur variable. [
 
 Les **collections** sont des classes qui implémentent l'interface `ICollection`. 
 
-La collection, par rapport au tableau, peut être développé ou réduit dynamiquement. 
+La collection, par rapport au tableau, peut être développée ou réduite dynamiquement. 
 
 Les collections se présentent sous deux formes : 
 - non génériques dans le *namespace* `System.Collections`,
 - génériques dans le *namespace* `System.Collections.Generic`.
 
-En général, on préfèrera utiliser les versions génériques qui sont plus rapides que le non génériques et réduisent la levée d'exception par l'utilisation d'erreurs à la compilation.
+En général, on préfèrera utiliser les versions génériques qui sont plus rapides que les non génériques et réduisent la levée d'exception par l'utilisation d'erreurs à la compilation.
 
 Les *ranges* (plages) fonctionnent aussi avec les collections. [MS *Learn Ranges*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/ranges "Ranges" _blank).
 
@@ -52,9 +52,7 @@ Les *ranges* (plages) fonctionnent aussi avec les collections. [MS *Learn Ranges
 
 ## Usage d'interfaces
 
-Les collections sont similaires car elles implémentent souvent les **mêmes interfaces**, en versions générique ou non générique.
-
-Par exemple :
+Les collections sont similaires car elles implémentent souvent les **mêmes interfaces**, en versions générique ou non générique. Par exemple :
 - `ICollection<T>` fournit des méthodes et propriétés pour gérer une collection,
 - `IEnumerable<T>` fournit la possibilité d'itérer,
 - `IDictionary<TKey,TValue>` fournit des propriétés et méthodes pour gérer une collection par paire clé-valeur.

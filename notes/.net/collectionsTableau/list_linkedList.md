@@ -31,7 +31,7 @@ Des propriétés :
 
 Si `.count` augmente, alors la `Capacity` aussi. [Source GeeksForGeeks](https://www.geeksforgeeks.org/c-sharp-capacity-of-a-list/ _blank)
 
-Exemples d'usage : l'`Array` pour des ensemble fermés comme un inventaire, des notes d'épreuve en philosophie ; la `List` pour des collections ouvertes comme une base de données, des références d'objets dont le nombre varie.
+Exemples d'usage : l'`Array` pour des ensembles fermés comme un inventaire, des notes d'épreuve en philosophie ; la `List` pour des collections ouvertes comme une base de données, des références d'objets dont le nombre varie.
 
 La `List` est une **classe générique**. Pour l'utiliser, on a besoin de la **librairie** afférente : 
 
