@@ -66,6 +66,7 @@
 [Partial](.net/structure//08_partial.md)
 [Généricité](.net/structure/09_genericite.md)
 [Annotations](.net/structure/10_annotations.md)
+[Asynchronisme](.net/structure/11_asynchronisme.md)
 
 ## POO
 
