@@ -66,7 +66,6 @@
 [Partial](.net/structure//08_partial.md)
 [Généricité](.net/structure/09_genericite.md)
 [Annotations](.net/structure/10_annotations.md)
-[Asynchronisme](.net/structure/11_asynchronisme.md)
 
 ## POO
 
@@ -116,6 +115,11 @@
 [HashTable, HashSet](.net/collectionsTableau/hashTable_hashSet.md)
 [Indexeur](.net/collectionsTableau/indexeur.md)
 [Énumérateur](.net/collectionsTableau/enumerateur.md)
+
+## Asynchronisme
+
+[Asynchronisme](.net/asynchronisme/asynchronisme.md)
+[Gestion temporelle](.net/asynchronisme/temps.md)
 
 ## *Delegate*
 

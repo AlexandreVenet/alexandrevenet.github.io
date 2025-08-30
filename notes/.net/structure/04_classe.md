@@ -323,10 +323,17 @@ C# propose aussi les **propriétés**. Une propriété **encapsule** un champ. L
 
 ```C#
 private type champ;
+
 public type Champ 
 {
 	get { return champ; }
 	set { champ = value; }
+}
+
+public type ChampSyntaxeLambda
+{
+    get => champ;
+    set => champ = value;
 }
 ```
 

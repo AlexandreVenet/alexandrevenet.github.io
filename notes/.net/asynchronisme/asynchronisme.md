@@ -10,9 +10,9 @@ Attendre ou faire autre chsoe sans bloquer.
 
 L'**asynchronisme** signifie **ne pas bloquer** : une tâche peut s’exécuter sur un autre *thread*, ou simplement se mettre en attente et reprendre plus tard, sans bloquer le programme principal. Par exemple : lancer la machine à laver, attendre qu'elle ait fini (en faisant peut-être autre chose), être informé de la fin de la tâche pour sortir le linge.
 
-Le **parallélisme** signifie **exécuter simultanément** (grâce à plusieurs *threads* ou cœurs CPU). Exemple : lancer la machine à laver et lancer le lave-vaisselle en même temps. Le parallélisme n'implique pas nécessairement asynchronisme. 
+Le **parallélisme** signifie **exécuter simultanément**. Exemple : lancer la machine à laver et lancer le lave-vaisselle en même temps. Le parallélisme n'implique pas nécessairement asynchronisme. 
 
-Conséquence : on peut effectuer des tâches asynchrones parallèles, des tâches synchrones parallèles, des tâches async ou sync non parallèles...
+Conséquence : on peut effectuer toute sorte de combinaisons entre synchrone/asynchrone et parallèle/non parallèle.
 
 Distinguer ***CPU-bound*** et ***I/O-bound***.
 - ***CPU-bound*** désigne une opération limitée par la puissance du processeur. La performance est mesurée par le temps qu'elle met à s'exécuter. Exemples : calculer des nombres premiers, compresser un fichier... Plusieurs *threads* ou `Task.Run()` peuvent accélérer l'exécution avec plusieurs cœurs CPU.
@@ -109,9 +109,9 @@ private async Task Autre()
 }
 ```
 
-## Zombification
+## Propagation
 
-Le code asynchrone est souvent appelé « code zombie » en référence à l'idée de **propagation** lorsqu'on l'utilise. Ce « code zombie » apparaît lorsque la gestion asynchrone remonte petit à petit les méthodes impliquées, y compris par exemple `Main()` (.NET) ou `Update()` (Unity) car il faut bien attendre un résultat à chaque fois, non ?
+Le code asynchrone est souvent appelé « code zombie » en référence à l'idée de **propagation** lorsqu'on l'utilise. Ce « code zombie » apparaît lorsque la gestion asynchrone remonte petit à petit les méthodes concernées, y compris par exemple `Main()` (.NET) ou `Update()` (Unity) car il faut bien attendre un résultat à chaque fois, non ?
 
 Par conséquent, il faut coder ces méthodes en asynchrone également. Il peut être nécessaire d'ajouter le mot-clé `async` à `Main()` pour par exemple les programmes Console.
 ```C#
@@ -121,7 +121,7 @@ async static Task Main(string[] args)
 }
 ```
 
-Comment faire du code asynchrone sans rendre `async` toutes les méthodes du programme ?
+Peut-on faire du code asynchrone sans rendre `async` toutes les méthodes du programme ?
 
 Il faut considérer si **la suite du code dépend du retour de la méthode asynchrone**. Pour l'exemple, on va utiliser des méthodes obsolètes depuis l'arrivée d'`async/await` mais qui fournissent un moyen de contournement. On souhaite lancer une méthode une fois le résultat obtenu. Cela s'effectue dans une certaine syntaxe mais la procédure est synchrone : 
 
@@ -423,198 +423,3 @@ Il est temps de décrire ce qu'est le **contexte asynchrone** que nous avons ren
 - ASP.NET : le contexte est le *thread* de la requête HTTP. *Deadlock* si on bloque ce *thread* de requête.
 - En Console, pas de contexte, donc pas de risque de *deadlock* : les `await` reprennent sur n’importe quel *thread* du *ThreadPool*. Donc `.Wait()` ou `.Result` peuvent être utilisés.
 
-## Faisons une pause
-
-Une pause ? D'accord mais pour le *thread* ou pour la *task* ?
-
-```C#
-private void Pause()
-{
-	while(true)
-	{
-		Thread.Sleep(100);
-	}
-}
-```
-
-```C#
-private async Task Pause()
-{
-	while(true)
-	{
-		await Task.Delay(100);
-	}
-}
-```
-
-## *Timeout*
-
-Avec le parallélisme, on peut penser deux méthodes parallèles et tester si celle qui s'achève en premier est bien celle que l'on attend. On réalise alors un ***timeout***. Par exemple : un délai de connexion à un serveur de base de données. Ici, on utilise `Task.WhenAny()` et le conteneur doit être `async`.
-
-```C#
-Task victoire = Task.Delay(5_000); // 5 sec
-Task echec = Task.Delay(30_000); // 30 sec
-
-Task vainqueur = await Task.WhenAny(victoire, echec);
-
-if(vainqueur == victoire)
-{
-	Console.WriteLine("Victoire");
-}
-else
-{
-	throw new TimeoutException("Echec.");
-}
-```
-
-Très bien mais on veut utiliser une fonction. Il suffit de créer une fonction asynchrone. 
-
-```C#
-public async Task LancerEtAttendre()
-{		
-	Task victoire = RequeteLongue();
-	Task echec = Task.Delay(1_000);
-	
-	Task vainqueur = await Task.WhenAny(victoire, echec);
-	
-	if (vainqueur == victoire)
-	{
-		Console.WriteLine("Victoire");
-	}
-	else
-	{
-		throw new TimeoutException("Délai dépassé.");
-	}
-}
-
-private async Task RequeteLongue()
-{
-	await Task.Delay(2_000);
-}
-```
-
-Très bien mais la fonction doit retourner un résultat. Ici, il faut ajouter `await victoire` pour obtenir le résultat de la tâche `vainqueur`. Subtilité 🧐 ! `await victoire` signifie non pas « attendre la tâche victoire » mais « obtenir le résultat ». L'attente, elle, est terminée puisqu'on dispose déjà de `vainqueur`. `await` est donc utilisable en remplacement de `.Result`.
-
-```C#
-public async Task LancerEtAttendre()
-{		
-	Task<int> victoire = RequeteLongue();
-	Task echec = Task.Delay(1_000);
-	
-	Task vainqueur = await Task.WhenAny(victoire, echec); // lancer, attendre, obtenir la tâche gagnante
-
-	if (vainqueur == victoire)
-	{
-		int resultat = await victoire; // obtenir le résultat (plus rien à attendre)
-		Console.WriteLine($"Victoire ! Valeur : {valeurVictoire}");
-	}
-	else
-	{
-		throw new TimeoutException("Délai dépassé.");
-	}
-}
-
-private async Task<int> RequeteLongue()
-{
-	await Task.Delay(2_000);
-	return 42;
-}
-```
-
-## Interruption de traitement
-
-Les *timeouts* réalisés précédemment supposent la notion d'**interruption**. En effet, passé un délai nos fonctions sont interrompues. Mais il existe de nombreuses autres causes d'interruption de traitement. Par exemple, une rupture de connexion à une base de données.
-
-**Une fonction asynchrone n'est pas nécessairement annulable**. Par exemple, les *timeouts* précédents ne pourraient pas interrompre une opération de lecture de données. 
-
-Pour gérer ce genre d'interruption, il faut faire autre chose : un **jeton d'annulation**. Ce qui fait qu'une action peut être interrompue, c'est le fait que l'action vérifie si le jeton en cours a été annulé. [Source Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/cancel-async-tasks-after-a-period-of-time "Annuler une tâche après un temps" _blank)
-
-Microsoft donne l'exemple d'un champ `static readonly` pour le jeton afin de simplifier leurs exemples mais l'intérêt est ailleurs.
-- Le champ global, pas nécessairemenet `static`, est utile dans le cas d'un réemploi du jeton dans plusieurs méthodes.
-- Le champ global `static` est utile si on souhaite un point central d'annulation pour gérer une procédure où plusieurs méthodes/objets écoutent le même signal d'annulation (exemple : un bouton « Annuler tout » dans une application WPF pour arrêter les tâches en cours).
-- Dans les deux cas, il y a partage du jeton. Alors, il faut bien gérer son cycle de vie : réinstanciation après annulation, éviter les fuites avec `Dispose()` (sinon le jeton risque de rester annulé ou causer des fuites).
-
-Imaginons le code suivant dans une classe. Faisons avec `try...catch` :
-
-```C#
-private static readonly CancellationTokenSource _jeton = new CancellationTokenSource();
-
-private async Task Test()
-{
-	try
-	{
-		_jeton.CancelAfter(300); // en ms
-		await TravailLong(_jeton.Token);
-		Console.WriteLine("fini !");
-	}
-	catch (OperationCanceledException) // couvre aussi TaskCanceledException
-	{
-		Console.WriteLine("Opération annulée !");
-	}
-	catch (Exception e)
-	{
-		Console.WriteLine(e.Message);
-	}
-	finally
-	{
-		_jeton.Dispose();
-	}
-	/*
-		Itération 1
-		Itération 2
-		Itération 3
-		Itération 4
-		Opération annulée !
-	*/
-}
-
-private async Task TravailLong(CancellationToken jeton)
-{
-	int iterationsMax = 10;
-	for (int i = 0; i < iterationsMax; i++)
-	{
-		jeton.ThrowIfCancellationRequested(); // Vérifier si le jeton a été annulé
-
-		Console.WriteLine($"Itération {i + 1}");
-		
-		await Task.Delay(100, jeton); // pause en ms simulant du travail
-	}
-}
-```
-
-On peut préférer `using(){}`, dit « commodité syntaxique » par Microsoft 🙂. Alors, pas besoin de `try...catch` ni de `Dispose()` car `using(){}` s'en occupe. [Source Microsot Learn](https://learn.microsoft.com/fr-fr/dotnet/api/system.idisposable "IDisposable" _blank). Cela étant, certaines exceptions ne sont pas couvertes ; donc, envelopper l'opération dans un `try...catch`. 
-
-Ici, on utilise un jeton dans la fonction (et non pas un champ statique). C'est un jeton local, limité à la portée de l'opération, pour un usage ponctuel.
-
-```C#
-private async Task Test()
-{
-	try
-	{
-		using (CancellationTokenSource jeton = new CancellationTokenSource())
-		{
-			jeton.CancelAfter(300);
-			await TravailLong(jeton.Token);
-			Console.WriteLine("fini !");
-		}
-	}
-	catch (TaskCanceledException) // distinguons tâche et opération pour tester
-	{
-		Console.WriteLine("Tâche annulée !");
-	}
-	catch (OperationCanceledException) 
-	{
-		Console.WriteLine("Opération annulée !");
-	}
-	catch (Exception e)
-	{
-		Console.WriteLine(e.Message);
-	}
-	/*
-		Itération 1
-		Itération 2
-		Itération 3
-		Tâche annulée !
-	*/
-}
-```
