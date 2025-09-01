@@ -252,3 +252,8 @@ File.AppendAllText(cheminFichier,
 	---
 	""");
 ```
+
+## Compression .zip
+
+.NET fourni de quoi manipuler des archives `.zip`. Voir ma solution de test : [CSharp_Zip](https://github.com/AlexandreVenet/CSharp_Zip "CSharp_Zip" _blank).
+
