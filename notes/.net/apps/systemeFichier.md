@@ -14,10 +14,11 @@ Manipuler des répertoires et fichiers.
 | Fichier | [File](https://learn.microsoft.com/en-us/dotnet/api/system.io.file _blank) statique, [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo _blank) concrète|
 | Chemin | [Path](https://learn.microsoft.com/en-us/dotnet/api/system.io.path _blank) statique|
 
+Lorsqu'il s'agit d'utiliser le système de fichier, toujours enrober les opérations dans un `try...catch` pour capturer les exceptions éventuelles : `IOException`, `FileNotFoundException`...
 
 ## Chemin
 
-Le **chemin** ou l'adresse cible une entité sur le disque, un appareil, ou un emplacement mémoire. 
+Le **chemin**, ou l'adresse, cible une entité sur le disque, un appareil, ou un emplacement mémoire. 
 
 ```
 Windows
@@ -181,4 +182,73 @@ fichierInfo.Delete(); // le fichier est supprimé
 
 Les données ont une **source** : fichier sur le disque, information en RAM, dans le réseau, entrées saisies par l'utilisateur ou l'utilisatrice...  Ces données sont à chaque fois une séquence d'octets. 
 
-Pour faciliter le traitement de ces données (lecture, écriture...) quelle que soit leur source, .NET fournit la classe abstraite, *disposable*, [Stream](https://learn.microsoft.com/fr-fr/dotnet/api/system.io.stream _blank), dont on utilise les classes dérivées spécifiques de la source : [FileStream](https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream _blank), [MemoryStream](https://learn.microsoft.com/fr-fr/dotnet/api/system.io.memorystream _blank), [BufferedStream](https://learn.microsoft.com/en-us/dotnet/api/system.io.bufferedstream _blank)...
+Quelle que soit leur source et le traitement (lecture, écriture), .NET fournit la classe abstraite, *disposable*, [Stream](https://learn.microsoft.com/fr-fr/dotnet/api/system.io.stream _blank), dont on utilise les classes dérivées spécifiques de la source : [FileStream](https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream _blank), [MemoryStream](https://learn.microsoft.com/fr-fr/dotnet/api/system.io.memorystream _blank), [BufferedStream](https://learn.microsoft.com/en-us/dotnet/api/system.io.bufferedstream _blank)... Une fois le flux créé avec une de ces entités, on utilise ensuite un *reader* ou un *writer*. Cette approche (flux puis opérations) est parfaite pour **contrôler finement les opérations** (mode d'ouverture, partage, accès bas niveau...). 
+
+.NET propose une autre approche à l'aide de classes ou méthodes servant de raccourcis. Alors, la gestion du *stream* est automatisée. Par exemple : `File` et ses méthodes d'écriture ou lecture, `StreamWriter` ou `StreamReader` peuvent être utilisés directement sans déclarer de flux...
+
+Voici un exemple pour illustrer les deux approches. On admet un chemin de fichier préalablement posé, avec `Path.Combine()` par exemple.
+
+```C#
+// Approche fine
+
+var donnees = new // type anonyme
+{
+	prenom = "Lex",
+	nom = "Luthor",
+	prime = 3000000
+};
+
+string cheminFichier = Path.Combine(_cheminDossierProgramme, "Test1.txt");
+
+using (FileStream flux = new(
+	path: cheminFichier,
+	mode: FileMode.OpenOrCreate, // Si inexistant, fichier créé ; sinon ouvrir
+	access: FileAccess.Write, // Ecrire seulement, depuis le début. Si nouveau contenu plus court que l’ancien, existence de "restes" à la fin du fichier.
+	share: FileShare.None) // Fichier verrouillé pendant la procédure
+) 
+{
+	// Ecrire (*reader*)
+	// Quoi ? Du texte
+	using (StreamWriter writer = new(flux, Encoding.UTF8))
+	{
+		writer.WriteLine($"Prénom : {donnees.prenom}");
+		writer.WriteLine($"Nom : {donnees.nom}");
+		writer.WriteLine($"Prime : {donnees.prime}");
+	}
+}
+// Le *buffer* (mémoire tampon) optimise les performances : écrire directement chaque caractère sur le disque serait très lent.
+// Le fichier est *flushé* :
+// - les données sont vidées du *buffer*,
+// - elles sont écrites sur disque sans fermer le fichier,
+// - si tout est terminé, alors le fichier est fermé.
+// Le *flush* a lieu automatiquement : en fin de using() ou à chaque fois que le *buffer* est plein.
+// Par défaut, StreamWriter a un *buffer* d’environ 1024 caractères (1 Ko), configurable depuis le constructeur.
+```
+```C#
+// Approche rapide
+
+var donnees = new // type anonyme
+{
+	prenom = "Lex",
+	nom = "Luthor",
+	prime = 3000000
+};
+
+string cheminFichier = Path.Combine(_cheminDossierProgramme, "Test1Simple.txt");
+
+// Cas 1 : écrire des lignes conservées sous forme d'Array
+File.WriteAllLines(cheminFichier, new[]
+{
+	$"Prénom : {donnees.prenom}",
+	$"Nom : {donnees.nom}",
+	$"Prime : {donnees.prime}",
+});
+
+// Cas 2 : écrire un texte (dont retours ligne) à la suite de ce qui précède
+File.AppendAllText(cheminFichier,
+	$"""
+	---
+	{donnees.prenom} {donnees.nom} est là !
+	---
+	""");
+```
